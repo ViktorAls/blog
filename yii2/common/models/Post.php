@@ -72,5 +72,5 @@ class Post extends \yii\db\ActiveRecord
     public function getTags(){
         return $this->hasMany(Tag::className(),['id_tag'=>'id_tag'])->via('postTags');
     }
-    
+
 }
