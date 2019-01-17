@@ -1,0 +1,658 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="c6942d54-c9bd-496f-aad8-5638e982d304" name="Default Changelist" comment="" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
+    <pharConfigPath>$PROJECT_DIR$/yii2/composer.json</pharConfigPath>
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/yii2/frontend/views/layouts/main.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="6358">
+              <caret line="377" column="18" selection-start-line="377" selection-start-column="18" selection-end-line="377" selection-end-column="18" />
+              <folding>
+                <element signature="e#67#88#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/yii2/frontend/controllers/SiteController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1122">
+              <caret line="77" column="80" selection-start-line="77" selection-start-column="80" selection-end-line="77" selection-end-column="80" />
+              <folding>
+                <element signature="e#39#62#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/yii2/common/models/Post.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="451">
+              <caret line="74" column="4" selection-start-line="74" selection-start-column="4" selection-end-line="74" selection-end-column="4" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/yii2/frontend/views/site/index.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="391">
+              <caret line="23" selection-start-line="23" selection-end-line="23" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/yii2/common/models/LoginForm.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="17">
+              <caret line="1" column="14" selection-start-line="1" selection-end-line="2" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>img/</find>
+      <find>$(window).load</find>
+      <find>img</find>
+      <find>entry</find>
+      <find>featured__column</find>
+      <find>logo</find>
+      <find>s-pageheader</find>
+      <find>enter</find>
+      <find>mejs-controls.svg</find>
+      <find>type=&quot;search&quot;</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/teacher_blog" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/yii2/common/config/main-local.php" />
+        <option value="$PROJECT_DIR$/yii2/backend/config/main.php" />
+        <option value="$PROJECT_DIR$/public_html/js/angular.min.js" />
+        <option value="$PROJECT_DIR$/public_html/js/init.js" />
+        <option value="$PROJECT_DIR$/public_html/js/jquery-1.12.4.min.js" />
+        <option value="$PROJECT_DIR$/public_html/js/isotope.js" />
+        <option value="$PROJECT_DIR$/public_html/js/jQuery.appear.js" />
+        <option value="$PROJECT_DIR$/public_html/js/jquery.slimscroll.js" />
+        <option value="$PROJECT_DIR$/public_html/js/lightgallery-all.js" />
+        <option value="$PROJECT_DIR$/public_html/js/material.min.js" />
+        <option value="$PROJECT_DIR$/public_html/css/material.min.css" />
+        <option value="$PROJECT_DIR$/public_html/css/material-design-iconic-font.min.css" />
+        <option value="$PROJECT_DIR$/public_html/css/lightgallery.css" />
+        <option value="$PROJECT_DIR$/public_html/js/modernizr.js" />
+        <option value="$PROJECT_DIR$/public_html/js/main.js" />
+        <option value="$PROJECT_DIR$/yii2/frontend/views/site/about.php" />
+        <option value="$PROJECT_DIR$/public_html/css/main.css" />
+        <option value="$PROJECT_DIR$/yii2/frontend/views/site/error.php" />
+        <option value="$PROJECT_DIR$/yii2/frontend/views/layouts/index.php" />
+        <option value="$PROJECT_DIR$/yii2/frontend/views/posts/photo.php" />
+        <option value="$PROJECT_DIR$/yii2/frontend/assets/AppAsset.php" />
+        <option value="$PROJECT_DIR$/yii2/frontend/components/link.php" />
+        <option value="$PROJECT_DIR$/yii2/frontend/config/main.php" />
+        <option value="$PROJECT_DIR$/yii2/frontend/components/Link.php" />
+        <option value="$PROJECT_DIR$/yii2/frontend/views/layouts/main.php" />
+        <option value="$PROJECT_DIR$/yii2/common/models/Tag.php" />
+        <option value="$PROJECT_DIR$/yii2/common/widgets/Selected.php" />
+        <option value="$PROJECT_DIR$/yii2/common/widgets/views/selected.php" />
+        <option value="$PROJECT_DIR$/yii2/frontend/views/site/index.php" />
+        <option value="$PROJECT_DIR$/yii2/frontend/controllers/SiteController.php" />
+        <option value="$PROJECT_DIR$/yii2/common/models/Post.php" />
+      </list>
+    </option>
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration">
+    <include_path>
+      <path value="$PROJECT_DIR$/yii2/vendor/symfony/console" />
+      <path value="$PROJECT_DIR$/yii2/vendor/symfony/event-dispatcher" />
+      <path value="$PROJECT_DIR$/yii2/vendor/symfony/css-selector" />
+      <path value="$PROJECT_DIR$/yii2/vendor/symfony/polyfill-mbstring" />
+      <path value="$PROJECT_DIR$/yii2/vendor/symfony/polyfill-ctype" />
+      <path value="$PROJECT_DIR$/yii2/vendor/symfony/contracts" />
+      <path value="$PROJECT_DIR$/yii2/vendor/doctrine/lexer" />
+      <path value="$PROJECT_DIR$/yii2/vendor/symfony/browser-kit" />
+      <path value="$PROJECT_DIR$/yii2/vendor/doctrine/instantiator" />
+      <path value="$PROJECT_DIR$/yii2/vendor/symfony/finder" />
+      <path value="$PROJECT_DIR$/yii2/vendor/egulias/email-validator" />
+      <path value="$PROJECT_DIR$/yii2/vendor/symfony/dom-crawler" />
+      <path value="$PROJECT_DIR$/yii2/vendor/symfony/yaml" />
+      <path value="$PROJECT_DIR$/yii2/vendor/phpspec/php-diff" />
+      <path value="$PROJECT_DIR$/yii2/vendor/phpspec/prophecy" />
+      <path value="$PROJECT_DIR$/yii2/vendor/guzzlehttp/psr7" />
+      <path value="$PROJECT_DIR$/yii2/vendor/codeception/stub" />
+      <path value="$PROJECT_DIR$/yii2/vendor/codeception/phpunit-wrapper" />
+      <path value="$PROJECT_DIR$/yii2/vendor/phpunit/php-timer" />
+      <path value="$PROJECT_DIR$/yii2/vendor/codeception/base" />
+      <path value="$PROJECT_DIR$/yii2/vendor/phpunit/php-file-iterator" />
+      <path value="$PROJECT_DIR$/yii2/vendor/codeception/verify" />
+      <path value="$PROJECT_DIR$/yii2/vendor/phpunit/php-token-stream" />
+      <path value="$PROJECT_DIR$/yii2/vendor/phpunit/php-text-template" />
+      <path value="$PROJECT_DIR$/yii2/vendor/phpunit/phpunit" />
+      <path value="$PROJECT_DIR$/yii2/vendor/phpunit/php-code-coverage" />
+      <path value="$PROJECT_DIR$/yii2/vendor/ralouphie/getallheaders" />
+      <path value="$PROJECT_DIR$/yii2/vendor/ezyang/htmlpurifier" />
+      <path value="$PROJECT_DIR$/yii2/vendor/sebastian/comparator" />
+      <path value="$PROJECT_DIR$/yii2/vendor/sebastian/global-state" />
+      <path value="$PROJECT_DIR$/yii2/vendor/sebastian/exporter" />
+      <path value="$PROJECT_DIR$/yii2/vendor/sebastian/environment" />
+      <path value="$PROJECT_DIR$/yii2/vendor/sebastian/object-enumerator" />
+      <path value="$PROJECT_DIR$/yii2/vendor/sebastian/recursion-context" />
+      <path value="$PROJECT_DIR$/yii2/vendor/sebastian/resource-operations" />
+      <path value="$PROJECT_DIR$/yii2/vendor/sebastian/object-reflector" />
+      <path value="$PROJECT_DIR$/yii2/vendor/sebastian/diff" />
+      <path value="$PROJECT_DIR$/yii2/vendor/sebastian/code-unit-reverse-lookup" />
+      <path value="$PROJECT_DIR$/yii2/vendor/bower-asset/punycode" />
+      <path value="$PROJECT_DIR$/yii2/vendor/swiftmailer/swiftmailer" />
+      <path value="$PROJECT_DIR$/yii2/vendor/sebastian/version" />
+      <path value="$PROJECT_DIR$/yii2/vendor/bower-asset/typeahead.js" />
+      <path value="$PROJECT_DIR$/yii2/vendor/bower-asset/bootstrap" />
+      <path value="$PROJECT_DIR$/yii2/vendor/bower-asset/yii2-pjax" />
+      <path value="$PROJECT_DIR$/yii2/vendor/bower-asset/inputmask" />
+      <path value="$PROJECT_DIR$/yii2/vendor/bower-asset/jquery" />
+      <path value="$PROJECT_DIR$/yii2/vendor/cebe/markdown" />
+      <path value="$PROJECT_DIR$/yii2/vendor/webmozart/assert" />
+      <path value="$PROJECT_DIR$/yii2/vendor/composer" />
+      <path value="$PROJECT_DIR$/yii2/vendor/fzaninotto/faker" />
+      <path value="$PROJECT_DIR$/yii2/vendor/phpdocumentor/reflection-docblock" />
+      <path value="$PROJECT_DIR$/yii2/vendor/phpdocumentor/reflection-common" />
+      <path value="$PROJECT_DIR$/yii2/vendor/phpdocumentor/type-resolver" />
+      <path value="$PROJECT_DIR$/yii2/vendor/myclabs/deep-copy" />
+      <path value="$PROJECT_DIR$/yii2/vendor/theseer/tokenizer" />
+      <path value="$PROJECT_DIR$/yii2/vendor/behat/gherkin" />
+      <path value="$PROJECT_DIR$/yii2/vendor/phar-io/manifest" />
+      <path value="$PROJECT_DIR$/yii2/vendor/phar-io/version" />
+      <path value="$PROJECT_DIR$/yii2/vendor/psr/http-message" />
+      <path value="$PROJECT_DIR$/yii2/vendor/yiisoft/yii2" />
+      <path value="$PROJECT_DIR$/yii2/vendor/yiisoft/yii2-faker" />
+      <path value="$PROJECT_DIR$/yii2/vendor/yiisoft/yii2-bootstrap" />
+      <path value="$PROJECT_DIR$/yii2/vendor/yiisoft/yii2-debug" />
+      <path value="$PROJECT_DIR$/yii2/vendor/yiisoft/yii2-composer" />
+      <path value="$PROJECT_DIR$/yii2/vendor/yiisoft/yii2-swiftmailer" />
+      <path value="$PROJECT_DIR$/yii2/vendor/yiisoft/yii2-gii" />
+    </include_path>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="697" />
+    <option name="height" value="745" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="blog" type="b2602c69:ProjectViewProjectNode" />
+              <item name="blog" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="blog" type="b2602c69:ProjectViewProjectNode" />
+              <item name="blog" type="462c0819:PsiDirectoryNode" />
+              <item name="public_html" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="blog" type="b2602c69:ProjectViewProjectNode" />
+              <item name="blog" type="462c0819:PsiDirectoryNode" />
+              <item name="yii2" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="blog" type="b2602c69:ProjectViewProjectNode" />
+              <item name="blog" type="462c0819:PsiDirectoryNode" />
+              <item name="yii2" type="462c0819:PsiDirectoryNode" />
+              <item name="common" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="blog" type="b2602c69:ProjectViewProjectNode" />
+              <item name="blog" type="462c0819:PsiDirectoryNode" />
+              <item name="yii2" type="462c0819:PsiDirectoryNode" />
+              <item name="common" type="462c0819:PsiDirectoryNode" />
+              <item name="models" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="blog" type="b2602c69:ProjectViewProjectNode" />
+              <item name="blog" type="462c0819:PsiDirectoryNode" />
+              <item name="yii2" type="462c0819:PsiDirectoryNode" />
+              <item name="common" type="462c0819:PsiDirectoryNode" />
+              <item name="widgets" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="blog" type="b2602c69:ProjectViewProjectNode" />
+              <item name="blog" type="462c0819:PsiDirectoryNode" />
+              <item name="yii2" type="462c0819:PsiDirectoryNode" />
+              <item name="common" type="462c0819:PsiDirectoryNode" />
+              <item name="widgets" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="blog" type="b2602c69:ProjectViewProjectNode" />
+              <item name="blog" type="462c0819:PsiDirectoryNode" />
+              <item name="yii2" type="462c0819:PsiDirectoryNode" />
+              <item name="console" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="blog" type="b2602c69:ProjectViewProjectNode" />
+              <item name="blog" type="462c0819:PsiDirectoryNode" />
+              <item name="yii2" type="462c0819:PsiDirectoryNode" />
+              <item name="frontend" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="blog" type="b2602c69:ProjectViewProjectNode" />
+              <item name="blog" type="462c0819:PsiDirectoryNode" />
+              <item name="yii2" type="462c0819:PsiDirectoryNode" />
+              <item name="frontend" type="462c0819:PsiDirectoryNode" />
+              <item name="controllers" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="blog" type="b2602c69:ProjectViewProjectNode" />
+              <item name="blog" type="462c0819:PsiDirectoryNode" />
+              <item name="yii2" type="462c0819:PsiDirectoryNode" />
+              <item name="frontend" type="462c0819:PsiDirectoryNode" />
+              <item name="models" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="blog" type="b2602c69:ProjectViewProjectNode" />
+              <item name="blog" type="462c0819:PsiDirectoryNode" />
+              <item name="yii2" type="462c0819:PsiDirectoryNode" />
+              <item name="frontend" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="blog" type="b2602c69:ProjectViewProjectNode" />
+              <item name="blog" type="462c0819:PsiDirectoryNode" />
+              <item name="yii2" type="462c0819:PsiDirectoryNode" />
+              <item name="frontend" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="layouts" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="blog" type="b2602c69:ProjectViewProjectNode" />
+              <item name="blog" type="462c0819:PsiDirectoryNode" />
+              <item name="yii2" type="462c0819:PsiDirectoryNode" />
+              <item name="frontend" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="posts" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../site.ru" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\OpenServer\domains\blog\yii2\common\models" />
+      <recent name="D:\OpenServer\domains\blog\yii2\frontend\views\posts" />
+      <recent name="D:\OpenServer\domains\blog\public_html\js" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\OpenServer\domains\blog\public_html\css" />
+      <recent name="D:\OpenServer\domains\blog\public_html\uploads\icon" />
+      <recent name="D:\OpenServer\domains\blog\yii2\frontend\assets" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c6942d54-c9bd-496f-aad8-5638e982d304" name="Default Changelist" comment="" />
+      <created>1547406382580</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1547406382580</updated>
+      <workItem from="1547406384717" duration="1697000" />
+      <workItem from="1547483675913" duration="13526000" />
+      <workItem from="1547545608118" duration="4337000" />
+      <workItem from="1547561306189" duration="30642000" />
+      <workItem from="1547722829916" duration="323000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="50525000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2647504" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32850242" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" />
+      <window_info anchor="bottom" id="Database Changes" order="9" />
+      <window_info anchor="bottom" id="Migrations" order="10" />
+      <window_info anchor="bottom" id="Terminal" order="11" weight="0.32850242" />
+      <window_info anchor="bottom" id="Event Log" order="12" side_tool="true" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Database" order="3" />
+    </layout>
+    <layout-to-restore>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25340393" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" />
+      <window_info anchor="bottom" id="Database Changes" order="9" />
+      <window_info anchor="bottom" id="Migrations" order="10" />
+      <window_info anchor="bottom" id="Terminal" order="11" weight="0.32850242" />
+      <window_info anchor="bottom" id="Event Log" order="12" side_tool="true" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Database" order="3" />
+    </layout-to-restore>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/public_html/js/plugins.js</url>
+          <line>163</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/public_html/js/smooth-scroll.js" />
+    <entry file="file://$PROJECT_DIR$/public_html/js/jquery-1.12.4.min.js" />
+    <entry file="file://$PROJECT_DIR$/public_html/css/lightgallery.css" />
+    <entry file="file://$PROJECT_DIR$/public_html/css/jquery.countdown.css" />
+    <entry file="file://$PROJECT_DIR$/public_html/css/site.css" />
+    <entry file="file://$PROJECT_DIR$/public_html/css/owl.carousel.css" />
+    <entry file="file://$PROJECT_DIR$/public_html/css/material-icons.css" />
+    <entry file="file://$PROJECT_DIR$/public_html/css/material-design-iconic-font.min.css" />
+    <entry file="file://$PROJECT_DIR$/public_html/js/lightgallery-all.js" />
+    <entry file="file://$PROJECT_DIR$/public_html/js/jquery.mCustomScrollbar.concat.min.js" />
+    <entry file="file://$PROJECT_DIR$/public_html/css/jquery.mCustomScrollbar.css" />
+    <entry file="file://$PROJECT_DIR$/public_html/css/style.css" />
+    <entry file="file://$PROJECT_DIR$/yii2/frontend/views/site/login.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/yii2/vendor/yiisoft/yii2/web/AssetBundle.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1370">
+          <caret line="92" column="11" selection-start-line="92" selection-start-column="11" selection-end-line="92" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public_html/images/thumbs/featured/featured-guitarman.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public_html/js/modernizr.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="8033" selection-start-line="2" selection-start-column="8033" selection-end-line="2" selection-end-column="8033" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public_html/js/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="23" column="44" selection-start-line="23" selection-start-column="44" selection-end-line="23" selection-end-column="44" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/yii2/frontend/views/site/about.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5627">
+          <caret line="331" selection-start-line="331" selection-end-line="331" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/yii2/frontend/config/params.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/yii2/frontend/views/site/error.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="21" selection-start-line="11" selection-start-column="21" selection-end-line="11" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/platform-impl.jar!/resources/html5-schema/html5/web-forms.rnc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="14" column="18" selection-start-line="14" selection-start-column="18" selection-end-line="14" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/yii2/frontend/views/posts/posts.php" />
+    <entry file="file://$PROJECT_DIR$/yii2/frontend/views/posts/photo.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/yii2/frontend/views/posts/video.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/yii2/frontend/views/posts/audio.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/yii2/frontend/views/posts/search.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/yii2/common/widgets/Alert.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public_html/images/logo.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public_html/images/herobg.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public_html/images/hero-bg.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public_html/images/kek.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public_html/images/icon-location@2x.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public_html/css/mejs-controls.svg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public_html/css/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="181">
+          <caret line="1287" column="58" selection-start-line="1287" selection-start-column="41" selection-end-line="1287" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public_html/js/plugins.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="154" column="28" selection-start-line="154" selection-end-line="155" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/yii2/frontend/assets/AppAsset.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="23" column="22" selection-start-line="23" selection-start-column="22" selection-end-line="23" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/yii2/vendor/yiisoft/yii2/data/Pagination.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-4119">
+          <caret line="75" column="6" selection-start-line="75" selection-start-column="6" selection-end-line="75" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/yii2/vendor/yiisoft/yii2/widgets/LinkPager.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1654">
+          <caret line="148" column="7" selection-start-line="148" selection-start-column="7" selection-end-line="148" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/yii2/frontend/views/layouts/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-439">
+          <caret line="73" selection-start-line="73" selection-end-line="73" />
+          <folding>
+            <element signature="e#67#88#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/yii2/frontend/components/Link.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="21" column="21" selection-start-line="21" selection-start-column="21" selection-end-line="21" selection-end-column="21" />
+          <folding>
+            <element signature="e#126#149#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/yii2/frontend/config/main.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="16" column="17" selection-start-line="16" selection-start-column="9" selection-end-line="16" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/yii2/common/models/User.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/yii2/common/models/TagPost.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/yii2/common/models/Tag.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="714">
+          <caret line="42" selection-start-line="42" selection-end-line="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/yii2/common/widgets/Selected.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="21" column="38" lean-forward="true" selection-start-line="21" selection-start-column="38" selection-end-line="21" selection-end-column="38" />
+          <folding>
+            <element signature="e#121#144#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/yii2/common/widgets/views/selected.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="298">
+          <caret line="56" column="52" selection-start-line="56" selection-start-column="52" selection-end-line="56" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/yii2/frontend/views/layouts/main.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6358">
+          <caret line="377" column="18" selection-start-line="377" selection-start-column="18" selection-end-line="377" selection-end-column="18" />
+          <folding>
+            <element signature="e#67#88#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/yii2/frontend/controllers/SiteController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1122">
+          <caret line="77" column="80" selection-start-line="77" selection-start-column="80" selection-end-line="77" selection-end-column="80" />
+          <folding>
+            <element signature="e#39#62#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/yii2/frontend/views/site/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="23" selection-start-line="23" selection-end-line="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/yii2/common/models/LoginForm.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="14" selection-start-line="1" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/yii2/common/models/Post.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="451">
+          <caret line="74" column="4" selection-start-line="74" selection-start-column="4" selection-end-line="74" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
