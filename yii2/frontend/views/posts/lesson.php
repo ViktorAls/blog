@@ -1,56 +1,44 @@
 <?php
-$this->title = '';
-?>
+$this->title = $model['title'];
+
+use yii\helpers\Html;
+use yii\helpers\Url; ?>
 <section class="s-content s-content--narrow s-content--no-padding-bottom">
 
     <article class="row format-audio format-gallery ">
 
         <div class="s-content__header col-full">
             <h1 class="s-content__header-title">
-                This Is an Audio Post Format.
+                <?=$model['title'];?>
             </h1>
             <ul class="s-content__header-meta">
-                <li class="date">December 16, 2017</li>
-                <li class="cat">
-                    In
-                    <a href="#0">Lifestyle</a>
-                    <a href="#0">Travel</a>
-                </li>
+                <li class="date"><?= date('F d, Y', $model['updated_at']) ?></li>
             </ul>
         </div>
 
-        <div class="s-content__media col-full">
-            <div class="s-content__post-thumb">
-                <img src="/images/thumbs/single/audio/audio-1000.jpg" alt="">
+        <?php if ($model['type'] == 1): ?>
+            <?= \common\widgets\PhotoPost::widget([
+                    'data'=>$model['file'],
+            ]) ?>
 
-                <div class="audio-wrap">
-
-                    <audio id="player2" src="/media/AirReview-Landmarks-02-ChasingCorporate.mp3" width="100%"
-                           height="42" controls="controls"></audio>
-
-                    <audio id="player2" src="/media/AirReview-Landmarks-02-ChasingCorporate.mp3" width="100%"
-                           height="42" controls="controls"></audio>
-
-                    <audio id="player2" src="/media/AirReview-Landmarks-02-ChasingCorporate.mp3" width="100%"
-                           height="42" controls="controls"></audio>
-
-                    <audio id="player2" src="/media/AirReview-Landmarks-02-ChasingCorporate.mp3" width="100%"
-                           height="42" controls="controls"></audio>
-                </div>
-            </div>
-        </div>
+        <? elseif ($model['type'] == 2): ?>
+            <?= \common\widgets\AudioPost::widget([
+                'data'=>$model['file'],
+                'icon'=>$model['icon']
+                ]) ?>
+        <? endif; ?>
 
         <div class="col-full s-content__main">
+            <?=$model['description'];?>
 
 
             <p class="s-content__tags">
                 <span>Теги новостей</span>
 
                 <span class="s-content__tag-list">
-                        <a href="#0">orci</a>
-                        <a href="#0">lectus</a>
-                        <a href="#0">varius</a>
-                        <a href="#0">turpis</a>
+                       <?php foreach ($model['tags'] as $tag):?>
+                       <?=Html::a($tag['name'],Url::to(['posts/tags','id'=>$tag['id_tag']]))?>
+                    <?php endforeach;?>
                 </span>
             </p>
 

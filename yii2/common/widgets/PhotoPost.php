@@ -13,5 +13,19 @@ use yii\base\Widget;
 
 class PhotoPost extends Widget
 {
+    /**
+     * @var string
+     */
+    public $pathPhoto = 'uploads/post/';
 
+    /**
+     * @var array
+     */
+    public $data;
+
+    public function run()
+    {
+
+        return $this->render('photo',['path'=>$this->pathPhoto,'data'=>$this->data]);
+    }
 }

@@ -14,5 +14,34 @@ use yii\base\Widget;
 
 class AudioPost extends Widget
 {
+    /**
+     * @var string
+     */
+    public $pathAudio = 'uploads/audio/';
 
+    /**
+     * @var string
+     */
+    public $pathIcon ='uploads/icon/';
+
+    /**
+     * @var string
+     */
+    public $icon;
+
+    /**
+     * @var array
+     */
+    public $data;
+
+    public function run()
+    {
+
+       return $this->render('audio', [
+           'pathAudio'=>$this->pathAudio,
+           'data'=>$this->data,
+           'pathIcon'=>$this->pathIcon,
+           'icon'=>$this->icon
+       ]);
+    }
 }

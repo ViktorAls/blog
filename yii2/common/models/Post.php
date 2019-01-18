@@ -12,7 +12,7 @@ use Yii;
  * @property string $description описание
  * @property int $created_at создал
  * @property int $updated_at обновил
- * @property int $type тип записи (2=аудио, 3=видео,1=просто пост)
+ * @property int $type тип записи (1=фото, 2=аудио,3=просто пост)
  * @property string $icon
  * @property int have looked сколько просмотрело
  */
@@ -72,5 +72,13 @@ class Post extends \yii\db\ActiveRecord
     public function getTags(){
         return $this->hasMany(Tag::className(),['id_tag'=>'id_tag'])->via('postTags');
     }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getFile(){
+        return $this->hasMany(PostFile::className(),['id_post'=>'id_post']);
+    }
+
 
 }

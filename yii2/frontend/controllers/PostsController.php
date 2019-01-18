@@ -25,7 +25,7 @@ class PostsController extends Controller
 
         $model = $this->postModel($id);
 
-        return $this->render('lesson',$model);
+        return $this->render('lesson',['model'=>$model]);
     }
 
     /**
@@ -34,10 +34,10 @@ class PostsController extends Controller
      * @throws HttpException
      */
     protected function postModel ($id){
-         if ($model = Post::find()->where(['id_post'=>$id])->asArray()->one()){
+         if ($model = Post::find()->where(['id_post'=>$id])->asArray()->with('tags','file')->one()){
              return $model;
          } else {
-             throw new HttpException('404','Страница не найден, попробуйте друго id');
+             throw new HttpException('404','Страница не найдена.');
          }
     }
 }
