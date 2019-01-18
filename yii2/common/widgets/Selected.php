@@ -35,7 +35,7 @@ class Selected extends Widget
             } else if ($post['type'] == 2) {
                 $posts[$key]['category'] = 'Аудио лекция';
             } else if ($post['type'] == 3) {
-                $posts[$key]['category'] = 'Видео лекция';
+                $posts[$key]['category'] = 'Лекция';
             }
         }
         return $posts;

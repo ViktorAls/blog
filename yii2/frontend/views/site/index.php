@@ -1,5 +1,7 @@
 <?$this->title = 'Главная страница';
 
+use yii\helpers\Html;
+use yii\helpers\Url;
 use yii\widgets\LinkPager; ?>
 <!-- s-content
 ================================================== -->
@@ -13,7 +15,7 @@ use yii\widgets\LinkPager; ?>
             <article class="masonry__brick entry format-standard" data-aos="fade-up">
 
                 <div class="entry__thumb">
-                    <a href="single-standard.html" class="entry__thumb-link">
+                    <a href="<?=\yii\helpers\Url::to(['posts/lesson','id'=>$post['id_post']])?>" class="entry__thumb-link">
                         <img src="<?=\yii\helpers\Url::home(true).'/uploads/icon/'.$post['icon']?>"
                              srcset="<?=\yii\helpers\Url::home(true).'/uploads/icon/'.$post['icon']?> 1x" alt="">
                     </a>
@@ -23,19 +25,21 @@ use yii\widgets\LinkPager; ?>
                     <div class="entry__header">
 
                         <div class="entry__date">
-                            <a href="single-standard.html"><?=date('F d, Y',$post['updated_at'])?></a>
+                            <a href="<?=\yii\helpers\Url::to(['posts/lesson','id'=>$post['id_post']])?>"><?=date('F d, Y',$post['updated_at'])?></a>
                         </div>
-                        <h1 class="entry__title"><a href="single-standard.html"><?=$post['title']?></a></h1>
+                        <h1 class="entry__title"><a href="<?=\yii\helpers\Url::to(['posts/lesson','id'=>$post['id_post']])?>"><?=html::encode($post['title'])?></a></h1>
 
                     </div>
                     <div class="entry__excerpt">
                         <p>
-                            <?=mb_strimwidth($post['description'], 0, 150, "...");?>
+                            <?=mb_strimwidth(html::encode($post['description']), 0, 150, "...");?>
                         </p>
                     </div>
                     <div class="entry__meta">
                             <span class="entry__meta-links">
-                                <a href="category.html">Health</a>
+                                <?php foreach ($post['tags'] as $tag):?>
+                                <?=Html::a(html::encode($tag['name']),Url::to(['post/tag','id'=>$tag['id_tag']]));?>
+                                <?php endforeach;?>
                             </span>
                     </div>
                 </div>

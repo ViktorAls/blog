@@ -32,52 +32,32 @@ AppAsset::register($this);
 
     <header class="header">
         <div class="header__content row">
-
             <div class="header__logo">
-                <a class="logo" href="<?=\yii\helpers\Url::home(true)?>">
-                    <?=Yii::$app->name?>
+                <a class="logo" href="<?= \yii\helpers\Url::home(true) ?>">
+                    <?= Yii::$app->name ?>
                 </a>
-            </div> <!-- end header__logo -->
-
-            <ul class="header__social">
-                <li>
-                    <a href="#0"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-                </li>
-                <li>
-                    <a href="#0"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-                </li>
-                <li>
-                    <a href="#0"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-                </li>
-                <li>
-                    <a href="#0"><i class="fa fa-pinterest" aria-hidden="true"></i></a>
-                </li>
-            </ul> <!-- end header__social -->
+            </div>
+            <?php if ($this->beginCache('connection', ['duration' => 3600])): ?>
+                <?= \common\widgets\Connection::widget() ?>
+                <?php $this->endCache(); ?>
+            <?php endif; ?>
 
             <a class="header__search-trigger" href="#0"></a>
-
             <div class="header__search">
-
                 <form role="search" method="get" class="header__search-form" action="#">
                     <label>
                         <span class="hide-content">Искать урок:</span>
-                        <input type="search" class="search-field" placeholder="Введите ключ для поиска" value="" name="s"
+                        <input type="search" class="search-field" placeholder="Введите ключ для поиска" value=""
+                               name="s"
                                title="Search for:" autocomplete="off">
                     </label>
                     <input type="submit" class="search-submit" value="Search">
                 </form>
-
                 <a href="#0" title="Close Search" class="header__overlay-close">Закрыть</a>
-
-            </div>  <!-- end header__search -->
-
-
+            </div>
             <a class="header__toggle-menu" href="#0" title="Menu"><span>Меню</span></a>
-
             <nav class="header__nav-wrap">
-
                 <h2 class="header__nav-heading h6">Навигация</h2>
-
                 <ul class="header__nav">
                     <li class="current"><a href="index.html" title="">Главная</a></li>
                     <li class="has-children">
@@ -93,15 +73,12 @@ AppAsset::register($this);
                     <li><a href="about.html" title="">О себе</a></li>
                     <li><a href="contact.html" title="">Обратная связь</a></li>
                 </ul> <!-- end header__nav -->
-
                 <a href="#0" title="Close Menu" class="header__overlay-close close-mobile-menu">Close</a>
-
-            </nav> <!-- end header__nav-wrap -->
-
+            </nav>
         </div> <!-- header-content -->
-    </header> <!-- header -->
+    </header>
 
-    <?=\common\widgets\Selected::widget()?>
+    <?= \common\widgets\Selected::widget() ?>
 </section> <!-- end s-pageheader -->
 
 
@@ -112,212 +89,47 @@ AppAsset::register($this);
 <?= $content ?>
 
 
-<!-- s-extra
-================================================== -->
+<!--Популярные-->
 <section class="s-extra">
 
     <div class="row top">
 
         <div class="col-eight md-six tab-full popular">
-            <h3>Popular Posts</h3>
+            <h3>Мне повезёт</h3>
 
             <div class="block-1-2 block-m-full popular__posts">
-                <article class="col-block popular__post">
-                    <a href="#0" class="popular__thumb">
-                        <img src="images/thumbs/small/wheel-150.jpg" alt="">
-                    </a>
-                    <h5><a href="#0">Visiting Theme Parks Improves Your Health.</a></h5>
-                    <section class="popular__meta">
-                        <span class="popular__author"><span>By</span> <a href="#0"> John Doe</a></span>
-                        <span class="popular__date"><span>on</span> <time
-                                    datetime="2017-12-19">Dec 19, 2017</time></span>
-                    </section>
-                </article>
-                <article class="col-block popular__post">
-                    <a href="#0" class="popular__thumb">
-                        <img src="images/thumbs/small/shutterbug-150.jpg" alt="">
-                    </a>
-                    <h5><a href="#0">Key Benefits Of Family Photography.</a></h5>
-                    <section class="popular__meta">
-                        <span class="popular__author"><span>By</span> <a href="#0"> John Doe</a></span>
-                        <span class="popular__date"><span>on</span> <time
-                                    datetime="2017-12-18">Dec 18, 2017</time></span>
-                    </section>
-                </article>
-                <article class="col-block popular__post">
-                    <a href="#0" class="popular__thumb">
-                        <img src="images/thumbs/small/cookies-150.jpg" alt="">
-                    </a>
-                    <h5><a href="#0">Absolutely No Sugar Oatmeal Cookies.</a></h5>
-                    <section class="popular__meta">
-                        <span class="popular__author"><span>By</span> <a href="#0"> John Doe</a></span>
-                        <span class="popular__date"><span>on</span> <time
-                                    datetime="2017-12-16">Dec 16, 2017</time></span>
-                    </section>
-                </article>
-                <article class="col-block popular__post">
-                    <a href="#0" class="popular__thumb">
-                        <img src="images/thumbs/small/beetle-150.jpg" alt="">
-                    </a>
-                    <h5><a href="#0">Throwback To The Good Old Days.</a></h5>
-                    <section class="popular__meta">
-                        <span class="popular__author"><span>By</span> <a href="#0"> John Doe</a></span>
-                        <span class="popular__date"><span>on</span> <time
-                                    datetime="2017-12-16">Dec 16, 2017</time></span>
-                    </section>
-                </article>
-                <article class="col-block popular__post">
-                    <a href="#0" class="popular__thumb">
-                        <img src="images/thumbs/small/tulips-150.jpg" alt="">
-                    </a>
-                    <h5><a href="#0">10 Interesting Facts About Caffeine.</a></h5>
-                    <section class="popular__meta">
-                        <span class="popular__author"><span>By</span> <a href="#0"> John Doe</a></span>
-                        <span class="popular__date"><span>on</span> <time
-                                    datetime="2017-12-14">Dec 14, 2017</time></span>
-                    </section>
-                </article>
-                <article class="col-block popular__post">
-                    <a href="#0" class="popular__thumb">
-                        <img src="images/thumbs/small/salad-150.jpg" alt="">
-                    </a>
-                    <h5><a href="#0">Healthy Mediterranean Salad Recipes</a></h5>
-                    <section class="popular__meta">
-                        <span class="popular__author"><span>By</span> <a href="#0"> John Doe</a></span>
-                        <span class="popular__date"><span>on</span> <time
-                                    datetime="2017-12-12">Dec 12, 2017</time></span>
-                    </section>
-                </article>
+                <?= \common\widgets\RandPost::widget(); ?>
             </div> <!-- end popular_posts -->
         </div> <!-- end popular -->
 
         <div class="col-four md-six tab-full about">
-            <h3>About Philosophy</h3>
+            <?php if ($this->beginCache('about', ['duration' => 3600 * 12])): ?>
 
-            <p>
-                Donec sollicitudin molestie malesuada. Nulla quis lorem ut libero malesuada feugiat. Pellentesque in
-                ipsum id orci porta dapibus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere
-                cubilia Curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula. Quisque
-                velit nisi, pretium ut lacinia in, elementum id enim. Donec sollicitudin molestie malesuada.
-            </p>
+                <?= \common\widgets\PointOfView::widget(['title' => 'Моя точка зрения']); ?>
 
-            <ul class="about__social">
-                <li>
-                    <a href="#0"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-                </li>
-                <li>
-                    <a href="#0"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-                </li>
-                <li>
-                    <a href="#0"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-                </li>
-                <li>
-                    <a href="#0"><i class="fa fa-pinterest" aria-hidden="true"></i></a>
-                </li>
-            </ul> <!-- end header__social -->
-        </div> <!-- end about -->
+                <?= \common\widgets\Connection::widget(['ulClass' => 'about__social']) ?>
 
-    </div> <!-- end row -->
+                <?php $this->endCache(); ?>
+            <?php endif; ?>
+
+        </div>
+
+    </div>
 
     <div class="row bottom tags-wrap">
         <div class="col-full tags">
-            <h3>Tags</h3>
+            <h3>Последние теги</h3>
 
             <div class="tagcloud">
-                <a href="#0">Salad</a>
-                <a href="#0">Recipe</a>
-                <a href="#0">Places</a>
-                <a href="#0">Tips</a>
-                <a href="#0">Friends</a>
-                <a href="#0">Travel</a>
-                <a href="#0">Exercise</a>
-                <a href="#0">Reading</a>
-                <a href="#0">Running</a>
-                <a href="#0">Self-Help</a>
-                <a href="#0">Vacation</a>
+                <?= \common\widgets\Tags::widget(); ?>
             </div> <!-- end tagcloud -->
         </div> <!-- end tags -->
     </div> <!-- end tags-wrap -->
 
-</section> <!-- end s-extra -->
+</section>
 
-
-<!-- s-footer
-================================================== -->
+<!--Низ сайта-->
 <footer class="s-footer">
-
-    <div class="s-footer__main">
-        <div class="row">
-
-            <div class="col-two md-four mob-full s-footer__sitelinks">
-
-                <h4>Quick Links</h4>
-
-                <ul class="s-footer__linklist">
-                    <li><a href="#0">Home</a></li>
-                    <li><a href="#0">Blog</a></li>
-                    <li><a href="#0">Styles</a></li>
-                    <li><a href="#0">About</a></li>
-                    <li><a href="#0">Contact</a></li>
-                    <li><a href="#0">Privacy Policy</a></li>
-                </ul>
-
-            </div> <!-- end s-footer__sitelinks -->
-
-            <div class="col-two md-four mob-full s-footer__archives">
-
-                <h4>Archives</h4>
-
-                <ul class="s-footer__linklist">
-                    <li><a href="#0">January 2018</a></li>
-                    <li><a href="#0">December 2017</a></li>
-                    <li><a href="#0">November 2017</a></li>
-                    <li><a href="#0">October 2017</a></li>
-                    <li><a href="#0">September 2017</a></li>
-                    <li><a href="#0">August 2017</a></li>
-                </ul>
-
-            </div> <!-- end s-footer__archives -->
-
-            <div class="col-two md-four mob-full s-footer__social">
-
-                <h4>Social</h4>
-
-                <ul class="s-footer__linklist">
-                    <li><a href="#0">Facebook</a></li>
-                    <li><a href="#0">Instagram</a></li>
-                    <li><a href="#0">Twitter</a></li>
-                    <li><a href="#0">Pinterest</a></li>
-                    <li><a href="#0">Google+</a></li>
-                    <li><a href="#0">LinkedIn</a></li>
-                </ul>
-
-            </div> <!-- end s-footer__social -->
-
-            <div class="col-five md-full end s-footer__subscribe">
-
-                <h4>Our Newsletter</h4>
-
-                <p>Sit vel delectus amet officiis repudiandae est voluptatem. Tempora maxime provident nisi et fuga et
-                    enim exercitationem ipsam. Culpa consequatur occaecati.</p>
-
-                <div class="subscribe-form">
-                    <form id="mc-form" class="group" novalidate="true">
-
-                        <input type="email" value="" name="EMAIL" class="email" id="mc-email"
-                               placeholder="Email Address" required="">
-
-                        <input type="submit" name="subscribe" value="Send">
-
-                        <label for="mc-email" class="subscribe-message"></label>
-
-                    </form>
-                </div>
-
-            </div> <!-- end s-footer__subscribe -->
-
-        </div>
-    </div> <!-- end s-footer__main -->
 
     <div class="s-footer__bottom">
         <div class="row">
@@ -337,7 +149,7 @@ AppAsset::register($this);
 </footer> <!-- end s-footer -->
 
 
-<!-- preloader
+<!-- При обновлении страници
 ================================================== -->
 <div id="preloader">
     <div id="loader">
@@ -356,24 +168,24 @@ AppAsset::register($this);
 <!--Настройки пагинации-->
 <script>
 
-   $(window).on('load',function () {
-       $('li.pgn__prev')
-           .find('a.pgn__num')
-           .removeClass()
-           .addClass('pgn__prev');
-       $('li.current')
-           .removeClass()
-           .find('a.pgn__num')
-           .replaceWith(function(index, oldHTML){
-           return $("<span>")
-               .html(oldHTML)
-               .addClass('pgn__num current');
-       });
-       $('li.pgn__next')
-           .find('a.pgn__num')
-           .removeClass()
-           .addClass('pgn__next');
-   })
+    $(window).on('load', function () {
+        $('li.pgn__prev')
+            .find('a.pgn__num')
+            .removeClass()
+            .addClass('pgn__prev');
+        $('li.current')
+            .removeClass()
+            .find('a.pgn__num')
+            .replaceWith(function (index, oldHTML) {
+                return $("<span>")
+                    .html(oldHTML)
+                    .addClass('pgn__num current');
+            });
+        $('li.pgn__next')
+            .find('a.pgn__num')
+            .removeClass()
+            .addClass('pgn__next');
+    })
 </script>
 <!--Конец настроек-->
 </body>

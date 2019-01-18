@@ -85,7 +85,7 @@ html, body {
 }
 
 body {
-   background: #19191b;
+   background: #e2e2e2;
    font-family: "metropolis-regular", sans-serif;
    font-size: 1.6rem;
    font-style: normal;
@@ -547,7 +547,7 @@ form,
    left: 0;
    right: 0;
    bottom: 0;
-   background: #050505;
+   background: #3a87ad;
    z-index: 800;
    height: 100%;
    width: 100%;
@@ -1912,7 +1912,7 @@ button::-moz-focus-inner, input::-moz-focus-inner {
 }
 
 .header__search-form::after {
-   content: "Press Enter to begin your search.";
+   content: "Для начала поиска нажмите клавишу Enter";
    display: block;
    letter-spacing: 0.6px;
    font-size: 1.6rem;
@@ -3282,8 +3282,8 @@ html.no-csstransitions .featured {
  *
  * ------------------------------------------------------------------- */
 footer {
-   padding-top: 10.2rem;
-   padding-bottom: 6rem;
+   padding-top: 3rem;
+   padding-bottom: 3rem;
    font-size: 1.5rem;
    line-height: 2;
    color: rgba(255, 255, 255, 0.4);
@@ -3316,6 +3316,9 @@ footer h4::after {
    bottom: 0;
 }
 
+.s-footer{
+   background-color: black;
+}
 .s-footer__main {
    margin-bottom: 3.6rem;
 }

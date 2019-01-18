@@ -14,9 +14,7 @@ return [
     'controllerNamespace' => 'frontend\controllers',
     'layout'=>'index',
     'components' => [
-        'postLink' => [
-            'class' => 'frontend\components\Link',
-        ],
+
         'request' => [
             'csrfParam' => '_csrf-frontend',
         ],

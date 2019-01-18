@@ -16,6 +16,7 @@ class AppAsset extends AssetBundle
         'css/fonts.css',
         'css/main.css',
         'css/vendor.css',
+        '//use.fontawesome.com/releases/v5.6.3/css/all.css'
     ];
     public $js = [
         '/js/modernizr.js',
