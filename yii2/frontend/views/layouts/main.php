@@ -48,7 +48,7 @@ AppAsset::register($this);
                     <label>
                         <span class="hide-content">Искать урок:</span>
                         <input type="search" class="search-field" placeholder="Введите ключ для поиска" value=""
-                               name="s"
+                               name="search"
                                title="Search for:" autocomplete="off">
                     </label>
                     <input type="submit" class="search-submit" value="Search">
@@ -59,13 +59,12 @@ AppAsset::register($this);
             <nav class="header__nav-wrap">
                 <h2 class="header__nav-heading h6">Навигация</h2>
                 <ul class="header__nav">
-                    <li class="current"><a href="index.html" title="">Главная</a></li>
+                    <li class="current"><a href="<?=\yii\helpers\Url::home(true)?>" title="">Главная</a></li>
                     <li class="has-children">
-                        <a href="#" title="">Уроки</a>
+                        <a href="#" title="">Категории</a>
                         <ul class="sub-menu">
-                            <li><a href="category.html">Видео уроки</a></li>
-                            <li><a href="category.html">Аудио уроки</a></li>
-                            <li><a href="category.html">Лекции</a></li>
+                            <li><a href="<?=\yii\helpers\Url::to(['posts/audio-lecture'])?>">Аудио лекции</a></li>
+                            <li><a href="<?=\yii\helpers\Url::to(['posts/lecture'])?>">Лекция</a></li>
                         </ul>
                     </li>
                     <li><a href="style-guide.html" title="">Документы</a></li>

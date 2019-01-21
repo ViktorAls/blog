@@ -49,7 +49,7 @@ AppAsset::register($this);
                     <label>
                         <span class="hide-content"><?=Yii::$app->search->SearchAction(Yii::$app->controller->route)['message']?>:</span>
                         <input type="search" class="search-field" placeholder="Введите ключ для поиска" value=""
-                               name="s" title="Поиск..." autocomplete="off">
+                               name="search" title="Поиск..." autocomplete="off">
                     </label>
                     <input type="submit" class="search-submit" value="Search">
                 </form>
@@ -64,7 +64,6 @@ AppAsset::register($this);
                         <a href="#" title="">Категории</a>
                         <ul class="sub-menu">
                             <li><a href="<?=\yii\helpers\Url::to(['posts/audio-lecture'])?>">Аудио лекции</a></li>
-                            <li><a href="<?=\yii\helpers\Url::to(['posts/photo-lecture'])?>">Фото лекция</a></li>
                             <li><a href="<?=\yii\helpers\Url::to(['posts/lecture'])?>">Лекция</a></li>
                         </ul>
                     </li>

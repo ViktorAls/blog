@@ -1,15 +1,18 @@
 <?php
+
 use yii\helpers\Html;
 use yii\helpers\Url;
-use yii\widgets\LinkPager; ?>
+use yii\widgets\LinkPager;
+$this->title = $category;
+?>
 <section class="s-content">
 
     <div class="row narrow">
         <div class="col-full s-content__header" data-aos="fade-up">
-            <h1>Category: Lifestyle</h1>
+            <h1>Категория: <?= $category ?></h1>
 
-            <p class="lead">Dolor similique vitae. Exercitationem quidem occaecati iusto. Id non vitae enim quas error
-                dolor maiores ut. Exercitationem earum ut repudiandae optio veritatis animi nulla qui dolores.</p>
+            <p class="lead">Сейчас вы находитесь в разделе "<?=$category?>". Здесь вы можете осуществить поиск, кликнув в
+                правом верхнем углу слово "Search". <br> Текущий запрос для поиска: <?= $params ?>.</p>
         </div>
     </div>
 
@@ -17,49 +20,54 @@ use yii\widgets\LinkPager; ?>
         <div class="masonry">
 
             <div class="grid-sizer"></div>
+            <?php if ($posts != null): ?>
+                <?php foreach ($posts as $key => $post): ?>
+                    <article class="masonry__brick entry format-standard" data-aos="fade-up">
 
-            <?php foreach ($posts as $key => $post): ?>
-                <article class="masonry__brick entry format-standard" data-aos="fade-up">
+                        <div class="entry__thumb">
+                            <a href="<?= \yii\helpers\Url::to(['posts/lesson', 'id' => $post['id_post']]) ?>"
+                               class="entry__thumb-link">
+                                <img src="<?= \yii\helpers\Url::home(true) . '/uploads/icon/' . $post['icon'] ?>"
+                                     srcset="<?= \yii\helpers\Url::home(true) . '/uploads/icon/' . $post['icon'] ?> 1x"
+                                     alt="">
+                            </a>
+                        </div>
 
-                    <div class="entry__thumb">
-                        <a href="<?= \yii\helpers\Url::to(['posts/lesson', 'id' => $post['id_post']]) ?>"
-                           class="entry__thumb-link">
-                            <img src="<?= \yii\helpers\Url::home(true) . '/uploads/icon/' . $post['icon'] ?>"
-                                 srcset="<?= \yii\helpers\Url::home(true) . '/uploads/icon/' . $post['icon'] ?> 1x"
-                                 alt="">
-                        </a>
-                    </div>
+                        <div class="entry__text">
+                            <div class="entry__header">
 
-                    <div class="entry__text">
-                        <div class="entry__header">
+                                <div class="entry__date">
+                                    <a href="<?= \yii\helpers\Url::to(['posts/lesson', 'id' => $post['id_post']]) ?>">
+                                        <?= date('F d, Y', $post['updated_at']) ?>
+                                    </a>
+                                </div>
+                                <h1 class="entry__title">
+                                    <a href="<?= \yii\helpers\Url::to(['posts/lesson', 'id' => $post['id_post']]) ?>">
+                                        <?= Html::encode($post['title']) ?>
+                                    </a>
+                                </h1>
 
-                            <div class="entry__date">
-                                <a href="<?= \yii\helpers\Url::to(['posts/lesson', 'id' => $post['id_post']]) ?>">
-                                    <?= date('F d, Y', $post['updated_at']) ?>
-                                </a>
                             </div>
-                            <h1 class="entry__title">
-                                <a href="<?= \yii\helpers\Url::to(['posts/lesson', 'id' => $post['id_post']]) ?>">
-                                    <?= Html::encode($post['title']) ?>
-                                </a>
-                            </h1>
-
-                        </div>
-                        <div class="entry__excerpt">
-                            <p>
-                                <?= mb_strimwidth(Html::encode($post['description']), 0, 150, "..."); ?>
-                            </p>
-                        </div>
-                        <div class="entry__meta">
+                            <div class="entry__excerpt">
+                                <p>
+                                    <?= mb_strimwidth(Html::encode($post['description']), 0, 150, "..."); ?>
+                                </p>
+                            </div>
+                            <div class="entry__meta">
                             <span class="entry__meta-links">
                                 <?php foreach ($post['tags'] as $tag): ?>
                                     <?= Html::a(Html::encode($tag['name']), Url::to(['post/tag', 'id' => $tag['id_tag']])); ?>
                                 <?php endforeach; ?>
                             </span>
+                            </div>
                         </div>
-                    </div>
-                </article>
-            <?php endforeach;?>
+                    </article>
+                <?php endforeach; ?>
+            <?php else: ?>
+                <div>
+                    <p>Записей, по вашему параметру, не найдено.</p>
+                </div>
+            <?php endif; ?>
         </div> <!-- end masonry -->
     </div> <!-- end masonry-wrap -->
 

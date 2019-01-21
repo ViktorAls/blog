@@ -19,7 +19,7 @@ use yii\helpers\Url; ?>
         <?php if ($model['type'] != 2): ?>
             <?= \common\widgets\PhotoPost::widget(['data'=>$model['file'],'icon'=>$model['icon']]);?>
         <? elseif ($model['type'] == 2): ?>
-            <?= \common\widgets\AudioPost::widget(['data'=>$model['file'],'icon'=>$model['icon']]) ?>
+            <?= \common\widgets\AudioPost::widget(['data'=>$model['file'], 'icon'=>$model['icon']]) ?>
         <? endif; ?>
 
         <div class="col-full s-content__main">
