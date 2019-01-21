@@ -2,17 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c6942d54-c9bd-496f-aad8-5638e982d304" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/public_html/uploads/post/herobg.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/yii2/common/widgets/views/photo.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/yii2/frontend/components/Search.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yii2/common/models/Post.php" beforeDir="false" afterPath="$PROJECT_DIR$/yii2/common/models/Post.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yii2/common/widgets/AudioPost.php" beforeDir="false" afterPath="$PROJECT_DIR$/yii2/common/widgets/AudioPost.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yii2/common/widgets/PhotoPost.php" beforeDir="false" afterPath="$PROJECT_DIR$/yii2/common/widgets/PhotoPost.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yii2/common/widgets/Tags.php" beforeDir="false" afterPath="$PROJECT_DIR$/yii2/common/widgets/Tags.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yii2/common/models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/yii2/common/models/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yii2/frontend/config/main.php" beforeDir="false" afterPath="$PROJECT_DIR$/yii2/frontend/config/main.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/yii2/frontend/controllers/PostsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/yii2/frontend/controllers/PostsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yii2/frontend/views/posts/lecture.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/yii2/frontend/views/posts/lesson.php" beforeDir="false" afterPath="$PROJECT_DIR$/yii2/frontend/views/posts/lesson.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yii2/frontend/views/posts/video.php" beforeDir="false" afterPath="$PROJECT_DIR$/yii2/common/widgets/views/audio.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yii2/frontend/views/layouts/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/yii2/frontend/views/layouts/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yii2/frontend/views/posts/search.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/yii2/frontend/views/site/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/yii2/frontend/views/site/index.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -29,7 +25,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/yii2/common/widgets/PointOfView.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
+            <state relative-caret-position="238">
               <caret line="21" column="91" selection-start-line="21" selection-start-column="91" selection-end-line="21" selection-end-column="91" />
               <folding>
                 <element signature="e#121#151#0#PHP" expanded="true" />
@@ -38,13 +34,46 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/yii2/frontend/controllers/PostsController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="366">
-              <caret line="36" column="82" selection-start-line="36" selection-start-column="82" selection-end-line="36" selection-end-column="82" />
+            <state relative-caret-position="536">
+              <caret line="48" selection-start-line="48" selection-end-line="48" />
               <folding>
                 <element signature="e#127#150#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/yii2/frontend/components/Search.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="391">
+              <caret line="23" column="20" lean-forward="true" selection-start-line="23" selection-start-column="20" selection-end-line="23" selection-end-column="20" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/yii2/frontend/views/layouts/index.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="253">
+              <caret line="47" column="157" selection-start-line="47" selection-start-column="157" selection-end-line="47" selection-end-column="157" />
+              <folding>
+                <element signature="e#67#88#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/yii2/frontend/views/site/index.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="468">
+              <caret line="91" column="31" lean-forward="true" selection-start-line="91" selection-start-column="14" selection-end-line="91" selection-end-column="31" />
+              <folding>
+                <element signature="e#313#2369#0#PHP" />
               </folding>
             </state>
           </provider>
@@ -53,7 +82,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/yii2/common/widgets/Selected.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="389">
+            <state relative-caret-position="527">
               <caret line="37" column="44" selection-start-line="37" selection-start-column="44" selection-end-line="37" selection-end-column="44" />
               <folding>
                 <element signature="e#121#144#0#PHP" expanded="true" />
@@ -87,8 +116,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/yii2/backend/config/main.php" />
-        <option value="$PROJECT_DIR$/public_html/js/angular.min.js" />
         <option value="$PROJECT_DIR$/public_html/js/init.js" />
         <option value="$PROJECT_DIR$/public_html/js/jquery-1.12.4.min.js" />
         <option value="$PROJECT_DIR$/public_html/js/isotope.js" />
@@ -114,7 +141,6 @@
         <option value="$PROJECT_DIR$/yii2/common/widgets/pointOfView.php" />
         <option value="$PROJECT_DIR$/yii2/common/widgets/PointOfView.php" />
         <option value="$PROJECT_DIR$/public_html/css/main.css" />
-        <option value="$PROJECT_DIR$/yii2/frontend/views/layouts/index.php" />
         <option value="$PROJECT_DIR$/yii2/frontend/views/layouts/main.php" />
         <option value="$PROJECT_DIR$/yii2/frontend/components/Link.php" />
         <option value="$PROJECT_DIR$/yii2/frontend/controllers/SiteController.php" />
@@ -125,7 +151,6 @@
         <option value="$PROJECT_DIR$/yii2/common/widgets/Photo.php" />
         <option value="$PROJECT_DIR$/yii2/common/widgets/Video.php" />
         <option value="$PROJECT_DIR$/yii2/common/widgets/Audio.php" />
-        <option value="$PROJECT_DIR$/yii2/frontend/config/main.php" />
         <option value="$PROJECT_DIR$/yii2/common/widgets/views/selected.php" />
         <option value="$PROJECT_DIR$/yii2/common/widgets/Selected.php" />
         <option value="$PROJECT_DIR$/yii2/common/widgets/RandPost.php" />
@@ -134,10 +159,14 @@
         <option value="$PROJECT_DIR$/yii2/common/widgets/AudioPost.php" />
         <option value="$PROJECT_DIR$/yii2/common/widgets/PhotoPost.php" />
         <option value="$PROJECT_DIR$/yii2/common/widgets/views/photo.php" />
-        <option value="$PROJECT_DIR$/yii2/frontend/views/site/index.php" />
-        <option value="$PROJECT_DIR$/yii2/frontend/controllers/PostsController.php" />
         <option value="$PROJECT_DIR$/yii2/common/widgets/Tags.php" />
         <option value="$PROJECT_DIR$/yii2/frontend/views/posts/lesson.php" />
+        <option value="$PROJECT_DIR$/yii2/frontend/views/site/index.php" />
+        <option value="$PROJECT_DIR$/yii2/frontend/controllers/PostsController.php" />
+        <option value="$PROJECT_DIR$/yii2/frontend/components/Search.php" />
+        <option value="$PROJECT_DIR$/yii2/frontend/views/layouts/index.php" />
+        <option value="$PROJECT_DIR$/yii2/frontend/config/main.php" />
+        <option value="$PROJECT_DIR$/yii2/common/models/User.php" />
       </list>
     </option>
   </component>
@@ -279,36 +308,28 @@
               <item name="blog" type="b2602c69:ProjectViewProjectNode" />
               <item name="blog" type="462c0819:PsiDirectoryNode" />
               <item name="yii2" type="462c0819:PsiDirectoryNode" />
-              <item name="common" type="462c0819:PsiDirectoryNode" />
+              <item name="frontend" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="blog" type="b2602c69:ProjectViewProjectNode" />
+              <item name="blog" type="462c0819:PsiDirectoryNode" />
+              <item name="yii2" type="462c0819:PsiDirectoryNode" />
+              <item name="frontend" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="blog" type="b2602c69:ProjectViewProjectNode" />
+              <item name="blog" type="462c0819:PsiDirectoryNode" />
+              <item name="yii2" type="462c0819:PsiDirectoryNode" />
+              <item name="frontend" type="462c0819:PsiDirectoryNode" />
               <item name="config" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="blog" type="b2602c69:ProjectViewProjectNode" />
               <item name="blog" type="462c0819:PsiDirectoryNode" />
               <item name="yii2" type="462c0819:PsiDirectoryNode" />
-              <item name="common" type="462c0819:PsiDirectoryNode" />
-              <item name="models" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="blog" type="b2602c69:ProjectViewProjectNode" />
-              <item name="blog" type="462c0819:PsiDirectoryNode" />
-              <item name="yii2" type="462c0819:PsiDirectoryNode" />
-              <item name="common" type="462c0819:PsiDirectoryNode" />
-              <item name="widgets" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="blog" type="b2602c69:ProjectViewProjectNode" />
-              <item name="blog" type="462c0819:PsiDirectoryNode" />
-              <item name="yii2" type="462c0819:PsiDirectoryNode" />
-              <item name="common" type="462c0819:PsiDirectoryNode" />
-              <item name="widgets" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="blog" type="b2602c69:ProjectViewProjectNode" />
-              <item name="blog" type="462c0819:PsiDirectoryNode" />
-              <item name="yii2" type="462c0819:PsiDirectoryNode" />
               <item name="frontend" type="462c0819:PsiDirectoryNode" />
+              <item name="controllers" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="blog" type="b2602c69:ProjectViewProjectNode" />
@@ -316,6 +337,14 @@
               <item name="yii2" type="462c0819:PsiDirectoryNode" />
               <item name="frontend" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="blog" type="b2602c69:ProjectViewProjectNode" />
+              <item name="blog" type="462c0819:PsiDirectoryNode" />
+              <item name="yii2" type="462c0819:PsiDirectoryNode" />
+              <item name="frontend" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="layouts" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="blog" type="b2602c69:ProjectViewProjectNode" />
@@ -325,14 +354,6 @@
               <item name="views" type="462c0819:PsiDirectoryNode" />
               <item name="posts" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="blog" type="b2602c69:ProjectViewProjectNode" />
-              <item name="blog" type="462c0819:PsiDirectoryNode" />
-              <item name="yii2" type="462c0819:PsiDirectoryNode" />
-              <item name="frontend" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="site" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -341,23 +362,23 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../needle" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\OpenServer\domains\blog\yii2\common\models" />
+      <recent name="D:\OpenServer\domains\blog\yii2\frontend\views\posts" />
+      <recent name="D:\OpenServer\domains\blog\public_html\js" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\OpenServer\domains\blog\public_html\uploads\post" />
       <recent name="D:\OpenServer\domains\blog\public_html\css" />
       <recent name="D:\OpenServer\domains\blog\public_html\uploads\icon" />
       <recent name="D:\OpenServer\domains\blog\yii2\frontend\assets" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\OpenServer\domains\blog\yii2\common\models" />
-      <recent name="D:\OpenServer\domains\blog\yii2\frontend\views\posts" />
-      <recent name="D:\OpenServer\domains\blog\public_html\js" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -387,17 +408,18 @@
       <workItem from="1547545608118" duration="4337000" />
       <workItem from="1547561306189" duration="30642000" />
       <workItem from="1547722829916" duration="39083000" />
+      <workItem from="1548076935841" duration="4044000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="89285000" />
+    <option name="totallyTimeSpent" value="93329000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2647504" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2685325" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -434,12 +456,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/public_html/images/logo.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public_html/images/herobg.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/public_html/images/hero-bg.jpg">
       <provider selected="true" editor-type-id="images" />
     </entry>
@@ -472,9 +488,6 @@
           <caret line="148" column="7" selection-start-line="148" selection-start-column="7" selection-end-line="148" selection-end-column="7" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/yii2/common/models/User.php">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/yii2/common/models/TagPost.php">
       <provider selected="true" editor-type-id="text-editor" />
@@ -600,30 +613,8 @@
     <entry file="file://$PROJECT_DIR$/yii2/frontend/views/site/about.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/yii2/common/widgets/Video.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/yii2/frontend/components/Link.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="111">
-          <caret line="25" column="44" selection-start-line="25" selection-start-column="44" selection-end-line="25" selection-end-column="44" />
-          <folding>
-            <element signature="e#126#149#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/yii2/frontend/config/main.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="16" selection-start-line="16" selection-end-line="16" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/yii2/common/widgets/Video.php" />
+    <entry file="file://$PROJECT_DIR$/yii2/frontend/components/Link.php" />
     <entry file="file://$PROJECT_DIR$/yii2/common/widgets/views/selected.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
@@ -651,16 +642,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/yii2/frontend/views/layouts/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="166" lean-forward="true" selection-start-line="166" selection-end-line="166" />
-          <folding>
-            <element signature="e#67#88#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/yii2/frontend/controllers/SiteController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1375">
@@ -674,9 +655,7 @@
     <entry file="file://$PROJECT_DIR$/yii2/common/widgets/Alert.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/yii2/frontend/views/posts/lecture.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/yii2/frontend/views/posts/lecture.php" />
     <entry file="file://$PROJECT_DIR$/yii2/common/widgets/views/photo.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
@@ -705,30 +684,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/yii2/common/widgets/Selected.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="389">
-          <caret line="37" column="44" selection-start-line="37" selection-start-column="44" selection-end-line="37" selection-end-column="44" />
-          <folding>
-            <element signature="e#121#144#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/yii2/common/widgets/views/audio.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="7" column="47" lean-forward="true" selection-start-line="7" selection-start-column="47" selection-end-line="7" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/yii2/common/widgets/PointOfView.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="21" column="91" selection-start-line="21" selection-start-column="91" selection-end-line="21" selection-end-column="91" />
-          <folding>
-            <element signature="e#121#151#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -738,18 +697,6 @@
           <caret line="33" column="57" selection-start-line="33" selection-start-column="57" selection-end-line="33" selection-end-column="57" />
           <folding>
             <element signature="e#120#142#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/yii2/frontend/views/site/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="31" column="156" selection-start-line="31" selection-start-column="114" selection-end-line="31" selection-end-column="156" />
-          <folding>
-            <element signature="e#38#59#0#PHP" expanded="true" />
-            <element signature="n#div#0;n#article#0;n#div#0;n#div#0;n#section#0;n#!!top" />
-            <element signature="n#div#1;n#section#0;n#!!top" />
           </folding>
         </state>
       </provider>
@@ -764,13 +711,77 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/yii2/common/widgets/PointOfView.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="21" column="91" selection-start-line="21" selection-start-column="91" selection-end-line="21" selection-end-column="91" />
+          <folding>
+            <element signature="e#121#151#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/yii2/common/widgets/Selected.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="37" column="44" selection-start-line="37" selection-start-column="44" selection-end-line="37" selection-end-column="44" />
+          <folding>
+            <element signature="e#121#144#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/yii2/frontend/views/site/login.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/yii2/frontend/controllers/PostsController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="366">
-          <caret line="36" column="82" selection-start-line="36" selection-start-column="82" selection-end-line="36" selection-end-column="82" />
+        <state relative-caret-position="536">
+          <caret line="48" selection-start-line="48" selection-end-line="48" />
           <folding>
             <element signature="e#127#150#0#PHP" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/yii2/frontend/views/site/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="468">
+          <caret line="91" column="31" lean-forward="true" selection-start-line="91" selection-start-column="14" selection-end-line="91" selection-end-column="31" />
+          <folding>
+            <element signature="e#313#2369#0#PHP" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/yii2/frontend/views/layouts/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="47" column="157" selection-start-line="47" selection-start-column="157" selection-end-line="47" selection-end-column="157" />
+          <folding>
+            <element signature="e#67#88#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/yii2/common/models/User.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2491">
+          <caret line="167" column="7" lean-forward="true" selection-start-line="167" selection-start-column="7" selection-end-line="167" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/yii2/frontend/config/main.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="23" column="47" lean-forward="true" selection-start-line="23" selection-start-column="47" selection-end-line="23" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/yii2/frontend/components/Search.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="23" column="20" lean-forward="true" selection-start-line="23" selection-start-column="20" selection-end-line="23" selection-end-column="20" />
         </state>
       </provider>
     </entry>

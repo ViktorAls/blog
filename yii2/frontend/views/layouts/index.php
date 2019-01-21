@@ -45,9 +45,9 @@ AppAsset::register($this);
             <?php endif; ?>
             <a class="header__search-trigger" href="#0"></a>
             <div class="header__search">
-                <form role="search" method="get" class="header__search-form" action="#">
+                <form role="search" method="get" class="header__search-form" action="<?=Yii::$app->search->SearchAction(Yii::$app->controller->route)['action']?>">
                     <label>
-                        <span class="hide-content">Искать урок:</span>
+                        <span class="hide-content"><?=Yii::$app->search->SearchAction(Yii::$app->controller->route)['message']?>:</span>
                         <input type="search" class="search-field" placeholder="Введите ключ для поиска" value=""
                                name="s" title="Search for:" autocomplete="off">
                     </label>

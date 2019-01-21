@@ -40,4 +40,18 @@ class PostsController extends Controller
              throw new HttpException('404','Страница не найдена.');
          }
     }
+
+    public function actionPhotoLecture(){
+
+    }
+
+    public function actionAudioLecture(){
+
+    }
+    public function actionLecture(){
+
+    }
+    public function actionSearch(){
+
+    }
 }

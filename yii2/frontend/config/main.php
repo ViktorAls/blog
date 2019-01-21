@@ -14,9 +14,11 @@ return [
     'controllerNamespace' => 'frontend\controllers',
     'layout'=>'index',
     'components' => [
-
         'request' => [
             'csrfParam' => '_csrf-frontend',
+        ],
+        'search' => [
+            'class' => 'frontend\components\Search'
         ],
         'user' => [
             'identityClass' => 'common\models\User',

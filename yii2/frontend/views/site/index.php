@@ -5,9 +5,7 @@ use yii\helpers\Url;
 use yii\widgets\LinkPager;
 ?>
 
-
 <section class="s-content">
-
     <div class="row masonry-wrap">
         <div class="masonry">
 
@@ -55,10 +53,13 @@ use yii\widgets\LinkPager;
         </div>
     </div>
 
+
     <!--    Пагинация-->
     <div class="row">
         <div class="col-full">
             <nav class="pgn">
+                <?php \yii\widgets\Pjax::begin(['timeout' => 100000, 'clientOptions' => ['container' => 'pjax-container']]); ?>
+
                 <?= LinkPager::widget([
                     'pagination' => $pages,
                     //Css option for container
@@ -73,7 +74,7 @@ use yii\widgets\LinkPager;
                     //Max count of allowed options
                     'maxButtonCount' => 8,
                     'linkContainerOptions' => ['class' => ''],
-                    // Css for each options. Links
+//                     Css for each options. Links
                     'linkOptions' => ['class' => 'pgn__num'],
                     'disabledPageCssClass' => 'disabled',
                     // Customzing CSS class for navigating link
@@ -81,8 +82,11 @@ use yii\widgets\LinkPager;
                     'nextPageCssClass' => 'pgn__next',
                 ]);
                 ?>
+                <?php \yii\widgets\Pjax::end(); ?>
+
             </nav>
         </div>
     </div>
     <!--    Конец пагинации-->
 </section>
+<?=Yii::$app->controller->route; ?>
