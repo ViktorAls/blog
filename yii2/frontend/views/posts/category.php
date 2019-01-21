@@ -1,16 +1,23 @@
-<? $this->title = 'Главная страница';
-
+<?php
 use yii\helpers\Html;
 use yii\helpers\Url;
-use yii\widgets\LinkPager;
-?>
-
+use yii\widgets\LinkPager; ?>
 <section class="s-content">
+
+    <div class="row narrow">
+        <div class="col-full s-content__header" data-aos="fade-up">
+            <h1>Category: Lifestyle</h1>
+
+            <p class="lead">Dolor similique vitae. Exercitationem quidem occaecati iusto. Id non vitae enim quas error
+                dolor maiores ut. Exercitationem earum ut repudiandae optio veritatis animi nulla qui dolores.</p>
+        </div>
+    </div>
+
     <div class="row masonry-wrap">
         <div class="masonry">
 
             <div class="grid-sizer"></div>
-            <!--           Начало Новостей-->
+
             <?php foreach ($posts as $key => $post): ?>
                 <article class="masonry__brick entry format-standard" data-aos="fade-up">
 
@@ -27,32 +34,34 @@ use yii\widgets\LinkPager;
                         <div class="entry__header">
 
                             <div class="entry__date">
-                                <a href="<?= \yii\helpers\Url::to(['posts/lesson', 'id' => $post['id_post']]) ?>"><?= date('F d, Y', $post['updated_at']) ?></a>
+                                <a href="<?= \yii\helpers\Url::to(['posts/lesson', 'id' => $post['id_post']]) ?>">
+                                    <?= date('F d, Y', $post['updated_at']) ?>
+                                </a>
                             </div>
-                            <h1 class="entry__title"><a
-                                        href="<?= \yii\helpers\Url::to(['posts/lesson', 'id' => $post['id_post']]) ?>"><?= html::encode($post['title']) ?></a>
+                            <h1 class="entry__title">
+                                <a href="<?= \yii\helpers\Url::to(['posts/lesson', 'id' => $post['id_post']]) ?>">
+                                    <?= Html::encode($post['title']) ?>
+                                </a>
                             </h1>
 
                         </div>
                         <div class="entry__excerpt">
                             <p>
-                                <?= mb_strimwidth(html::encode($post['description']), 0, 150, "..."); ?>
+                                <?= mb_strimwidth(Html::encode($post['description']), 0, 150, "..."); ?>
                             </p>
                         </div>
                         <div class="entry__meta">
                             <span class="entry__meta-links">
                                 <?php foreach ($post['tags'] as $tag): ?>
-                                    <?= Html::a(html::encode($tag['name']), Url::to(['post/tag', 'id' => $tag['id_tag']])); ?>
+                                    <?= Html::a(Html::encode($tag['name']), Url::to(['post/tag', 'id' => $tag['id_tag']])); ?>
                                 <?php endforeach; ?>
                             </span>
                         </div>
                     </div>
                 </article>
-            <?php endforeach; ?>
-            <!--            Конец новостей-->
-        </div>
-    </div>
-
+            <?php endforeach;?>
+        </div> <!-- end masonry -->
+    </div> <!-- end masonry-wrap -->
 
     <!--    Пагинация-->
     <div class="row">
@@ -88,4 +97,5 @@ use yii\widgets\LinkPager;
         </div>
     </div>
     <!--    Конец пагинации-->
-</section>
+
+</section> <!-- s-content -->

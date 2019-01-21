@@ -49,23 +49,23 @@ AppAsset::register($this);
                     <label>
                         <span class="hide-content"><?=Yii::$app->search->SearchAction(Yii::$app->controller->route)['message']?>:</span>
                         <input type="search" class="search-field" placeholder="Введите ключ для поиска" value=""
-                               name="s" title="Search for:" autocomplete="off">
+                               name="s" title="Поиск..." autocomplete="off">
                     </label>
                     <input type="submit" class="search-submit" value="Search">
                 </form>
-                <a href="#0" title="Close Search" class="header__overlay-close">Close</a>
+                <a href="#0" title="Закрыть поиск" class="header__overlay-close">Close</a>
             </div>
             <a class="header__toggle-menu" href="#0" title="Menu"><span>Menu</span></a>
             <nav class="header__nav-wrap">
                 <h2 class="header__nav-heading h6">Навигация</h2>
                 <ul class="header__nav">
-                    <li class="current"><a href="index.html" title="">Главная</a></li>
+                    <li class="current"><a href="<?=\yii\helpers\Url::home(true)?>" title="">Главная</a></li>
                     <li class="has-children">
-                        <a href="#" title="">Уроки</a>
+                        <a href="#" title="">Категории</a>
                         <ul class="sub-menu">
-                            <li><a href="category.html">Видео уроки</a></li>
-                            <li><a href="category.html">Аудио уроки</a></li>
-                            <li><a href="category.html">Лекции</a></li>
+                            <li><a href="<?=\yii\helpers\Url::to(['posts/audio-lecture'])?>">Аудио лекции</a></li>
+                            <li><a href="<?=\yii\helpers\Url::to(['posts/photo-lecture'])?>">Фото лекция</a></li>
+                            <li><a href="<?=\yii\helpers\Url::to(['posts/lecture'])?>">Лекция</a></li>
                         </ul>
                     </li>
                     <li><a href="style-guide.html" title="">Документы</a></li>
@@ -164,8 +164,30 @@ AppAsset::register($this);
         </div>
     </div>
 </div>
-
 <?php $this->endBody() ?>
+<!--Настройки пагинации-->
+<script>
+
+    $(window).on('load', function () {
+        $('li.pgn__prev')
+            .find('a.pgn__num')
+            .removeClass()
+            .addClass('pgn__prev');
+        $('li.current')
+            .removeClass()
+            .find('a.pgn__num')
+            .replaceWith(function (index, oldHTML) {
+                return $("<span>")
+                    .html(oldHTML)
+                    .addClass('pgn__num current');
+            });
+        $('li.pgn__next')
+            .find('a.pgn__num')
+            .removeClass()
+            .addClass('pgn__next');
+    })
+</script>
+<!--Конец настроек-->
 </body>
 </html>
 <?php $this->endPage() ?>

@@ -19,13 +19,22 @@ class PhotoPost extends Widget
     public $pathPhoto = 'uploads/post/';
 
     /**
+     * @var string
+     */
+    public $pathIcon = 'uploads/icon/';
+
+    /**
      * @var array
      */
     public $data;
 
+    /**
+     * @var string
+     */
+    public $icon;
+
     public function run()
     {
-
-        return $this->render('photo',['path'=>$this->pathPhoto,'data'=>$this->data]);
+        return $this->render('photo',['pathPhoto'=>$this->pathPhoto,'data'=>$this->data,'pathIcon'=>$this->pathIcon,'icon'=>$this->icon]);
     }
 }

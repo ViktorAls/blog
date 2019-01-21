@@ -10,6 +10,7 @@ namespace frontend\controllers;
 
 
 use common\models\Post;
+use yii\data\Pagination;
 use yii\web\Controller;
 use yii\web\HttpException;
 
@@ -41,17 +42,23 @@ class PostsController extends Controller
          }
     }
 
-    public function actionPhotoLecture(){
-
+    public function actionLecture(){
+        $query = Post::find()->where(['type'=>3]);
+        $pages = new Pagination(['totalCount' => $query->count(),'pageSize' => 9]);
+        $posts = $query->offset($pages->offset)
+            ->limit($pages->limit)
+            ->asArray()
+            ->with('tags')
+            ->orderBy(['id_post'=>SORT_DESC])
+            ->all();
+        return $this->render('category',compact('posts','pages'));
     }
 
     public function actionAudioLecture(){
-
+        return $this->render('category');
     }
-    public function actionLecture(){
 
-    }
     public function actionSearch(){
-
+        return $this->render('category');
     }
 }
