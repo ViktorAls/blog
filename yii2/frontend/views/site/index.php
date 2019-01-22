@@ -1,8 +1,12 @@
 <? $this->title = 'Главная страница';
 
+/**
+ * @var array $posts
+ */
 use yii\helpers\Html;
 use yii\helpers\Url;
 use yii\widgets\LinkPager;
+use common\widgets\ArticlePost;
 ?>
 
 <section class="s-content">
@@ -12,42 +16,14 @@ use yii\widgets\LinkPager;
             <div class="grid-sizer"></div>
             <!--           Начало Новостей-->
             <?php foreach ($posts as $key => $post): ?>
-                <article class="masonry__brick entry format-standard" data-aos="fade-up">
-
-                    <div class="entry__thumb">
-                        <a href="<?= Url::to(['posts/lesson', 'id' => $post['id_post']]) ?>"
-                           class="entry__thumb-link">
-                            <img src="<?= Url::home(true) . '/uploads/icon/' . $post['icon'] ?>"
-                                 srcset="<?= Url::home(true) . '/uploads/icon/' . $post['icon'] ?> 1x"
-                                 alt="">
-                        </a>
-                    </div>
-
-                    <div class="entry__text">
-                        <div class="entry__header">
-
-                            <div class="entry__date">
-                                <a href="<?= Url::to(['posts/lesson', 'id' => $post['id_post']]) ?>"><?= date('F d, Y', $post['updated_at']) ?></a>
-                            </div>
-                            <h1 class="entry__title"><a
-                                        href="<?= Url::to(['posts/lesson', 'id' => $post['id_post']]) ?>"><?= html::encode($post['title']) ?></a>
-                            </h1>
-
-                        </div>
-                        <div class="entry__excerpt">
-                            <p>
-                                <?= mb_strimwidth(html::encode($post['description']), 0, 150, "..."); ?>
-                            </p>
-                        </div>
-                        <div class="entry__meta">
-                            <span class="entry__meta-links">
-                                <?php foreach ($post['tags'] as $tag): ?>
-                                    <?= Html::a(Html::encode($tag['name']), Url::to(['posts/tags', 'search' => $tag['name']])); ?>
-                                <?php endforeach; ?>
-                            </span>
-                        </div>
-                    </div>
-                </article>
+              <?= ArticlePost::widget([
+                      'title'=>$post['title'],
+                        'description' => $post['description'],
+                    'idPost' => $post['id_post'],
+                    'nameIcon'=>$post['icon'],
+                    'datePublication'=>$post['created_at'],
+                    'tags'=>$post['tags'],
+                    ]);  ?>
             <?php endforeach; ?>
             <!--            Конец новостей-->
         </div>

@@ -3593,6 +3593,10 @@ footer h4::after {
    margin-bottom: .9rem;
 }
 
+.mb-0{
+   margin-top: 0px;
+}
+
 .s-content__header-meta {
    list-style: none;
    margin-left: 0;

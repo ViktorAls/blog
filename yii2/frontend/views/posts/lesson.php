@@ -8,9 +8,9 @@ use yii\helpers\Url; ?>
     <article class="row format-audio format-gallery ">
 
         <div class="s-content__header col-full">
-            <h1 class="s-content__header-title">
+            <h2 class="s-content__header-title mt-0">
                 <?=$model['title'];?>
-            </h1>
+            </h2>
             <ul class="s-content__header-meta">
                 <li class="date"><?= date('F d, Y', $model['updated_at']) ?></li>
             </ul>

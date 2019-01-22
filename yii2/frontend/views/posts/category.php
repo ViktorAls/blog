@@ -1,8 +1,15 @@
 <?php
 
-use yii\helpers\Html;
-use yii\helpers\Url;
+/**
+ * @var string $category
+ * @var array $posts
+ * @var Pagination $pages
+ */
+
+use yii\data\Pagination;
 use yii\widgets\LinkPager;
+use common\widgets\ArticlePost;
+
 $this->title = $category;
 ?>
 <section class="s-content">
@@ -22,46 +29,14 @@ $this->title = $category;
             <div class="grid-sizer"></div>
             <?php if ($posts != null): ?>
                 <?php foreach ($posts as $key => $post): ?>
-                    <article class="masonry__brick entry format-standard" data-aos="fade-up">
-
-                        <div class="entry__thumb">
-                            <a href="<?= \yii\helpers\Url::to(['posts/lesson', 'id' => $post['id_post']]) ?>"
-                               class="entry__thumb-link">
-                                <img src="<?= \yii\helpers\Url::home(true) . '/uploads/icon/' . $post['icon'] ?>"
-                                     srcset="<?= \yii\helpers\Url::home(true) . '/uploads/icon/' . $post['icon'] ?> 1x"
-                                     alt="">
-                            </a>
-                        </div>
-
-                        <div class="entry__text">
-                            <div class="entry__header">
-
-                                <div class="entry__date">
-                                    <a href="<?= \yii\helpers\Url::to(['posts/lesson', 'id' => $post['id_post']]) ?>">
-                                        <?= date('F d, Y', $post['updated_at']) ?>
-                                    </a>
-                                </div>
-                                <h1 class="entry__title">
-                                    <a href="<?= \yii\helpers\Url::to(['posts/lesson', 'id' => $post['id_post']]) ?>">
-                                        <?= Html::encode($post['title']) ?>
-                                    </a>
-                                </h1>
-
-                            </div>
-                            <div class="entry__excerpt">
-                                <p>
-                                    <?= mb_strimwidth(Html::encode($post['description']), 0, 150, "..."); ?>
-                                </p>
-                            </div>
-                            <div class="entry__meta">
-                            <span class="entry__meta-links">
-                                <?php foreach ($post['tags'] as $tag): ?>
-                                    <?= Html::a(Html::encode($tag['name']), Url::to(['posts/tags', 'search' => $tag['name']])); ?>
-                                <?php endforeach; ?>
-                            </span>
-                            </div>
-                        </div>
-                    </article>
+                    <?= ArticlePost::widget([
+                        'title'=>$post['title'],
+                        'description' => $post['description'],
+                        'idPost' => $post['id_post'],
+                        'nameIcon'=>$post['icon'],
+                        'datePublication'=>$post['created_at'],
+                        'tags'=>$post['tags'],
+                    ]);  ?>
                 <?php endforeach; ?>
             <?php else: ?>
                 <div>
@@ -75,8 +50,6 @@ $this->title = $category;
     <div class="row">
         <div class="col-full">
             <nav class="pgn">
-                <?php \yii\widgets\Pjax::begin(['timeout' => 100000, 'clientOptions' => ['container' => 'pjax-container']]); ?>
-
                 <?= LinkPager::widget([
                     'pagination' => $pages,
                     //Css option for container
@@ -99,8 +72,6 @@ $this->title = $category;
                     'nextPageCssClass' => 'pgn__next',
                 ]);
                 ?>
-                <?php \yii\widgets\Pjax::end(); ?>
-
             </nav>
         </div>
     </div>
