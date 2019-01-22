@@ -15,10 +15,10 @@ use yii\widgets\LinkPager;
                 <article class="masonry__brick entry format-standard" data-aos="fade-up">
 
                     <div class="entry__thumb">
-                        <a href="<?= \yii\helpers\Url::to(['posts/lesson', 'id' => $post['id_post']]) ?>"
+                        <a href="<?= Url::to(['posts/lesson', 'id' => $post['id_post']]) ?>"
                            class="entry__thumb-link">
-                            <img src="<?= \yii\helpers\Url::home(true) . '/uploads/icon/' . $post['icon'] ?>"
-                                 srcset="<?= \yii\helpers\Url::home(true) . '/uploads/icon/' . $post['icon'] ?> 1x"
+                            <img src="<?= Url::home(true) . '/uploads/icon/' . $post['icon'] ?>"
+                                 srcset="<?= Url::home(true) . '/uploads/icon/' . $post['icon'] ?> 1x"
                                  alt="">
                         </a>
                     </div>
@@ -27,10 +27,10 @@ use yii\widgets\LinkPager;
                         <div class="entry__header">
 
                             <div class="entry__date">
-                                <a href="<?= \yii\helpers\Url::to(['posts/lesson', 'id' => $post['id_post']]) ?>"><?= date('F d, Y', $post['updated_at']) ?></a>
+                                <a href="<?= Url::to(['posts/lesson', 'id' => $post['id_post']]) ?>"><?= date('F d, Y', $post['updated_at']) ?></a>
                             </div>
                             <h1 class="entry__title"><a
-                                        href="<?= \yii\helpers\Url::to(['posts/lesson', 'id' => $post['id_post']]) ?>"><?= html::encode($post['title']) ?></a>
+                                        href="<?= Url::to(['posts/lesson', 'id' => $post['id_post']]) ?>"><?= html::encode($post['title']) ?></a>
                             </h1>
 
                         </div>
@@ -42,7 +42,7 @@ use yii\widgets\LinkPager;
                         <div class="entry__meta">
                             <span class="entry__meta-links">
                                 <?php foreach ($post['tags'] as $tag): ?>
-                                    <?= Html::a(html::encode($tag['name']), Url::to(['post/tag', 'id' => $tag['id_tag']])); ?>
+                                    <?= Html::a(Html::encode($tag['name']), Url::to(['posts/tags', 'search' => $tag['name']])); ?>
                                 <?php endforeach; ?>
                             </span>
                         </div>
@@ -58,8 +58,6 @@ use yii\widgets\LinkPager;
     <div class="row">
         <div class="col-full">
             <nav class="pgn">
-                <?php \yii\widgets\Pjax::begin(['timeout' => 100000, 'clientOptions' => ['container' => 'pjax-container']]); ?>
-
                 <?= LinkPager::widget([
                     'pagination' => $pages,
                     //Css option for container
@@ -82,8 +80,6 @@ use yii\widgets\LinkPager;
                     'nextPageCssClass' => 'pgn__next',
                 ]);
                 ?>
-                <?php \yii\widgets\Pjax::end(); ?>
-
             </nav>
         </div>
     </div>

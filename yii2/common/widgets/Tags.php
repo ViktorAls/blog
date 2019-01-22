@@ -31,7 +31,7 @@ class Tags extends Widget
     public function createHtmlTags(array $tags){
         $html = null;
         foreach ($tags as $tag){
-            $html .= Html::a($tag['name'],Url::to(['posts/tags','id'=>$tag['id_tag']]));
+            $html .= Html::a($tag['name'],Url::to(['posts/tags','search'=>$tag['name']]));
         }
         return $html;
     }

@@ -36,7 +36,6 @@ class AudioPost extends Widget
 
     public function run()
     {
-
        return $this->render('audio', [
            'pathAudio'=>$this->pathAudio,
            'data'=>$this->data,

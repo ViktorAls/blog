@@ -54,15 +54,3 @@ class Connection extends Widget
         return $html;
     }
 }
-//
-//<ul class="header__social">
-//                <li>
-//                    <a href="#0"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
-//                </li>
-//                <li>
-//                    <a href="#0"><i class="fas fa-at" aria-hidden="true"></i></a>
-//                </li>
-//                <li>
-//                    <a href="#0"><i class="fab fa-vk" aria-hidden="true"></i></a>
-//                </li>
-//            </ul>

@@ -10,7 +10,8 @@
                     <div class="entry__content">
                         <span class="entry__category"><a href="#0"><?= $post[0]['category'] ?></a></span>
 
-                        <h1><a href="<?=\yii\helpers\Url::to(['posts/lesson','id'=>$post[0]['id_post']])?>" title=""><?= $post[0]['title'] ?></a></h1>
+                        <h1><a href="<?= \yii\helpers\Url::to(['posts/lesson', 'id' => $post[0]['id_post']]) ?>"
+                               title=""><?= $post[0]['title'] ?></a></h1>
 
                         <div class="entry__info">
 
@@ -31,7 +32,8 @@
                     <div class="entry__content">
                         <span class="entry__category"><a href="#0"><?= $post[1]['category'] ?></a></span>
 
-                        <h1><a href="<?=\yii\helpers\Url::to(['posts/lesson','id'=>$post[1]['id_post']])?>" title=""><?= $post[0]['title'] ?></a></h1>
+                        <h1><a href="<?= \yii\helpers\Url::to(['posts/lesson', 'id' => $post[1]['id_post']]) ?>"
+                               title=""><?= $post[0]['title'] ?></a></h1>
 
                         <div class="entry__info">
 
@@ -49,7 +51,8 @@
                     <div class="entry__content">
                         <span class="entry__category"><a href="#0"><?= $post[2]['category'] ?></a></span>
 
-                        <h1><a href="<?=\yii\helpers\Url::to(['posts/lesson','id'=>$post[2]['id_post']])?>" title=""><?= $post[0]['title'] ?></a></h1>
+                        <h1><a href="<?= \yii\helpers\Url::to(['posts/lesson', 'id' => $post[2]['id_post']]) ?>"
+                               title=""><?= $post[0]['title'] ?></a></h1>
 
                         <div class="entry__info">
 
@@ -60,7 +63,7 @@
                     </div>
 
                 </div>
-            </div> <!-- end entry -->
-        </div> <!-- end featured -->
-    </div> <!-- end col-full -->
-</div> <!-- end pageheader-content row -->
+            </div>
+        </div>
+    </div>
+</div>

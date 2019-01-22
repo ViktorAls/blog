@@ -10,8 +10,10 @@ namespace frontend\controllers;
 
 
 use common\models\Post;
+use common\models\Tag;
+use common\models\TagPost;
 use yii\data\Pagination;
-use yii\db\Query;
+use yii\helpers\ArrayHelper;
 use yii\web\Controller;
 use yii\web\HttpException;
 
@@ -110,6 +112,21 @@ class PostsController extends Controller
             ->orderBy(['id_post' => SORT_DESC])
             ->all();
         return [$pages,$posts];
+    }
+
+    public function actionTags($search){
+        $category = 'Теги.';
+        $params = $search;
+        $tags = Tag::find()->where(['like','name',$search])->asArray()->all();
+        $idTag = ArrayHelper::map($tags,'id_tag','id_tag');
+        $idPost = ArrayHelper::map(TagPost::find()->asArray()->where(['in','id_tag',$idTag])->groupBy('id_post')->all(),'id','id_post');
+        $query = Post::find()->andWhere(['in','id_post',$idPost]);
+        $pagesPosts = $this->PagesPosts($query);
+        return $this->render('category',['posts'=>$pagesPosts[1],
+                'pages'=>$pagesPosts[0],
+                'category'=>$category,
+                'params'=>$params]
+        );
     }
 
 }

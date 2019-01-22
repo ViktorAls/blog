@@ -56,7 +56,7 @@ $this->title = $category;
                             <div class="entry__meta">
                             <span class="entry__meta-links">
                                 <?php foreach ($post['tags'] as $tag): ?>
-                                    <?= Html::a(Html::encode($tag['name']), Url::to(['post/tag', 'id' => $tag['id_tag']])); ?>
+                                    <?= Html::a(Html::encode($tag['name']), Url::to(['posts/tags', 'search' => $tag['name']])); ?>
                                 <?php endforeach; ?>
                             </span>
                             </div>
