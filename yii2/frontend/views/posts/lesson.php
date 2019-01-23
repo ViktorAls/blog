@@ -12,7 +12,7 @@ use yii\helpers\Url; ?>
                 <?=$model['title'];?>
             </h2>
             <ul class="s-content__header-meta">
-                <li class="date"><?= date('F d, Y', $model['updated_at']) ?></li>
+                <li class="date"><?= date('F d, Y', $model['created_at']) ?></li>
             </ul>
         </div>
 
@@ -31,7 +31,7 @@ use yii\helpers\Url; ?>
 
                 <span class="s-content__tag-list">
                        <?php foreach ($model['tags'] as $tag):?>
-                       <?=Html::a($tag['name'],Url::to(['posts/tags','id'=>$tag['id_tag']]))?>
+                       <?=Html::a($tag['name'],Url::to(['posts/tags','search'=>$tag['name']]))?>
                     <?php endforeach;?>
                 </span>
             </p>

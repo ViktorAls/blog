@@ -2889,8 +2889,8 @@ html.no-csstransitions .featured {
  * ------------------------------------------------------------------- */
 .s-content {
    background-color: #f2f2f2;
-   padding-top: 8.4rem;
-   padding-bottom: 7.2rem;
+   padding-top: 6.4rem;
+   padding-bottom: 5.2rem;
 }
 
 .s-content--no-padding-bottom {
@@ -3591,9 +3591,6 @@ footer h4::after {
    font-size: 4.2rem;
    line-height: 1.214;
    margin-bottom: .9rem;
-}
-
-.mb-0{
    margin-top: 0px;
 }
 
