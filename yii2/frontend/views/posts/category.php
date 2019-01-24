@@ -8,7 +8,6 @@
 
 use yii\data\Pagination;
 use yii\widgets\LinkPager;
-use common\widgets\ArticlePost;
 
 $this->title = $category;
 ?>
@@ -29,7 +28,7 @@ $this->title = $category;
             <div class="grid-sizer"></div>
             <?php if ($posts != null): ?>
                 <?php foreach ($posts as $key => $post): ?>
-                    <?= ArticlePost::widget([
+                    <?= common\widgets\ArticlePost::widget([
                         'title'=>$post['title'],
                         'description' => $post['description'],
                         'idPost' => $post['id_post'],

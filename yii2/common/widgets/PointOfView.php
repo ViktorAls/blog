@@ -16,7 +16,14 @@ use yii\helpers\Html;
 class PointOfView extends Widget
 {
 
+    /**
+     * @var string
+     */
     public $title='';
+
+    /**
+     * @return string
+     */
     public function run()
     {
         $PointOfView = Information::find()->asArray()->where(['name'=>'pointOfView'])->one();

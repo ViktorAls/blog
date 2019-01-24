@@ -16,8 +16,14 @@ use yii\helpers\Url;
 class Tags extends Widget
 {
 
+    /**
+     * @var int
+     */
     public $limit = 10;
 
+    /**
+     * @return string
+     */
     public function run()
     {
         $tags = Tag::find()->asArray()->orderBy(['id_tag'=>SORT_DESC])->limit($this->limit)->all();

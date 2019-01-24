@@ -3,10 +3,9 @@
 /**
  * @var array $posts
  */
-use yii\helpers\Html;
-use yii\helpers\Url;
+
 use yii\widgets\LinkPager;
-use common\widgets\ArticlePost;
+
 ?>
 
 <section class="s-content">
@@ -16,14 +15,14 @@ use common\widgets\ArticlePost;
             <div class="grid-sizer"></div>
             <!--           Начало Новостей-->
             <?php foreach ($posts as $key => $post): ?>
-              <?= ArticlePost::widget([
-                      'title'=>$post['title'],
-                        'description' => $post['description'],
+                <?= common\widgets\ArticlePost::widget([
+                    'title' => $post['title'],
+                    'description' => $post['description'],
                     'idPost' => $post['id_post'],
-                    'nameIcon'=>$post['icon'],
-                    'datePublication'=>$post['created_at'],
-                    'tags'=>$post['tags'],
-                    ]);  ?>
+                    'nameIcon' => $post['icon'],
+                    'datePublication' => $post['created_at'],
+                    'tags' => $post['tags'],
+                ]); ?>
             <?php endforeach; ?>
             <!--            Конец новостей-->
         </div>

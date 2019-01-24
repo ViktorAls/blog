@@ -14,6 +14,9 @@ use yii\base\Widget;
 
 class Selected extends Widget
 {
+    /**
+     * @return string
+     */
     public function run()
     {
         $post = Post::find()->asArray()->limit(3)->orderBy(['updated_at' => SORT_DESC])->all();

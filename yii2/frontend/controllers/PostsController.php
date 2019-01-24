@@ -16,9 +16,11 @@ use yii\data\Pagination;
 use yii\helpers\ArrayHelper;
 use yii\web\Controller;
 use yii\web\HttpException;
+use yii\web\NotFoundHttpException;
 
 /**
- * @method asArray()
+ * Class PostsController
+ * @package frontend\controllers
  */
 class PostsController extends Controller
 {
@@ -30,7 +32,6 @@ class PostsController extends Controller
      */
     public function actionLesson($id)
     {
-
         $model = $this->postModel($id);
 
         return $this->render('lesson', ['model' => $model]);
@@ -43,28 +44,26 @@ class PostsController extends Controller
      */
     protected function postModel($id)
     {
-        if ($model = Post::find()->where(['id_post' => $id])->asArray()->with('tags', 'file')->one()) {
+        if (($model = Post::find()->where(['id_post' => $id])->asArray()->with('tags', 'file')->one()) !== null) {
             return $model;
-        } else {
-            throw new HttpException('404', 'Страница не найдена.');
         }
+        throw new NotFoundHttpException();
     }
 
     public function actionLecture($search = null)
     {
         $category = 'Лекции';
         if ($search == null) {
-            $params = 'все записи';
+            $search = 'все записи';
             $query = Post::find()->where('type != 2');
         } else {
-            $params = $search;
-            $query = Post::find()->where('type != 2')->andWhere(['like','title',$search]);
+            $query = Post::find()->where('type != 2')->andWhere(['like', 'title', $search]);
         }
         $pagesPosts = $this->PagesPosts($query);
-        return $this->render('category',['posts'=>$pagesPosts[1],
-                'pages'=>$pagesPosts[0],
-                'category'=>$category,
-                'params'=>$params]
+        return $this->render('category', ['posts' => $pagesPosts[1],
+                'pages' => $pagesPosts[0],
+                'category' => $category,
+                'params' => $search]
         );
     }
 
@@ -72,30 +71,28 @@ class PostsController extends Controller
     {
         $category = 'Аудио лекции';
         if ($search == null) {
-            $params = 'все записи';
+            $search = 'все записи';
             $query = Post::find()->where('type = 2');
         } else {
-            $params = $search;
-            $query = Post::find()->where('type = 2')->andWhere(['like','title',$search]);
+            $query = Post::find()->where('type = 2')->andWhere(['like', 'title', $search]);
         }
         $pagesPosts = $this->PagesPosts($query);
-        return $this->render('category',['posts'=>$pagesPosts[1],
-                'pages'=>$pagesPosts[0],
-                'category'=>$category,
-                'params'=>$params]
+        return $this->render('category', ['posts' => $pagesPosts[1],
+                'pages' => $pagesPosts[0],
+                'category' => $category,
+                'params' => $search]
         );
     }
 
     public function actionSearch($search)
     {
         $category = 'Все типы лекций.';
-            $params = $search;
-            $query = Post::find()->andWhere(['like','title',$search]);
-            $pagesPosts = $this->PagesPosts($query);
-        return $this->render('category',['posts'=>$pagesPosts[1],
-            'pages'=>$pagesPosts[0],
-            'category'=>$category,
-            'params'=>$params]
+        $query = Post::find()->andWhere(['like', 'title', $search]);
+        $pagesPosts = $this->PagesPosts($query);
+        return $this->render('category', ['posts' => $pagesPosts[1],
+                'pages' => $pagesPosts[0],
+                'category' => $category,
+                'params' => $search]
         );
     }
 
@@ -103,7 +100,8 @@ class PostsController extends Controller
      * @param $query
      * @return array
      */
-    public function PagesPosts($query){
+    public function PagesPosts($query)
+    {
         $pages = new Pagination(['totalCount' => $query->count(), 'pageSize' => 9]);
         $posts = $query->offset($pages->offset)
             ->limit($pages->limit)
@@ -111,21 +109,23 @@ class PostsController extends Controller
             ->with('tags')
             ->orderBy(['id_post' => SORT_DESC])
             ->all();
-        return [$pages,$posts];
+        return [$pages, $posts];
     }
 
-    public function actionTags($search){
+    public function actionTags($search)
+    {
         $category = 'Теги.';
-        $params = $search;
-        $tags = Tag::find()->where(['like','name',$search])->asArray()->all();
-        $idTag = ArrayHelper::map($tags,'id_tag','id_tag');
-        $idPost = ArrayHelper::map(TagPost::find()->asArray()->where(['in','id_tag',$idTag])->groupBy('id_post')->all(),'id','id_post');
-        $query = Post::find()->andWhere(['in','id_post',$idPost]);
-        $pagesPosts = $this->PagesPosts($query);
-        return $this->render('category',['posts'=>$pagesPosts[1],
-                'pages'=>$pagesPosts[0],
-                'category'=>$category,
-                'params'=>$params]
+        $query = Post::find()->joinWith('tags')->where(['like', 'tag.name', $search]);
+        $pages = new Pagination(['totalCount' => $query->count(), 'pageSize' => 9]);
+        $posts = $query->asArray()
+            ->offset($pages->offset)
+            ->limit($pages->limit)
+            ->all();
+
+        return $this->render('category', ['posts' => $posts,
+                'pages' => $pages,
+                'category' => $category,
+                'params' => $search]
         );
     }
 

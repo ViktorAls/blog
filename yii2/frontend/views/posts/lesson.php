@@ -25,17 +25,15 @@ use yii\helpers\Url; ?>
         <div class="col-full s-content__main">
             <?=$model['description'];?>
 
-
             <p class="s-content__tags">
                 <span>Теги новостей</span>
 
                 <span class="s-content__tag-list">
-                       <?php foreach ($model['tags'] as $tag):?>
+                       <?php foreach ($model['tags'] as $tag): ?>
                        <?=Html::a($tag['name'],Url::to(['posts/tags','search'=>$tag['name']]))?>
                     <?php endforeach;?>
                 </span>
             </p>
-
 
         </div>
 

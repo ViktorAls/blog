@@ -59,9 +59,8 @@ class RandPost extends Widget
         $html .= Html::endTag('h5');
         $html .= Html::beginTag('section', ['class' => 'popular__meta']);
         $html .= Html::beginTag('span', ['class' => 'popular__date']);
-        $date = date('Y-m-d',$post['created_at']);
-        $html .= Html::beginTag('time', ['datetime' =>$date]);
-        $html .= date('F d, Y',$date);
+        $html .= Html::beginTag('time', ['datetime' =>date('Y-m-d',$post['created_at'])]);
+        $html .= date('Y-m-d',$post['created_at']);
         $html .= Html::endTag('span');
         $html .= Html::endTag('span');
         $html .= Html::endTag('section');

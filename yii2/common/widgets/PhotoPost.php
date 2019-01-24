@@ -33,6 +33,9 @@ class PhotoPost extends Widget
      */
     public $icon;
 
+    /**
+     * @return string
+     */
     public function run()
     {
         return $this->render('photo',['pathPhoto'=>$this->pathPhoto,'data'=>$this->data,'pathIcon'=>$this->pathIcon,'icon'=>$this->icon]);
