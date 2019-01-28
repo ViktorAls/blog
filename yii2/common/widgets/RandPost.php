@@ -10,6 +10,7 @@ namespace common\widgets;
 
 
 use common\models\Post;
+use common\models\query\PostQuery;
 use yii\base\Widget;
 use yii\db\Expression;
 use yii\helpers\Html;
@@ -22,11 +23,7 @@ class RandPost extends Widget
     public function run()
     {
         $html = '';
-        $posts = Post::find()
-            ->orderBy(new Expression('rand()'))
-            ->limit(6)
-            ->asArray()
-            ->all();
+        $posts = PostQuery::getRand();
         foreach ($posts as $post) {
             $html .= $this->getArticle($post);
         }
@@ -34,7 +31,7 @@ class RandPost extends Widget
     }
 
     /**
-     * @param Post $post
+     * @param $post
      * @return string
      */
     protected function getArticle($post)

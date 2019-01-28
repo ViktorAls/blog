@@ -7,8 +7,6 @@
  */
 
 use yii\data\Pagination;
-use yii\widgets\LinkPager;
-
 $this->title = $category;
 ?>
 <section class="s-content">
@@ -49,7 +47,7 @@ $this->title = $category;
     <div class="row">
         <div class="col-full">
             <nav class="pgn">
-                <?= LinkPager::widget([
+                <?= yii\widgets\LinkPager::widget([
                     'pagination' => $pages,
                     //Css option for container
                     'options' => ['class' => ''],

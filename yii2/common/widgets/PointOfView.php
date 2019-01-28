@@ -9,7 +9,7 @@
 namespace common\widgets;
 
 
-use common\models\Information;
+use common\models\query\InformationQuery;
 use yii\base\Widget;
 use yii\helpers\Html;
 
@@ -26,7 +26,7 @@ class PointOfView extends Widget
      */
     public function run()
     {
-        $PointOfView = Information::find()->asArray()->where(['name'=>'pointOfView'])->one();
+        $PointOfView = InformationQuery::getPointOfView();
         $html='';
         $html .= Html::tag('h3',$this->title);
         $html .= Html::tag('p',$PointOfView['value']);

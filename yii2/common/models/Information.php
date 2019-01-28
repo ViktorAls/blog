@@ -41,8 +41,8 @@ class Information extends \yii\db\ActiveRecord
     {
         return [
             'id_information' => 'Id Information',
-            'name' => 'Name',
-            'value' => 'Value',
+            'name' => 'Название',
+            'value' => 'Значение',
         ];
     }
 }

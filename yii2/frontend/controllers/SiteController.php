@@ -2,6 +2,7 @@
 namespace frontend\controllers;
 
 use common\models\Post;
+use common\models\query\PostQuery;
 use Yii;
 use yii\base\InvalidParamException;
 use yii\data\Pagination;
@@ -47,14 +48,8 @@ class SiteController extends Controller
     {
         $this->layout = 'main';
         $query = Post::find();
-        $pages = new Pagination(['totalCount' => $query->count(),'pageSize' => 9]);
-        $posts = $query->offset($pages->offset)
-            ->limit($pages->limit)
-            ->asArray()
-            ->with('tags')
-            ->orderBy(['id_post'=>SORT_DESC])
-            ->all();
-        return $this->render('index',compact('posts','pages'));
+        $pagesPost = PostQuery::getPagesPosts($query);
+        return $this->render('index',['posts'=>$pagesPost[1],'pages'=>$pagesPost[0]]);
     }
 
 

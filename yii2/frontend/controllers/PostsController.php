@@ -10,6 +10,7 @@ namespace frontend\controllers;
 
 
 use common\models\Post;
+use common\models\query\PostQuery;
 use common\models\Tag;
 use common\models\TagPost;
 use yii\data\Pagination;
@@ -26,7 +27,7 @@ class PostsController extends Controller
 {
 
     /**
-     * @param $id
+     * @param string $id
      * @return string
      * @throws HttpException
      */
@@ -38,57 +39,31 @@ class PostsController extends Controller
     }
 
     /**
-     * @param $id
+     * @param string $id
      * @return array|Post|\yii\db\ActiveRecord|null
      * @throws HttpException
      */
     protected function postModel($id)
     {
-        if (($model = Post::find()->where(['id_post' => $id])->asArray()->with('tags', 'file')->one()) !== null) {
+        if (($model = PostQuery::getOneModel(['id_post'=>$id])) !== null) {
             return $model;
         }
         throw new NotFoundHttpException();
     }
 
-    public function actionLecture($search = null)
+    /**
+     * @param string $search
+     * @return string
+     */
+    public function actionLecture($search = 'все записи')
     {
         $category = 'Лекции';
-        if ($search == null) {
-            $search = 'все записи';
-            $query = Post::find()->where('type != 2');
+        if ($search == 'все записи') {
+            $query = PostQuery::getAllByType('type != 2');
         } else {
-            $query = Post::find()->where('type != 2')->andWhere(['like', 'title', $search]);
+            $query = PostQuery::getByTypeLikeTitle('type != 2',$search);
         }
-        $pagesPosts = $this->PagesPosts($query);
-        return $this->render('category', ['posts' => $pagesPosts[1],
-                'pages' => $pagesPosts[0],
-                'category' => $category,
-                'params' => $search]
-        );
-    }
-
-    public function actionAudioLecture($search = null)
-    {
-        $category = 'Аудио лекции';
-        if ($search == null) {
-            $search = 'все записи';
-            $query = Post::find()->where('type = 2');
-        } else {
-            $query = Post::find()->where('type = 2')->andWhere(['like', 'title', $search]);
-        }
-        $pagesPosts = $this->PagesPosts($query);
-        return $this->render('category', ['posts' => $pagesPosts[1],
-                'pages' => $pagesPosts[0],
-                'category' => $category,
-                'params' => $search]
-        );
-    }
-
-    public function actionSearch($search)
-    {
-        $category = 'Все типы лекций.';
-        $query = Post::find()->andWhere(['like', 'title', $search]);
-        $pagesPosts = $this->PagesPosts($query);
+        $pagesPosts = PostQuery::getPagesPosts($query);
         return $this->render('category', ['posts' => $pagesPosts[1],
                 'pages' => $pagesPosts[0],
                 'category' => $category,
@@ -97,33 +72,53 @@ class PostsController extends Controller
     }
 
     /**
-     * @param $query
-     * @return array
+     * @param string $search
+     * @return string
      */
-    public function PagesPosts($query)
+    public function actionAudioLecture($search = 'все записи')
     {
-        $pages = new Pagination(['totalCount' => $query->count(), 'pageSize' => 9]);
-        $posts = $query->offset($pages->offset)
-            ->limit($pages->limit)
-            ->asArray()
-            ->with('tags')
-            ->orderBy(['id_post' => SORT_DESC])
-            ->all();
-        return [$pages, $posts];
+        $category = 'Аудио лекции';
+        if ($search == 'все записи') {
+            $query = PostQuery::getAllByType('type = 2');
+        } else {
+            $query = PostQuery::getByTypeLikeTitle('type = 2',$search);
+        }
+        $pagesPosts = PostQuery::getPagesPosts($query);
+        return $this->render('category', ['posts' => $pagesPosts[1],
+                'pages' => $pagesPosts[0],
+                'category' => $category,
+                'params' => $search]
+        );
     }
 
+    /**
+     * @param string $search
+     * @return string
+     */
+    public function actionSearch($search)
+    {
+        $category = 'Все типы лекций.';
+        $query = PostQuery::getModelLikeTitle($search);
+        $pagesPosts = PostQuery::getPagesPosts($query);
+        return $this->render('category', ['posts' => $pagesPosts[1],
+                'pages' => $pagesPosts[0],
+                'category' => $category,
+                'params' => $search]
+        );
+    }
+
+
+    /**
+     * @param string $search
+     * @return string
+     */
     public function actionTags($search)
     {
         $category = 'Теги.';
-        $query = Post::find()->joinWith('tags')->where(['like', 'tag.name', $search]);
-        $pages = new Pagination(['totalCount' => $query->count(), 'pageSize' => 9]);
-        $posts = $query->asArray()
-            ->offset($pages->offset)
-            ->limit($pages->limit)
-            ->all();
-
-        return $this->render('category', ['posts' => $posts,
-                'pages' => $pages,
+        $query = PostQuery::getLikeTag($search);
+        $pages = PostQuery::getPagesPosts($query);
+        return $this->render('category', ['posts' => $pages[1],
+                'pages' => $pages[0],
                 'category' => $category,
                 'params' => $search]
         );

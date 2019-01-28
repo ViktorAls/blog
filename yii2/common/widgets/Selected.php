@@ -10,16 +10,22 @@ namespace common\widgets;
 
 
 use common\models\Post;
+use common\models\query\PostQuery;
 use yii\base\Widget;
 
 class Selected extends Widget
 {
     /**
+     * @var int
+     */
+    public $limit = 3;
+
+    /**
      * @return string
      */
     public function run()
     {
-        $post = Post::find()->asArray()->limit(3)->orderBy(['updated_at' => SORT_DESC])->all();
+        $post = PostQuery::getLimitDesc($this->limit,'updated_at');
         $post = $this->addType($post);
         return $this->render('selected', compact('post'));
     }

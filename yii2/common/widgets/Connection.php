@@ -10,6 +10,7 @@ namespace common\widgets;
 
 
 use common\models\Information;
+use common\models\query\InformationQuery;
 use yii\base\Widget;
 use yii\helpers\Html;
 
@@ -27,9 +28,7 @@ class Connection extends Widget
     public function run()
     {
         $html = '';
-        $connection = Information::find()->indexBy('name')->orWhere(['name'=>'facebook'])
-            ->orWhere(['name'=>'mail'])->orWhere(['name'=>'vkontakte'])
-            ->asArray()->all();
+        $connection = InformationQuery::getMessenger();
         $html .= html::beginTag('ul',['class'=>$this->ulClass]);
         $html .= $this->getLi($connection['vkontakte']['value'],'fab fa-vk');
         $html .= $this->getLi($connection['mail']['value'],'fas fa-at');

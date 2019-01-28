@@ -8,6 +8,7 @@
 
 namespace common\widgets;
 
+use common\models\query\TagQuery;
 use common\models\Tag;
 use yii\base\Widget;
 use yii\helpers\Html;
@@ -26,7 +27,7 @@ class Tags extends Widget
      */
     public function run()
     {
-        $tags = Tag::find()->asArray()->orderBy(['id_tag'=>SORT_DESC])->limit($this->limit)->all();
+        $tags = TagQuery::getLimitDesc($this->limit,'id_tag');
         return $this->createHtmlTags($tags);
     }
 
