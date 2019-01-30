@@ -9,6 +9,7 @@
 namespace frontend\controllers;
 
 
+use common\models\query\DocumentQuery;
 use yii\web\Controller;
 
 class DocumentController extends Controller
@@ -16,14 +17,15 @@ class DocumentController extends Controller
 
     public function actionIndex($search = 'все документы'){
         if ($search == 'все документы') {
-            $query = PostQuery::getAllByType('type != 2');
+            $query = DocumentQuery::getAll();
         } else {
-            $query = PostQuery::getByTypeLikeTitle('type != 2',$search);
+            $query = DocumentQuery::getLikeTitle($search);
         }
-        $pagesPosts = PostQuery::getPagesPosts($query);
-        return $this->render('category', ['posts' => $pagesPosts[1],
-                'pages' => $pagesPosts[0],
-                'params' => $search]
+        $pagesDocument = DocumentQuery::getPagesDocument($query);
+        return $this->render('index', ['posts' => $pagesDocument[1],
+                'pages' => $pagesDocument[0],
+                'params' => $search
+            ]
         );
     }
 }
