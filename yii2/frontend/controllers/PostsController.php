@@ -11,10 +11,6 @@ namespace frontend\controllers;
 
 use common\models\Post;
 use common\models\query\PostQuery;
-use common\models\Tag;
-use common\models\TagPost;
-use yii\data\Pagination;
-use yii\helpers\ArrayHelper;
 use yii\web\Controller;
 use yii\web\HttpException;
 use yii\web\NotFoundHttpException;
