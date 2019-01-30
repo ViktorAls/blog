@@ -67,7 +67,7 @@ AppAsset::register($this);
                             <li><a href="<?=\yii\helpers\Url::to(['posts/lecture'])?>">Лекция</a></li>
                         </ul>
                     </li>
-                    <li><a href="style-guide.html" title="">Документы</a></li>
+                    <li><a href="<?=\yii\helpers\Url::to(['document/index'])?>" title="">Документы</a></li>
                     <li><a href="style-guide.html" title="">Тесты</a></li>
                     <li><a href="about.html" title="">О себе</a></li>
                     <li><a href="contact.html" title="">Обратная связь</a></li>

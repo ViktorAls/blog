@@ -1,0 +1,132 @@
+.ilia {
+    width: 70%;
+    margin: 0 auto;
+    height: auto;
+    /* border: 1px solid rgba(0, 0, 0, 0.3); */
+    background-color: #fff;
+    padding: 2em 2em .5em 1em;
+    border-radius: 5px;
+    margin-bottom: 2em;
+}
+
+.ilia_card {
+    position: relative;
+}
+
+.copy_link {
+    position: absolute;
+    right: 0;
+    top: 0;
+    font-size: 1em;
+    color: #000;
+}
+
+.tagcloud a {
+    display: inline-block;
+    font-family: "metropolis-extrabold", sans-serif;
+    font-size: 1.3rem;
+    line-height: 3.6rem;
+    text-transform: uppercase;
+    letter-spacing: .2rem;
+    padding: 0 2rem;
+    margin: 0 1.2rem 1.5rem 0;
+    border-radius: 3px;
+    background: #e2e2e2;
+    text-decoration: none;
+    color: #333333;
+    position: relative;
+}
+
+.tagcloud a:hover {
+    background-color: #000;
+    color: #e2e2e2;
+}
+
+.date {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+.date .entry__date {
+    margin-right: 1.5em;
+
+    Илья (Иисус), [ 29.01 .19 00: 01 ]
+}
+
+.ilia_card {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.ilia_card-img {
+    width: 10%;
+}
+
+.ilia_card-info {
+    width: 90%;
+}
+
+.ilia_card-info p {
+    margin-bottom: .6em;
+}
+
+.ilia_card-info h2 {
+    margin-top: 0;
+}
+
+.ilia_card img {
+    width: 82px;
+    height: auto;
+
+}
+
+.entry__date p {
+    padding: 0;
+    margin: 0;
+    font-size: 0.9em;
+    padding-left: 15px;
+}
+
+.tage_gl {
+    margin: 10px 0 10px 15px;
+}
+
+.tage a {
+    display: inline-block;
+    font-family: "metropolis-regular", sans-serif;
+    font-size: 1.3rem;
+    line-height: inherit;
+    color: #7f7f7f;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    border-radius: 3px;
+    margin-right: 6px;
+    margin-bottom: 6px;
+    padding: 0 10px;
+}
+
+.tage_document {
+    position: relative;
+    padding-right: 70px;
+}
+
+.tage_document:after {
+    display: inline-block;
+    content: "";
+    height: .8px;
+    width: 42px;
+    background-color: rgba(0, 0, 0, 0.2);
+    position: absolute;
+    top: 50%;
+    right: 13px;
+}
+
+.tage a:hover {
+    color: #fff;
+    background-color: #000;
+}
+
+.donovalfd {
+    float: right;
+}

@@ -9,7 +9,6 @@
 namespace common\widgets;
 
 
-use common\models\Post;
 use common\models\query\PostQuery;
 use yii\base\Widget;
 
@@ -20,12 +19,15 @@ class Selected extends Widget
      */
     public $limit = 3;
 
+    const PHOTO_LECTURE = 1;
+    const AUDIO_LECTURE = 2;
+
     /**
      * @return string
      */
     public function run()
     {
-        $post = PostQuery::getLimitDesc($this->limit,'updated_at');
+        $post = PostQuery::getLimitDesc($this->limit, 'updated_at');
         $post = $this->addType($post);
         return $this->render('selected', compact('post'));
     }
@@ -37,12 +39,16 @@ class Selected extends Widget
     public function addType(array $posts)
     {
         foreach ($posts as $key => $post) {
-            if ($post['type'] == 1) {
-                $posts[$key]['category'] = 'Фото лекция';
-            } else if ($post['type'] == 2) {
-                $posts[$key]['category'] = 'Аудио лекция';
-            } else if ($post['type'] == 3) {
-                $posts[$key]['category'] = 'Лекция';
+
+            switch ($post['type']) {
+                case self::PHOTO_LECTURE :
+                    $posts[$key]['category'] = 'Фото лекция';
+                    break;
+                case self::AUDIO_LECTURE :
+                    $posts[$key]['category'] = 'Аудио лекция';
+                    break;
+                default:
+                    $posts[$key]['category'] = 'Лекция';
             }
         }
         return $posts;

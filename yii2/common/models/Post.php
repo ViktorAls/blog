@@ -55,7 +55,6 @@ class Post extends \yii\db\ActiveRecord
             'updated_at' => 'Обновлено',
             'type' => 'Тип записи',
             'icon' => 'Иконка',
-            'have_looked' => 'Просмотренно',
         ];
     }
 
