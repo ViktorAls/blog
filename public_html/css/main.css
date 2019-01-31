@@ -2040,7 +2040,7 @@ body.search-is-visible {
 
 }
 
-@media only screen and (max-width:800px) {
+@media only screen and (max-width:1000px) {
    .s-pageheader {
       min-height: 90px;
    }
@@ -2308,7 +2308,7 @@ body.search-is-visible {
 
 }
 
-@media only screen and (max-width:800px) {
+@media only screen and (max-width:1000px) {
    .header__nav-wrap {
       background-color: #151515;
       opacity: 0;

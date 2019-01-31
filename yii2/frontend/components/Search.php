@@ -24,6 +24,9 @@ class Search extends \yii\base\Component
             case 'posts/tags':
                 $action = ['action' => Url::to(['posts/tags']),'message'=>'Поиск по тегам'];
                 break;
+            case 'document/index':
+                $action = ['action' => Url::to(['document/index']),'message'=>'Поиск по документам'];
+                break;
             default:
                 $action = ['action' => Url::to(['posts/search']),'message'=>'Поиск по всем типам лекций'];
         }

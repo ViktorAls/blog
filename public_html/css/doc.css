@@ -1,10 +1,10 @@
 .ilia {
-    width: 70%;
+    width: 80%;
     margin: 0 auto;
     height: auto;
     /* border: 1px solid rgba(0, 0, 0, 0.3); */
     background-color: #fff;
-    padding: 2em 2em .5em 1em;
+    padding: 15px;
     border-radius: 5px;
     margin-bottom: 2em;
 }
@@ -43,25 +43,45 @@
 }
 
 .date {
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: -20px;
+    margin-bottom: 15px;
 
 }
 
 .date .entry__date {
     margin-right: 1.5em;
-
-    Илья (Иисус), [ 29.01 .19 00: 01 ]
+    width: 70%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.btn_donov{
+    width: 26%
+}
+.btn_donov-click{
+    text-align: center;
+    display: block;
+    width: 100%;
+    border-radius: 3px;
+    background: #e2e2e2;
+    text-decoration: none;
+    color: #333333;
+    position: relative;
 }
 
 .ilia_card {
-    display: flex;
-    justify-content: flex-start;
+    /*display: flex;*/
+    /*justify-content: flex-start;*/
 }
 
 .ilia_card-img {
     width: 10%;
+    float: left;
 }
 
 .ilia_card-info {
@@ -86,11 +106,11 @@
     padding: 0;
     margin: 0;
     font-size: 0.9em;
-    padding-left: 15px;
+
 }
 
 .tage_gl {
-    margin: 10px 0 10px 15px;
+    margin: 0px 0 10px 0px;
 }
 
 .tage a {
@@ -114,7 +134,7 @@
 .tage_document:after {
     display: inline-block;
     content: "";
-    height: .8px;
+    height: 1px;
     width: 42px;
     background-color: rgba(0, 0, 0, 0.2);
     position: absolute;
@@ -129,4 +149,17 @@
 
 .donovalfd {
     float: right;
+}
+.btn-doc {
+    width: 100%;
+    height: 2.4rem;
+    line-height: 2.1rem;
+}
+@media only screen and (max-width:1000px) {
+    .btn_donov{
+        width: 100%
+    }
+    .date .entry__date{
+        width: 100%;
+    }
 }

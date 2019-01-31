@@ -29,21 +29,24 @@ $this->title = $category;
                     </div>
                     <div class="ilia_card-info">
                         <h2>Далеко-далеко за словесными горами в стране.</h2>
-                        <p>Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты. Большой что предупредила рыбного осталось первую раз большого, напоивший, ручеек, lorem родного путь это проектах!</p>
+
+                    </div>
+                    <p>Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты. Большой что предупредила рыбного осталось первую раз большого, напоивший, ручеек, lorem родного путь это проектах!</p>
+                </div>
+                <div class="inf">
+                    <div class="date">
+                            <div class="entry__date">
+                                <div><p>Дата публикации: <strong>December 15, 2017</strong></p></div>
+                                <div><p>Дата изменения: <strong>December 15, 2017</strong></p></div>
+                            </div>
+
+                            <div class="btn_donov">
+                                <a class="btn_donov-click" href="#0">Скачать</a>
+                            </div>
                     </div>
 
                 </div>
-                <div class="date">
-                    <div class="entry__date">
-                        <p>Дата публикации: <strong>December 15, 2017</strong></p>
-                    </div>
-                    <div class="entry__date">
-                        <p>Дата изменения: <strong>December 15, 2017</strong></p>
-                    </div>
-                    <div>
-                        <a href="#" class="donovalfd"><strong>Скачать</strong></a>
-                    </div>
-                </div>
+
                 <div class="tage_gl">
                         <span class="tage"><span class="tage_document">Теги документа</span>
                         <a href="#0">orci</a>
