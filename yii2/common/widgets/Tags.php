@@ -10,6 +10,7 @@ namespace common\widgets;
 
 use common\models\query\TagQuery;
 use common\models\Tag;
+use Yii;
 use yii\base\Widget;
 use yii\helpers\Html;
 use yii\helpers\Url;
@@ -37,8 +38,14 @@ class Tags extends Widget
      */
     public function createHtmlTags(array $tags){
         $html = null;
-        foreach ($tags as $tag){
-            $html .= Html::a($tag['name'],Url::to(['posts/tags','search'=>$tag['name']]));
+        if (Yii::$app->controller->route == 'document/index') {
+            foreach ($tags as $tag) {
+                $html .= Html::a($tag['name'], Url::current(['tag' => $tag['name']]));
+            }
+        } else {
+            foreach ($tags as $tag) {
+                $html .= Html::a($tag['name'], Url::to(['posts/tags', 'tag' => $tag['name']]));
+            }
         }
         return $html;
     }

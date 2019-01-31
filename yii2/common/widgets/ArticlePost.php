@@ -57,7 +57,7 @@ class ArticlePost extends \yii\base\Widget
     /**
      * @var string
      */
-    public $getParamsTag = 'search';
+    public $getParamsTag = 'tag';
 
     /**
      * @var string

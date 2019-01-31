@@ -108,10 +108,11 @@ class PostsController extends Controller
      * @param string $search
      * @return string
      */
-    public function actionTags($search)
+    public function actionTags($tag,$search='')
     {
-        $category = 'Теги.';
-        $query = PostQuery::getLikeTag($search);
+        $category = 'Все лекции. Тег: '.$tag;
+        $query = PostQuery::getLikeTag($tag,$search);
+        $search==''?$search='Все записи':0;
         $pages = PostQuery::getPagesPosts($query);
         return $this->render('category', ['posts' => $pages[1],
                 'pages' => $pages[0],

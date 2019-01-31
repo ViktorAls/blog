@@ -4,10 +4,13 @@
 
 /* @var $content string */
 
+use yii\bootstrap\ActiveForm;
 use yii\helpers\Html;
 use yii\widgets\Breadcrumbs;
 use frontend\assets\AppAsset;
 use common\widgets\Alert;
+
+$search = Yii::$app->search->SearchAction(Yii::$app->controller->route);
 
 AppAsset::register($this);
 ?>
@@ -45,14 +48,19 @@ AppAsset::register($this);
             <?php endif; ?>
             <a class="header__search-trigger" href="#0"></a>
             <div class="header__search">
-                <form role="search" method="get" class="header__search-form" action="<?=Yii::$app->search->SearchAction(Yii::$app->controller->route)['action']?>">
+
+                <?php $form = \yii\widgets\ActiveForm::begin([
+                    'method' => 'get',
+                    'action' => [$search['action']],
+                    'options' => ['role'=>'search','class'=>'header__search-form']
+                ]) ?>
                     <label>
-                        <span class="hide-content"><?=Yii::$app->search->SearchAction(Yii::$app->controller->route)['message']?>:</span>
+                        <span class="hide-content"><?=$search['message']?>:</span>
                         <input type="search" class="search-field" placeholder="Введите ключ для поиска" value=""
                                name="search" title="Поиск..." autocomplete="off">
                     </label>
                     <input type="submit" class="search-submit" value="Search">
-                </form>
+                <?php $form = \yii\widgets\ActiveForm::end() ?>
                 <a href="#0" title="Закрыть поиск" class="header__overlay-close">Close</a>
             </div>
             <a class="header__toggle-menu" href="#0" title="Menu"><span>Menu</span></a>

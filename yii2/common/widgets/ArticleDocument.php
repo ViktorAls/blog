@@ -10,33 +10,15 @@ namespace common\widgets;
 
 
 use yii\base\Widget;
+use yii\helpers\Url;
 
-class articleDocument extends Widget
+class ArticleDocument extends Widget
 {
 
-    /**
-     * @var integer
-     */
-    public $idPost;
-
-    /**
-     * @var string
-     */
-    public $nameIcon;
-
-    /**
-     * @var DateTime
-     */
-    public $datePublication;
     /**
      * @var string
      */
     public $title;
-
-    /**
-     * @var array
-     */
-    public $tags;
 
     /**
      * @var string
@@ -46,12 +28,26 @@ class articleDocument extends Widget
     /**
      * @var string
      */
-    public $getParamsPost = 'id';
+    public $fileName;
+    /**
+     * @var integer
+     */
+    public $created_at;
+
+    /**
+     * @var integer
+     */
+    public $updated_at;
+
+    /**
+     * @var array
+     */
+    public $tags;
 
     /**
      * @var string
      */
-    public $fullActionPost = 'posts/lesson';
+    public $defaultIcon = 'txt.svg';
 
     /**
      * @var string
@@ -61,23 +57,29 @@ class articleDocument extends Widget
     /**
      * @var string
      */
-    public $getParamsTag = 'search';
-
-    /**
-     * @var string
-     */
-    public $fullActionTags ='posts/tags';
+    public $pathIcon = '/uploads/iconDocument/';
 
 
-    /**
-     * @var string
-     */
-    public $pathIcon ='/uploads/icon/';
-
-
-
-    public function run (){
-
-        return $this->render('document',['']);
+    public function run()
+    {
+        $iconPath = pathinfo(\Yii::getAlias('@iconDocument')
+                . '/' . $this->fileName, PATHINFO_EXTENSION) . '.svg';
+        if (file_exists(\Yii::getAlias('@iconDocument') . '/' . $iconPath)) {
+            $icon = Url::home(true) . $this->pathIcon . $iconPath;
+        } else {
+            $icon = Url::home(true) . $this->pathIcon . $this->defaultIcon;
+        }
+        $created_at = date($this->formatDate, $this->created_at);
+        $updated_at = date($this->formatDate, $this->updated_at);
+        $url_download = '';
+        return $this->render('articleDocument', [
+            'title' => $this->title,
+            'icon' => $icon,
+            'url_download' => $url_download,
+            'description' => $this->description,
+            'tags' => $this->tags,
+            'created_at' => $created_at,
+            'updated_at' => $updated_at,
+        ]);
     }
 }

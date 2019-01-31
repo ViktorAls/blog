@@ -18,28 +18,28 @@ class DocumentQuery extends Document
     public static function getPagesDocument($query)
     {
         $pages = new Pagination(['totalCount' => $query->count(), 'pageSize' => 9]);
-        $posts = $query->offset($pages->offset)
+        $document = $query->offset($pages->offset)
             ->limit($pages->limit)
-            ->asArray()
-            ->with('tags')
             ->orderBy(['id_document' => SORT_DESC])
+            ->asArray()
             ->all();
-        return [$pages, $posts];
+        return [$pages, $document];
     }
 
     /**
      * @return \yii\db\ActiveQuery
      */
     public static function getAll(){
-        return self::find();
+        return self::find()->joinWith('tags');
     }
 
     /**
      * @param string $search
      * @return \yii\db\ActiveQuery
      */
-    public static function getLikeTitle($search){
-        return self::find()->andWhere(['like', 'name', $search]);
+    public static function getLikeTitle($search,$tag){
+        return self::find()->andWhere(['like', 'document.name', $search])
+            ->joinWith('tags')->andWhere(['like','tag.name',$tag]);
     }
 
 }

@@ -15,7 +15,7 @@ $this->title = $category;
         <div class="col-full s-content__header" data-aos="fade-up">
             <h1>Категория: <?= $category ?></h1>
 
-            <p class="lead">Сейчас вы находитесь в разделе "<?=$category?>". Здесь вы можете осуществить поиск, кликнув в
+            <p class="lead">Сейчас вы находитесь в разделе "<?=$category?>". Вы можете осуществить поиск, кликнув в
                 правом верхнем углу слово "Search". <br> Текущий запрос для поиска: <?= $params ?>.</p>
         </div>
     </div>

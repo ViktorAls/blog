@@ -30,7 +30,7 @@ use yii\helpers\Url; ?>
 
                 <span class="s-content__tag-list">
                        <?php foreach ($model['tags'] as $tag): ?>
-                       <?=Html::a($tag['name'],Url::to(['posts/tags','search'=>$tag['name']]))?>
+                       <?=Html::a($tag['name'],Url::to(['posts/tags','tag'=>$tag['name']]))?>
                     <?php endforeach;?>
                 </span>
             </p>

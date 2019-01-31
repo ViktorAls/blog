@@ -85,7 +85,7 @@ class PostQuery extends Post
      * @param string $search
      * @return ActiveQuery
      */
-    public static function getLikeTag($search){
-      return  self::find()->joinWith('tags')->where(['like', 'tag.name', $search]);
+    public static function getLikeTag($tag,$search=''){
+      return  self::find()->joinWith('tags')->where(['like', 'tag.name', $tag])->andWhere(['like','post.title',$search]);
     }
 }
