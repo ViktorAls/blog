@@ -63,14 +63,17 @@ AppAsset::register($this);
                     <li class="has-children">
                         <a href="#" title="">Категории</a>
                         <ul class="sub-menu">
+                            <li><a href="<?=\yii\helpers\Url::to(['document/index'])?>" title="">Документы</a></li>
                             <li><a href="<?=\yii\helpers\Url::to(['posts/audio-lecture'])?>">Аудио лекции</a></li>
                             <li><a href="<?=\yii\helpers\Url::to(['posts/lecture'])?>">Лекция</a></li>
                         </ul>
                     </li>
-                    <li><a href="<?=\yii\helpers\Url::to(['document/index'])?>" title="">Документы</a></li>
                     <li><a href="style-guide.html" title="">Тесты</a></li>
                     <li><a href="<?=\yii\helpers\Url::to(['site/about'])?>" title="">О себе</a></li>
                     <li><a href="<?=\yii\helpers\Url::to(['site/contact'])?>" title="">Обратная связь</a></li>
+                    <?php if (Yii::$app->user->isGuest):?>
+                        <li><a href="<?=\yii\helpers\Url::to(['site/login'])?>" title="">Вход</a></li>
+                    <?php endif; ?>
                 </ul> <!-- end header__nav -->
                 <a href="#0" title="Close Menu" class="header__overlay-close close-mobile-menu">Close</a>
             </nav>

@@ -1,6 +1,7 @@
 <?php
 namespace frontend\controllers;
 
+use common\models\LoginForm;
 use common\models\Post;
 use common\models\query\PostQuery;
 use frontend\models\ContactForm;
@@ -67,6 +68,30 @@ class SiteController extends Controller
             return $this->refresh();
         } else {
             return $this->render('contact', [
+                'model' => $model,
+            ]);
+        }
+    }
+
+
+    /**
+     * Logs in a user.
+     *
+     * @return mixed
+     */
+    public function actionLogin()
+    {
+        if (!Yii::$app->user->isGuest) {
+            return $this->goHome();
+        }
+
+        $model = new LoginForm();
+        if ($model->load(Yii::$app->request->post()) && $model->login()) {
+            return $this->goBack();
+        } else {
+            $model->password = '';
+
+            return $this->render('login', [
                 'model' => $model,
             ]);
         }

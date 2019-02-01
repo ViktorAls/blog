@@ -52,14 +52,14 @@ AppAsset::register($this);
                 <?php $form = \yii\widgets\ActiveForm::begin([
                     'method' => 'get',
                     'action' => [$search['action']],
-                    'options' => ['role'=>'search','class'=>'header__search-form']
+                    'options' => ['role' => 'search', 'class' => 'header__search-form']
                 ]) ?>
-                    <label>
-                        <span class="hide-content"><?=$search['message']?>:</span>
-                        <input type="search" class="search-field" placeholder="Введите ключ для поиска" value=""
-                               name="search" title="Поиск..." autocomplete="off">
-                    </label>
-                    <input type="submit" class="search-submit" value="Search">
+                <label>
+                    <span class="hide-content"><?= $search['message'] ?>:</span>
+                    <input type="search" class="search-field" placeholder="Введите ключ для поиска" value=""
+                           name="search" title="Поиск..." autocomplete="off">
+                </label>
+                <input type="submit" class="search-submit" value="Search">
                 <?php $form = \yii\widgets\ActiveForm::end() ?>
                 <a href="#0" title="Закрыть поиск" class="header__overlay-close">Close</a>
             </div>
@@ -67,18 +67,30 @@ AppAsset::register($this);
             <nav class="header__nav-wrap">
                 <h2 class="header__nav-heading h6">Навигация</h2>
                 <ul class="header__nav">
-                    <li class="current"><a href="<?=\yii\helpers\Url::home(true)?>" title="">Главная</a></li>
+                    <li class="current"><a href="<?= \yii\helpers\Url::home(true) ?>" title="">Главная</a></li>
                     <li class="has-children">
                         <a href="#" title="">Категории</a>
                         <ul class="sub-menu">
-                            <li><a href="<?=\yii\helpers\Url::to(['posts/audio-lecture'])?>">Аудио лекции</a></li>
-                            <li><a href="<?=\yii\helpers\Url::to(['posts/lecture'])?>">Лекция</a></li>
+                            <li><a href="<?= \yii\helpers\Url::to(['document/index']) ?>" title="">Документы</a></li>
+                            <li><a href="<?= \yii\helpers\Url::to(['posts/audio-lecture']) ?>">Аудио лекции</a></li>
+                            <li><a href="<?= \yii\helpers\Url::to(['posts/lecture']) ?>">Лекция</a></li>
                         </ul>
                     </li>
-                    <li><a href="<?=\yii\helpers\Url::to(['document/index'])?>" title="">Документы</a></li>
                     <li><a href="style-guide.html" title="">Тесты</a></li>
-                    <li><a href="<?=\yii\helpers\Url::to(['site/about'])?>" title="">О себе</a></li>
-                    <li><a href="<?=\yii\helpers\Url::to(['site/contact'])?>" title="">Обратная связь</a></li>
+                    <li><a href="<?= \yii\helpers\Url::to(['site/about']) ?>" title="">О себе</a></li>
+                    <li><a href="<?= \yii\helpers\Url::to(['site/contact']) ?>" title="">Обратная связь</a></li>
+                    <?php if (Yii::$app->user->isGuest): ?>
+                        <li><a href="<?= \yii\helpers\Url::to(['site/login']) ?>" title="">Вход</a></li>
+                    <?php else: ?>
+                        <li class="has-children">
+                            <a href="#" title="">Профиль</a>
+                            <ul class="sub-menu">
+                                <li><a href="<?= \yii\helpers\Url::to(['document/index']) ?>" title="">Тесты</a></li>
+                                <li><a href="<?= \yii\helpers\Url::to(['posts/audio-lecture']) ?>">Результаты тестов</a></li>
+                                <li><a href="<?= \yii\helpers\Url::to(['posts/lecture']) ?>">Настройки профиля</a></li>
+                            </ul>
+                        </li>
+                    <?php endif; ?>
                 </ul> <!-- end header__nav -->
                 <a href="#0" title="Close Menu" class="header__overlay-close close-mobile-menu">Close</a>
             </nav>
