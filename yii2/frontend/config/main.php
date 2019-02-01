@@ -13,6 +13,7 @@ return [
     'name'=>'Voronko',
     'controllerNamespace' => 'frontend\controllers',
     'layout'=>'index',
+    'language'=>'ru',
     'components' => [
         'request' => [
             'csrfParam' => '_csrf-frontend',

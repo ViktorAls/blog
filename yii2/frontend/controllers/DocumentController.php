@@ -11,7 +11,9 @@ namespace frontend\controllers;
 
 use common\models\query\DocumentQuery;
 use Yii;
+use yii\helpers\Url;
 use yii\web\Controller;
+use yii\web\NotFoundHttpException;
 
 class DocumentController extends Controller
 {
@@ -35,13 +37,18 @@ class DocumentController extends Controller
         );
     }
 
-//    public function actionDownload($file=null){
-//
-//        if (file_exists(Yii::getAlias('@document').'/'.$file)){
-//
-//        }
-//        $file = Yii::getAlias('@iconDocument').'/txt.svg';
-//        return Yii::$app->response->sendFile($file);
-//
-//    }
+    /**
+     * @param $file
+     * @return \yii\console\Response|\yii\web\Response
+     * @throws NotFoundHttpException
+     */
+    public function actionDownload($file){
+        $file = urlencode($file);
+
+        if (file_exists(Yii::getAlias('@document').'/'.$file)){
+            $file = Yii::getAlias('@document').'/'.$file;
+          return Yii::$app->response->sendFile($file);
+        }
+        throw new NotFoundHttpException('Файл не найден, возможно он был удалён.');
+    }
 }

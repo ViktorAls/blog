@@ -59,6 +59,7 @@ class ArticleDocument extends Widget
      */
     public $pathIcon = '/uploads/iconDocument/';
 
+    public $getParamsDownload = 'file';
 
     public function run()
     {
@@ -71,7 +72,7 @@ class ArticleDocument extends Widget
         }
         $created_at = date($this->formatDate, $this->created_at);
         $updated_at = date($this->formatDate, $this->updated_at);
-        $url_download = '';
+        $url_download = Url::to(['document/download',$this->getParamsDownload=>$this->fileName]);
         return $this->render('articleDocument', [
             'title' => $this->title,
             'icon' => $icon,
