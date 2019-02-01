@@ -81,15 +81,18 @@ $this->title = 'Обратная связь';
                 <div class="message form-field">
                     <?= $form->field($model, 'body')->textarea(['rows' => 6, 'class' => 'full-width']) ?>
                 </div>
+
                 <div class="form-field">
                     <?= $form->field($model, 'verifyCode')->widget(Captcha::className(), [
                         'template' => '
                             <div class="row">
-                            <div class="col-lg-3">{image}</div>
-                            <div class="col-lg-6">{input}</div>
+                            <div class="col-md-2">{image}</div>
+                            <div class="col-md-10">{input}</div>
                             </div>
                             ',
-                        ]) ?>
+                        'options' => ['class'=>'full-width'],
+                        'imageOptions' => ['class'=>'rrrr'],
+                        ]);?>
                 </div>
                 <?= Html::submitButton('Отправить', ['class' => 'submit btn btn--primary full-width']) ?>
             </fieldset>

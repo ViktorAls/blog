@@ -43,6 +43,7 @@ class DocumentController extends Controller
      * @throws NotFoundHttpException
      */
     public function actionDownload($file){
+
         $file = urlencode($file);
 
         if (file_exists(Yii::getAlias('@document').'/'.$file)){
