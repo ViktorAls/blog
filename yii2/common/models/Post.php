@@ -15,6 +15,7 @@ use Yii;
  * @property int $type тип записи (1=фото, 2=аудио,3=просто пост)
  * @property string $icon
  * @property int have looked сколько просмотрело
+ * @property Comment comments
  */
 class Post extends \yii\db\ActiveRecord
 {
@@ -77,6 +78,13 @@ class Post extends \yii\db\ActiveRecord
      */
     public function getFile(){
         return $this->hasMany(PostFile::className(),['id_post'=>'id_post']);
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public  function  getComments(){
+        return $this->hasMany(Comment::className(),['id_post'=>'id_post']);
     }
 
 

@@ -22,6 +22,8 @@ use yii\web\NotFoundHttpException;
 class PostsController extends Controller
 {
 
+
+
     /**
      * @param string $id
      * @return string
@@ -30,7 +32,6 @@ class PostsController extends Controller
     public function actionLesson($id)
     {
         $model = $this->postModel($id);
-
         return $this->render('lesson', ['model' => $model]);
     }
 
@@ -41,7 +42,7 @@ class PostsController extends Controller
      */
     protected function postModel($id)
     {
-        if (($model = PostQuery::getOneModel(['id_post'=>$id])) !== null) {
+        if (($model = PostQuery::getOneModel(['id_post' => $id], ['file', 'tags','comments.user'])) !== null) {
             return $model;
         }
         throw new NotFoundHttpException();
@@ -57,7 +58,7 @@ class PostsController extends Controller
         if ($search == 'все записи') {
             $query = PostQuery::getAllByType('type != 2');
         } else {
-            $query = PostQuery::getByTypeLikeTitle('type != 2',$search);
+            $query = PostQuery::getByTypeLikeTitle('type != 2', $search);
         }
         $pagesPosts = PostQuery::getPagesPosts($query);
         return $this->render('category', ['posts' => $pagesPosts[1],
@@ -77,7 +78,7 @@ class PostsController extends Controller
         if ($search == 'все записи') {
             $query = PostQuery::getAllByType('type = 2');
         } else {
-            $query = PostQuery::getByTypeLikeTitle('type = 2',$search);
+            $query = PostQuery::getByTypeLikeTitle('type = 2', $search);
         }
         $pagesPosts = PostQuery::getPagesPosts($query);
         return $this->render('category', ['posts' => $pagesPosts[1],
@@ -108,11 +109,11 @@ class PostsController extends Controller
      * @param string $search
      * @return string
      */
-    public function actionTags($tag,$search='')
+    public function actionTags($tag, $search = '')
     {
-        $category = 'Все лекции. Тег: '.$tag;
-        $query = PostQuery::getLikeTag($tag,$search);
-        $search==''?$search='Все записи':0;
+        $category = 'Все лекции. Тег: ' . $tag;
+        $query = PostQuery::getLikeTag($tag, $search);
+        $search == '' ? $search = 'Все записи' : 0;
         $pages = PostQuery::getPagesPosts($query);
         return $this->render('category', ['posts' => $pages[1],
                 'pages' => $pages[0],
