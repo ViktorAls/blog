@@ -28,7 +28,6 @@ AppAsset::register($this);
 <body id="top">
 <?php $this->beginBody() ?>
 
-
 <!-- pageheader
 ================================================== -->
 <!-- pageheader
@@ -98,13 +97,8 @@ AppAsset::register($this);
     </header> <!-- header -->
 
 </div> <!-- end s-pageheader -->
-
-<?= Breadcrumbs::widget([
-    'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
-]) ?>
-<?= Alert::widget() ?>
+<?= Alert::widget(['options' => ['style'=>'margin-bottom: 0px']]) ?>
 <?= $content ?>
-
 
 <!-- s-extra
 ================================================== -->
