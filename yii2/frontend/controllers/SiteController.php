@@ -1,6 +1,9 @@
 <?php
 namespace frontend\controllers;
 
+use app\models\Article;
+use app\models\Comment;
+use app\models\CommentForm;
 use common\models\LoginForm;
 use common\models\Post;
 use common\models\query\PostQuery;
@@ -10,6 +13,7 @@ use frontend\models\ResetPasswordForm;
 use frontend\models\SignupForm;
 use Yii;
 use yii\base\InvalidParamException;
+use yii\data\ActiveDataProvider;
 use yii\web\BadRequestHttpException;
 use yii\web\Controller;
 
@@ -73,6 +77,15 @@ class SiteController extends Controller
         }
     }
 
+    /**
+     * @return \yii\web\Response
+     */
+    public function actionLogout()
+    {
+        Yii::$app->user->logout();
+
+        return $this->goHome();
+    }
 
     /**
      * Logs in a user.
@@ -177,4 +190,6 @@ class SiteController extends Controller
             'model' => $model,
         ]);
     }
+
+
 }

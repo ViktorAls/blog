@@ -4,11 +4,11 @@
 
 /* @var $content string */
 
-use yii\bootstrap\ActiveForm;
-use yii\helpers\Html;
-use yii\widgets\Breadcrumbs;
-use frontend\assets\AppAsset;
 use common\widgets\Alert;
+use frontend\assets\AppAsset;
+use yii\helpers\Html;
+use yii\helpers\Url;
+use yii\widgets\Breadcrumbs;
 
 $search = Yii::$app->search->SearchAction(Yii::$app->controller->route);
 
@@ -76,7 +76,6 @@ AppAsset::register($this);
                             <li><a href="<?= \yii\helpers\Url::to(['posts/lecture']) ?>">Лекция</a></li>
                         </ul>
                     </li>
-                    <li><a href="style-guide.html" title="">Тесты</a></li>
                     <li><a href="<?= \yii\helpers\Url::to(['site/about']) ?>" title="">О себе</a></li>
                     <li><a href="<?= \yii\helpers\Url::to(['site/contact']) ?>" title="">Обратная связь</a></li>
                     <?php if (Yii::$app->user->isGuest): ?>
@@ -88,6 +87,7 @@ AppAsset::register($this);
                                 <li><a href="<?= \yii\helpers\Url::to(['document/index']) ?>" title="">Тесты</a></li>
                                 <li><a href="<?= \yii\helpers\Url::to(['posts/audio-lecture']) ?>">Результаты тестов</a></li>
                                 <li><a href="<?= \yii\helpers\Url::to(['posts/lecture']) ?>">Настройки профиля</a></li>
+                                <?= Html::a('Выход', Url::to(['site/logout']), ['data-method' => 'POST']) ?>​
                             </ul>
                         </li>
                     <?php endif; ?>

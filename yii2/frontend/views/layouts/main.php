@@ -5,6 +5,7 @@
 /* @var $content string */
 
 use yii\helpers\Html;
+use yii\helpers\Url;
 use yii\widgets\Breadcrumbs;
 use frontend\assets\AppAsset;
 use common\widgets\Alert;
@@ -68,11 +69,20 @@ AppAsset::register($this);
                             <li><a href="<?=\yii\helpers\Url::to(['posts/lecture'])?>">Лекция</a></li>
                         </ul>
                     </li>
-                    <li><a href="style-guide.html" title="">Тесты</a></li>
                     <li><a href="<?=\yii\helpers\Url::to(['site/about'])?>" title="">О себе</a></li>
                     <li><a href="<?=\yii\helpers\Url::to(['site/contact'])?>" title="">Обратная связь</a></li>
-                    <?php if (Yii::$app->user->isGuest):?>
-                        <li><a href="<?=\yii\helpers\Url::to(['site/login'])?>" title="">Вход</a></li>
+                    <?php if (Yii::$app->user->isGuest): ?>
+                        <li><a href="<?= \yii\helpers\Url::to(['site/login']) ?>" title="">Вход</a></li>
+                    <?php else: ?>
+                        <li class="has-children">
+                            <a href="#" title="">Профиль</a>
+                            <ul class="sub-menu">
+                                <li><a href="<?= Url::to(['document/index']) ?>" title="">Тесты</a></li>
+                                <li><a href="<?= Url::to(['posts/audio-lecture']) ?>">Результаты тестов</a></li>
+                                <li><a href="<?= Url::to(['posts/lecture']) ?>">Настройки профиля</a></li>
+                                <li><?= Html::a('Выход', Url::to(['site/logout']), ['data-method' => 'POST'])?></li>​
+                            </ul>
+                        </li>
                     <?php endif; ?>
                 </ul> <!-- end header__nav -->
                 <a href="#0" title="Close Menu" class="header__overlay-close close-mobile-menu">Close</a>
