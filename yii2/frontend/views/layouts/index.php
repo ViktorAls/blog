@@ -86,7 +86,6 @@ AppAsset::register($this);
                                 <li><a href="<?= \yii\helpers\Url::to(['document/index']) ?>" title="">Тесты</a></li>
                                 <li><a href="<?= \yii\helpers\Url::to(['posts/audio-lecture']) ?>">Результаты тестов</a></li>
                                 <li><a href="<?= \yii\helpers\Url::to(['posts/lecture']) ?>">Настройки профиля</a></li>
-                                <li><a href="<?= \yii\helpers\Url::to(['posts/lecture']) ?>">Настройки профиля</a></li>
                                 <li><?= Html::a('Выход', Url::to(['site/logout']), ['data-method' => 'POST']);?>​ </li>
                             </ul>
                         </li>
