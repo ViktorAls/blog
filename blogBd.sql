@@ -27,21 +27,21 @@ CREATE TABLE IF NOT EXISTS `comment` (
   PRIMARY KEY (`id_comment`)
 ) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8;
 
--- Дамп данных таблицы blog.comment: ~14 rows (приблизительно)
+-- Дамп данных таблицы blog.comment: ~15 rows (приблизительно)
 /*!40000 ALTER TABLE `comment` DISABLE KEYS */;
 INSERT INTO `comment` (`id_comment`, `id_post`, `id_parent`, `text`, `created_at`, `id_user`) VALUES
-	(1, 1, 0, 'Первый', '2019-02-02 14:05:28', 1),
+	(1, 1, 0, 'Первый', '2019-02-02 14:05:28', 2),
 	(2, 1, 0, 'Второй', '2019-02-02 14:05:37', 1),
-	(3, 1, 1, '1,3', '2019-02-02 14:08:00', 1),
-	(4, 1, 2, '2,4', '2019-02-02 14:08:12', 1),
+	(3, 1, 1, '1,3', '2019-02-02 14:08:00', 2),
+	(4, 1, 2, '2,4', '2019-02-02 14:08:12', 2),
 	(5, 1, 3, '3,5', '2019-02-02 14:08:23', 1),
 	(6, 1, 4, '4,6', '2019-02-02 14:08:50', 1),
-	(7, 1, 5, '5,7', '2019-02-02 14:20:10', 1),
-	(8, 1, 3, '3,8', '2019-02-02 14:20:11', 1),
-	(9, 1, 2, '2,9', '2019-02-02 14:20:11', 1),
-	(10, 1, 7, '7,10', '2019-02-02 14:27:46', 1),
-	(11, 1, 6, '6,11', '2019-02-02 14:27:57', 1),
-	(12, 1, 7, '7,12', '2019-02-02 14:28:04', 1),
+	(7, 1, 5, '5,7', '2019-02-02 14:20:10', 2),
+	(8, 1, 3, '3,8', '2019-02-02 14:20:11', 2),
+	(9, 1, 2, '2,9', '2019-02-02 14:20:11', 2),
+	(10, 1, 7, '7,10', '2019-02-02 14:27:46', 2),
+	(11, 1, 6, '6,11', '2019-02-02 14:27:57', 2),
+	(12, 1, 7, '7,12', '2019-02-02 14:28:04', 2),
 	(13, 1, 2, '2,13', '2019-02-02 14:43:54', 1),
 	(14, 1, 1, '1,14', '2019-02-02 14:48:09', 1),
 	(15, 1, 4, '4,15', '0000-00-00 00:00:00', 1);
@@ -73,10 +73,12 @@ CREATE TABLE IF NOT EXISTS `group` (
   `id_group` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(50) NOT NULL,
   PRIMARY KEY (`id_group`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 -- Дамп данных таблицы blog.group: ~0 rows (приблизительно)
 /*!40000 ALTER TABLE `group` DISABLE KEYS */;
+INSERT INTO `group` (`id_group`, `name`) VALUES
+	(1, '21-11-26ТП');
 /*!40000 ALTER TABLE `group` ENABLE KEYS */;
 
 -- Дамп структуры для таблица blog.information
@@ -230,7 +232,11 @@ INSERT INTO `tagPost` (`id`, `id_post`, `id_tag`) VALUES
 -- Дамп структуры для таблица blog.user
 CREATE TABLE IF NOT EXISTS `user` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `username` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `middlename` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `patronymic` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `id_group` int(11) NOT NULL DEFAULT '0',
+  `icon` text COLLATE utf8_unicode_ci NOT NULL,
   `auth_key` varchar(32) COLLATE utf8_unicode_ci NOT NULL,
   `password_hash` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `password_reset_token` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
@@ -238,18 +244,17 @@ CREATE TABLE IF NOT EXISTS `user` (
   `status` smallint(6) NOT NULL DEFAULT '10',
   `created_at` int(11) NOT NULL,
   `updated_at` int(11) NOT NULL,
-  `icon` text COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`id`),
-  UNIQUE KEY `username` (`username`),
+  UNIQUE KEY `username` (`name`),
   UNIQUE KEY `email` (`email`),
   UNIQUE KEY `password_reset_token` (`password_reset_token`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- Дамп данных таблицы blog.user: ~2 rows (приблизительно)
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` (`id`, `username`, `auth_key`, `password_hash`, `password_reset_token`, `email`, `status`, `created_at`, `updated_at`, `icon`) VALUES
-	(1, 'admin', 'd6K77igBYRYJ6QmZbwDMCbnvgJ6T-aLy', '$2y$13$lS3jEoOVSqK78XCdMbvyRefm3iLXVNuFxhAAP0XAwbgzFDSgg72QG', NULL, 'vitia14@mail.ru', 10, 1548857663, 1548857663, '/images/avatars/user-03.jpg'),
-	(2, 'admins', 'J3vZUBKegHW2Ic_XBkoUCW9hc3zOYLlL', '$2y$13$ge.o0rV.t.8uSarBTUm2m.VEkDrYfCB7.dTpSZcBdnh0ZB91RbiRW', 'gxsFrI2WiftdLgIFRt75tU2h4fIz4_kD_1549111778', 'vip.viktor98@yandex.ru', 10, 1549041948, 1549111778, '/images/avatars/user-03.jpg');
+INSERT INTO `user` (`id`, `name`, `middlename`, `patronymic`, `id_group`, `icon`, `auth_key`, `password_hash`, `password_reset_token`, `email`, `status`, `created_at`, `updated_at`) VALUES
+	(1, 'Виктор', 'Алексеевич', 'Александрович', 1, '/uploads/user/alex.jpg', 'd6K77igBYRYJ6QmZbwDMCbnvgJ6T-aLy', '$2y$13$lS3jEoOVSqK78XCdMbvyRefm3iLXVNuFxhAAP0XAwbgzFDSgg72QG', NULL, 'vitia14@mail.ru', 10, 1548857663, 1548857663),
+	(2, 'Анастасия', 'Александровна', 'Семёнова', 1, '/uploads/user/semka.jpg', 'J3vZUBKegHW2Ic_XBkoUCW9hc3zOYLlL', '$2y$13$OLBJ8AVo7PK.0p0vXcyBsOjNSae1bAKb3tQlPECJ13seuT4zTysgq', NULL, 'vip.viktor98@yandex.ru', 10, 1549041948, 1549312446);
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
