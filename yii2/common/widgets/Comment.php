@@ -145,8 +145,7 @@ class Comment extends Widget
         }
     }
 
-?>
-
+    
 //        <!-- commentlist -->
 //        <ol class="commentlist">
 //            <li class="comment">
