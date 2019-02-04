@@ -32,6 +32,11 @@ class Comment extends Widget
     public $comments;
 
     /**
+     * @var string
+     */
+    public $formatDate = 'F d, Y';
+
+    /**
      * @param array $comments
      * @return int
      */
@@ -91,16 +96,17 @@ class Comment extends Widget
     }
 
     /**
-     * @param $name
-     * @param $date
+     * @param string $name
+     * @param string $date
      * @return string
      */
     protected function getInfo($name, $date)
     {
+        $dateF = date($this->formatDate,$date);
         $html = Html::beginTag('div', ['class' => 'comment__info']);
         $html .= Html::tag('cite', $name);
         $html .= Html::beginTag('div', ['class' => 'comment__meta']);
-        $html .= Html::tag('time', $date, ['class' => 'comment__time']);
+        $html .= Html::tag('time', $dateF, ['class' => 'comment__time']);
         $html .= Html::a('Ответить', '#', ['class' => 'reply']);
         $html .= Html::endTag('div');
         $html .= Html::endTag('div');
@@ -129,10 +135,11 @@ class Comment extends Widget
         $html = null;
         foreach ($items as $item) {
             if ($item['id_parent'] == $parentId) {
-
                 $html .= Html::beginTag('li', ['class' => 'comment']);
                 $html .= $this->getAvatar($item['user']['icon']);
-                $html .= $this->getContent($item['user']['username'],$item['created_at'],$item['text']);
+                $name = $item['user']['patronymic'].' '.$item['user']['name'].' '.$item['user']['middlename'];
+                $text = Html::encode($item['text']);
+                $html .= $this->getContent($name,$item['created_at'],$text);
                 if ($this->inValue($items,$item['id_comment'])) {
                     $html .= Html::beginTag('ul',['class'=>'children']);
                     $html .= $this->getTree($items, $item['id_comment']);

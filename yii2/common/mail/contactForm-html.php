@@ -3,7 +3,6 @@
 use yii\helpers\Html;
 
 /* @var $this yii\web\View */
-/* @var $user common\models\User */
 
 ?>
 <style type="text/css">
@@ -147,7 +146,8 @@ use yii\helpers\Html;
                                             <td align="left"
                                                 style="padding: 20px 0 0 0; font-size: 16px; line-height: 25px; font-family: Helvetica, Arial, sans-serif; color: #666666;"
                                                 class="padding-copy">С уважением,<?= $name ?>
-                                                <br> Обратная связь:<br><?= $email ?></td>
+                                                <br> Обратная связь: <?= $email ?>
+                                            </td>
                                         </tr>
                                     </table>
                                 </td>
