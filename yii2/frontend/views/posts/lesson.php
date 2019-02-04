@@ -39,8 +39,6 @@ use yii\helpers\Url; ?>
 
     </article>
 
-
-
     <?=\common\widgets\Comment::widget(['comments' => $model['comments']])?>
 
 </section>

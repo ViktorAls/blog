@@ -23,7 +23,6 @@ class PostsController extends Controller
 {
 
 
-
     /**
      * @param string $id
      * @return string
@@ -32,7 +31,6 @@ class PostsController extends Controller
     public function actionLesson($id)
     {
         $model = $this->postModel($id);
-
         return $this->render('lesson', ['model' => $model]);
     }
 
@@ -43,7 +41,14 @@ class PostsController extends Controller
      */
     protected function postModel($id)
     {
-        if (($model = PostQuery::getOneModel(['id_post' => $id], ['file', 'tags','comments.user'])) !== null) {
+        if (($model = PostQuery::getOneModel(['post.id_post' => $id],
+                [
+                    'file', 'tags',
+                    'comments.user' => function ($query) {
+                        $query->select('id,icon,name,middlename,patronymic');
+                    },
+                ]
+            )) !== null) {
             return $model;
         }
         throw new NotFoundHttpException();

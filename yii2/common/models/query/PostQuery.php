@@ -33,11 +33,12 @@ class PostQuery extends Post
 
     /**
      * @param array $where
+     * @param string $select
      * @param array $with
      * @return array
      */
     public static function getOneModel($where,$with = ['file','tags']){
-        return self::find()->where($where)->asArray()->with($with)->one();
+        return self::find()->where($where)->asArray()->With($with)->one();
     }
 
     /**

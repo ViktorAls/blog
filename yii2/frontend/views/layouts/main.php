@@ -205,8 +205,12 @@ AppAsset::register($this);
 <?php $this->endPage() ?>
 
 
-
-
+<style>
+    html{
+        border-color: rgb(160,160,255)
+        color: ;
+    }
+</style>
 
 
 

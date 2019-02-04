@@ -14,18 +14,7 @@ use yii\helpers\Html;
 
 class Comment extends Widget
 {
-    /**
-     * @var string
-     */
-    public $classContainer = 'comments-wrap';
-    /**
-     * @var string
-     */
-    public $classTitleContainer = 'h2';
-    /**
-     * @var string
-     */
-    public $classOl = 'commentlist';
+
     /**
      * @var array
      */
@@ -34,7 +23,36 @@ class Comment extends Widget
     /**
      * @var string
      */
-    public $formatDate = 'F d, Y';
+    public $classContainer = 'comments-wrap';
+    /**
+     * @var string
+     */
+    public $classTitleContainer = 'h2';
+
+    /**
+     * @var string
+     */
+    public $classUlChildren = 'children';
+
+    /**
+     * @var string
+     */
+    public $classLiComment = 'comment';
+
+    /**
+     * @var string
+     */
+    public $classAvatar = 'avatar';
+
+    /**
+     * @var string
+     */
+    public $classOl = 'commentlist';
+
+    /**
+     * @var string
+     */
+    public $formatDate = 'M d, Y @ H:i';
 
     /**
      * @param array $comments
@@ -75,7 +93,7 @@ class Comment extends Widget
     protected function getAvatar($icon)
     {
         $html = Html::beginTag('div', ['class' => 'comment__avatar']);
-        $html .= Html::img($icon, ['width' => '50', 'height' => '50', 'class' => 'avatar']);
+        $html .= Html::img($icon, ['width' => '50', 'height' => '50', 'class' => $this->classAvatar]);
         $html .= Html::endTag('div');
         return $html;
     }
@@ -102,7 +120,7 @@ class Comment extends Widget
      */
     protected function getInfo($name, $date)
     {
-        $dateF = date($this->formatDate,$date);
+        $dateF = date($this->formatDate,strtotime($date));
         $html = Html::beginTag('div', ['class' => 'comment__info']);
         $html .= Html::tag('cite', $name);
         $html .= Html::beginTag('div', ['class' => 'comment__meta']);
@@ -125,23 +143,18 @@ class Comment extends Widget
         return $html;
     }
 
-    /**
-     * @var int
-     */
-    public $parent = 0;
-
     public function getTree($items, $parentId = 0)
     {
         $html = null;
         foreach ($items as $item) {
             if ($item['id_parent'] == $parentId) {
-                $html .= Html::beginTag('li', ['class' => 'comment']);
+                $html .= Html::beginTag('li', ['class' => $this->classLiComment]);
                 $html .= $this->getAvatar($item['user']['icon']);
                 $name = $item['user']['patronymic'].' '.$item['user']['name'].' '.$item['user']['middlename'];
                 $text = Html::encode($item['text']);
                 $html .= $this->getContent($name,$item['created_at'],$text);
-                if ($this->inValue($items,$item['id_comment'])) {
-                    $html .= Html::beginTag('ul',['class'=>'children']);
+                if ($this->isChildren($items,$item['id_comment'])) {
+                    $html .= Html::beginTag('ul',['class'=>$this->classUlChildren,'style'=>"border-left:0.5px solid #6DDFFF;"]);
                     $html .= $this->getTree($items, $item['id_comment']);
                     $html .= Html::endTag('ul');
                 }
@@ -151,7 +164,7 @@ class Comment extends Widget
         return $html;
     }
 
-        public function inValue($items, $values)
+        public function isChildren($items, $values)
         {
             foreach ($items as $value) {
                 if ($value['id_parent'] == $values) {
