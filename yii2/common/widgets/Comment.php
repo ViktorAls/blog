@@ -32,11 +32,9 @@ class Comment extends Widget
     public $comments;
 
     /**
-     * @var array
+     * @param array $comments
+     * @return int
      */
-    private $treeComment;
-
-
     protected function countComment($comments)
     {
         $count = 0;
@@ -65,7 +63,10 @@ class Comment extends Widget
         return $html;
     }
 
-
+    /**
+     * @param $icon
+     * @return string
+     */
     protected function getAvatar($icon)
     {
         $html = Html::beginTag('div', ['class' => 'comment__avatar']);
@@ -74,6 +75,12 @@ class Comment extends Widget
         return $html;
     }
 
+    /**
+     * @param string $name
+     * @param int $date
+     * @param string $text
+     * @return string
+     */
     protected function getContent($name, $date, $text)
     {
         $html = Html::beginTag('div', ['class' => 'comment__content']);
@@ -83,6 +90,11 @@ class Comment extends Widget
         return $html;
     }
 
+    /**
+     * @param $name
+     * @param $date
+     * @return string
+     */
     protected function getInfo($name, $date)
     {
         $html = Html::beginTag('div', ['class' => 'comment__info']);
@@ -95,6 +107,10 @@ class Comment extends Widget
         return $html;
     }
 
+    /**
+     * @param string $text
+     * @return string
+     */
     protected function getText($text)
     {
         $html = Html::beginTag('div', ['class' => 'comment__text']);
@@ -103,32 +119,26 @@ class Comment extends Widget
         return $html;
     }
 
-
-    public $par = 0;
+    /**
+     * @var int
+     */
+    public $parent = 0;
 
     public function getTree($items, $parentId = 0)
     {
         $html = null;
         foreach ($items as $item) {
             if ($item['id_parent'] == $parentId) {
-                if ($item['id_parent'] != $this->par) {
-                    if ($item['id_parent'] != 0)
-                        $html .= html::beginTag('ul', ['class' => 'children']);
-                }
+
                 $html .= Html::beginTag('li', ['class' => 'comment']);
                 $html .= $this->getAvatar($item['user']['icon']);
                 $html .= $this->getContent($item['user']['username'],$item['created_at'],$item['text']);
                 if ($this->inValue($items,$item['id_comment'])) {
+                    $html .= Html::beginTag('ul',['class'=>'children']);
                     $html .= $this->getTree($items, $item['id_comment']);
-                }
-                if ($item['id_parent'] != $this->par) {
-                    if ($item['id_parent'] == 0) {
-                        $html .= html::endTag('ul');
-                    }
-                    $this->par = $item['id_parent'];
+                    $html .= Html::endTag('ul');
                 }
                 $html .= Html::endTag('li');
-
             }
         }
         return $html;
@@ -144,111 +154,3 @@ class Comment extends Widget
             return false;
         }
     }
-
-    
-//        <!-- commentlist -->
-//        <ol class="commentlist">
-//            <li class="comment">
-//                <div class="comment__avatar">
-//                    <img width="50" height="50" class="avatar" src="/images/avatars/user-04.jpg" alt="">
-//                </div>
-//                <div class="comment__content">
-//
-//                    <div class="comment__info">
-//                        <cite>John Doe</cite>
-//
-//                        <div class="comment__meta">
-//                            <time class="comment__time">Dec 16, 2017 @ 24:05</time>
-//                            <a class="reply" href="#0">Reply</a>
-//                        </div>
-//                    </div>
-//
-//                    <div class="comment__text">
-//                        <p>Sumo euismod dissentiunt ne sit, ad eos iudico qualisque adversarium, tota falli et mei. Esse
-//                            euismod
-//                            urbanitas ut sed, et duo scaevola pericula splendide. Primis veritus contentiones nec ad,
-//                            nec et
-//                            tantas semper delicatissimi.</p>
-//                    </div>
-//
-//                </div>
-//                <ul class="children">
-//                    <li class="comment">
-//                        <div class="comment__avatar">
-//                            <img width="50" height="50" class="avatar" src="/images/avatars/user-03.jpg" alt="">
-//                        </div>
-//                        <div class="comment__content">
-//                            <div class="comment__info">
-//                                <cite>Kakashi Hatake</cite>
-//
-//                                <div class="comment__meta">
-//                                    <time class="comment__time">Dec 16, 2017 @ 25:05</time>
-//                                    <a class="reply" href="#0">Reply</a>
-//                                </div>
-//                            </div>
-//                            <div class="comment__text">
-//                                <p>Duis sed odio sit amet nibh vulputate
-//                                    cursus a sit amet mauris. Morbi accumsan ipsum velit. Duis sed odio sit amet nibh
-//                                    vulputate
-//                                    cursus a sit amet mauris</p>
-//                            </div>
-//                        </div>
-//                        <ul class="children">
-//                            <li class=" comment">
-//
-//                                <div class="comment__avatar">
-//                                    <img width="50" height="50" class="avatar" src="/images/avatars/user-04.jpg" alt="">
-//                                </div>
-//
-//                                <div class="comment__content">
-//
-//                                    <div class="comment__info">
-//                                        <cite>John Doe</cite>
-//
-//                                        <div class="comment__meta">
-//                                            <time class="comment__time">Dec 16, 2017 @ 25:15</time>
-//                                            <a class="reply" href="#0">Reply</a>
-//                                        </div>
-//                                    </div>
-//
-//                                    <div class="comment__text">
-//                                        <p>Investigationes demonstraverunt lectores legere me lius quod ii legunt
-//                                            saepius. Claritas est
-//                                            etiam processus dynamicus, qui sequitur mutationem consuetudium
-//                                            lectorum.</p>
-//                                    </div>
-//
-//                                </div>
-//
-//                            </li>
-//                            <li class=" comment">
-//
-//                                <div class="comment__avatar">
-//                                    <img width="50" height="50" class="avatar" src="/images/avatars/user-04.jpg" alt="">
-//                                </div>
-//
-//                                <div class="comment__content">
-//
-//                                    <div class="comment__info">
-//                                        <cite>John Doe</cite>
-//
-//                                        <div class="comment__meta">
-//                                            <time class="comment__time">Dec 16, 2017 @ 25:15</time>
-//                                            <a class="reply" href="#0">Reply</a>
-//                                        </div>
-//                                    </div>
-//
-//                                    <div class="comment__text">
-//                                        <p>Investigationes demonstraverunt lectores legere me lius quod ii legunt
-//                                            saepius. Claritas est
-//                                            etiam processus dynamicus, qui sequitur mutationem consuetudium
-//                                            lectorum.</p>
-//                                    </div>
-//
-//                                </div>
-//                            </li>
-//                        </ul>
-//                    </li>
-//                </ul>
-//            </li>
-//        </ol>

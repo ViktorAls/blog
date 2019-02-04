@@ -18,7 +18,7 @@ $this->title = 'Авторизация';
 
         <?php $form = ActiveForm::begin(['id' => 'login-form']); ?>
 
-        <?= $form->field($model, 'username')->textInput(['autofocus' => true, 'class' => 'full-width'])->label('Логин') ?>
+        <?= $form->field($model, 'email')->textInput(['autofocus' => true, 'class' => 'full-width'])->label('Email') ?>
 
         <?= $form->field($model, 'password')->passwordInput(['class' => 'full-width'])->label('Пароль') ?>
 

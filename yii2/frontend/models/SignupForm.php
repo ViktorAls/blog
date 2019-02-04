@@ -2,14 +2,13 @@
 namespace frontend\models;
 
 use yii\base\Model;
-use common\models\User;
+use frontend\models\User;
 
 /**
  * Signup form
  */
 class SignupForm extends Model
 {
-    public $username;
     public $email;
     public $password;
 
@@ -20,16 +19,11 @@ class SignupForm extends Model
     public function rules()
     {
         return [
-            ['username', 'trim'],
-            ['username', 'required'],
-            ['username', 'unique', 'targetClass' => '\common\models\User', 'message' => 'This username has already been taken.'],
-            ['username', 'string', 'min' => 2, 'max' => 255],
-
             ['email', 'trim'],
             ['email', 'required'],
             ['email', 'email'],
             ['email', 'string', 'max' => 255],
-            ['email', 'unique', 'targetClass' => '\common\models\User', 'message' => 'This email address has already been taken.'],
+            ['email', 'unique', 'targetClass' => '\frontend\models\User', 'message' => 'Этот адрес электронной почты уже занят.'],
 
             ['password', 'required'],
             ['password', 'string', 'min' => 6],
@@ -37,9 +31,8 @@ class SignupForm extends Model
     }
 
     /**
-     * Signs user up.
-     *
-     * @return User|null the saved model or null if saving fails
+     * @return User|null
+     * @throws \yii\base\Exception
      */
     public function signup()
     {
@@ -48,7 +41,6 @@ class SignupForm extends Model
         }
         
         $user = new User();
-        $user->username = $this->username;
         $user->email = $this->email;
         $user->setPassword($this->password);
         $user->generateAuthKey();

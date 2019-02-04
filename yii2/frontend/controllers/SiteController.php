@@ -1,10 +1,8 @@
 <?php
 namespace frontend\controllers;
 
-use app\models\Article;
-use app\models\Comment;
-use app\models\CommentForm;
-use common\models\LoginForm;
+
+use frontend\models\LoginForm;
 use common\models\Post;
 use common\models\query\PostQuery;
 use frontend\models\ContactForm;
@@ -13,7 +11,6 @@ use frontend\models\ResetPasswordForm;
 use frontend\models\SignupForm;
 use Yii;
 use yii\base\InvalidParamException;
-use yii\data\ActiveDataProvider;
 use yii\web\BadRequestHttpException;
 use yii\web\Controller;
 
@@ -150,6 +147,7 @@ class SiteController extends Controller
      * @param string $token
      * @return mixed
      * @throws BadRequestHttpException
+     * @throws \yii\base\Exception
      */
     public function actionResetPassword($token)
     {
@@ -172,8 +170,8 @@ class SiteController extends Controller
 
     /**
      * Signs user up.
-     *
      * @return mixed
+     * @throws \yii\base\Exception
      */
     public function actionSignup()
     {
