@@ -32,6 +32,7 @@ class PostsController extends Controller
     public function actionLesson($id)
     {
         $model = $this->postModel($id);
+
         return $this->render('lesson', ['model' => $model]);
     }
 
