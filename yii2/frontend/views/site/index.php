@@ -1,4 +1,4 @@
-<? $this->title = 'Главная страница';
+<?php $this->title = 'Главная страница';
 
 /**
  * @var array $posts

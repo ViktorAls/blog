@@ -84,9 +84,10 @@ AppAsset::register($this);
                             <a href="#" title="">Профиль</a>
                             <ul class="sub-menu">
                                 <li><a href="<?= \yii\helpers\Url::to(['document/index']) ?>" title="">Тесты</a></li>
-                                <li><a href="<?= \yii\helpers\Url::to(['posts/audio-lecture']) ?>">Результаты тестов</a></li>
-                                <li><a href="<?= \yii\helpers\Url::to(['posts/lecture']) ?>">Настройки профиля</a></li>
-                                <li><?= Html::a('Выход', Url::to(['site/logout']), ['data-method' => 'POST']);?>​ </li>
+                                <li><a href="<?= \yii\helpers\Url::to(['posts/audio-lecture']) ?>">Результаты тестов</a>
+                                </li>
+                                <li><a href="#" class="modalAjaxProfile">Настройки профиля</a></li>
+                                <li><?= Html::a('Выход', Url::to(['site/logout']), ['data-method' => 'POST']); ?>​</li>
                             </ul>
                         </li>
                     <?php endif; ?>
@@ -97,7 +98,7 @@ AppAsset::register($this);
     </header> <!-- header -->
 
 </div> <!-- end s-pageheader -->
-<?= Alert::widget(['options' => ['style'=>'margin-bottom: 0px']]) ?>
+<?= Alert::widget(['options' => ['style' => 'margin-bottom: 0px']]) ?>
 <?= $content ?>
 
 <!-- s-extra
@@ -153,7 +154,6 @@ AppAsset::register($this);
                     <span>© Copyright Philosophy 2018</span>
                     <span>Site Template by <a href="https://colorlib.com/">Colorlib</a></span>
                 </div>
-
                 <div class="go-top">
                     <a class="smoothscroll" title="Back to Top" href="#top"></a>
                 </div>
@@ -177,10 +177,37 @@ AppAsset::register($this);
         </div>
     </div>
 </div>
+
+<div id="modal-info" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" style="height: 0;     margin-top: 6px;" data-dismiss="modal"
+                        aria-hidden="true">×
+                </button>
+                <h4 class="modal-title">Настройки профиля</h4>
+            </div>
+            <div class="modal-body">
+                <img src="/images/load.gif" alt="">
+
+            </div>
+            <div class="modal-footer">
+                <p>Тут вы можите сменить аватарку и </p>
+            </div>
+        </div>
+    </div>
+</div>
+<!--Конец модального окна-->
+<?php $this->registerJs("
+$('.modalAjaxProfile').on('click',function(){
+$('#modal-info').modal('show');
+$('#modal-info').find('.modal-body').load('" . Url::to('/user/settings') . "');
+})"); ?>
 <?php $this->endBody() ?>
+
+
 <!--Настройки пагинации-->
 <script>
-
     $(window).on('load', function () {
         $('li.pgn__prev')
             .find('a.pgn__num')

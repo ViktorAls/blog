@@ -79,7 +79,7 @@ AppAsset::register($this);
                             <ul class="sub-menu">
                                 <li><a href="<?= Url::to(['document/index']) ?>" title="">Тесты</a></li>
                                 <li><a href="<?= Url::to(['posts/audio-lecture']) ?>">Результаты тестов</a></li>
-                                <li><a href="<?= Url::to(['posts/lecture']) ?>">Настройки профиля</a></li>
+                                <li><a href="#" class="modalAjaxProfile">Настройки профиля</a></li>
                                 <li><?= Html::a('Выход', Url::to(['site/logout']), ['data-method' => 'POST'])?></li>​
                             </ul>
                         </li>
@@ -174,7 +174,32 @@ AppAsset::register($this);
         </div>
     </div>
 </div>
+<div id="modal-info" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" style="height: 0;     margin-top: 6px;" data-dismiss="modal"
+                        aria-hidden="true">×
+                </button>
+                <h4 class="modal-title">Настройки профиля</h4>
+            </div>
+            <div class="modal-body">
+                <img src="/images/load.gif" alt="">
 
+            </div>
+            <div class="modal-footer">
+                <p>Тут вы можите сменить аватарку и </p>
+            </div>
+        </div>
+    </div>
+</div>
+<!--Конец модального окна-->
+<?php $this->registerJs("
+$('.modalAjaxProfile').on('click',function(){
+$('#modal-info').modal('show');
+$('#modal-info').find('.modal-body').load('" . Url::to('/user/settings') . "');
+})"); ?>
+<?php $this->endBody() ?>
 
 <?php $this->endBody() ?>
 <!--Настройки пагинации-->

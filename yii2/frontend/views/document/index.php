@@ -24,7 +24,7 @@ $this->title = $searchParams;
 
     <div class="grid-sizer"></div>
 
-    <? if ($documents != null): ?>
+    <?php if ($documents != null): ?>
         <?php foreach ($documents as $key => $document): ?>
             <?= \common\widgets\articleDocument::widget([
                 'title' => $document['name'],
@@ -35,7 +35,7 @@ $this->title = $searchParams;
                 'tags' => $document['tags'],
             ]); ?>
         <?php endforeach; ?>
-    <? endif; ?>
+    <?php endif; ?>
     <!--    Пагинация-->
     <div class="row">
         <div class="col-full">

@@ -37,7 +37,7 @@
         <span class="tage"><span class="tage_document">Теги документа</span>
             <?php foreach ($tags as $tag): ?>
                 <a href="<?=\yii\helpers\Url::current(['tag'=>$tag['name']])?>"><?= $tag['name'] ?></a>
-            <? endforeach; ?>
+            <?php endforeach; ?>
         </span>
     </div>
 </article>
