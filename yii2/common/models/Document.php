@@ -8,6 +8,7 @@ use Yii;
  * This is the model class for table "document".
  *
  * @property int $id_document
+ * @property int $id_lesson
  * @property string $name
  * @property string $href
  * @property string $description

@@ -37,8 +37,8 @@ class DocumentQuery extends Document
      * @param string $search
      * @return \yii\db\ActiveQuery
      */
-    public static function getLikeTitle($search,$tag){
-        return self::find()->andWhere(['like', 'document.name', $search])
+    public static function getLikeTitle($search,$tag,$lesson){
+        return self::find()->andWhere(['like', 'document.name', $search])->andWhere(['document.id_lesson'=>$lesson])
             ->joinWith('tags')->andWhere(['like','tag.name',$tag]);
     }
 

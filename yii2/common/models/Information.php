@@ -10,6 +10,7 @@ use Yii;
  * @property int $id_information
  * @property string $name
  * @property string $value
+ * @property string $comment
  */
 class Information extends \yii\db\ActiveRecord
 {
@@ -28,7 +29,7 @@ class Information extends \yii\db\ActiveRecord
     {
         return [
             [['name', 'value'], 'required'],
-            [['value'], 'string'],
+            [['value','comment'], 'string'],
             [['name'], 'string', 'max' => 200],
             [['name'], 'unique'],
         ];

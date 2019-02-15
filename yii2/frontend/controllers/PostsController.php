@@ -103,10 +103,13 @@ class PostsController extends Controller
         $category = 'Все типы лекций.';
         $query = PostQuery::getModelLikeTitle($search);
         $pagesPosts = PostQuery::getPagesPosts($query);
-        return $this->render('category', ['posts' => $pagesPosts[1],
+        return $this->render('category',
+            [
+                'posts' => $pagesPosts[1],
                 'pages' => $pagesPosts[0],
                 'category' => $category,
-                'params' => $search]
+                'params' => $search
+            ]
         );
     }
 

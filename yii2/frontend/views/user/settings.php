@@ -1,35 +1,48 @@
 <?php
 
 use kartik\file\FileInput;
+use yii\helpers\Html;
+use yii\widgets\ActiveForm;
 
 ?>
+
+<style>
+    .icon-profil img{
+        display: block;
+        width: 100%;
+        height: 270px;
+        object-fit:scale-down;
+    }
+</style>
 <div class="row">
-    <div class="col-md-4">jkl</div>
-    <div class="col-md-6">
-        <?php
-
-        echo FileInput::widget([
-            'name' => 'attachment_49[]',
-            'options'=>[
-                'multiple'=>е
-            ],
-            'showMessage' => false,
+    <div class="col-md-7">
+        <div class="col-md-12 text-center"><b><?=$user['middlename']?> <?=$user['name']?> <?=$user['patronymic']?></b></div>
+        <div class="col-md-12">
+            <div class="icon-profil">
+            <?=Html::img(\yii\helpers\Url::home(true).'/uploads/user/'.$user['icon'])?>
+            </div>
+        </div>
+        <div class="col-md-6"><b>Группа:</b> <?=$user['group']['name']?></div>
+    </div>
+    <div class="col-md-5">
+        <?php $form = ActiveForm::begin(); ?>
+        <?= $form->field($model, 'file')->widget(FileInput::classname(), [
+            'options' => ['accept' => 'image/*'],
+            'resizeImages' => true,
             'pluginOptions' => [
-                'initialPreview'=>[
-                    "http://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/FullMoon2010.jpg/631px-FullMoon2010.jpg",
-                    "http://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Earth_Eastern_Hemisphere.jpg/600px-Earth_Eastern_Hemisphere.jpg"
-                ],
-                'initialPreviewAsData'=>true,
-                'initialCaption'=>"The Moon and the Earth",
-                'initialPreviewConfig' => [
-                    ['caption' => 'Moon.jpg', 'size' => '873727'],
-                    ['caption' => 'Earth.jpg', 'size' => '1287883'],
-                ],
-                'overwriteInitial'=>false,
-                'maxFileSize'=>2800
-            ]
-        ]);
-
-        ?>
+                'browseClass' => 'btn btn-primary btn-block' ,
+                'initialPreviewAsData' => true,
+                'overwriteInitial' => false,
+                'initialPreviewConfig' => 'Аватарка пользователя',
+                'showPreview' => true,
+                'showCaption' => false,
+                'showRemove' => false,
+                'showUpload' => false,
+                'dropZoneTitle' => '',
+            ],
+        ])->label('Аватарка'); ?>
+        <?=\yii\helpers\Html::submitButton('Изменить фотографию',['class'=>'btn-block btn-mini'])?>
+        <?php $form = ActiveForm::end(); ?>
     </div>
 </div>
+

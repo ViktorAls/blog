@@ -155,6 +155,11 @@
     height: 2.4rem;
     line-height: 2.1rem;
 }
+.modal-body_img{
+    display: block;
+    width: auto;
+    margin: 0 auto;
+}
 @media only screen and (max-width:1000px) {
     .btn_donov{
         width: 100%

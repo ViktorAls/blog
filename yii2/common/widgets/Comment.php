@@ -11,6 +11,7 @@ namespace common\widgets;
 
 use yii\base\Widget;
 use yii\helpers\Html;
+use yii\helpers\Url;
 
 class Comment extends Widget
 {
@@ -54,6 +55,8 @@ class Comment extends Widget
      */
     public $formatDate = 'M d, Y @ H:i';
 
+    public $pathIcon = 'uploads/user/';
+
     /**
      * @param array $comments
      * @return int
@@ -92,6 +95,7 @@ class Comment extends Widget
      */
     protected function getAvatar($icon)
     {
+        $icon = Url::home(true).$this->pathIcon.$icon;
         $html = Html::beginTag('div', ['class' => 'comment__avatar']);
         $html .= Html::img($icon, ['width' => '50', 'height' => '50', 'class' => $this->classAvatar]);
         $html .= Html::endTag('div');

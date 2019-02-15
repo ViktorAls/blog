@@ -1,6 +1,7 @@
 <?php
 namespace frontend\models;
 
+use common\models\Group;
 use Yii;
 use yii\base\NotSupportedException;
 use yii\behaviors\TimestampBehavior;
@@ -11,6 +12,11 @@ use yii\web\IdentityInterface;
  * User model
  *
  * @property integer $id
+ * @property string $name
+ * @property string $middlename
+ * @property string $patronymic
+ * @property string $icon
+ * @property integer $id_group
  * @property string $password_hash
  * @property string $password_reset_token
  * @property string $email
@@ -188,4 +194,12 @@ class User extends ActiveRecord implements IdentityInterface
     {
         $this->password_reset_token = null;
     }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getGroup(){
+        return $this->hasOne(Group::className(),['id_group'=>'id_group']);
+    }
+
 }

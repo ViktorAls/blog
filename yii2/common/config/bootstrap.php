@@ -5,5 +5,7 @@ Yii::setAlias('@backend', dirname(dirname(__DIR__)) . '/backend');
 Yii::setAlias('@console', dirname(dirname(__DIR__)) . '/console');
 Yii::setAlias('@iconDocument', dirname(dirname(dirname(__DIR__))) . '/public_html/uploads/iconDocument');
 Yii::setAlias('@document', dirname(dirname(dirname(__DIR__))) . '/public_html/uploads/Documents');
+Yii::setAlias('@user', dirname(dirname(dirname(__DIR__))) . '/public_html/uploads/user');
+
 
 

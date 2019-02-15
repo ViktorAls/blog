@@ -10,6 +10,7 @@ namespace frontend\controllers;
 
 
 use common\models\query\DocumentQuery;
+use common\models\query\LessonQuery;
 use frontend\models\User;
 use Yii;
 use yii\helpers\Url;
@@ -20,16 +21,17 @@ use yii\web\NotFoundHttpException;
 class DocumentController extends Controller
 {
 
-    public function actionIndex($search = '', $tag = '')
+    public function actionIndex($lesson = 0,$search = '', $tag = '')
     {
-        if ($search === '' && $tag === '') {
+        if ($search === '' && $tag === '' && $lesson <= 0) {
             $query = DocumentQuery::getAll();
         } else {
-            $query = DocumentQuery::getLikeTitle($search, $tag);
+            $query = DocumentQuery::getLikeTitle($search, $tag,$lesson);
         }
-        $searchParams = $search === '' ? '' : ' Название документа: ' . $search . '. ';
-        $searchParams .= $tag === '' ? '' : ' Тег: ' . $tag;
-        $searchParams = $searchParams === '' ? ' Все документы ' : $searchParams . '. ';
+        $searchParams = $lesson <= 0 ? '' : 'Предмет: '.LessonQuery::title($lesson).'.';
+        $searchParams .= $search === '' ? '' : ' Название документа: ' . $search . '. ';
+        $searchParams .= $tag === '' ? '' : ' Тег: ' . $tag.'.';
+        $searchParams = $searchParams === '' ? ' Все документы ' : $searchParams;
         $pagesDocument = DocumentQuery::getPagesDocument($query);
         return $this->render('index', [
                 'documents' => $pagesDocument[1],

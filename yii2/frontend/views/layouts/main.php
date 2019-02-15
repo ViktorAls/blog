@@ -31,64 +31,7 @@ AppAsset::register($this);
 ================================================== -->
 <section class="s-pageheader s-pageheader--home">
 
-    <header class="header">
-        <div class="header__content row">
-            <div class="header__logo">
-                <a class="logo" href="<?= \yii\helpers\Url::home(true) ?>">
-                    <?= Yii::$app->name ?>
-                </a>
-            </div>
-            <?php if ($this->beginCache('connection', ['duration' => 3600])): ?>
-                <?= \common\widgets\Connection::widget() ?>
-                <?php $this->endCache(); ?>
-            <?php endif; ?>
-
-            <a class="header__search-trigger" href="#0"></a>
-            <div class="header__search">
-                <form role="search" method="get" class="header__search-form" action="#">
-                    <label>
-                        <span class="hide-content">Искать урок:</span>
-                        <input type="search" class="search-field" placeholder="Введите ключ для поиска" value=""
-                               name="search"
-                               title="Search for:" autocomplete="off">
-                    </label>
-                    <input type="submit" class="search-submit" value="Search">
-                </form>
-                <a href="#0" title="Close Search" class="header__overlay-close">Закрыть</a>
-            </div>
-            <a class="header__toggle-menu" href="#0" title="Menu"><span>Меню</span></a>
-            <nav class="header__nav-wrap">
-                <h2 class="header__nav-heading h6">Навигация</h2>
-                <ul class="header__nav">
-                    <li class="current"><a href="<?=\yii\helpers\Url::home(true)?>" title="">Главная</a></li>
-                    <li class="has-children">
-                        <a href="#" title="">Категории</a>
-                        <ul class="sub-menu">
-                            <li><a href="<?=\yii\helpers\Url::to(['document/index'])?>" title="">Документы</a></li>
-                            <li><a href="<?=\yii\helpers\Url::to(['posts/audio-lecture'])?>">Аудио лекции</a></li>
-                            <li><a href="<?=\yii\helpers\Url::to(['posts/lecture'])?>">Лекция</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="<?=\yii\helpers\Url::to(['site/about'])?>" title="">О себе</a></li>
-                    <li><a href="<?=\yii\helpers\Url::to(['site/contact'])?>" title="">Обратная связь</a></li>
-                    <?php if (Yii::$app->user->isGuest): ?>
-                        <li><a href="<?= \yii\helpers\Url::to(['site/login']) ?>" title="">Вход</a></li>
-                    <?php else: ?>
-                        <li class="has-children">
-                            <a href="#" title="">Профиль</a>
-                            <ul class="sub-menu">
-                                <li><a href="<?= Url::to(['document/index']) ?>" title="">Тесты</a></li>
-                                <li><a href="<?= Url::to(['posts/audio-lecture']) ?>">Результаты тестов</a></li>
-                                <li><a href="#" class="modalAjaxProfile">Настройки профиля</a></li>
-                                <li><?= Html::a('Выход', Url::to(['site/logout']), ['data-method' => 'POST'])?></li>​
-                            </ul>
-                        </li>
-                    <?php endif; ?>
-                </ul> <!-- end header__nav -->
-                <a href="#0" title="Close Menu" class="header__overlay-close close-mobile-menu">Close</a>
-            </nav>
-        </div> <!-- header-content -->
-    </header>
+    <?=\common\widgets\Header::widget()?>
 
     <?= \common\widgets\Selected::widget() ?>
 </section> <!-- end s-pageheader -->
@@ -175,7 +118,7 @@ AppAsset::register($this);
     </div>
 </div>
 <div id="modal-info" class="modal fade">
-    <div class="modal-dialog">
+    <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" style="height: 0;     margin-top: 6px;" data-dismiss="modal"
@@ -184,12 +127,10 @@ AppAsset::register($this);
                 <h4 class="modal-title">Настройки профиля</h4>
             </div>
             <div class="modal-body">
-                <img src="/images/load.gif" alt="">
+                <img src="/images/load.gif" class="modal-body_img" alt="">
 
             </div>
-            <div class="modal-footer">
-                <p>Тут вы можите сменить аватарку и </p>
-            </div>
+
         </div>
     </div>
 </div>
