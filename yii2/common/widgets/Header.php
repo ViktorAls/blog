@@ -12,6 +12,7 @@ namespace common\widgets;
 use common\models\query\LessonQuery;
 use yii\base\Widget;
 use yii\helpers\Html;
+use yii\helpers\Url;
 
 class Header extends Widget
 {
@@ -33,25 +34,26 @@ class Header extends Widget
 
     public function run()
     {
+        $lessons = LessonQuery::getLesson();
         return $this->render('header', [
-                'logoName'=>$this->logoName,
-                'urlLogo'=>$this->urlLogo,
-                'liDocument'=>$this->liDocument(),
-                'connectionWidget'=>$this->connectionWidget,
+                'logoName' => $this->logoName,
+                'urlLogo' => $this->urlLogo,
+                'liDocument' => $this->getLi($lessons,Url::to(['document/index'])),
+                'liAudioLecture' => $this->getLi($lessons,Url::to(['posts/audio-lecture'])),
+                'liLecture' => $this->getLi($lessons,Url::to(['posts/lecture'])),
+                'connectionWidget' => $this->connectionWidget,
             ]
         );
     }
 
-    public function liDocument()
+    public function getLi($lessons,$url)
     {
-        $html=null;
-        $documents = LessonQuery::headerDocument();
-        foreach ($documents as $document) {
+        $html = null;
+        foreach ($lessons as $lesson) {
             $html .= Html::beginTag('li');
-            $html .= Html::a($document['title'],$document['url']);
+            $html .= Html::a($lesson['name'],Url::to([$url,'lesson'=>$lesson['id_lesson']]));
             $html .= Html::endTag('li');
         }
         return $html;
     }
-
 }

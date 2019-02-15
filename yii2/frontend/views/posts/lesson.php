@@ -16,9 +16,9 @@ use yii\helpers\Url; ?>
             </ul>
         </div>
 
-        <?php if ($model['type'] != 2): ?>
+        <?php if ($model['type'] !== 2): ?>
             <?= \common\widgets\PhotoPost::widget(['data'=>$model['file'],'icon'=>$model['icon']]);?>
-        <?php elseif ($model['type'] == 2): ?>
+        <?php elseif ($model['type'] === 2): ?>
             <?= \common\widgets\AudioPost::widget(['data'=>$model['file'], 'icon'=>$model['icon']]) ?>
         <?php endif; ?>
 

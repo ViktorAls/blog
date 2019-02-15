@@ -28,7 +28,7 @@ class DocumentController extends Controller
         } else {
             $query = DocumentQuery::getLikeTitle($search, $tag,$lesson);
         }
-        $searchParams = $lesson <= 0 ? '' : 'Предмет: '.LessonQuery::title($lesson).'.';
+        $searchParams = $lesson <= 0 ? '' : 'Предмет: '.LessonQuery::getTitle($lesson).'.';
         $searchParams .= $search === '' ? '' : ' Название документа: ' . $search . '. ';
         $searchParams .= $tag === '' ? '' : ' Тег: ' . $tag.'.';
         $searchParams = $searchParams === '' ? ' Все документы ' : $searchParams;

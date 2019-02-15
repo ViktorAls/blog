@@ -5,10 +5,11 @@
  * @var string $urlLogo
  * @var string $logoName
  * @var string $liDocument
+ * @var string $liAudioLecture
+ * @var string $liLecture
  */
 $search = Yii::$app->search->SearchAction(Yii::$app->controller->route);
 
-use kartik\popover\PopoverX;
 use yii\helpers\Html;
 
 ?>
@@ -21,10 +22,7 @@ use yii\helpers\Html;
             </a>
         </div>
         <?php if ($connectionWidget === true): ?>
-            <?php if ($this->beginCache('connection', ['duration' => 3600 * 12])): ?>
                 <?= \common\widgets\Connection::widget() ?>
-                <?php $this->endCache(); ?>
-            <?php endif; ?>
         <?php endif; ?>
 
         <a class="header__search-trigger" href="#0"></a>
@@ -51,9 +49,20 @@ use yii\helpers\Html;
                 <li class="has-children">
                     <a href="#" title="">Лекции</a>
                     <ul class="sub-menu">
-                        <li><a href="<?= \yii\helpers\Url::to(['posts/audio-lecture']) ?>">Аудио лекции</a></li>
-                        <li><a href="<?= \yii\helpers\Url::to(['posts/lecture']) ?>">Лекция</a></li>
-
+                        <li class="has-children">
+                            <a href="#" title="">Аудио лекции</a>
+                            <ul class="sub-menu">
+                                <?=$liAudioLecture?>
+                                <li><a href="<?= \yii\helpers\Url::to(['posts/audio-lecture']) ?>" title="">Все аудио лекции</a></li>
+                            </ul>
+                        </li>
+                        <li class="has-children">
+                            <a href="#" title="">Лекции</a>
+                            <ul class="sub-menu">
+                                <?=$liLecture?>
+                                <li><a href="<?= \yii\helpers\Url::to(['posts/lecture']) ?>" title="">Все лекции</a></li>
+                            </ul>
+                        </li>
                     </ul>
                 </li>
                 <li class="has-children">

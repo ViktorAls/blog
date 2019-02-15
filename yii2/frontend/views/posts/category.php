@@ -4,6 +4,7 @@
  * @var string $category
  * @var array $posts
  * @var Pagination $pages
+ * @var string $section
  */
 
 use yii\data\Pagination;
@@ -13,10 +14,10 @@ $this->title = $category;
 
     <div class="row narrow">
         <div class="col-full s-content__header" data-aos="fade-up">
-            <h1>Категория: <?= $category ?></h1>
+            <h1>Раздел: <?= $section ?></h1>
 
-            <p class="lead">Сейчас вы находитесь в разделе "<?=$category?>". Вы можете осуществить поиск, кликнув в
-                правом верхнем углу слово "Search". <br> Текущий запрос для поиска: <?= $params ?>.</p>
+            <p class="lead">Сейчас вы находитесь в разделе "<?=$section?>". Вы можете осуществить поиск, кликнув в
+                правом верхнем углу слово "Search". <br> Текущий запрос для поиска: <?= $category ?>.</p>
         </div>
     </div>
 
@@ -24,7 +25,7 @@ $this->title = $category;
         <div class="masonry">
 
             <div class="grid-sizer"></div>
-            <?php if ($posts != null): ?>
+            <?php if (!empty($posts)): ?>
                 <?php foreach ($posts as $key => $post): ?>
                     <?= common\widgets\ArticlePost::widget([
                         'title'=>$post['title'],

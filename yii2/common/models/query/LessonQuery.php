@@ -10,29 +10,23 @@ namespace common\models\query;
 
 
 use common\models\Lesson;
-use yii\helpers\Url;
 
 class LessonQuery extends Lesson
 {
 
     /**
-     * @return array
+     * @return array|DocumentQuery[]|LessonQuery[]|\yii\db\ActiveRecord[]
      */
-    public static function headerDocument()
+    public static function getLesson()
     {
-        $lessons = self::find()->asArray()->all();
-        $lessonArray = [];
-        foreach ($lessons as $lesson) {
-            $lessonArray[] = ['title' => $lesson['name'], 'url' => Url::to(['document/index', 'lesson' => $lesson['id_lesson']])];
-        }
-        return $lessonArray;
+        return self::find()->asArray()->all();
     }
 
     /**
-     * @param $id
+     * @param int $id
      * @return string
      */
-    public static function title($id){
+    public static function getTitle($id){
         return self::find()->where(['id_lesson'=>$id])->asArray()->one()['name'];
     }
 }

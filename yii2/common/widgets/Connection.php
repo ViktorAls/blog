@@ -12,6 +12,7 @@ namespace common\widgets;
 use common\models\Information;
 use common\models\query\InformationQuery;
 use kartik\popover\PopoverX;
+use Yii;
 use yii\base\Widget;
 use yii\helpers\Html;
 
@@ -30,7 +31,12 @@ class Connection extends Widget
     public function run()
     {
         $html = '';
-        $connection = InformationQuery::getMessenger();
+        $connection = Yii::$app->cache->get('connection');
+        if ($connection === false){
+            $connection = InformationQuery::getMessenger();
+            Yii::$app->cache->set('connection', $connection, 3600);
+        }
+
         $html .= html::beginTag('ul',['class'=>$this->ulClass]);
         $html .= $this->getLi('ВКонтакте',$connection['vkontakte']['value'],'fab fa-vk');
         $html .= $this->getLi('Mail почта',$connection['mail']['value'],'fas fa-at');
@@ -50,10 +56,10 @@ class Connection extends Widget
         $html='';
         $html .= Html::beginTag('li');
         $html .= PopoverX::widget([
-            'header' => $title,
+            'header' => $title.'____',
             'placement' => PopoverX::ALIGN_RIGHT,
             'content' => $content,
-            'closeButton'=>['tag'=>'a'],
+            'closeButton' => ['tag'=>'a'],
             'toggleButton' => [
                 'label' => '<i class="'.$iClass.'" aria-hidden="true"></i>',
                 'tag' => 'a',

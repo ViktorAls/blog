@@ -10,6 +10,7 @@ namespace frontend\controllers;
 
 
 use common\models\Post;
+use common\models\query\LessonQuery;
 use common\models\query\PostQuery;
 use yii\web\Controller;
 use yii\web\HttpException;
@@ -48,7 +49,7 @@ class PostsController extends Controller
                         $query->select('id,icon,name,middlename,patronymic');
                     },
                 ]
-            )) !== null) {
+            ))!==null) {
             return $model;
         }
         throw new NotFoundHttpException();
@@ -56,41 +57,49 @@ class PostsController extends Controller
 
     /**
      * @param string $search
+     * @param int $lesson
      * @return string
      */
-    public function actionLecture($search = 'все записи')
+    public function actionLecture($search = '', $lesson = 0)
     {
-        $category = 'Лекции';
-        if ($search == 'все записи') {
+        if ($search==='' && $lesson === 0) {
             $query = PostQuery::getAllByType('type != 2');
         } else {
-            $query = PostQuery::getByTypeLikeTitle('type != 2', $search);
+            $query = PostQuery::getByTypeLikeTitle('type != 2', $search, $lesson);
         }
+        $category = $search==='' ? '' : 'Заголовок:' . $search.'. ';
+        $category .= $lesson === ''?'': 'Лекция: '. LessonQuery::getTitle($lesson).'. ';
+        $category = $category === ''? 'Все записи.':$category;
         $pagesPosts = PostQuery::getPagesPosts($query);
         return $this->render('category', ['posts' => $pagesPosts[1],
                 'pages' => $pagesPosts[0],
                 'category' => $category,
-                'params' => $search]
+                'section' => 'Аудио лекции',
+            ]
         );
     }
 
     /**
      * @param string $search
+     * @param int $lesson
      * @return string
      */
-    public function actionAudioLecture($search = 'все записи')
+    public function actionAudioLecture($search = '', $lesson = 0)
     {
-        $category = 'Аудио лекции';
-        if ($search == 'все записи') {
+        if ($search==='') {
             $query = PostQuery::getAllByType('type = 2');
         } else {
-            $query = PostQuery::getByTypeLikeTitle('type = 2', $search);
+            $query = PostQuery::getByTypeLikeTitle('type = 2', $search, $lesson);
         }
+        $category = $search==='' ? '' : 'Заголовок:' . $search.'. ';
+        $category .= $lesson === ''?'': 'Лекция: '. LessonQuery::getTitle($lesson).'. ';
+        $category = $category === ''? 'Все записи.':$category;
         $pagesPosts = PostQuery::getPagesPosts($query);
         return $this->render('category', ['posts' => $pagesPosts[1],
                 'pages' => $pagesPosts[0],
                 'category' => $category,
-                'params' => $search]
+                'section' => 'Аудио лекции',
+            ]
         );
     }
 
@@ -122,7 +131,7 @@ class PostsController extends Controller
     {
         $category = 'Все лекции. Тег: ' . $tag;
         $query = PostQuery::getLikeTag($tag, $search);
-        $search == '' ? $search = 'Все записи' : 0;
+        $search==='' ? $search = 'Все записи' : 0;
         $pages = PostQuery::getPagesPosts($query);
         return $this->render('category', ['posts' => $pages[1],
                 'pages' => $pages[0],

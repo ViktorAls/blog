@@ -54,8 +54,8 @@ class PostQuery extends Post
      * @param string $search
      * @return \yii\db\ActiveQuery
      */
-    public static function getByTypeLikeTitle($condition,$search){
-        return self::find()->where($condition)->andWhere(['like', 'title', $search]);
+    public static function getByTypeLikeTitle($condition,$search,$lesson){
+        return self::find()->where($condition)->andWhere(['like', 'title', $search])->andWhere(['id_lesson'=>$lesson]);
     }
 
     /**
