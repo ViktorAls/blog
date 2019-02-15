@@ -31,7 +31,7 @@ AppAsset::register($this);
 ================================================== -->
 <section class="s-pageheader s-pageheader--home">
 
-    <?=\common\widgets\Header::widget()?>
+    <?=\common\widgets\Header::widget(['logoName' => Yii::$app->name ])?>
 
     <?= \common\widgets\Selected::widget() ?>
 </section> <!-- end s-pageheader -->

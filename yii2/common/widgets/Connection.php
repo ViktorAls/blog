@@ -11,6 +11,7 @@ namespace common\widgets;
 
 use common\models\Information;
 use common\models\query\InformationQuery;
+use kartik\popover\PopoverX;
 use yii\base\Widget;
 use yii\helpers\Html;
 
@@ -24,32 +25,42 @@ class Connection extends Widget
 
     /**
      * @return string
+     * @throws \Exception
      */
     public function run()
     {
         $html = '';
         $connection = InformationQuery::getMessenger();
         $html .= html::beginTag('ul',['class'=>$this->ulClass]);
-        $html .= $this->getLi($connection['vkontakte']['value'],'fab fa-vk');
-        $html .= $this->getLi($connection['mail']['value'],'fas fa-at');
-        $html .= $this->getLi($connection['facebook']['value'],'fab fa-facebook-f');
+        $html .= $this->getLi('ВКонтакте',$connection['vkontakte']['value'],'fab fa-vk');
+        $html .= $this->getLi('Mail почта',$connection['mail']['value'],'fas fa-at');
+        $html .= $this->getLi('Facebook',$connection['facebook']['value'],'fab fa-facebook-f');
         $html .= Html::endTag('ul');
         return $html;
     }
 
     /**
-     * @param string $href
+     * @param $title
      * @param string $iClass
+     * @param string $content
      * @return string
+     * @throws \Exception
      */
-    public function getLi($href,$iClass){
+    public function getLi($title,$content,$iClass){
         $html='';
         $html .= Html::beginTag('li');
-        $html .= Html::beginTag('a',['href'=>$href]);
-        $html .= Html::beginTag('i',['class'=>$iClass,'aria-hidden'=>'true']);
-        $html .= Html::endTag('i');
-        $html .= Html::endTag('a');
+        $html .= PopoverX::widget([
+            'header' => $title,
+            'placement' => PopoverX::ALIGN_RIGHT,
+            'content' => $content,
+            'closeButton'=>['tag'=>'a'],
+            'toggleButton' => [
+                'label' => '<i class="'.$iClass.'" aria-hidden="true"></i>',
+                'tag' => 'a',
+            ],
+        ]);
         $html .= Html::endTag('li');
         return $html;
     }
+
 }

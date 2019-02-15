@@ -19,7 +19,8 @@
         "yiisoft/yii2-bootstrap": "~2.0.0",
         "yiisoft/yii2-swiftmailer": "~2.0.0 || ~2.1.0",
         "ext-mbstring": "*",
-        "kartik-v/yii2-widget-fileinput": "dev-master"
+        "kartik-v/yii2-widget-fileinput": "dev-master",
+        "kartik-v/yii2-popover-x": "dev-master"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.0.0",

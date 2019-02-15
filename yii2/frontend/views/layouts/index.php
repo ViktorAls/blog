@@ -34,7 +34,7 @@ AppAsset::register($this);
   ================================================== -->
 <div class="s-pageheader">
 
-    <?=\common\widgets\Header::widget()?>
+    <?=\common\widgets\Header::widget(['logoName' => Yii::$app->name ])?>
 </div> <!-- end s-pageheader -->
 <?= Alert::widget(['options' => ['style' => 'margin-bottom: 0px']]) ?>
 <?= $content ?>

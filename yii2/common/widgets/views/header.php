@@ -8,7 +8,10 @@
  */
 $search = Yii::$app->search->SearchAction(Yii::$app->controller->route);
 
-use yii\helpers\Html; ?>
+use kartik\popover\PopoverX;
+use yii\helpers\Html;
+
+?>
 
 <header class="header">
     <div class="header__content row">
@@ -23,6 +26,7 @@ use yii\helpers\Html; ?>
                 <?php $this->endCache(); ?>
             <?php endif; ?>
         <?php endif; ?>
+
         <a class="header__search-trigger" href="#0"></a>
         <div class="header__search">
             <?php $form = \yii\widgets\ActiveForm::begin([

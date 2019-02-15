@@ -22,7 +22,9 @@
       <excludeFolder url="file://$MODULE_DIR$/yii2/vendor/fzaninotto/faker" />
       <excludeFolder url="file://$MODULE_DIR$/yii2/vendor/guzzlehttp/psr7" />
       <excludeFolder url="file://$MODULE_DIR$/yii2/vendor/kartik-v/bootstrap-fileinput" />
+      <excludeFolder url="file://$MODULE_DIR$/yii2/vendor/kartik-v/bootstrap-popover-x" />
       <excludeFolder url="file://$MODULE_DIR$/yii2/vendor/kartik-v/yii2-krajee-base" />
+      <excludeFolder url="file://$MODULE_DIR$/yii2/vendor/kartik-v/yii2-popover-x" />
       <excludeFolder url="file://$MODULE_DIR$/yii2/vendor/kartik-v/yii2-widget-fileinput" />
       <excludeFolder url="file://$MODULE_DIR$/yii2/vendor/myclabs/deep-copy" />
       <excludeFolder url="file://$MODULE_DIR$/yii2/vendor/phar-io/manifest" />

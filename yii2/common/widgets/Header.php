@@ -36,7 +36,8 @@ class Header extends Widget
         return $this->render('header', [
                 'logoName'=>$this->logoName,
                 'urlLogo'=>$this->urlLogo,
-                'liDocument'=>$this->liDocument()
+                'liDocument'=>$this->liDocument(),
+                'connectionWidget'=>$this->connectionWidget,
             ]
         );
     }
