@@ -3,30 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="c6942d54-c9bd-496f-aad8-5638e982d304" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yii2/common/config/main-local.php" beforeDir="false" afterPath="$PROJECT_DIR$/yii2/common/config/main-local.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yii2/common/models/Comment.php" beforeDir="false" afterPath="$PROJECT_DIR$/yii2/common/models/Comment.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yii2/common/models/Document.php" beforeDir="false" afterPath="$PROJECT_DIR$/yii2/common/models/Document.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yii2/common/models/Group.php" beforeDir="false" afterPath="$PROJECT_DIR$/yii2/common/models/Group.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yii2/common/models/Information.php" beforeDir="false" afterPath="$PROJECT_DIR$/yii2/common/models/Information.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yii2/common/models/Lesson.php" beforeDir="false" afterPath="$PROJECT_DIR$/yii2/common/models/Lesson.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yii2/common/models/Post.php" beforeDir="false" afterPath="$PROJECT_DIR$/yii2/common/models/Post.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yii2/common/models/PostFile.php" beforeDir="false" afterPath="$PROJECT_DIR$/yii2/common/models/PostFile.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yii2/common/models/Tag.php" beforeDir="false" afterPath="$PROJECT_DIR$/yii2/common/models/Tag.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yii2/common/models/TagDocument.php" beforeDir="false" afterPath="$PROJECT_DIR$/yii2/common/models/TagDocument.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yii2/common/models/TagPost.php" beforeDir="false" afterPath="$PROJECT_DIR$/yii2/common/models/TagPost.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yii2/common/models/query/DocumentQuery.php" beforeDir="false" afterPath="$PROJECT_DIR$/yii2/common/models/query/DocumentQuery.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yii2/common/models/query/LessonQuery.php" beforeDir="false" afterPath="$PROJECT_DIR$/yii2/common/models/query/LessonQuery.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yii2/common/models/query/PostQuery.php" beforeDir="false" afterPath="$PROJECT_DIR$/yii2/common/models/query/PostQuery.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yii2/common/models/query/TagQuery.php" beforeDir="false" afterPath="$PROJECT_DIR$/yii2/common/models/query/TagQuery.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yii2/common/widgets/Header.php" beforeDir="false" afterPath="$PROJECT_DIR$/yii2/common/widgets/Header.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yii2/common/widgets/RandPost.php" beforeDir="false" afterPath="$PROJECT_DIR$/yii2/common/widgets/RandPost.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yii2/common/widgets/Tags.php" beforeDir="false" afterPath="$PROJECT_DIR$/yii2/common/widgets/Tags.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yii2/common/widgets/views/selected.php" beforeDir="false" afterPath="$PROJECT_DIR$/yii2/common/widgets/views/selected.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yii2/console/migrations/m130524_201442_init.php" beforeDir="false" afterPath="$PROJECT_DIR$/yii2/console/migrations/m130524_201442_init.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yii2/frontend/controllers/PostsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/yii2/frontend/controllers/PostsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yii2/frontend/controllers/SiteController.php" beforeDir="false" afterPath="$PROJECT_DIR$/yii2/frontend/controllers/SiteController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yii2/frontend/views/posts/category.php" beforeDir="false" afterPath="$PROJECT_DIR$/yii2/frontend/views/posts/category.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yii2/frontend/views/site/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/yii2/frontend/views/site/index.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -42,17 +18,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/yii2/common/config/main-local.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="55" selection-start-line="5" selection-start-column="55" selection-end-line="5" selection-end-column="55" />
+            <state relative-caret-position="425">
+              <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/yii2/console/migrations/m190216_095215_create_table.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
-              <caret line="79" column="10" lean-forward="true" selection-start-line="79" selection-start-column="10" selection-end-line="79" selection-end-column="10" />
+            <state relative-caret-position="-110">
+              <caret line="65" column="34" selection-start-line="65" selection-start-column="34" selection-end-line="65" selection-end-column="34" />
               <folding>
                 <element signature="e#243#446#0#PHP" />
                 <element signature="e#486#586#0#PHP" />
@@ -63,6 +39,7 @@
                 <element signature="e#1881#2031#0#PHP" />
                 <element signature="e#2203#2351#0#PHP" />
                 <element signature="e#2392#2532#0#PHP" />
+                <element signature="e#2568#2665#0#PHP" />
                 <element signature="e#1045#1160#0#PHP" />
                 <element signature="e#2675#2782#0#PHP" />
                 <element signature="e#2793#2902#0#PHP" />
@@ -92,6 +69,15 @@
                 <element signature="e#6179#6279#0#PHP" />
                 <element signature="e#6289#6384#0#PHP" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/yii2/console/migrations/m190216_104002_insert_information_table.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="187">
+              <caret line="11" column="72" lean-forward="true" selection-start-line="11" selection-start-column="72" selection-end-line="11" selection-end-column="72" />
             </state>
           </provider>
         </entry>
@@ -147,7 +133,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/yii2/common/widgets/Comment.php" />
         <option value="$PROJECT_DIR$/yii2/frontend/models/ProfileSettingsForm.php" />
         <option value="$PROJECT_DIR$/yii2/frontend/controllers/UserController.php" />
         <option value="$PROJECT_DIR$/public_html/css/doc.css" />
@@ -187,7 +172,6 @@
         <option value="$PROJECT_DIR$/yii2/common/widgets/views/selected.php" />
         <option value="$PROJECT_DIR$/yii2/frontend/views/posts/category.php" />
         <option value="$PROJECT_DIR$/yii2/frontend/views/site/index.php" />
-        <option value="$PROJECT_DIR$/yii2/common/config/main-local.php" />
         <option value="$PROJECT_DIR$/yii2/console/migrations/m190215_200354_create_comment_table.php" />
         <option value="$PROJECT_DIR$/yii2/console/migrations/m190216_091826_create_junction_table_for_document_and_tag_tables.php" />
         <option value="$PROJECT_DIR$/yii2/console/migrations/m190216_091707_create_post_table.php" />
@@ -198,6 +182,8 @@
         <option value="$PROJECT_DIR$/yii2/console/migrations/m190216_091724_create_postFile_table.php" />
         <option value="$PROJECT_DIR$/yii2/console/migrations/m190216_091803_create_junction_table_for_post_and_tag_tables.php" />
         <option value="$PROJECT_DIR$/yii2/console/migrations/m190216_095215_create_table.php" />
+        <option value="$PROJECT_DIR$/yii2/common/config/main-local.php" />
+        <option value="$PROJECT_DIR$/yii2/console/migrations/m190216_104002_insert_information_table.php" />
       </list>
     </option>
   </component>
@@ -459,12 +445,12 @@
       <workItem from="1549532473917" duration="419000" />
       <workItem from="1549533231357" duration="23774000" />
       <workItem from="1550171248037" duration="6148000" />
-      <workItem from="1550216714291" duration="22630000" />
+      <workItem from="1550216714291" duration="23719000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="297175000" />
+    <option name="totallyTimeSpent" value="298264000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
@@ -513,13 +499,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/yii2/common/models/Information.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-212">
-          <caret line="9" column="20" lean-forward="true" selection-start-line="9" selection-start-column="20" selection-end-line="9" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/yii2/common/models/Group.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-153">
@@ -809,13 +788,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/yii2/common/config/main-local.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="55" selection-start-line="5" selection-start-column="55" selection-end-line="5" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/yii2/console/migrations/m190216_091724_create_postFile_table.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="417">
@@ -837,10 +809,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/yii2/common/config/main-local.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/yii2/console/migrations/m190216_095215_create_table.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="79" column="10" lean-forward="true" selection-start-line="79" selection-start-column="10" selection-end-line="79" selection-end-column="10" />
+        <state relative-caret-position="-110">
+          <caret line="65" column="34" selection-start-line="65" selection-start-column="34" selection-end-line="65" selection-end-column="34" />
           <folding>
             <element signature="e#243#446#0#PHP" />
             <element signature="e#486#586#0#PHP" />
@@ -851,6 +830,7 @@
             <element signature="e#1881#2031#0#PHP" />
             <element signature="e#2203#2351#0#PHP" />
             <element signature="e#2392#2532#0#PHP" />
+            <element signature="e#2568#2665#0#PHP" />
             <element signature="e#1045#1160#0#PHP" />
             <element signature="e#2675#2782#0#PHP" />
             <element signature="e#2793#2902#0#PHP" />
@@ -880,6 +860,13 @@
             <element signature="e#6179#6279#0#PHP" />
             <element signature="e#6289#6384#0#PHP" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/yii2/console/migrations/m190216_104002_insert_information_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="72" lean-forward="true" selection-start-line="11" selection-start-column="72" selection-end-line="11" selection-end-column="72" />
         </state>
       </provider>
     </entry>
