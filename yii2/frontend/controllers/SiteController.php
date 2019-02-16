@@ -178,12 +178,13 @@ class SiteController extends Controller
      */
     public function actionSignup()
     {
+
         $model = new SignupForm();
         $group = ArrayHelper::map(GroupQuery::getGroupAll(),'id','name');
         if ($model->load(Yii::$app->request->post())) {
             if ($model->signup()) {
                 yii::$app->session->setFlash('success','Аккаунт зарегистрирован и будет доступен после проверки администратором');
-                    return $this->goHome();
+                    return $this->refresh();
             }
         }
         return $this->render('signup', [

@@ -1,0 +1,37 @@
+a:2:{i:0;a:2:{i:0;s:1494:"
+                <h3>Моя точка зрения</h3><p>Моя точка зрения</p>
+                <ul class="about__social"><li><a data-toggle="popover-x" data-placement="right" data-target="#w5"><i class="fab fa-vk" aria-hidden="true"></i></a>
+<div id="w5" class="popover popover-x popover-default" role="dialog">
+<div class="arrow"></div><div class="popover-header popover-title">
+<a class="close" data-dismiss="popover-x" aria-hidden="true">&times;</a>
+ВКонтакте____
+</div>
+<div class="popover-body popover-content">
+
+http://vk.com/id1
+</div>
+
+</div></li><li><a data-toggle="popover-x" data-placement="right" data-target="#w6"><i class="fas fa-at" aria-hidden="true"></i></a>
+<div id="w6" class="popover popover-x popover-default" role="dialog">
+<div class="arrow"></div><div class="popover-header popover-title">
+<a class="close" data-dismiss="popover-x" aria-hidden="true">&times;</a>
+Mail почта____
+</div>
+<div class="popover-body popover-content">
+
+mail@ru.ru
+</div>
+
+</div></li><li><a data-toggle="popover-x" data-placement="right" data-target="#w7"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+<div id="w7" class="popover popover-x popover-default" role="dialog">
+<div class="arrow"></div><div class="popover-header popover-title">
+<a class="close" data-dismiss="popover-x" aria-hidden="true">&times;</a>
+Facebook____
+</div>
+<div class="popover-body popover-content">
+
+страница в файсбуке
+</div>
+
+</div></li></ul>
+                ";i:1;N;}i:1;N;}
