@@ -11,6 +11,7 @@
 $search = Yii::$app->search->SearchAction(Yii::$app->controller->route);
 
 use yii\helpers\Html;
+use yii\helpers\Url;
 
 ?>
 

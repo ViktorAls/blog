@@ -2,6 +2,7 @@
 namespace frontend\controllers;
 
 
+use common\models\query\GroupQuery;
 use frontend\models\LoginForm;
 use common\models\Post;
 use common\models\query\PostQuery;
@@ -11,6 +12,7 @@ use frontend\models\ResetPasswordForm;
 use frontend\models\SignupForm;
 use Yii;
 use yii\base\InvalidParamException;
+use yii\helpers\ArrayHelper;
 use yii\web\BadRequestHttpException;
 use yii\web\Controller;
 
@@ -177,16 +179,16 @@ class SiteController extends Controller
     public function actionSignup()
     {
         $model = new SignupForm();
+        $group = ArrayHelper::map(GroupQuery::getGroupAll(),'id','name');
         if ($model->load(Yii::$app->request->post())) {
-            if ($user = $model->signup()) {
-                if (Yii::$app->getUser()->login($user)) {
+            if ($model->signup()) {
+                yii::$app->session->setFlash('success','Аккаунт зарегистрирован и будет доступен после проверки администратором');
                     return $this->goHome();
-                }
             }
         }
-
         return $this->render('signup', [
             'model' => $model,
+            'group'=>$group
         ]);
     }
 

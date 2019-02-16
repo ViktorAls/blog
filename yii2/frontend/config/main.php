@@ -22,12 +22,11 @@ return [
             'class' => 'frontend\components\Search'
         ],
         'user' => [
-            'identityClass' => 'frontend\models\User',
+            'identityClass' => 'common\models\UserFrontend',
             'enableAutoLogin' => true,
             'identityCookie' => ['name' => '_identity-frontend', 'httpOnly' => true],
         ],
         'session' => [
-            // this is the name of the session cookie used for login on the frontend
             'name' => 'advanced-frontend',
         ],
         'log' => [

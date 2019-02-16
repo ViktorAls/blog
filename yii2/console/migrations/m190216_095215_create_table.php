@@ -72,7 +72,28 @@ class m190216_095215_create_table extends Migration
             'id' => $this->primaryKey(),
             'name' => $this->char(50)->notNull()
         ]);
-        
+        $this->createTable('userFrontend', [
+            'id' => $this->primaryKey(),
+            'name' => $this->char(255)->notNull(),
+            'middlename' => $this->char(255)->notNull(),
+            'patronymic' => $this->char(255)->notNull(),
+            'id_group' => $this->integer(11)->notNull()->defaultValue(0),
+            'icon' => $this->text()->notNull()->defaultValue('default.jpg'),
+            'auth_key' => $this->char(32)->notNull(),
+            'password_hash' => $this->char(255)->notNull(),
+            'password_reset_token' => $this->char(255)->null()->unique(),
+            'email' => $this->char(255)->notNull()->unique(),
+            'status' => $this->smallInteger(6)->defaultValue(0),
+            'created_at' => $this->integer(11)->notNull(),
+            'updated_at' => $this->integer(11)->notNull(),
+        ]);
+        // таблица  userFrontend, поле id_group
+        $this->createIndex(
+            'idx-userFrontend-id_group',
+            'userFrontend',
+            'id_group'
+        );
+
         // таблица  document, поле id_lesson
         $this->createIndex(
             'idx-document-id_lesson',
@@ -116,6 +137,15 @@ class m190216_095215_create_table extends Migration
             'id_tag'
         );
 
+        // связь табилци userFrontend по полю id_group к табилци group полю id
+        $this->addForeignKey(
+            'fk-userFrontend-id_group',
+            'userFrontend',
+            'id_group',
+            'group',
+            'id',
+            'CASCADE'
+        );
         // связь табилци document по полю id_lesson к табилци lesson полю id
         $this->addForeignKey(
             'fk-document-id_lesson',
@@ -186,6 +216,11 @@ class m190216_095215_create_table extends Migration
      */
     public function safeDown()
     {
+        //внешний ключ для таблици userFrontend  поле id_group
+        $this->dropForeignKey(
+            'fk-userFrontend-id_group',
+            'userFrontend'
+        );
         //внешний ключ для таблици postFile  поле id_post
         $this->dropForeignKey(
             'fk-postFile-id_post',
@@ -222,6 +257,11 @@ class m190216_095215_create_table extends Migration
             'tagDocument'
         );
 
+        //индекс таблици userFrontend поля id_group
+        $this->dropIndex(
+            'idx-userFrontend-id_group',
+            'userFrontend'
+        );
         //индекс таблици document поля id_lesson
         $this->dropIndex(
             'idx-document-id_lesson',

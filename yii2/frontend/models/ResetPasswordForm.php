@@ -1,9 +1,9 @@
 <?php
 namespace frontend\models;
 
+use common\models\UserFrontend;
 use yii\base\Model;
 use yii\base\InvalidParamException;
-use frontend\models\User;
 
 /**
  * Password reset form
@@ -13,7 +13,7 @@ class ResetPasswordForm extends Model
     public $password;
 
     /**
-     * @var \frontend\models\User
+     * @var UserFrontend
      */
     private $_user;
 
@@ -30,7 +30,7 @@ class ResetPasswordForm extends Model
         if (empty($token) || !is_string($token)) {
             throw new InvalidParamException('Маркер сброса пароля не может быть пустым.');
         }
-        $this->_user = User::findByPasswordResetToken($token);
+        $this->_user = UserFrontend::findByPasswordResetToken($token);
         if (!$this->_user) {
             throw new InvalidParamException('Неверный токен сброса пароля.');
         }

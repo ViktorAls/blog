@@ -27,6 +27,9 @@ $this->title = 'Авторизация';
         <div style="color:#999;margin:1em 0">
             Если вы забыли свой пароль, вы можете <?= Html::a('сбросить его', ['site/request-password-reset']) ?>.
         </div>
+        <div style="color:#999;margin:1em 0">
+            Если в вас нет аккаунта <?= Html::a('создайте его', ['site/signup']) ?>.
+        </div>
 
         <div class="form-group">
             <?= Html::submitButton('Авторизация', ['class' => 'btn btn-primary btn-block', 'name' => 'login-button']) ?>

@@ -1,11 +1,14 @@
 <?php
 namespace frontend\models;
 
+use common\models\UserFrontend;
 use Yii;
 use yii\base\Model;
 
 /**
- * Login form
+ * Class LoginForm
+ * @package frontend\models
+ * @property null|\common\models\UserFrontend $user
  */
 class LoginForm extends Model
 {
@@ -44,7 +47,7 @@ class LoginForm extends Model
     {
         if (!$this->hasErrors()) {
             $user = $this->getUser();
-            if (!$user || !$user->validatePassword($this->password)) {
+            if (!$user->validatePassword($this->password) || !$user) {
                 $this->addError($attribute, 'Неверный email или пароль.');
             }
         }
@@ -58,7 +61,7 @@ class LoginForm extends Model
     public function login()
     {
         if ($this->validate()) {
-            return Yii::$app->user->login($this->getUser(), $this->rememberMe ? 3600 * 24 * 30 : 0);
+            return Yii::$app->user->login($this->getUser(), $this->rememberMe ? 3600*720 : 0);
         }
         
         return false;
@@ -67,12 +70,12 @@ class LoginForm extends Model
     /**
      * Finds user by [[email]]
      *
-     * @return User|null
+     * @return UserFrontend|null
      */
     protected function getUser()
     {
         if ($this->_user === null) {
-            $this->_user = User::findByEmail($this->email);
+            $this->_user = UserFrontend::findByEmail($this->email);
         }
 
         return $this->_user;

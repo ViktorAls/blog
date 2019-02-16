@@ -17,7 +17,7 @@ class m190216_104002_insert_information_table extends Migration
             [
                 ['vkontakte','http://vk.com/id1','Страница ВКонтакте'],
                 ['mail','mail@ru.ru','Почта для ображращения'],
-                ['faecbook','страница в файсбуке','страница в файсбуке'],
+                ['facebook','страница в файсбуке','страница в файсбуке'],
                 ['pointOfView','Моя точка зрения','Моя точка зрения'],
                 ['AboutMe','Duis ex ad cupidatat tempor Excepteur cillum cupidatat fugiat nostrud cupidatat dolor sunt sint sit nisi','Страница О себе. Главная запись'],
                 ['whoAmI','Duis ex ad cupidatat tempor Excepteur cillum cupidatat fugiat nostrud cupidatat dolor sunt sint sit nisi','Страница О себе. Кто я'],
@@ -28,12 +28,11 @@ class m190216_104002_insert_information_table extends Migration
                 ['address','Duis ex ad cupidatat tempor Excepteur cillum cupidatat fugiat nostrud cupidatat dolor sunt sint sit nisi','Адрес, где можно найти'],
             ]
         )->execute();
-
     }
 
     public function safeDown()
     {
-       echo 'Сделанные действия отмене не подлежат';
+       echo 'Действие отмене не подлежит';
        return false;
     }
 

@@ -6,12 +6,13 @@
  * Time: 15:45
  */
 
-namespace frontend\models\query;
+namespace common\models\query;
 
 
-use frontend\models\User;
 
-class UserQuery extends User
+use common\models\UserFrontend;
+
+class UserFrontendQuery extends UserFrontend
 {
     public static function getOpenInformation(){
        return self::find()->select('group.name,user.icon,user.name,user.id_group,user.middlename,user.patronymic')
