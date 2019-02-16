@@ -28,7 +28,7 @@ class Tags extends Widget
      */
     public function run()
     {
-        $tags = TagQuery::getLimitDesc($this->limit,'id_tag');
+        $tags = TagQuery::getLimitDesc($this->limit,'id');
         return $this->createHtmlTags($tags);
     }
 
@@ -38,7 +38,7 @@ class Tags extends Widget
      */
     public function createHtmlTags(array $tags){
         $html = null;
-        if (Yii::$app->controller->route == 'document/index') {
+        if (Yii::$app->controller->route === 'document/index') {
             foreach ($tags as $tag) {
                 $html .= Html::a($tag['name'], Url::current(['tag' => $tag['name']]));
             }

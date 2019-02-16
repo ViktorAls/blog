@@ -59,7 +59,7 @@ class SiteController extends Controller
     public function actionContact()
     {
         $model = new ContactForm();
-        if ($model->load(Yii::$app->request->post()) && $model->validate()) {
+        if ($model->validate() && $model->load(Yii::$app->request->post())) {
             if ($model->sendEmail(Yii::$app->params['adminEmail'])) {
                 Yii::$app->session->setFlash('success', 'Благодарим Вас за обращение к нам. Мы ответим вам как можно скорее.');
             } else {
@@ -67,11 +67,11 @@ class SiteController extends Controller
             }
 
             return $this->refresh();
-        } else {
-            return $this->render('contact', [
-                'model' => $model,
-            ]);
         }
+
+        return $this->render('contact', [
+            'model' => $model,
+        ]);
     }
 
     /**
@@ -98,13 +98,13 @@ class SiteController extends Controller
         $model = new LoginForm();
         if ($model->load(Yii::$app->request->post()) && $model->login()) {
             return $this->goBack();
-        } else {
-            $model->password = '';
-
-            return $this->render('login', [
-                'model' => $model,
-            ]);
         }
+
+        $model->password = '';
+
+        return $this->render('login', [
+            'model' => $model,
+        ]);
     }
 
     /**
@@ -127,14 +127,14 @@ class SiteController extends Controller
     public function actionRequestPasswordReset()
     {
         $model = new PasswordResetRequestForm();
-        if ($model->load(Yii::$app->request->post()) && $model->validate()) {
+        if ($model->validate() && $model->load(Yii::$app->request->post())) {
             if ($model->sendEmail()) {
                 Yii::$app->session->setFlash('success', 'Проверьте свою электронную почту для дальнейших инструкций.');
 
                 return $this->goHome();
-            } else {
-                Yii::$app->session->setFlash('error', 'К сожалению, мы не можем сбросить пароль для указанного адреса электронной почты.');
             }
+
+            Yii::$app->session->setFlash('error', 'К сожалению, мы не можем сбросить пароль для указанного адреса электронной почты.');
         }
 
         return $this->render('requestPasswordResetToken', [
@@ -158,7 +158,7 @@ class SiteController extends Controller
             throw new BadRequestHttpException($e->getMessage());
         }
 
-        if ($model->load(Yii::$app->request->post()) && $model->validate() && $model->resetPassword()) {
+        if ($model->resetPassword() && $model->validate() && $model->load(Yii::$app->request->post())) {
             Yii::$app->session->setFlash('success', 'New password saved.');
 
             return $this->goHome();

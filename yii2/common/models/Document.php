@@ -7,7 +7,7 @@ use Yii;
 /**
  * This is the model class for table "document".
  *
- * @property int $id_document
+ * @property int $id
  * @property int $id_lesson
  * @property string $name
  * @property string $href
@@ -58,13 +58,13 @@ class Document extends \yii\db\ActiveRecord
      * @return \yii\db\ActiveQuery
      */
     public function getDocumentTag(){
-        return $this->hasMany(TagDocument::className(),['id_document'=>'id_document']);
+        return $this->hasMany(TagDocument::className(),['id_document'=>'id']);
     }
 
     /**
      * @return \yii\db\ActiveQuery
      */
     public function getTags(){
-        return $this->hasMany(Tag::className(),['id_tag'=>'id_tag'])->via('documentTag');
+        return $this->hasMany(Tag::className(),['id'=>'id_tag'])->via('documentTag');
     }
 }

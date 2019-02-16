@@ -7,7 +7,7 @@ use Yii;
 /**
  * This is the model class for table "lesson".
  *
- * @property int $id_lesson
+ * @property int $id
  * @property string $name
  */
 class Lesson extends \yii\db\ActiveRecord

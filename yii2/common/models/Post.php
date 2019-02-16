@@ -7,7 +7,7 @@ use Yii;
 /**
  * This is the model class for table "post".
  *
- * @property int $id_post
+ * @property int $id
  * @property string $title название
  * @property string $description описание
  * @property int $created_at создал
@@ -63,21 +63,21 @@ class Post extends \yii\db\ActiveRecord
      * @return \yii\db\ActiveQuery
      */
     public function getPostTags(){
-        return $this->hasMany(TagPost::className(),['id_post'=>'id_post']);
+        return $this->hasMany(TagPost::className(),['id_post'=>'id']);
     }
 
     /**
      * @return \yii\db\ActiveQuery
      */
     public function getTags(){
-        return $this->hasMany(Tag::className(),['id_tag'=>'id_tag'])->via('postTags');
+        return $this->hasMany(Tag::className(),['id'=>'id_tag'])->via('postTags');
     }
 
     /**
      * @return \yii\db\ActiveQuery
      */
     public function getFile(){
-        return $this->hasMany(PostFile::className(),['id_post'=>'id_post']);
+        return $this->hasMany(PostFile::className(),['id_post'=>'id']);
     }
 
     /**

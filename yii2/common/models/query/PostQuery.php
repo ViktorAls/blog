@@ -27,8 +27,8 @@ class PostQuery extends Post
      * @param string $fieldDesc
      * @return array
      */
-    public static function getLimitDesc($limit,$fieldDesc = 'id_post'){
-        return Post::find()->asArray()->limit($limit)->orderBy([$fieldDesc => SORT_DESC])->all();
+    public static function getLimitDesc($limit,$fieldDesc = 'id'){
+        return self::find()->asArray()->limit($limit)->orderBy([$fieldDesc => SORT_DESC])->all();
     }
 
     /**
@@ -38,7 +38,7 @@ class PostQuery extends Post
      * @return array
      */
     public static function getOneModel($where,$with = ['file','tags']){
-        return self::find()->where($where)->asArray()->With($with)->one();
+        return self::find()->where($where)->asArray()->with($with)->one();
     }
 
     /**
@@ -77,7 +77,7 @@ class PostQuery extends Post
             ->limit($pages->limit)
             ->asArray()
             ->with('tags')
-            ->orderBy(['id_post' => SORT_DESC])
+            ->orderBy(['id' => SORT_DESC])
             ->all();
         return [$pages, $posts];
     }

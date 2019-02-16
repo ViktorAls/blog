@@ -42,7 +42,7 @@ class PostsController extends Controller
      */
     protected function postModel($id)
     {
-        if (($model = PostQuery::getOneModel(['post.id_post' => $id],
+        if (($model = PostQuery::getOneModel(['post.id' => $id],
                 [
                     'file', 'tags',
                     'comments.user' => function ($query) {

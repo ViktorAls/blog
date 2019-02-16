@@ -50,7 +50,7 @@ class RandPost extends Widget
         $html .= Html::a(mb_strimwidth(html::encode($post['title']), 0, 90, '...'),
             Url::to([
                 'posts/lesson',
-                'id' => $post['id_post']
+                'id' => $post['id']
             ])
         );
         $html .= Html::endTag('h5');

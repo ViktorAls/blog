@@ -7,7 +7,7 @@ use Yii;
 /**
  * This is the model class for table "group".
  *
- * @property int $id_group
+ * @property int $id
  * @property string $name
  */
 class Group extends \yii\db\ActiveRecord

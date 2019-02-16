@@ -8,7 +8,7 @@ use Yii;
 /**
  * This is the model class for table "comment".
  *
- * @property int $id_comment
+ * @property int $id
  * @property int $id_post
  * @property int $id_parent
  * @property string $text
@@ -53,7 +53,7 @@ class Comment extends \yii\db\ActiveRecord
         ];
     }
 
-    public  function  getUser(){
+    public  function getUser(){
         return $this->hasOne(User::className(),['id'=>'id_user']);
     }
 }

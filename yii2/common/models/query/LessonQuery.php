@@ -27,6 +27,6 @@ class LessonQuery extends Lesson
      * @return string
      */
     public static function getTitle($id){
-        return self::find()->where(['id_lesson'=>$id])->asArray()->one()['name'];
+        return self::find()->where(['id'=>$id])->asArray()->one()['name'];
     }
 }

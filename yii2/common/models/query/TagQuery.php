@@ -12,7 +12,7 @@ class TagQuery extends Tag
      * @param string $field
      * @return array
      */
-    public static function getLimitDesc($limit,$field = 'id_tag'){
+    public static function getLimitDesc($limit,$field = 'id'){
         return self::find()->asArray()->orderBy([$field=>SORT_DESC])->limit($limit)->all();
     }
 }

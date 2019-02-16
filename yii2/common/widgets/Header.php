@@ -51,7 +51,7 @@ class Header extends Widget
         $html = null;
         foreach ($lessons as $lesson) {
             $html .= Html::beginTag('li');
-            $html .= Html::a($lesson['name'],Url::to([$url,'lesson'=>$lesson['id_lesson']]));
+            $html .= Html::a($lesson['name'],Url::to([$url,'lesson'=>$lesson['id']]));
             $html .= Html::endTag('li');
         }
         return $html;

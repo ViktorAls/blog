@@ -20,7 +20,7 @@ class DocumentQuery extends Document
         $pages = new Pagination(['totalCount' => $query->count(), 'pageSize' => 9]);
         $document = $query->offset($pages->offset)
             ->limit($pages->limit)
-            ->orderBy(['id_document' => SORT_DESC])
+            ->orderBy(['id' => SORT_DESC])
             ->asArray()
             ->all();
         return [$pages, $document];

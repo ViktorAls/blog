@@ -7,7 +7,7 @@ use Yii;
 /**
  * This is the model class for table "tag".
  *
- * @property int $id_tag
+ * @property int $id
  * @property string $name
  */
 class Tag extends \yii\db\ActiveRecord

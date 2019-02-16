@@ -7,7 +7,7 @@ use Yii;
 /**
  * This is the model class for table "information".
  *
- * @property int $id_information
+ * @property int $id
  * @property string $name
  * @property string $value
  * @property string $comment

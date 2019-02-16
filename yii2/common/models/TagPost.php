@@ -7,7 +7,6 @@ use Yii;
 /**
  * This is the model class for table "tagPost".
  *
- * @property int $id
  * @property int $id_post
  * @property int $id_tag
  */

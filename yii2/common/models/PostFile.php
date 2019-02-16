@@ -7,7 +7,7 @@ use Yii;
 /**
  * This is the model class for table "postFile".
  *
- * @property int $id_file
+ * @property int $id
  * @property string $name
  * @property int $id_post
  */

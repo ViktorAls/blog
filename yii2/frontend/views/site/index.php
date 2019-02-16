@@ -18,7 +18,7 @@ use yii\widgets\LinkPager;
                 <?= common\widgets\ArticlePost::widget([
                     'title' => $post['title'],
                     'description' => $post['description'],
-                    'idPost' => $post['id_post'],
+                    'idPost' => $post['id'],
                     'nameIcon' => $post['icon'],
                     'datePublication' => $post['created_at'],
                     'tags' => $post['tags'],
