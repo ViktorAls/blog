@@ -2,8 +2,6 @@
 
 namespace common\models;
 
-use frontend\models\User;
-use Yii;
 
 /**
  * This is the model class for table "comment".
@@ -13,6 +11,7 @@ use Yii;
  * @property int $id_parent
  * @property string $text
  * @property string $created_at
+ * @property User $user
  * @property int $id_user
  */
 class Comment extends \yii\db\ActiveRecord
@@ -53,6 +52,9 @@ class Comment extends \yii\db\ActiveRecord
         ];
     }
 
+    /**
+     * @return \yii\db\ActiveQuery
+     */
     public  function getUser(){
         return $this->hasOne(User::className(),['id'=>'id_user']);
     }

@@ -9,7 +9,7 @@
 namespace frontend\models;
 
 
-use common\models\UserFrontend;
+use common\models\User;
 use Yii;
 use yii\base\Model;
 use yii\helpers\FileHelper;
@@ -37,7 +37,7 @@ class ProfileSettingsForm extends Model
     public function saveIcon($nextFile)
     {
 
-        $user = UserFrontend::findOne(['id'=>\Yii::$app->user->id]);
+        $user = User::findOne(['id'=>\Yii::$app->user->id]);
         if($file = UploadedFile::getInstance($this, 'file')){
             $user->icon = $this->saveOne($file,$nextFile);
         }

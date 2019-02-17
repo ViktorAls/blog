@@ -9,7 +9,7 @@
 namespace frontend\controllers;
 
 
-use common\models\query\UserFrontendQuery;
+use common\models\query\UserQuery;
 use frontend\models\ProfileSettingsForm;
 use Yii;
 use yii\web\Controller;
@@ -23,7 +23,7 @@ class UserController extends Controller
      */
     public  function actionSettings(){
         $model = new ProfileSettingsForm();
-        $user = UserFrontendQuery::getOpenInformation();
+        $user = UserQuery::getOpenInformation();
         if ($model->load(Yii::$app->request->post())) {
             if ($model->saveIcon($user['icon'])) {
                 Yii::$app->session->setFlash('success', 'Аватарка изменена');

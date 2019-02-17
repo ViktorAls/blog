@@ -29,7 +29,7 @@ use yii\web\IdentityInterface;
  * @property \common\models\Group $group
  * @property integer $success
  */
-class UserFrontend extends ActiveRecord implements IdentityInterface
+class User extends ActiveRecord implements IdentityInterface
 {
     const STATUS_DELETED = 0;
     const STATUS_ACTIVE = 10;
@@ -40,7 +40,7 @@ class UserFrontend extends ActiveRecord implements IdentityInterface
      */
     public static function tableName()
     {
-        return '{{%userFrontend}}';
+        return '{{%user}}';
     }
 
     /**

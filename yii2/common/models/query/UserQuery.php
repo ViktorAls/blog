@@ -10,9 +10,9 @@ namespace common\models\query;
 
 
 
-use common\models\UserFrontend;
+use common\models\User;
 
-class UserFrontendQuery extends UserFrontend
+class UserQuery extends User
 {
     public static function getOpenInformation(){
        return self::find()->select('group.name,user.icon,user.name,user.id_group,user.middlename,user.patronymic')

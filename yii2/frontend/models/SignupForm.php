@@ -1,7 +1,7 @@
 <?php
 namespace frontend\models;
 
-use common\models\UserFrontend;
+use common\models\User;
 use yii\base\Model;
 
 /**
@@ -28,7 +28,7 @@ class SignupForm extends Model
             ['email', 'required'],
             ['email', 'email'],
             ['email', 'string', 'max' => 255],
-            ['email', 'unique', 'targetClass' => '\common\models\UserFrontend', 'message' => 'Этот адрес электронной почты уже занят.'],
+            ['email', 'unique', 'targetClass' => '\common\models\User', 'message' => 'Этот адрес электронной почты уже занят.'],
 
             [['name','patronymic','middlename','group'],'required'],
             ['middlename','string','max'=>255],
@@ -42,7 +42,7 @@ class SignupForm extends Model
     }
 
     /**
-     * @return UserFrontend
+     * @return User
      * @throws \yii\base\Exception
      */
     public function signup()
@@ -50,7 +50,7 @@ class SignupForm extends Model
         if (!$this->validate()) {
             return null;
         }
-        $user = new UserFrontend();
+        $user = new User();
         $user->email = $this->email;
         $user->setPassword($this->password);
         $user->id_group = $this->group;

@@ -4,11 +4,11 @@
 
 /* @var $content string */
 
+use common\widgets\Alert;
+use frontend\assets\AppAsset;
 use yii\helpers\Html;
 use yii\helpers\Url;
 use yii\widgets\Breadcrumbs;
-use frontend\assets\AppAsset;
-use common\widgets\Alert;
 
 AppAsset::register($this);
 ?>
@@ -31,7 +31,7 @@ AppAsset::register($this);
 ================================================== -->
 <section class="s-pageheader s-pageheader--home">
 
-    <?=\common\widgets\Header::widget(['logoName' => Yii::$app->name ])?>
+    <?= \common\widgets\Header::widget(['logoName' => Yii::$app->name]) ?>
 
     <?= \common\widgets\Selected::widget() ?>
 </section> <!-- end s-pageheader -->
@@ -53,19 +53,19 @@ AppAsset::register($this);
             <h3>Мне повезёт</h3>
 
             <div class="block-1-2 block-m-full popular__posts">
-                <?= \common\widgets\RandPost::widget(); ?>
+                <?php if ($this->beginCache('radnPost', ['duration' => 3600 * 2])): ?>
+                    <?= \common\widgets\RandPost::widget(); ?>
+                    <?php $this->endCache(); ?>
+                <?php endif; ?>
             </div> <!-- end popular_posts -->
         </div> <!-- end popular -->
 
         <div class="col-four md-six tab-full about">
-            <?php if ($this->beginCache('about', ['duration' => 3600 * 12])): ?>
 
-                <?= \common\widgets\PointOfView::widget(['title' => 'Моя точка зрения']); ?>
+            <?= \common\widgets\PointOfView::widget(['title' => 'Моя точка зрения']); ?>
 
-                <?= \common\widgets\Connection::widget(['ulClass' => 'about__social']) ?>
+            <?= \common\widgets\Connection::widget(['ulClass' => 'about__social']) ?>
 
-                <?php $this->endCache(); ?>
-            <?php endif; ?>
 
         </div>
 
@@ -172,8 +172,8 @@ $('#modal-info').find('.modal-body').load('" . Url::to('/user/settings') . "');
 
 
 <style>
-    html{
-        border-color: rgb(160,160,255)
+    html {
+        border-color: rgb(160, 160, 255)
         color: ;
     }
 </style>

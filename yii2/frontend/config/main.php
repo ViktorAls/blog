@@ -22,7 +22,7 @@ return [
             'class' => 'frontend\components\Search'
         ],
         'user' => [
-            'identityClass' => 'common\models\UserFrontend',
+            'identityClass' => 'common\models\User',
             'enableAutoLogin' => true,
             'identityCookie' => ['name' => '_identity-frontend', 'httpOnly' => true],
         ],

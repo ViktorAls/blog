@@ -1,3 +1,4 @@
+<?$this->title='О себе.'?>
 <section class="s-content s-content--narrow">
 
     <div class="row">
@@ -22,42 +23,28 @@
 
             <p class="lead">О себе.</p>
 
-            <p>Duis ex ad cupidatat tempor Excepteur cillum cupidatat fugiat nostrud cupidatat dolor sunt sint sit nisi
-                est eu exercitation incididunt adipisicing veniam velit id fugiat enim mollit amet anim veniam dolor
-                dolor irure velit commodo cillum sit nulla ullamco magna amet magna cupidatat qui labore cillum sit in
-                tempor veniam consequat non laborum adipisicing aliqua ea nisi sint ut quis proident ullamco ut dolore
-                culpa occaecat ut laboris in sit minim cupidatat ut dolor voluptate enim veniam consequat occaecat
-                fugiat in adipisicing in amet Ut nulla nisi non ut enim aliqua laborum mollit quis nostrud sed sed.
-            </p>
+            <p><?=$about['aboutMe']['value']?>    </p>
 
 
             <div class="row block-1-2 block-tab-full">
                 <div class="col-block">
                     <h3 class="quarter-top-margin">Кто я.</h3>
-                    <p>Lorem ipsum Nisi amet fugiat eiusmod et aliqua ad qui ut nisi Ut aute anim mollit fugiat qui sit
-                        ex occaecat et eu mollit nisi pariatur fugiat deserunt dolor veniam reprehenderit aliquip magna
-                        nisi consequat aliqua veniam in aute ullamco Duis laborum ad non pariatur sit.</p>
+                    <p><?=$about['whoAmI']['value']?></p>
                 </div>
 
                 <div class="col-block">
                     <h3 class="quarter-top-margin">Моя миссия.</h3>
-                    <p>Lorem ipsum Nisi amet fugiat eiusmod et aliqua ad qui ut nisi Ut aute anim mollit fugiat qui sit
-                        ex occaecat et eu mollit nisi pariatur fugiat deserunt dolor veniam reprehenderit aliquip magna
-                        nisi consequat aliqua veniam in aute ullamco Duis laborum ad non pariatur sit.</p>
+                    <p><?=$about['myMission']['value']?></p>
                 </div>
 
                 <div class="col-block">
                     <h3 class="quarter-top-margin">Мой взгляд.</h3>
-                    <p>Lorem ipsum Nisi amet fugiat eiusmod et aliqua ad qui ut nisi Ut aute anim mollit fugiat qui sit
-                        ex occaecat et eu mollit nisi pariatur fugiat deserunt dolor veniam reprehenderit aliquip magna
-                        nisi consequat aliqua veniam in aute ullamco Duis laborum ad non pariatur sit.</p>
+                    <p><?=$about['myOpinion']['value']?></p>
                 </div>
 
                 <div class="col-block">
                     <h3 class="quarter-top-margin">Мои ценности.</h3>
-                    <p>Lorem ipsum Nisi amet fugiat eiusmod et aliqua ad qui ut nisi Ut aute anim mollit fugiat qui sit
-                        ex occaecat et eu mollit nisi pariatur fugiat deserunt dolor veniam reprehenderit aliquip magna
-                        nisi consequat aliqua veniam in aute ullamco Duis laborum ad non pariatur sit.</p>
+                    <p><?=$about['myValues']['value']?></p>
                 </div>
 
             </div>

@@ -1,14 +1,14 @@
 <?php
 namespace frontend\models;
 
-use common\models\UserFrontend;
+use common\models\User;
 use Yii;
 use yii\base\Model;
 
 /**
  * Class LoginForm
  * @package frontend\models
- * @property null|\common\models\UserFrontend $user
+ * @property null|\common\models\User $user
  */
 class LoginForm extends Model
 {
@@ -70,12 +70,12 @@ class LoginForm extends Model
     /**
      * Finds user by [[email]]
      *
-     * @return UserFrontend|null
+     * @return User|null
      */
     protected function getUser()
     {
         if ($this->_user === null) {
-            $this->_user = UserFrontend::findByEmail($this->email);
+            $this->_user = User::findByEmail($this->email);
         }
 
         return $this->_user;

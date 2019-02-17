@@ -8,7 +8,6 @@ use common\widgets\Alert;
 use frontend\assets\AppAsset;
 use yii\helpers\Html;
 use yii\helpers\Url;
-use yii\widgets\Breadcrumbs;
 
 $search = Yii::$app->search->SearchAction(Yii::$app->controller->route);
 
@@ -34,7 +33,7 @@ AppAsset::register($this);
   ================================================== -->
 <div class="s-pageheader">
 
-    <?=\common\widgets\Header::widget(['logoName' => Yii::$app->name ])?>
+    <?= \common\widgets\Header::widget(['logoName' => Yii::$app->name]) ?>
 </div> <!-- end s-pageheader -->
 <?= Alert::widget(['options' => ['style' => 'margin-bottom: 0px']]) ?>
 <?= $content ?>
@@ -49,7 +48,10 @@ AppAsset::register($this);
             <h3>Мне повезёт</h3>
 
             <div class="block-1-2 block-m-full popular__posts">
-                <?= \common\widgets\RandPost::widget(); ?>
+                <?php if ($this->beginCache('radnPost', ['duration' => 3600 * 2])): ?>
+                    <?= \common\widgets\RandPost::widget(); ?>
+                    <?php $this->endCache(); ?>
+                <?php endif; ?>
             </div> <!-- end popular_posts -->
         </div> <!-- end popular -->
 
@@ -125,8 +127,8 @@ AppAsset::register($this);
                 </button>
                 <h4 class="modal-title">Настройки профиля</h4>
             </div>
-            <div class="modal-body" >
-               <img src="/images/load.gif" class="modal-body_img" alt="">
+            <div class="modal-body">
+                <img src="/images/load.gif" class="modal-body_img" alt="">
             </div>
         </div>
     </div>

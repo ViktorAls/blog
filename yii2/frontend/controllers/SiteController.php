@@ -3,6 +3,7 @@ namespace frontend\controllers;
 
 
 use common\models\query\GroupQuery;
+use common\models\query\InformationQuery;
 use frontend\models\LoginForm;
 use common\models\Post;
 use common\models\query\PostQuery;
@@ -61,7 +62,7 @@ class SiteController extends Controller
     public function actionContact()
     {
         $model = new ContactForm();
-        if ($model->validate() && $model->load(Yii::$app->request->post())) {
+        if ( $model->load(Yii::$app->request->post()) && $model->validate()) {
             if ($model->sendEmail(Yii::$app->params['adminEmail'])) {
                 Yii::$app->session->setFlash('success', 'Благодарим Вас за обращение к нам. Мы ответим вам как можно скорее.');
             } else {
@@ -73,6 +74,7 @@ class SiteController extends Controller
 
         return $this->render('contact', [
             'model' => $model,
+            'contact'=>InformationQuery::getContact()
         ]);
     }
 
@@ -116,7 +118,7 @@ class SiteController extends Controller
      */
     public function actionAbout()
     {
-        return $this->render('about');
+        return $this->render('about',['about'=>InformationQuery::getAbout()]);
     }
 
 

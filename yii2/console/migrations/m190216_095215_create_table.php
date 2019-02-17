@@ -72,12 +72,13 @@ class m190216_095215_create_table extends Migration
             'id' => $this->primaryKey(),
             'name' => $this->char(50)->notNull()
         ]);
-        $this->createTable('userFrontend', [
+        $this->createTable('user', [
             'id' => $this->primaryKey(),
             'name' => $this->char(255)->notNull(),
             'middlename' => $this->char(255)->notNull(),
             'patronymic' => $this->char(255)->notNull(),
-            'id_group' => $this->integer(11)->notNull()->defaultValue(0),
+            'success'=>$this->smallInteger(2)->notNull()->defaultValue(0),
+            'id_group' => $this->integer(11)->notNull(),
             'icon' => $this->text()->notNull()->defaultValue('default.jpg'),
             'auth_key' => $this->char(32)->notNull(),
             'password_hash' => $this->char(255)->notNull(),
@@ -89,7 +90,7 @@ class m190216_095215_create_table extends Migration
         ]);
         // таблица  userFrontend, поле id_group
         $this->createIndex(
-            'idx-userFrontend-id_group',
+            'idx-user-id_group',
             'userFrontend',
             'id_group'
         );
@@ -139,7 +140,7 @@ class m190216_095215_create_table extends Migration
 
         // связь табилци userFrontend по полю id_group к табилци group полю id
         $this->addForeignKey(
-            'fk-userFrontend-id_group',
+            'fk-user-id_group',
             'userFrontend',
             'id_group',
             'group',
@@ -218,7 +219,7 @@ class m190216_095215_create_table extends Migration
     {
         //внешний ключ для таблици userFrontend  поле id_group
         $this->dropForeignKey(
-            'fk-userFrontend-id_group',
+            'fk-user-id_group',
             'userFrontend'
         );
         //внешний ключ для таблици postFile  поле id_post
@@ -259,7 +260,7 @@ class m190216_095215_create_table extends Migration
 
         //индекс таблици userFrontend поля id_group
         $this->dropIndex(
-            'idx-userFrontend-id_group',
+            'idx-user-id_group',
             'userFrontend'
         );
         //индекс таблици document поля id_lesson
