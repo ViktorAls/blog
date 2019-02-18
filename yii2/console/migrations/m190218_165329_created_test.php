@@ -83,18 +83,6 @@ class m190218_165329_created_test extends Migration
      */
     public function safeDown()
     {
-        $this->dropIndex(
-            'idx-test-id_lesson',
-            'test'
-        );
-        $this->dropIndex(
-            'idx-answer-id_question',
-            'answer'
-        );
-        $this->dropIndex(
-            'idx-question-id_test',
-            'question'
-        );
 
         $this->dropForeignKey(
             'fk-test-id_lesson',
@@ -109,6 +97,18 @@ class m190218_165329_created_test extends Migration
             'answer'
         );
 
+        $this->dropIndex(
+            'idx-test-id_lesson',
+            'test'
+        );
+        $this->dropIndex(
+            'idx-answer-id_question',
+            'answer'
+        );
+        $this->dropIndex(
+            'idx-question-id_test',
+            'question'
+        );
         $this->dropTable('test');
         $this->dropTable('question');
         $this->dropTable('answer');

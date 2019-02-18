@@ -175,7 +175,6 @@ class Comment extends Widget
                     return true;
                 }
             }
-
             return false;
         }
     }

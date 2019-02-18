@@ -25,7 +25,7 @@ class m190216_095215_create_table extends Migration
         $this->createTable('comment', [
             'id' => $this->primaryKey(),
             'id_post' => $this->integer()->notNull(),
-            'id_parent' => $this->integer()->null(),
+            'id_parent' => $this->integer()->defaultValue(0)->null(),
             'text' => $this->text()->notNull(),
             'created_at' => $this->dateTime()->null(),
             'id_user' => $this->integer()->notNull(),
@@ -94,6 +94,18 @@ class m190216_095215_create_table extends Migration
             'userFrontend',
             'id_group'
         );
+        // таблица  userFrontend, поле id_group
+        $this->createIndex(
+            'idx-comment-id_post',
+            'comment',
+            'id_post'
+        );
+        // таблица  userFrontend, поле id_group
+        $this->createIndex(
+            'idx-comment-id_user',
+            'comment',
+            'id_user'
+        );
 
         // таблица  document, поле id_lesson
         $this->createIndex(
@@ -138,6 +150,24 @@ class m190216_095215_create_table extends Migration
             'id_tag'
         );
 
+        // связь табилци comment по полю id_post к табилци id_post полю id
+        $this->addForeignKey(
+            'fk-comment-id_post',
+            'comment',
+            'id_post',
+            'post',
+            'id',
+            'CASCADE'
+        );
+        // связь табилци document по полю comment к табилци user полю id
+        $this->addForeignKey(
+            'fk-comment-id_user',
+            'comment',
+            'id_user',
+            'user',
+            'id',
+            'CASCADE'
+        );
         // связь табилци userFrontend по полю id_group к табилци group полю id
         $this->addForeignKey(
             'fk-user-id_group',
@@ -227,6 +257,17 @@ class m190216_095215_create_table extends Migration
             'fk-postFile-id_post',
             'postFile'
         );
+
+        // связь табилци comment по полю id_post к табилци id_post полю id
+        $this->dropForeignKey(
+            'fk-comment-id_post',
+            'comment'
+        );
+        // связь табилци document по полю comment к табилци user полю id
+        $this->dropForeignKey(
+            'fk-comment-id_user',
+            'comment'
+        );
         //внешний ключ для таблици post поле id_lesson
         $this->dropForeignKey(
             'fk-post-id_lesson',
@@ -294,6 +335,16 @@ class m190216_095215_create_table extends Migration
             'tagDocument'
         );
         //индекс таблици tagDocument поля id_tag
+        $this->dropIndex(
+            'idx-tagDocument-id_tag',
+            'tagDocument'
+        );
+        // таблица  tagDocument, поле id_document
+        $this->dropIndex(
+            'idx-tagDocument-id_document',
+            'tagDocument'
+        );
+        // таблица  tagDocument, поле id_tag
         $this->dropIndex(
             'idx-tagDocument-id_tag',
             'tagDocument'
