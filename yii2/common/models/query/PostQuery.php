@@ -52,6 +52,7 @@ class PostQuery extends Post
     /**
      * @param string $condition
      * @param string $search
+     * @param integer $lesson
      * @return \yii\db\ActiveQuery
      */
     public static function getByTypeLikeTitle($condition,$search,$lesson){

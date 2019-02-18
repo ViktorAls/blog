@@ -56,16 +56,9 @@ AppAsset::register($this);
         </div> <!-- end popular -->
 
         <div class="col-four md-six tab-full about">
-            <?php if ($this->beginCache('about', ['duration' => 3600 * 12])): ?>
+            <?= \common\widgets\PointOfView::widget(['title' => 'Моя точка зрения']); ?>
 
-                <?= \common\widgets\PointOfView::widget(['title' => 'Моя точка зрения']); ?>
-
-                <?= \common\widgets\Connection::widget(['ulClass' => 'about__social']) ?>
-
-                <?php $this->endCache(); ?>
-            <?php endif; ?>
-
-
+            <?= \common\widgets\Connection::widget(['ulClass' => 'about__social']) ?>
         </div> <!-- end about -->
 
     </div> <!-- end row -->

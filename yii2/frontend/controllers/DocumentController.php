@@ -13,6 +13,7 @@ use common\models\query\DocumentQuery;
 use common\models\query\LessonQuery;
 use frontend\models\User;
 use Yii;
+use yii\filters\AccessControl;
 use yii\helpers\Url;
 use yii\web\Controller;
 use yii\web\HttpException;
@@ -20,6 +21,38 @@ use yii\web\NotFoundHttpException;
 
 class DocumentController extends Controller
 {
+
+    /**
+     * {@inheritdoc}
+     */
+    public function behaviors()
+    {
+        return [
+            'access' => [
+                'class' => AccessControl::className(),
+                'only' => ['index','download'],
+                'rules' => [
+                    [
+                        'actions' => ['index','download'],
+                        'allow' => true,
+                        'roles' => ['@'],
+                    ],
+                ],
+            ],
+        ];
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function actions()
+    {
+        return [
+            'error' => [
+                'class' => 'yii\web\ErrorAction',
+            ],
+        ];
+    }
 
     public function actionIndex($lesson = 0,$search = '', $tag = '')
     {

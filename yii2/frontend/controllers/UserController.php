@@ -12,11 +12,42 @@ namespace frontend\controllers;
 use common\models\query\UserQuery;
 use frontend\models\ProfileSettingsForm;
 use Yii;
+use yii\filters\AccessControl;
 use yii\web\Controller;
 
 class UserController extends Controller
 {
 
+    /**
+     * {@inheritdoc}
+     */
+    public function behaviors()
+    {
+        return [
+            'access' => [
+                'class' => AccessControl::className(),
+                'rules' => [
+                    [
+                        'actions' => ['settings'],
+                        'allow' => true,
+                        'roles' => ['@'],
+                    ],
+                ],
+            ],
+        ];
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function actions()
+    {
+        return [
+            'error' => [
+                'class' => 'yii\web\ErrorAction',
+            ],
+        ];
+    }
     /**
      * @return string|\yii\web\Response
      * @throws \yii\base\Exception

@@ -57,6 +57,7 @@ class SignupForm extends Model
         $user->name = $this->name;
         $user->patronymic = $this->patronymic;
         $user->middlename = $this->middlename;
+        $user->status = 0;
         $user->generateAuthKey();
         return !$user->save() ? null : $user;
     }

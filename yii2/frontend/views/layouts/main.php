@@ -66,9 +66,7 @@ AppAsset::register($this);
 
             <?= \common\widgets\Connection::widget(['ulClass' => 'about__social']) ?>
 
-
         </div>
-
     </div>
 
     <div class="row bottom tags-wrap">

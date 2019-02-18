@@ -5,9 +5,9 @@
 
 /* @var $model \frontend\models\ContactForm */
 
-use yii\helpers\Html;
 use yii\bootstrap\ActiveForm;
 use yii\captcha\Captcha;
+use yii\helpers\Html;
 
 $this->title = 'Обратная связь';
 ?>
@@ -25,24 +25,20 @@ $this->title = 'Обратная связь';
 
         <div class="col-full s-content__main">
 
-            <p class="lead"><?=$contact['mainFeedback']['value']?></p>
+            <p class="lead"><?= $contact['mainFeedback']['value'] ?></p>
 
-            <p><?=$contact['feedback']['value']?></p>
+            <p><?= $contact['feedback']['value'] ?></p>
 
             <div class="row">
                 <div class="col-six tab-full">
                     <h3>Где нас найти</h3>
-                    <p><?=$contact['address']['value']?></p>
+                    <p><?= $contact['address']['value'] ?></p>
                 </div>
 
                 <div class="col-six tab-full">
                     <h3>Контактная информация</h3>
 
-                    <p>contact@philosophywebsite.com<br>
-                        info@philosophywebsite.com <br>
-                        Phone: (+1) 123 456
-                    </p>
-
+                     <?= \common\widgets\Connection::widget(['ulClass' => 'about__social']) ?>
                 </div>
             </div> <!-- end row -->
 
@@ -76,9 +72,9 @@ $this->title = 'Обратная связь';
                             <div class="col-md-10">{input}</div>
                             </div>
                             ',
-                        'options' => ['class'=>'full-width'],
-                        'imageOptions' => ['class'=>'rrrr'],
-                        ]);?>
+                        'options' => ['class' => 'full-width'],
+                        'imageOptions' => ['class' => 'rrrr'],
+                    ]); ?>
                 </div>
                 <?= Html::submitButton('Отправить', ['class' => 'submit btn btn--primary full-width']) ?>
             </fieldset>

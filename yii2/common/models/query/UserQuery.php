@@ -16,8 +16,8 @@ class UserQuery extends User
 {
     public static function getOpenInformation(){
        return self::find()->select('group.name,user.icon,user.name,user.id_group,user.middlename,user.patronymic')
-            ->where(['id'=>\Yii::$app->user->id])
-            ->joinWith('group')
+            ->where(['user.id'=>\Yii::$app->user->id])
+            ->innerJoinWith('group')
             ->asArray()
             ->one();
     }

@@ -20,25 +20,9 @@ use yii\web\Controller;
 /**
  * Site controller
  */
-class SiteController extends Controller
+class SiteController extends AccessController
 {
 
-
-    /**
-     * {@inheritdoc}
-     */
-    public function actions()
-    {
-        return [
-            'error' => [
-                'class' => 'yii\web\ErrorAction',
-            ],
-            'captcha' => [
-                'class' => 'yii\captcha\CaptchaAction',
-                'fixedVerifyCode' => YII_ENV_TEST ? 'testme' : null,
-            ],
-        ];
-    }
 
     /**
      * Displays homepage.
@@ -102,13 +86,13 @@ class SiteController extends Controller
         $model = new LoginForm();
         if ($model->load(Yii::$app->request->post()) && $model->login()) {
             return $this->goBack();
+        } else {
+            $model->password = '';
+
+            return $this->render('login', [
+                'model' => $model,
+            ]);
         }
-
-        $model->password = '';
-
-        return $this->render('login', [
-            'model' => $model,
-        ]);
     }
 
     /**
@@ -131,13 +115,11 @@ class SiteController extends Controller
     public function actionRequestPasswordReset()
     {
         $model = new PasswordResetRequestForm();
-        if ($model->validate() && $model->load(Yii::$app->request->post())) {
+        if ($model->load(Yii::$app->request->post()) && $model->validate()) {
             if ($model->sendEmail()) {
                 Yii::$app->session->setFlash('success', 'Проверьте свою электронную почту для дальнейших инструкций.');
-
                 return $this->goHome();
             }
-
             Yii::$app->session->setFlash('error', 'К сожалению, мы не можем сбросить пароль для указанного адреса электронной почты.');
         }
 
@@ -162,7 +144,7 @@ class SiteController extends Controller
             throw new BadRequestHttpException($e->getMessage());
         }
 
-        if ($model->resetPassword() && $model->validate() && $model->load(Yii::$app->request->post())) {
+        if ($model->load(Yii::$app->request->post()) && $model->validate() && $model->resetPassword()) {
             Yii::$app->session->setFlash('success', 'New password saved.');
 
             return $this->goHome();
@@ -184,14 +166,14 @@ class SiteController extends Controller
         $model = new SignupForm();
         $group = ArrayHelper::map(GroupQuery::getGroupAll(),'id','name');
         if ($model->load(Yii::$app->request->post())) {
-            if ($model->signup()) {
-                yii::$app->session->setFlash('success','Аккаунт зарегистрирован и будет доступен после проверки администратором');
-                    return $this->refresh();
+            if ($user = $model->signup()) {
+                    Yii::$app->session->set('success','Вы успешно зарегистрировались, ожидайте подтверждения от администратора.');
+                    return $this->goHome();
             }
         }
+
         return $this->render('signup', [
-            'model' => $model,
-            'group'=>$group
+            'model' => $model,'group'=>$group
         ]);
     }
 

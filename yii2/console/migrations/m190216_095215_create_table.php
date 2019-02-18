@@ -79,7 +79,7 @@ class m190216_095215_create_table extends Migration
             'patronymic' => $this->char(255)->notNull(),
             'success'=>$this->smallInteger(2)->notNull()->defaultValue(0),
             'id_group' => $this->integer(11)->notNull(),
-            'icon' => $this->text()->notNull()->defaultValue('default.jpg'),
+            'icon' => $this->char(255)->notNull()->defaultValue('avatar.jpg'),
             'auth_key' => $this->char(32)->notNull(),
             'password_hash' => $this->char(255)->notNull(),
             'password_reset_token' => $this->char(255)->null()->unique(),

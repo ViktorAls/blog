@@ -66,13 +66,6 @@ use yii\helpers\Url;
                         </li>
                     </ul>
                 </li>
-                <li class="has-children">
-                    <a href="#" title="">Документы</a>
-                    <ul class="sub-menu">
-                        <?= $liDocument ?>
-                        <li><a href="<?= \yii\helpers\Url::to(['document/index']) ?>" title="">Все документы</a></li>
-                    </ul>
-                </li>
                 <li><a href="<?= \yii\helpers\Url::to(['site/about']) ?>" title="">О себе</a></li>
                 <li><a href="<?= \yii\helpers\Url::to(['site/contact']) ?>" title="">Обратная связь</a></li>
                 <?php if (Yii::$app->user->isGuest): ?>
@@ -81,11 +74,18 @@ use yii\helpers\Url;
                     <li class="has-children">
                         <a href="#" title="">Профиль</a>
                         <ul class="sub-menu">
+                            <li class="has-children">
+                                <a href="#" title="">Документы</a>
+                                <ul class="sub-menu">
+                                    <?= $liDocument ?>
+                                    <li><a href="<?= \yii\helpers\Url::to(['document/index']) ?>" title="">Все документы</a></li>
+                                </ul>
+                            </li>
                             <li><a href="<?= \yii\helpers\Url::to(['document/index']) ?>" title="">Тесты</a></li>
                             <li><a href="<?= \yii\helpers\Url::to(['posts/audio-lecture']) ?>">Результаты тестов</a>
                             </li>
                             <li><a href="#" class="modalAjaxProfile">Настройки профиля</a></li>
-                            <li><?= Html::a('Выход', Url::to(['site/logout']), ['data-method' => 'POST']); ?>​</li>
+                            <li><?= Html::a('Выход', Url::to(['site/logout']),['data-method' => 'POST']);?></li>
                         </ul>
                     </li>
                 <?php endif; ?>
