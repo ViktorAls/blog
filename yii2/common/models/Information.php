@@ -29,8 +29,8 @@ class Information extends \yii\db\ActiveRecord
     {
         return [
             [['name', 'value'], 'required'],
-            [['value','comment'], 'string'],
-            [['name'], 'string', 'max' => 200],
+            [['value', 'comment'], 'string'],
+            [['name'], 'string', 'max' => 100],
             [['name'], 'unique'],
         ];
     }
@@ -41,9 +41,10 @@ class Information extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id_information' => 'Id Information',
-            'name' => 'Название',
-            'value' => 'Значение',
+            'id' => 'ID',
+            'name' => 'Name',
+            'value' => 'Value',
+            'comment' => 'Comment',
         ];
     }
 }

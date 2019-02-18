@@ -9,6 +9,8 @@ use Yii;
  *
  * @property int $id
  * @property string $name
+ *
+ * @property User[] $users
  */
 class Group extends \yii\db\ActiveRecord
 {
@@ -27,7 +29,7 @@ class Group extends \yii\db\ActiveRecord
     {
         return [
             [['name'], 'required'],
-            [['name'], 'string', 'max' => 50],
+            [['name'], 'string', 'max' => 100],
         ];
     }
 
@@ -37,10 +39,16 @@ class Group extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id_group' => 'Id Group',
+            'id' => 'ID',
             'name' => 'Name',
         ];
     }
 
-
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getUsers()
+    {
+        return $this->hasMany(User::className(), ['id_group' => 'id']);
+    }
 }

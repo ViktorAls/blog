@@ -9,6 +9,10 @@ use Yii;
  *
  * @property int $id
  * @property string $name
+ *
+ * @property Document[] $documents
+ * @property Post[] $posts
+ * @property Test[] $tests
  */
 class Lesson extends \yii\db\ActiveRecord
 {
@@ -37,8 +41,32 @@ class Lesson extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id_lesson' => 'Id Lesson',
+            'id' => 'ID',
             'name' => 'Name',
         ];
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getDocuments()
+    {
+        return $this->hasMany(Document::className(), ['id_lesson' => 'id']);
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getPosts()
+    {
+        return $this->hasMany(Post::className(), ['id_lesson' => 'id']);
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getTests()
+    {
+        return $this->hasMany(Test::className(), ['id_lesson' => 'id']);
     }
 }

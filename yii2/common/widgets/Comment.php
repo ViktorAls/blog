@@ -157,9 +157,9 @@ class Comment extends Widget
                 $name = $item['user']['patronymic'].' '.$item['user']['name'].' '.$item['user']['middlename'];
                 $text = Html::encode($item['text']);
                 $html .= $this->getContent($name,$item['created_at'],$text);
-                if ($this->isChildren($items,$item['id_comment'])) {
+                if ($this->isChildren($items,$item['id'])) {
                     $html .= Html::beginTag('ul',['class'=>$this->classUlChildren,'style'=>"border-left:0.5px solid #6DDFFF;"]);
-                    $html .= $this->getTree($items, $item['id_comment']);
+                    $html .= $this->getTree($items, $item['id']);
                     $html .= Html::endTag('ul');
                 }
                 $html .= Html::endTag('li');
@@ -171,10 +171,11 @@ class Comment extends Widget
         public function isChildren($items, $values)
         {
             foreach ($items as $value) {
-                if ($value['id_parent'] == $values) {
+                if ($value['id_parent'] === $values) {
                     return true;
                 }
             }
+
             return false;
         }
     }

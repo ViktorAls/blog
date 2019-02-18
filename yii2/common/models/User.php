@@ -53,16 +53,40 @@ class User extends ActiveRecord implements IdentityInterface
         ];
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function rules()
     {
         return [
-            ['status', 'default', 'value' => self::STATUS_ACTIVE],
-            ['status', 'in', 'range' => [self::STATUS_ACTIVE, self::STATUS_DELETED]],
+            [['name', 'middlename', 'patronymic', 'id_group', 'auth_key', 'password_hash', 'email', 'created_at', 'updated_at'], 'required'],
+            [['success', 'id_group', 'status', 'created_at', 'updated_at'], 'integer'],
+            [['name', 'middlename', 'patronymic', 'password_hash', 'password_reset_token', 'email'], 'string', 'max' => 255],
+            [['icon'], 'string', 'max' => 300],
+            [['auth_key'], 'string', 'max' => 32],
+            [['email'], 'unique'],
+            [['password_reset_token'], 'unique'],
+            [['id_group'], 'exist', 'skipOnError' => true, 'targetClass' => Group::className(), 'targetAttribute' => ['id_group' => 'id']],
         ];
     }
+
+    public function attributeLabels()
+    {
+        return [
+            'id' => 'ID',
+            'name' => 'Name',
+            'middlename' => 'Middlename',
+            'success' => 'Success',
+            'patronymic' => 'Patronymic',
+            'id_group' => 'Id Group',
+            'icon' => 'Icon',
+            'auth_key' => 'Auth Key',
+            'password_hash' => 'Password Hash',
+            'password_reset_token' => 'Password Reset Token',
+            'email' => 'Email',
+            'status' => 'Status',
+            'created_at' => 'Created At',
+            'updated_at' => 'Updated At',
+        ];
+    }
+
 
     /**
      * {@inheritdoc}
@@ -201,8 +225,17 @@ class User extends ActiveRecord implements IdentityInterface
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getGroup(){
-        return $this->hasOne(Group::className(),['id'=>'id_group']);
+    public function getGroup()
+    {
+        return $this->hasOne(Group::className(), ['id' => 'id_group']);
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getComments()
+    {
+        return $this->hasMany(Comment::className(), ['id_user' => 'id']);
     }
 
 }

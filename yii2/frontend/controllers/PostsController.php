@@ -43,7 +43,7 @@ class PostsController extends AccessController
     {
         if (($model = PostQuery::getOneModel(['post.id' => $id],
                 [
-                    'file', 'tags',
+                    'postFiles', 'tags',
                     'comments.user' => function ($query) {
                         $query->select('id,icon,name,middlename,patronymic');
                     },

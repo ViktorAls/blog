@@ -27,6 +27,9 @@ class Search extends \yii\base\Component
             case 'document/index':
                 $action = ['action' => Url::current(),'message'=>'Поиск по документам'];
                 break;
+            case 'test/index':
+                $action = ['action' => Url::current(),'message'=>'Поиск по тестам'];
+                break;
             default:
                 $action = ['action' => Url::to(['posts/search']),'message'=>'Поиск по всем типам лекций'];
         }

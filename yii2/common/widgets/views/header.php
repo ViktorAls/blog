@@ -86,7 +86,7 @@ use yii\helpers\Url;
                                 <a href="#" title="">Тесты</a>
                                 <ul class="sub-menu">
                                     <?= $liTest ?>
-                                    <li><a href="<?= \yii\helpers\Url::to(['document/index']) ?>" title="">Все тесты</a></li>
+                                    <li><a href="<?= \yii\helpers\Url::to(['test/index']) ?>" title="">Все тесты</a></li>
                                 </ul>
                             </li>
                             <li><a href="<?= \yii\helpers\Url::to(['posts/audio-lecture']) ?>">Результаты тестов</a>

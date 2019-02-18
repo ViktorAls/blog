@@ -2,6 +2,7 @@
 
 namespace common\models;
 
+use Yii;
 
 /**
  * This is the model class for table "comment".
@@ -11,8 +12,10 @@ namespace common\models;
  * @property int $id_parent
  * @property string $text
  * @property string $created_at
- * @property User $user
  * @property int $id_user
+ *
+ * @property Post $post
+ * @property User $user
  */
 class Comment extends \yii\db\ActiveRecord
 {
@@ -30,10 +33,12 @@ class Comment extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
+            [['id_post', 'text', 'id_user'], 'required'],
             [['id_post', 'id_parent', 'id_user'], 'integer'],
-            [['text', 'created_at', 'id_user'], 'required'],
             [['text'], 'string'],
             [['created_at'], 'safe'],
+            [['id_post'], 'exist', 'skipOnError' => true, 'targetClass' => Post::className(), 'targetAttribute' => ['id_post' => 'id']],
+            [['id_user'], 'exist', 'skipOnError' => true, 'targetClass' => User::className(), 'targetAttribute' => ['id_user' => 'id']],
         ];
     }
 
@@ -43,7 +48,7 @@ class Comment extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id_comment' => 'Id Comment',
+            'id' => 'ID',
             'id_post' => 'Id Post',
             'id_parent' => 'Id Parent',
             'text' => 'Text',
@@ -55,7 +60,16 @@ class Comment extends \yii\db\ActiveRecord
     /**
      * @return \yii\db\ActiveQuery
      */
-    public  function getUser(){
-        return $this->hasOne(User::className(),['id'=>'id_user']);
+    public function getPost()
+    {
+        return $this->hasOne(Post::className(), ['id' => 'id_post']);
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getUser()
+    {
+        return $this->hasOne(User::className(), ['id' => 'id_user']);
     }
 }

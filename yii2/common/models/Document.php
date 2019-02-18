@@ -8,12 +8,16 @@ use Yii;
  * This is the model class for table "document".
  *
  * @property int $id
- * @property int $id_lesson
  * @property string $name
  * @property string $href
  * @property string $description
- * @property string $updated_at
- * @property string $created_at
+ * @property int $updated_at
+ * @property int $created_at
+ * @property int $id_lesson
+ *
+ * @property Lesson $lesson
+ * @property TagDocument[] $tagDocuments
+ * @property Tag[] $tags
  */
 class Document extends \yii\db\ActiveRecord
 {
@@ -31,11 +35,11 @@ class Document extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [[ 'name', 'href', 'description', 'date'], 'required'],
-            [['updated_at','created_at'], 'integer'],
+            [['name', 'href', 'description', 'updated_at', 'created_at', 'id_lesson'], 'required'],
             [['name', 'href', 'description'], 'string'],
-            [['date'], 'safe'],
-            ];
+            [['updated_at', 'created_at', 'id_lesson'], 'integer'],
+            [['id_lesson'], 'exist', 'skipOnError' => true, 'targetClass' => Lesson::className(), 'targetAttribute' => ['id_lesson' => 'id']],
+        ];
     }
 
     /**
@@ -44,27 +48,37 @@ class Document extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id_document' => 'Id',
-            'name' => 'Заголовок',
-            'href' => 'Название для скачивания',
-            'description' => 'Описание',
-            'created_at' => 'Опубликовоно',
-            'updated_at'=>'Изменено',
+            'id' => 'ID',
+            'name' => 'Name',
+            'href' => 'Href',
+            'description' => 'Description',
+            'updated_at' => 'Updated At',
+            'created_at' => 'Created At',
+            'id_lesson' => 'Id Lesson',
         ];
     }
 
-
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getDocumentTag(){
-        return $this->hasMany(TagDocument::className(),['id_document'=>'id']);
+    public function getLesson()
+    {
+        return $this->hasOne(Lesson::className(), ['id' => 'id_lesson']);
     }
 
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getTags(){
-        return $this->hasMany(Tag::className(),['id'=>'id_tag'])->via('documentTag');
+    public function getTagDocuments()
+    {
+        return $this->hasMany(TagDocument::className(), ['id_document' => 'id']);
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getTags()
+    {
+        return $this->hasMany(Tag::className(), ['id' => 'id_tag'])->viaTable('tagDocument', ['id_document' => 'id']);
     }
 }

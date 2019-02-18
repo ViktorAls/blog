@@ -14,7 +14,8 @@ use yii\web\Controller;
 class TestController extends Controller
 {
 
-    public function getIndex($id=0){
+    public function actionIndex($lesson='',$search=''){
+
         return $this->render('index');
     }
 

@@ -9,6 +9,9 @@ use Yii;
  *
  * @property int $id_post
  * @property int $id_tag
+ *
+ * @property Post $post
+ * @property Tag $tag
  */
 class TagPost extends \yii\db\ActiveRecord
 {
@@ -28,6 +31,9 @@ class TagPost extends \yii\db\ActiveRecord
         return [
             [['id_post', 'id_tag'], 'required'],
             [['id_post', 'id_tag'], 'integer'],
+            [['id_post', 'id_tag'], 'unique', 'targetAttribute' => ['id_post', 'id_tag']],
+            [['id_post'], 'exist', 'skipOnError' => true, 'targetClass' => Post::className(), 'targetAttribute' => ['id_post' => 'id']],
+            [['id_tag'], 'exist', 'skipOnError' => true, 'targetClass' => Tag::className(), 'targetAttribute' => ['id_tag' => 'id']],
         ];
     }
 
@@ -37,9 +43,24 @@ class TagPost extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id' => 'ID',
             'id_post' => 'Id Post',
             'id_tag' => 'Id Tag',
         ];
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getPost()
+    {
+        return $this->hasOne(Post::className(), ['id' => 'id_post']);
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getTag()
+    {
+        return $this->hasOne(Tag::className(), ['id' => 'id_tag']);
     }
 }
