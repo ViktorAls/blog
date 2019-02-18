@@ -55,7 +55,6 @@ class m190218_171852_create_resultTest_table extends Migration
     public function safeDown()
     {
 
-
         $this->dropForeignKey(
             'fk-resultTest-id_user',
             'resultTest'

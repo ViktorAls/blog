@@ -2,10 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c6942d54-c9bd-496f-aad8-5638e982d304" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yii2/common/widgets/Comment.php" beforeDir="false" afterPath="$PROJECT_DIR$/yii2/common/widgets/Comment.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yii2/console/migrations/m190216_095215_create_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/yii2/console/migrations/m190216_095215_create_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yii2/console/migrations/m190218_165329_created_test.php" beforeDir="false" afterPath="$PROJECT_DIR$/yii2/console/migrations/m190218_165329_created_test.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/yii2/console/migrations/m190218_171852_create_resultTest_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/yii2/console/migrations/m190218_171852_create_resultTest_table.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -28,11 +24,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/yii2/console/migrations/m190218_171852_create_resultTest_table.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="128">
-              <caret line="58" column="20" selection-start-line="58" selection-start-column="20" selection-end-line="58" selection-end-column="20" />
+            <state relative-caret-position="357">
+              <caret line="21" column="25" selection-start-line="21" selection-start-column="25" selection-end-line="21" selection-end-column="25" />
             </state>
           </provider>
         </entry>
@@ -58,10 +54,10 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/yii2/console/migrations/m190216_095215_create_table.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="332">
+            <state relative-caret-position="230">
               <caret line="265" column="30" selection-start-line="265" selection-start-column="30" selection-end-line="265" selection-end-column="30" />
             </state>
           </provider>
@@ -177,8 +173,8 @@
         <option value="$PROJECT_DIR$/yii2/frontend/views/posts/lesson.php" />
         <option value="$PROJECT_DIR$/yii2/common/widgets/Comment.php" />
         <option value="$PROJECT_DIR$/yii2/console/migrations/m190218_165329_created_test.php" />
-        <option value="$PROJECT_DIR$/yii2/console/migrations/m190218_171852_create_resultTest_table.php" />
         <option value="$PROJECT_DIR$/yii2/console/migrations/m190216_095215_create_table.php" />
+        <option value="$PROJECT_DIR$/yii2/console/migrations/m190218_171852_create_resultTest_table.php" />
       </list>
     </option>
   </component>
@@ -312,21 +308,6 @@
               <item name="yii2" type="462c0819:PsiDirectoryNode" />
               <item name="frontend" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="blog" type="b2602c69:ProjectViewProjectNode" />
-              <item name="blog" type="462c0819:PsiDirectoryNode" />
-              <item name="yii2" type="462c0819:PsiDirectoryNode" />
-              <item name="frontend" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="blog" type="b2602c69:ProjectViewProjectNode" />
-              <item name="blog" type="462c0819:PsiDirectoryNode" />
-              <item name="yii2" type="462c0819:PsiDirectoryNode" />
-              <item name="frontend" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="posts" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -406,12 +387,12 @@
       <workItem from="1550171248037" duration="6148000" />
       <workItem from="1550216714291" duration="53469000" />
       <workItem from="1550475601705" duration="176000" />
-      <workItem from="1550508704059" duration="9558000" />
+      <workItem from="1550508704059" duration="9863000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="337748000" />
+    <option name="totallyTimeSpent" value="338053000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
@@ -824,17 +805,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/yii2/console/migrations/m190218_171852_create_resultTest_table.php">
+    <entry file="file://$PROJECT_DIR$/yii2/console/migrations/m190216_095215_create_table.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="128">
-          <caret line="58" column="20" selection-start-line="58" selection-start-column="20" selection-end-line="58" selection-end-column="20" />
+        <state relative-caret-position="230">
+          <caret line="265" column="30" selection-start-line="265" selection-start-column="30" selection-end-line="265" selection-end-column="30" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/yii2/console/migrations/m190216_095215_create_table.php">
+    <entry file="file://$PROJECT_DIR$/yii2/console/migrations/m190218_171852_create_resultTest_table.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="332">
-          <caret line="265" column="30" selection-start-line="265" selection-start-column="30" selection-end-line="265" selection-end-column="30" />
+        <state relative-caret-position="357">
+          <caret line="21" column="25" selection-start-line="21" selection-start-column="25" selection-end-line="21" selection-end-column="25" />
         </state>
       </provider>
     </entry>
