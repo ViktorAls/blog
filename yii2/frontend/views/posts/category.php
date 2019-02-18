@@ -8,7 +8,7 @@
  */
 
 use yii\data\Pagination;
-$this->title = $category;
+$this->title = $section;
 ?>
 <section class="s-content">
 

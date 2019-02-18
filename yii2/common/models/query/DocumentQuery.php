@@ -29,17 +29,29 @@ class DocumentQuery extends Document
     /**
      * @return \yii\db\ActiveQuery
      */
-    public static function getAll(){
+    public static function getAll()
+    {
         return self::find()->joinWith('tags');
     }
 
     /**
      * @param string $search
-     * @return \yii\db\ActiveQuery
+     * @param string $tag
+     * @param string $lesson
+     * @return ActiveQuery
      */
-    public static function getLikeTitle($search,$tag,$lesson){
-        return self::find()->andWhere(['like', 'document.name', $search])->andWhere(['document.id_lesson'=>$lesson])
-            ->joinWith('tags')->andWhere(['like','tag.name',$tag]);
+    public static function getLikeTitle($search, $tag, $lesson)
+    {
+        if ($lesson===0) {
+            return self::find()
+                ->andWhere(['like', 'document.name', $search])
+                ->joinWith('tags')
+                ->andWhere(['like', 'tag.name', $tag]);
+        }
+        return self::find()->andWhere(['like', 'document.name', $search])
+            ->andWhere(['document.id_lesson' => $lesson])
+            ->joinWith('tags')
+            ->andWhere(['like', 'tag.name', $tag]);
     }
 
 }

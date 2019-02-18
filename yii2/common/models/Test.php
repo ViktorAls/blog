@@ -14,7 +14,6 @@ use Yii;
  * @property string $date
  * @property string $begin_date
  * @property string $end_date
- *
  * @property Question[] $questions
  * @property Lesson $lesson
  */

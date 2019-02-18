@@ -61,7 +61,7 @@ class PostsController extends AccessController
      */
     public function actionLecture($search = '', $lesson = 0)
     {
-        if ($search==='' && $lesson===0) {
+        if ($search === '' && $lesson === 0) {
             $query = PostQuery::getAllByType('type != 2');
         } else {
             $query = PostQuery::getByTypeLikeTitle('type != 2', $search, $lesson);
@@ -85,7 +85,7 @@ class PostsController extends AccessController
      */
     public function actionAudioLecture($search = '', $lesson = 0)
     {
-        if ($search==='' && $lesson===0) {
+        if ($search==='' && $lesson === 0) {
             $query = PostQuery::getAllByType('type = 2');
         } else {
             $query = PostQuery::getByTypeLikeTitle('type = 2', $search, $lesson);
