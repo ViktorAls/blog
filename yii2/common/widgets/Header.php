@@ -41,6 +41,7 @@ class Header extends Widget
                 'liDocument' => $this->getLi($lessons,Url::to(['document/index'])),
                 'liAudioLecture' => $this->getLi($lessons,Url::to(['posts/audio-lecture'])),
                 'liLecture' => $this->getLi($lessons,Url::to(['posts/lecture'])),
+                'liTest' => $this->getLi($lessons,Url::to(['test/index'])),
                 'connectionWidget' => $this->connectionWidget,
             ]
         );

@@ -7,6 +7,7 @@
  * @var string $liDocument
  * @var string $liAudioLecture
  * @var string $liLecture
+ * @var string $liTest
  */
 $search = Yii::$app->search->SearchAction(Yii::$app->controller->route);
 
@@ -81,7 +82,13 @@ use yii\helpers\Url;
                                     <li><a href="<?= \yii\helpers\Url::to(['document/index']) ?>" title="">Все документы</a></li>
                                 </ul>
                             </li>
-                            <li><a href="<?= \yii\helpers\Url::to(['document/index']) ?>" title="">Тесты</a></li>
+                            <li class="has-children">
+                                <a href="#" title="">Тесты</a>
+                                <ul class="sub-menu">
+                                    <?= $liTest ?>
+                                    <li><a href="<?= \yii\helpers\Url::to(['document/index']) ?>" title="">Все тесты</a></li>
+                                </ul>
+                            </li>
                             <li><a href="<?= \yii\helpers\Url::to(['posts/audio-lecture']) ?>">Результаты тестов</a>
                             </li>
                             <li><a href="#" class="modalAjaxProfile">Настройки профиля</a></li>
