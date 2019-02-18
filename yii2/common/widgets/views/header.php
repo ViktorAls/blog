@@ -89,7 +89,7 @@ use yii\helpers\Url;
                                     <li><a href="<?= \yii\helpers\Url::to(['test/index']) ?>" title="">Все тесты</a></li>
                                 </ul>
                             </li>
-                            <li><a href="<?= \yii\helpers\Url::to(['posts/audio-lecture']) ?>">Результаты тестов</a>
+                            <li><a href="<?= \yii\helpers\Url::to(['result-test/index']) ?>">Результаты тестов</a>
                             </li>
                             <li><a href="#" class="modalAjaxProfile">Настройки профиля</a></li>
                             <li><?= Html::a('Выход', Url::to(['site/logout']),['data-method' => 'POST']);?></li>
