@@ -1,6 +1,7 @@
 <?php
-namespace common\models;
+namespace backend\models;
 
+use common\models\Comment;
 use common\models\Group;
 use Yii;
 use yii\base\NotSupportedException;
@@ -34,6 +35,7 @@ class User extends ActiveRecord implements IdentityInterface
 {
     const STATUS_DELETED = 0;
     const STATUS_ACTIVE = 10;
+    const SUCCESS_ADMIN = 1;
 
 
     /**
@@ -94,7 +96,7 @@ class User extends ActiveRecord implements IdentityInterface
      */
     public static function findIdentity($id)
     {
-        return static::findOne(['id' => $id, 'status' => self::STATUS_ACTIVE]);
+        return static::findOne(['id' => $id, 'status' => self::STATUS_ACTIVE,'success'=>self::SUCCESS_ADMIN]);
     }
 
     /**
@@ -114,7 +116,7 @@ class User extends ActiveRecord implements IdentityInterface
      */
     public static function findByEmail($email)
     {
-        return static::findOne(['email' => $email, 'status' => self::STATUS_ACTIVE]);
+        return static::findOne(['email' => $email, 'status' => self::STATUS_ACTIVE,'success'=>self::SUCCESS_ADMIN]);
     }
 
     /**

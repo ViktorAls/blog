@@ -73,6 +73,11 @@
       <path value="$PROJECT_DIR$/yii2/vendor/kartik-v/bootstrap-fileinput" />
       <path value="$PROJECT_DIR$/yii2/vendor/kartik-v/yii2-popover-x" />
       <path value="$PROJECT_DIR$/yii2/vendor/kartik-v/bootstrap-popover-x" />
+      <path value="$PROJECT_DIR$/yii2/vendor/almasaeed2010/adminlte" />
+      <path value="$PROJECT_DIR$/yii2/vendor/fortawesome/font-awesome" />
+      <path value="$PROJECT_DIR$/yii2/vendor/rmrevin/yii2-fontawesome" />
+      <path value="$PROJECT_DIR$/yii2/vendor/cebe/yii2-gravatar" />
+      <path value="$PROJECT_DIR$/yii2/vendor/dmstr/yii2-adminlte-asset" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="5.4.0" />
