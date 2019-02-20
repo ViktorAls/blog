@@ -3,16 +3,16 @@
 namespace backend\controllers;
 
 use Yii;
-use common\models\tag;
-use backend\models\TagsSearch;
+use common\models\lesson;
+use backend\models\LessonSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
 /**
- * TagsController implements the CRUD actions for tag model.
+ * LessonController implements the CRUD actions for lesson model.
  */
-class TagsController extends Controller
+class LessonController extends Controller
 {
     /**
      * {@inheritdoc}
@@ -31,9 +31,9 @@ class TagsController extends Controller
 
     public function actionIndex()
     {
-        $searchModel = new TagsSearch();
+        $searchModel = new LessonSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
-        $model = new Tag();
+        $model = new Lesson();
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             yii::$app->response->refresh();
         }
@@ -56,7 +56,7 @@ class TagsController extends Controller
             \Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
             $model = $this->findModel($id);
             if (yii::$app->request->isAjax) {
-                $model->name = yii::$app->request->post('tags');
+                $model->name = yii::$app->request->post('lesson');
                 if ($model->save()){
                     return ['output'=>'', 'message'=>'','values'=>$model->name];
                 }
@@ -65,7 +65,6 @@ class TagsController extends Controller
         }
         return $this->redirect(Yii::$app->request->referrer);
     }
-
     /**
      * @param $id
      * @return \yii\web\Response
@@ -81,15 +80,15 @@ class TagsController extends Controller
     }
 
     /**
-     * Finds the tag model based on its primary key value.
+     * Finds the lesson model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param integer $id
-     * @return tag the loaded model
+     * @return lesson the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
     {
-        if (($model = tag::findOne($id)) !== null) {
+        if (($model = lesson::findOne($id)) !== null) {
             return $model;
         }
 

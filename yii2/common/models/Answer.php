@@ -44,9 +44,9 @@ class Answer extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'title' => 'Title',
-            'bool' => 'Bool',
-            'id_question' => 'Id Question',
+            'title' => 'Ответ',
+            'bool' => 'Правильность',
+            'id_question' => 'Вопрос',
         ];
     }
 

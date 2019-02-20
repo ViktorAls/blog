@@ -3,16 +3,16 @@
 namespace backend\controllers;
 
 use Yii;
-use common\models\tag;
-use backend\models\TagsSearch;
+use common\models\information;
+use backend\models\InformationSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
 /**
- * TagsController implements the CRUD actions for tag model.
+ * InformationController implements the CRUD actions for information model.
  */
-class TagsController extends Controller
+class InformationController extends Controller
 {
     /**
      * {@inheritdoc}
@@ -31,9 +31,9 @@ class TagsController extends Controller
 
     public function actionIndex()
     {
-        $searchModel = new TagsSearch();
+        $searchModel = new InformationSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
-        $model = new Tag();
+        $model = new Information();
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             yii::$app->response->refresh();
         }
@@ -56,40 +56,25 @@ class TagsController extends Controller
             \Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
             $model = $this->findModel($id);
             if (yii::$app->request->isAjax) {
-                $model->name = yii::$app->request->post('tags');
+                $model->value = yii::$app->request->post('information');
                 if ($model->save()){
-                    return ['output'=>'', 'message'=>'','values'=>$model->name];
+                    return ['output'=>'', 'message'=>'','values'=>$model->value];
                 }
             }
             return ['output'=>'', 'message'=>'При сохранении произошла ошибка, попробуйте ещё раз.'];
         }
         return $this->redirect(Yii::$app->request->referrer);
     }
-
     /**
-     * @param $id
-     * @return \yii\web\Response
-     * @throws NotFoundHttpException
-     * @throws \Throwable
-     * @throws \yii\db\StaleObjectException
-     */
-    public function actionDelete($id)
-    {
-        $this->findModel($id)->delete();
-
-        return $this->redirect(['index']);
-    }
-
-    /**
-     * Finds the tag model based on its primary key value.
+     * Finds the information model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param integer $id
-     * @return tag the loaded model
+     * @return information the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
     {
-        if (($model = tag::findOne($id)) !== null) {
+        if (($model = information::findOne($id)) !== null) {
             return $model;
         }
 

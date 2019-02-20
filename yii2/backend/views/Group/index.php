@@ -1,49 +1,54 @@
 <?php
 
 use kartik\editable\Editable;
-use yii\grid\GridView;
 use yii\helpers\Html;
+use yii\grid\GridView;
 use yii\widgets\Pjax;
+/* @var $this yii\web\View */
+/* @var $searchModel backend\models\LessonSearch */
+/* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Управление тегами новостей';
+$this->title = 'Управление группами учащихся';
+$this->params['breadcrumbs'][] = $this->title;
 ?>
+
 <div class="tag-index">
     <div class="row">
         <div class="col-md-8">
             <div class="box box-danger">
                 <div class="box-header">
-                    <h3 class="box-title">Теги к новостям</h3>
+                    <h3 class="box-title">Группы</h3>
                 </div>
                 <div class="box-body">
                     <?php Pjax::begin(); ?>
-                    <?= /** @var \backend\models\TagsSearch $searchModel */
-                    GridView::widget([
+                    <?= GridView::widget([
                         'dataProvider' => $dataProvider,
                         'filterModel' => $searchModel,
                         'columns' => [
                             ['class' => 'yii\grid\SerialColumn'],
                             [
-                                'label'=>'Теги',
+                                'label'=>'Предметы',
                                 'attribute' => 'name',
                                 'content'=>function($model){
                                     return Editable::widget([
-                                            'name'=>'tags',
+                                        'name'=>'group',
                                         'value'=>$model->name,
                                         'bsColCssPrefixes'=>Editable::SIZE_MEDIUM,
                                         'pjaxContainerId'=>'p0',
                                         'formOptions'=>[
-                                            'action' => [\yii\helpers\Url::to(['tags/update','type'=>'ajax','id'=>$model->id])]
+                                            'action' => [\yii\helpers\Url::to(['group/update','type'=>'ajax','id'=>$model->id])]
                                         ],
                                         'asPopover' => true,
                                         'editableButtonOptions'=>['label'=>'<i class="fas fa-pen"></i>'],// значек редактирования
                                         'format' => Editable::FORMAT_BUTTON,// редактирвоание по стоке или кнопки
                                         'preHeader'=>' ',// иконка когда редактируем
-                                        'header' => 'Тег: '.$model->name,
-                                        'size'=>'md',
+                                        'header' => 'Предмет: '.$model->name,
+                                        'size'=>'2',
                                         'options' => ['class'=>'form-control', 'placeholder'=>'Enter person name...']
                                     ]);
                                 }
                             ],
+
                             [
                                 'class' => 'yii\grid\ActionColumn',
                                 'template' => '{delete}',
@@ -52,7 +57,7 @@ $this->title = 'Управление тегами новостей';
                                         $options = array_merge([
                                             'title' => Yii::t('yii', 'Delete'),
                                             'aria-label' => Yii::t('yii', 'Delete'),
-                                            'data-confirm' => 'При удалении этого тега будут удалены все связанные с ним записи, уверены что хотите удалить его ?',
+                                            'data-confirm' => 'При удалении этого предмета будут удалены все связанные с ним записи, уверены что хотите удалить его ?',
                                             'data-method' => 'post',
                                             'data-pjax' => '0',
                                         ]);
@@ -69,7 +74,7 @@ $this->title = 'Управление тегами новостей';
         <div class="col-md-4">
             <div class="box box-danger">
                 <div class="box-header">
-                    <h3 class="box-title">Добавить тег</h3>
+                    <h3 class="box-title">Добавить группу</h3>
                 </div>
                 <div class="box-body">
                     <?= $this->render('_form', [

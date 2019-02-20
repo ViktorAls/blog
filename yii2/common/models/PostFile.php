@@ -43,8 +43,8 @@ class PostFile extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'name' => 'Name',
-            'id_post' => 'Id Post',
+            'name' => 'Название',
+            'id_post' => 'Запись',
         ];
     }
 

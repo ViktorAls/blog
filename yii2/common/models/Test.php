@@ -49,10 +49,9 @@ class Test extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'title' => 'Title',
-            'description' => 'Description',
-            'id_lesson' => 'Id Lesson',
-            'date' => 'Date',
+            'title' => 'Название',
+            'description' => 'Описание',
+            'id_lesson' => 'Урок',
             'begin_date' => 'Begin Date',
             'end_date' => 'End Date',
         ];

@@ -49,12 +49,12 @@ class Document extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'name' => 'Name',
-            'href' => 'Href',
-            'description' => 'Description',
-            'updated_at' => 'Updated At',
-            'created_at' => 'Created At',
-            'id_lesson' => 'Id Lesson',
+            'name' => 'Название',
+            'href' => 'Ссылка',
+            'description' => 'Описание',
+            'updated_at' => 'Изменено',
+            'created_at' => 'Добавлено',
+            'id_lesson' => 'Урок',
         ];
     }
 

@@ -46,9 +46,9 @@ class Question extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'title' => 'Title',
-            'icon' => 'Icon',
-            'id_test' => 'Id Test',
+            'title' => 'Название',
+            'icon' => 'Иконка',
+            'id_test' => 'Тест',
         ];
     }
 
