@@ -21,7 +21,8 @@
         "ext-mbstring": "*",
         "kartik-v/yii2-widget-fileinput": "dev-master",
         "kartik-v/yii2-popover-x": "dev-master",
-        "dmstr/yii2-adminlte-asset": "^2.1"
+        "dmstr/yii2-adminlte-asset": "^2.1",
+        "kartik-v/yii2-editable": "dev-master"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.0.0",
