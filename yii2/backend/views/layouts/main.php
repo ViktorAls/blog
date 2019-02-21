@@ -17,6 +17,7 @@ use yii\helpers\Html;
         <?= Html::csrfMetaTags() ?>
         <title><?= Html::encode($this->title) ?></title>
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
         <?php $this->head() ?>
     </head>
     <body class="hold-transition skin-blue sidebar-mini sidebar-collapse">
@@ -42,6 +43,8 @@ use yii\helpers\Html;
     </div>
 
     <?php $this->endBody() ?>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
     </body>
     </html>
     <?php $this->endPage() ?>

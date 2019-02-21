@@ -23,8 +23,6 @@ use yii\web\IdentityInterface;
  * @property string $email
  * @property string $auth_key
  * @property integer $status
- * @property integer $created_at
- * @property integer $updated_at
  * @property string $password write-only password
  * @property string $authKey
  * @property \common\models\Group $group
@@ -46,21 +44,13 @@ class User extends ActiveRecord implements IdentityInterface
         return '{{%user}}';
     }
 
-    /**
-     * {@inheritdoc}
-     */
-    public function behaviors()
-    {
-        return [
-            TimestampBehavior::className(),
-        ];
-    }
+
 
     public function rules()
     {
         return [
-            [['name', 'middlename', 'patronymic', 'id_group', 'auth_key', 'password_hash', 'email', 'created_at', 'updated_at'], 'required'],
-            [['success', 'id_group', 'status', 'created_at', 'updated_at'], 'integer'],
+            [['name', 'middlename', 'patronymic', 'id_group', 'email'], 'required'],
+            [['success', 'id_group', 'status'], 'integer'],
             [['name', 'middlename', 'patronymic', 'password_hash', 'password_reset_token', 'email'], 'string', 'max' => 255],
             [['icon'], 'string', 'max' => 300],
             [['auth_key'], 'string', 'max' => 32],
@@ -85,8 +75,6 @@ class User extends ActiveRecord implements IdentityInterface
             'password_reset_token' => 'Password Reset Token',
             'email' => 'Email',
             'status' => 'Status',
-            'created_at' => 'Created At',
-            'updated_at' => 'Updated At',
         ];
     }
 

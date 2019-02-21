@@ -1,10 +1,8 @@
 <?php
 namespace common\models;
 
-use common\models\Group;
 use Yii;
 use yii\base\NotSupportedException;
-use yii\behaviors\TimestampBehavior;
 use yii\db\ActiveRecord;
 use yii\web\IdentityInterface;
 
@@ -22,8 +20,6 @@ use yii\web\IdentityInterface;
  * @property string $email
  * @property string $auth_key
  * @property integer $status
- * @property integer $created_at
- * @property integer $updated_at
  * @property string $password write-only password
  * @property string $authKey
  * @property \common\models\Group $group
@@ -34,7 +30,7 @@ class User extends ActiveRecord implements IdentityInterface
 {
     const STATUS_DELETED = 0;
     const STATUS_ACTIVE = 10;
-
+    public $password;
 
     /**
      * {@inheritdoc}
@@ -44,24 +40,16 @@ class User extends ActiveRecord implements IdentityInterface
         return '{{%user}}';
     }
 
-    /**
-     * {@inheritdoc}
-     */
-    public function behaviors()
-    {
-        return [
-            TimestampBehavior::className(),
-        ];
-    }
+
 
     public function rules()
     {
         return [
-            [['name', 'middlename', 'patronymic', 'id_group', 'auth_key', 'password_hash', 'email', 'created_at', 'updated_at'], 'required'],
-            [['success', 'id_group', 'status', 'created_at', 'updated_at'], 'integer'],
+            [['name', 'middlename', 'patronymic', 'id_group', 'email'], 'required'],
+            [['success', 'id_group', 'status'], 'integer'],
             [['name', 'middlename', 'patronymic', 'password_hash', 'password_reset_token', 'email'], 'string', 'max' => 255],
             [['icon'], 'string', 'max' => 300],
-            [['auth_key'], 'string', 'max' => 32],
+            [['auth_key','password'], 'string', 'max' => 32],
             [['email'], 'unique'],
             [['password_reset_token'], 'unique'],
             [['id_group'], 'exist', 'skipOnError' => true, 'targetClass' => Group::className(), 'targetAttribute' => ['id_group' => 'id']],
@@ -72,19 +60,18 @@ class User extends ActiveRecord implements IdentityInterface
     {
         return [
             'id' => 'ID',
-            'name' => 'Name',
-            'middlename' => 'Middlename',
-            'success' => 'Success',
-            'patronymic' => 'Patronymic',
-            'id_group' => 'Id Group',
-            'icon' => 'Icon',
+            'name' => 'Имя',
+            'middlename' => 'Фамилия',
+            'success' => 'Право доступа',
+            'patronymic' => 'Отчество',
+            'id_group' => 'Группа',
+            'icon' => 'Аватарка',
             'auth_key' => 'Auth Key',
             'password_hash' => 'Password Hash',
             'password_reset_token' => 'Password Reset Token',
-            'email' => 'Email',
-            'status' => 'Status',
-            'created_at' => 'Created At',
-            'updated_at' => 'Updated At',
+            'email' => 'Почта',
+            'status' => 'Статус',
+            'password'=>'Пароль',
         ];
     }
 
@@ -237,6 +224,20 @@ class User extends ActiveRecord implements IdentityInterface
     public function getComments()
     {
         return $this->hasMany(Comment::className(), ['id_user' => 'id']);
+    }
+
+    /**
+     * @param bool $insert
+     * @return bool
+     * @throws \yii\base\Exception
+     */
+    public function beforeSave($insert)
+    {
+
+        if($this->isNewRecord) {
+            $this->setPassword($this->password);
+        }
+        return parent::beforeSave($insert);
     }
 
 }
