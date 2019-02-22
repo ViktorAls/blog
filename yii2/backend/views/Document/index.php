@@ -42,8 +42,6 @@ $this->params['breadcrumbs'][] = $this->title;
                         'filter' => $lessonFilter,
                     ],
                     'description:ntext',
-                    'updated_at',
-                    'created_at',
 
                     ['class' => 'yii\grid\ActionColumn'],
                 ],

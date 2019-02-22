@@ -80,6 +80,7 @@
       <path value="$PROJECT_DIR$/yii2/vendor/dmstr/yii2-adminlte-asset" />
       <path value="$PROJECT_DIR$/yii2/vendor/kartik-v/yii2-widget-activeform" />
       <path value="$PROJECT_DIR$/yii2/vendor/kartik-v/yii2-editable" />
+      <path value="$PROJECT_DIR$/yii2/vendor/kartik-v/yii2-widget-select2" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="5.4.0" />
