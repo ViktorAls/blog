@@ -17,7 +17,7 @@ class LessonQuery extends Lesson
     /**
      * @return array|DocumentQuery[]|LessonQuery[]|\yii\db\ActiveRecord[]
      */
-    public static function getLesson()
+    public static function getAll()
     {
         return self::find()->asArray()->all();
     }

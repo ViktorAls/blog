@@ -34,7 +34,7 @@ class Header extends Widget
 
     public function run()
     {
-        $lessons = LessonQuery::getLesson();
+        $lessons = LessonQuery::getAll();
         return $this->render('header', [
                 'logoName' => $this->logoName,
                 'urlLogo' => $this->urlLogo,

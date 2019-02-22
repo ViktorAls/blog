@@ -59,10 +59,19 @@ $this->params['breadcrumbs'][] = $this->title;
                     ],
 
                     ['class' => 'yii\grid\ActionColumn',
-                        'template' => '{admin}{update}{delete}',
+                        'template' => '{status} {admin} {update} {delete}',
                         'buttons' => [
-                            'admin' => function () {
-                                return Html::a('<i class="fas fa-lock"></i>');
+                            'admin' => function ($url, $model) {
+                                if ($model->success===0) {
+                                    return Html::a('<i class="fas fa-lock"></i>', $url, ['title' => 'Разграничить права']);
+                                }
+                                return Html::a('<i class="fas fa-lock-open"></i>', $url, ['title' => 'Ограничить права']);
+                            },
+                            'status' => function ($url, $model) {
+                                if ($model->status===0) {
+                                    return Html::a('<i class="fas fa-plus"></i>', $url, ['title' => 'Одобрать']);
+                                }
+                                return Html::a('<i class="fas fa-minus"></i>', $url, ['title' => 'Запретить']);
                             }
                         ]
                     ],

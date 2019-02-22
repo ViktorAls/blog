@@ -62,11 +62,31 @@ class UserController extends Controller
             $allow = 'администратор';
         }
        if($model->save()){
-        Yii::$app->session->setFlash('success',"Права доступа изменены на \'$allow\'");
+        Yii::$app->session->setFlash('success',"Права доступа изменены на '$allow'");
        } else {
            Yii::$app->session->setFlash('error','При изменении прав произошла ошибка');
        }
        return $this->redirect(['index']);
+    }
+
+    /**
+     * @param $id
+     * @return \yii\web\Response
+     * @throws NotFoundHttpException
+     */
+    public function actionStatus($id){
+        $model = $this->findModel($id);
+        if($model->status === 10){
+            $model->status = 0;
+        } else {
+            $model->status = 10;
+        }
+        if($model->save()){
+            Yii::$app->session->setFlash('success','Статус пользователя изменён');
+        } else {
+            Yii::$app->session->setFlash('error','При изменении статуса произошла ошибка');
+        }
+        return $this->redirect(['index']);
     }
 
     /**

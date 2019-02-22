@@ -23,6 +23,16 @@
                         'icon' => 'tasks',
                         'url' => [\yii\helpers\Url::to(['information/index'])],
                     ],
+                    [
+                        'label' => 'Документы',
+                        'icon' => 'tasks',
+                        'url' => [\yii\helpers\Url::to(['document/index'])],
+                    ],
+                    [
+                        'label' => 'Пользователи',
+                        'icon' => 'tasks',
+                        'url' => [\yii\helpers\Url::to(['user/index'])],
+                    ],
 
                     ['label' => 'Выход', 'icon' => 'times-circle', 'url' => ['/site/logout'], 'template' => '<a href="{url}" data-method="post">{icon}{label}</a>'],
                 ],
