@@ -47,6 +47,27 @@ class UserController extends Controller
         ]);
     }
 
+    /**
+     * @param $id
+     * @return \yii\web\Response
+     * @throws NotFoundHttpException
+     */
+    public function actionAdmin($id){
+        $allow = 'учащийся';
+        $model = $this->findModel($id);
+        if($model->success === 1){
+            $model->success = 0;
+        } else {
+            $model->success = 1;
+            $allow = 'администратор';
+        }
+       if($model->save()){
+        Yii::$app->session->setFlash('success',"Права доступа изменены на \'$allow\'");
+       } else {
+           Yii::$app->session->setFlash('error','При изменении прав произошла ошибка');
+       }
+       return $this->redirect(['index']);
+    }
 
     /**
      * Creates a new user model.
@@ -59,7 +80,7 @@ class UserController extends Controller
         $groupFilter = ArrayHelper::map(GroupQuery::getGroupAll(),'id','name');
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            Yii::$app->session->setFlash('success','Пользователь зарегестрирован, ожидает подтверждения.');
+            Yii::$app->session->setFlash('error','Пользователь зарегистрирован, ожидает подтверждения.');
             return $this->redirect(['index']);
         }
 

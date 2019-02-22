@@ -55,6 +55,7 @@ class User extends ActiveRecord implements IdentityInterface
             [['icon'], 'string', 'max' => 300],
             [['auth_key'], 'string', 'max' => 32],
             [['email'], 'unique'],
+            [['email'], 'email'],
             [['password_reset_token'], 'unique'],
             [['id_group'], 'exist', 'skipOnError' => true, 'targetClass' => Group::className(), 'targetAttribute' => ['id_group' => 'id']],
         ];

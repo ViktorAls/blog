@@ -8,7 +8,7 @@ use yii\widgets\Pjax;
 /* @var $searchModel backend\models\UserSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Пользвователи';
+$this->title = 'Пользователи';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 
@@ -16,19 +16,13 @@ $this->params['breadcrumbs'][] = $this->title;
     <div class="box-header with-border">
         <h3 class="box-title">Управление пользователями</h3>
         <div class="box-tools pull-right">
-            <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
-            </button>
-            <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+            <?= Html::a('<i class="far fa-plus-square"></i>', ['create']) ?>
         </div>
     </div>
     <!-- /.box-header -->
     <div class="box-body">
         <div class="table-responsive">
             <?php Pjax::begin(); ?>
-
-            <p>
-                <?= Html::a('Добавить пользователя', ['create'], ['class' => 'btn btn-success']) ?>
-            </p>
 
             <?= GridView::widget([
                 'dataProvider' => $dataProvider,
@@ -65,7 +59,12 @@ $this->params['breadcrumbs'][] = $this->title;
                     ],
 
                     ['class' => 'yii\grid\ActionColumn',
-                        'template' => '{update}{delete}'
+                        'template' => '{admin}{update}{delete}',
+                        'buttons' => [
+                            'admin' => function () {
+                                return Html::a('<i class="fas fa-lock"></i>');
+                            }
+                        ]
                     ],
                 ],
             ]); ?>
