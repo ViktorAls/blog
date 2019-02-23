@@ -33,7 +33,7 @@ class m190216_095215_create_table extends Migration
         $this->createTable('document', [
             'id' => $this->primaryKey(),
             'name' => $this->text()->notNull(),
-            'href' => $this->text()->notNull(),
+            'href' => $this->text()->null(),
             'description' => $this->text()->notNull(),
             'updated_at' => $this->integer()->notNull(),
             'created_at' => $this->integer()->notNull(),

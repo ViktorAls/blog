@@ -5,6 +5,7 @@ namespace common\models;
 use Yii;
 use yii\behaviors\TimestampBehavior;
 use yii\helpers\ArrayHelper;
+use yii\helpers\FileHelper;
 use yii\web\UploadedFile;
 
 /**
@@ -122,6 +123,9 @@ class Document extends \yii\db\ActiveRecord
      */
     public function beforeSave($insert){
         if($file = UploadedFile::getInstance($this, 'file')){
+            if (!$this->isNewRecord && $this->href !== null){
+                $this->isFileDelete(yii::getAlias("@document/$this->href"));
+            }
             $this->saveFileOne($file);
         }
         return parent::beforeSave($insert);
@@ -139,9 +143,23 @@ class Document extends \yii\db\ActiveRecord
      */
     public function saveFileOne($file){
         $dir = Yii::getAlias('@document');
+        $this->createDir($dir);
         $this->href = time() .'_'.Yii::$app->getSecurity()->generateRandomString(6) . '.' . $file->extension;
         $file->saveAs($dir.'/'.$this->href);
     }
+    /**
+     * Если папки нету, то создалить её
+     * @param $dir
+     * @throws \yii\base\Exception
+     * $dir - путь для проверки существования папки
+     */
+    public function createDir($dir)
+    {
+        if (!is_dir($dir)) {
+            FileHelper::createDirectory($dir);
+        }
+    }
+
     /**
      * Для удаления файла, если он есть, то удалить его
      * @param string $filename

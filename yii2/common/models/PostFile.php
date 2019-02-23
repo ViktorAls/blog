@@ -2,8 +2,6 @@
 
 namespace common\models;
 
-use Yii;
-
 /**
  * This is the model class for table "postFile".
  *
@@ -54,5 +52,18 @@ class PostFile extends \yii\db\ActiveRecord
     public function getPost()
     {
         return $this->hasOne(Post::className(), ['id' => 'id_post']);
+    }
+
+    /*
+    * Вернёт путь картинки,
+    * */
+    public function getImagesUrl()
+    {
+        if ($this->name) {
+            $path = $this->name;
+        } else {
+            $path = 'img/noimage.jpg';
+        }
+        return $path;
     }
 }

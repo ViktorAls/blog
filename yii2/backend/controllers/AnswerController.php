@@ -2,20 +2,17 @@
 
 namespace backend\controllers;
 
-use common\models\query\LessonQuery;
-use common\models\query\TagQuery;
 use Yii;
-use common\models\document;
-use backend\models\DocumentSearch;
-use yii\helpers\ArrayHelper;
+use common\models\answer;
+use backend\models\AnswerSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
 /**
- * DocumentController implements the CRUD actions for document model.
+ * AnswerController implements the CRUD actions for answer model.
  */
-class DocumentController extends Controller
+class AnswerController extends Controller
 {
     /**
      * {@inheritdoc}
@@ -33,23 +30,22 @@ class DocumentController extends Controller
     }
 
     /**
-     * Lists all document models.
+     * Lists all answer models.
      * @return mixed
      */
     public function actionIndex()
     {
-        $searchModel = new DocumentSearch();
+        $searchModel = new AnswerSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
-        $lessonFilter = ArrayHelper::map(LessonQuery::getAll(),'id','name');
+
         return $this->render('index', [
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
-            'lessonFilter'=> $lessonFilter,
         ]);
     }
 
     /**
-     * Displays a single document model.
+     * Displays a single answer model.
      * @param integer $id
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
@@ -62,29 +58,25 @@ class DocumentController extends Controller
     }
 
     /**
-     * Creates a new document model.
+     * Creates a new answer model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
     public function actionCreate()
     {
-        $model = new document();
+        $model = new answer();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
         }
-        $lessonFilter = ArrayHelper::map(LessonQuery::getAll(),'id','name');
-        $tagFilter = ArrayHelper::map(TagQuery::getAll(), 'id', 'name');
 
         return $this->render('create', [
             'model' => $model,
-            'lessonFilter'=>$lessonFilter,
-            'tagFilter'=>$tagFilter,
         ]);
     }
 
     /**
-     * Updates an existing document model.
+     * Updates an existing answer model.
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param integer $id
      * @return mixed
@@ -98,22 +90,17 @@ class DocumentController extends Controller
             return $this->redirect(['view', 'id' => $model->id]);
         }
 
-        $lessonFilter = ArrayHelper::map(LessonQuery::getAll(),'id','name');
-        $tagFilter = ArrayHelper::map(TagQuery::getAll(), 'id', 'name');
-
         return $this->render('update', [
             'model' => $model,
-            'lessonFilter'=>$lessonFilter,
-            'tagFilter'=>$tagFilter,
         ]);
     }
 
     /**
-     * @param $id
-     * @return \yii\web\Response
-     * @throws NotFoundHttpException
-     * @throws \Throwable
-     * @throws \yii\db\StaleObjectException
+     * Deletes an existing answer model.
+     * If deletion is successful, the browser will be redirected to the 'index' page.
+     * @param integer $id
+     * @return mixed
+     * @throws NotFoundHttpException if the model cannot be found
      */
     public function actionDelete($id)
     {
@@ -123,15 +110,15 @@ class DocumentController extends Controller
     }
 
     /**
-     * Finds the document model based on its primary key value.
+     * Finds the answer model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param integer $id
-     * @return document the loaded model
+     * @return answer the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
     {
-        if (($model = document::findOne($id)) !== null) {
+        if (($model = answer::findOne($id)) !== null) {
             return $model;
         }
 

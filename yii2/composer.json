@@ -23,7 +23,9 @@
         "kartik-v/yii2-popover-x": "dev-master",
         "dmstr/yii2-adminlte-asset": "^2.1",
         "kartik-v/yii2-editable": "dev-master",
-        "kartik-v/yii2-widget-select2": "dev-master"
+        "kartik-v/yii2-widget-select2": "dev-master",
+        "vova07/yii2-imperavi-widget": "*",
+        "kartik-v/yii2-dynagrid": "dev-master"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.0.0",

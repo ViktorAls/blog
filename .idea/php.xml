@@ -81,6 +81,11 @@
       <path value="$PROJECT_DIR$/yii2/vendor/kartik-v/yii2-widget-activeform" />
       <path value="$PROJECT_DIR$/yii2/vendor/kartik-v/yii2-editable" />
       <path value="$PROJECT_DIR$/yii2/vendor/kartik-v/yii2-widget-select2" />
+      <path value="$PROJECT_DIR$/yii2/vendor/vova07/yii2-imperavi-widget" />
+      <path value="$PROJECT_DIR$/yii2/vendor/kartik-v/yii2-dialog" />
+      <path value="$PROJECT_DIR$/yii2/vendor/kartik-v/yii2-sortable" />
+      <path value="$PROJECT_DIR$/yii2/vendor/kartik-v/yii2-dynagrid" />
+      <path value="$PROJECT_DIR$/yii2/vendor/kartik-v/yii2-grid" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="5.4.0" />

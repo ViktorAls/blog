@@ -8,7 +8,7 @@ use yii\widgets\Pjax;
 /* @var $searchModel backend\models\UserSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 /**
- * @var array $lessonFilter;
+ * @var array $lessonFilter ;
  */
 
 $this->title = 'Документы';
@@ -33,7 +33,6 @@ $this->params['breadcrumbs'][] = $this->title;
                 'columns' => [
                     ['class' => 'yii\grid\SerialColumn'],
                     'name:ntext',
-                    'href:ntext',
                     [
                         'attribute' => 'id_lesson',
                         'value' => function ($model) {
@@ -41,8 +40,15 @@ $this->params['breadcrumbs'][] = $this->title;
                         },
                         'filter' => $lessonFilter,
                     ],
-                    'description:ntext',
-
+                    'description:html',
+                    'href:ntext:Название файла на сервере',
+                    [
+                        'label' => 'Теги',
+                        'value' => function ($model) {
+                            $name = array_column($model->tags, 'name');
+                            return implode(', ',$name);
+                        }
+                    ],
                     ['class' => 'yii\grid\ActionColumn'],
                 ],
             ]); ?>

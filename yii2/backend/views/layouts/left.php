@@ -19,6 +19,15 @@
                         ],
                     ],
                     [
+                        'label' => 'Лекции',
+                        'icon' => 'tasks',
+                        'url' => '#',
+                        'items' => [
+                            ['label' => 'Аудио-лекции', 'icon' => 'check-circle', 'url' => [\yii\helpers\Url::to(['post/index','type'=>1])]],
+                            ['label' => 'Лекции', 'icon' => 'clock', 'url' => [\yii\helpers\Url::to(['post/index','type'=>0])]],
+                        ],
+                    ],
+                    [
                         'label' => 'Страница значений',
                         'icon' => 'tasks',
                         'url' => [\yii\helpers\Url::to(['information/index'])],

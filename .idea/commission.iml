@@ -27,9 +27,13 @@
       <excludeFolder url="file://$MODULE_DIR$/yii2/vendor/guzzlehttp/psr7" />
       <excludeFolder url="file://$MODULE_DIR$/yii2/vendor/kartik-v/bootstrap-fileinput" />
       <excludeFolder url="file://$MODULE_DIR$/yii2/vendor/kartik-v/bootstrap-popover-x" />
+      <excludeFolder url="file://$MODULE_DIR$/yii2/vendor/kartik-v/yii2-dialog" />
+      <excludeFolder url="file://$MODULE_DIR$/yii2/vendor/kartik-v/yii2-dynagrid" />
       <excludeFolder url="file://$MODULE_DIR$/yii2/vendor/kartik-v/yii2-editable" />
+      <excludeFolder url="file://$MODULE_DIR$/yii2/vendor/kartik-v/yii2-grid" />
       <excludeFolder url="file://$MODULE_DIR$/yii2/vendor/kartik-v/yii2-krajee-base" />
       <excludeFolder url="file://$MODULE_DIR$/yii2/vendor/kartik-v/yii2-popover-x" />
+      <excludeFolder url="file://$MODULE_DIR$/yii2/vendor/kartik-v/yii2-sortable" />
       <excludeFolder url="file://$MODULE_DIR$/yii2/vendor/kartik-v/yii2-widget-activeform" />
       <excludeFolder url="file://$MODULE_DIR$/yii2/vendor/kartik-v/yii2-widget-fileinput" />
       <excludeFolder url="file://$MODULE_DIR$/yii2/vendor/kartik-v/yii2-widget-select2" />
@@ -73,6 +77,7 @@
       <excludeFolder url="file://$MODULE_DIR$/yii2/vendor/symfony/polyfill-mbstring" />
       <excludeFolder url="file://$MODULE_DIR$/yii2/vendor/symfony/yaml" />
       <excludeFolder url="file://$MODULE_DIR$/yii2/vendor/theseer/tokenizer" />
+      <excludeFolder url="file://$MODULE_DIR$/yii2/vendor/vova07/yii2-imperavi-widget" />
       <excludeFolder url="file://$MODULE_DIR$/yii2/vendor/webmozart/assert" />
       <excludeFolder url="file://$MODULE_DIR$/yii2/vendor/yiisoft/yii2" />
       <excludeFolder url="file://$MODULE_DIR$/yii2/vendor/yiisoft/yii2-bootstrap" />

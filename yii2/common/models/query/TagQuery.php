@@ -15,4 +15,11 @@ class TagQuery extends Tag
     public static function getLimitDesc($limit,$field = 'id'){
         return self::find()->asArray()->orderBy([$field=>SORT_DESC])->limit($limit)->all();
     }
+
+    /**
+     * @return array|TagQuery[]|Tag[]|\yii\db\ActiveRecord[]
+     */
+    public static function getAll(){
+        return self::find()->asArray()->all();
+    }
 }
