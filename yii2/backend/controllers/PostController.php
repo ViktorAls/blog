@@ -74,7 +74,7 @@ class PostController extends Controller
      */
     protected function findModel($id)
     {
-        if (($model = post::findOne($id))!==null) {
+        if (($model = Post::findOne($id))!==null) {
             return $model;
         }
 

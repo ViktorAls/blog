@@ -9,7 +9,7 @@ use common\models\post;
 /**
  * PostSearch represents the model behind the search form of `common\models\post`.
  */
-class PostSearch extends post
+class PostSearch extends Post
 {
     /**
      * {@inheritdoc}
@@ -42,7 +42,7 @@ class PostSearch extends post
      */
     public function search($params)
     {
-        $query = post::find()->orderBy(['id'=>SORT_DESC]);
+        $query = Post::find()->orderBy(['id'=>SORT_DESC]);
 
         // add conditions that should always apply here
 

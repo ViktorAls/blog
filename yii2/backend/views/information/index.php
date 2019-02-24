@@ -14,7 +14,6 @@ $this->params['breadcrumbs'][] = $this->title;
 <div class="box box-info">
     <div class="box-header with-border">
         <h3 class="box-title">Настройки информации на страницах</h3>
-
         <div class="box-tools pull-right">
             <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
             </button>

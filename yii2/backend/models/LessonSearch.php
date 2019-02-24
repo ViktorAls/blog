@@ -9,7 +9,7 @@ use common\models\lesson;
 /**
  * LessonSearch represents the model behind the search form of `common\models\lesson`.
  */
-class LessonSearch extends lesson
+class LessonSearch extends Lesson
 {
     /**
      * {@inheritdoc}
@@ -40,7 +40,7 @@ class LessonSearch extends lesson
      */
     public function search($params)
     {
-        $query = lesson::find();
+        $query = Lesson::find();
 
         // add conditions that should always apply here
 

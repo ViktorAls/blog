@@ -9,7 +9,7 @@ use common\models\test;
 /**
  * testSearch represents the model behind the search form of `common\models\test`.
  */
-class testSearch extends test
+class TestSearch extends Test
 {
     /**
      * {@inheritdoc}
@@ -40,7 +40,7 @@ class testSearch extends test
      */
     public function search($params)
     {
-        $query = test::find();
+        $query = Test::find();
 
         // add conditions that should always apply here
 

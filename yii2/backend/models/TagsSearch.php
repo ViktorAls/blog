@@ -9,7 +9,7 @@ use common\models\tag;
 /**
  * TagsSearch represents the model behind the search form of `common\models\tag`.
  */
-class TagsSearch extends tag
+class TagsSearch extends Tag
 {
     /**
      * {@inheritdoc}
@@ -40,7 +40,7 @@ class TagsSearch extends tag
      */
     public function search($params)
     {
-        $query = tag::find()->orderBy(['id'=>SORT_DESC]);
+        $query = Tag::find()->orderBy(['id'=>SORT_DESC]);
 
         // add conditions that should always apply here
 

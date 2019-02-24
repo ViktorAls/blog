@@ -28,7 +28,9 @@ class TestQuery extends Test
     public static function getAll(){
         return self::find()->asArray()->joinWith('lesson')->where(['>=','begin_date',date('Y-m-d H:i:s')])->andWhere(['>','end_date',date('Y-m-d H:i:s')]);
     }
-
+    public static function getArrayAll(){
+        return self::find()->asArray()->all();
+    }
     /**
      * @param ActiveQuery $query
      * @return array

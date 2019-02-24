@@ -2,6 +2,7 @@
 
 namespace backend\controllers;
 
+use Throwable;
 use Yii;
 use common\models\test;
 use backend\models\testSearch;
@@ -96,11 +97,11 @@ class TestController extends Controller
     }
 
     /**
-     * Deletes an existing test model.
-     * If deletion is successful, the browser will be redirected to the 'index' page.
-     * @param integer $id
-     * @return mixed
-     * @throws NotFoundHttpException if the model cannot be found
+     * @param $id
+     * @return \yii\web\Response
+     * @throws NotFoundHttpException
+     * @throws Throwable
+     * @throws \yii\db\StaleObjectException
      */
     public function actionDelete($id)
     {
@@ -118,7 +119,7 @@ class TestController extends Controller
      */
     protected function findModel($id)
     {
-        if (($model = test::findOne($id)) !== null) {
+        if (($model = Test::findOne($id)) !== null) {
             return $model;
         }
 

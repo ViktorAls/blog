@@ -131,7 +131,7 @@ class DocumentController extends Controller
      */
     protected function findModel($id)
     {
-        if (($model = document::findOne($id)) !== null) {
+        if (($model = Document::findOne($id)) !== null) {
             return $model;
         }
 

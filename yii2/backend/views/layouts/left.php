@@ -28,6 +28,11 @@
                         ],
                     ],
                     [
+                        'label' => 'Управление тестами',
+                        'icon' => 'tasks',
+                        'url' => [\yii\helpers\Url::to(['test/index'])],
+                    ],
+                    [
                         'label' => 'Страница значений',
                         'icon' => 'tasks',
                         'url' => [\yii\helpers\Url::to(['information/index'])],

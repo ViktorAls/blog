@@ -9,7 +9,7 @@ use common\models\user;
 /**
  * UserSearch represents the model behind the search form of `common\models\user`.
  */
-class UserSearch extends user
+class UserSearch extends User
 {
     /**
      * {@inheritdoc}
@@ -40,7 +40,7 @@ class UserSearch extends user
      */
     public function search($params)
     {
-        $query = user::find()->orderBy(['id'=>SORT_DESC]);
+        $query = User::find()->orderBy(['id'=>SORT_DESC]);
 
         // add conditions that should always apply here
 

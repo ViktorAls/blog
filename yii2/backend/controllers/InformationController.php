@@ -74,7 +74,7 @@ class InformationController extends Controller
      */
     protected function findModel($id)
     {
-        if (($model = information::findOne($id)) !== null) {
+        if (($model = Information::findOne($id)) !== null) {
             return $model;
         }
 

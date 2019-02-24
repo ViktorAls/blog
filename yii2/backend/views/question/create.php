@@ -3,10 +3,9 @@
 use yii\helpers\Html;
 
 /* @var $this yii\web\View */
-/* @var $model common\models\test */
+/* @var $model common\models\question */
 
-$this->title = 'Добавить тест';
-$this->params['breadcrumbs'][] = ['label' => 'Тесты', 'url' => ['index']];
+$this->title = 'Добавить новый вопрос';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="box box-info">
@@ -18,7 +17,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <div class="box-body">
         <?= $this->render('_form', [
             'model' => $model,
+            'testFilter'=>$testFilter,
         ]) ?>
     </div>
 </div>
-

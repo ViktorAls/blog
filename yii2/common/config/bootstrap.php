@@ -8,9 +8,12 @@ Yii::setAlias('@document', dirname(dirname(dirname(__DIR__))) . '/public_html/up
 Yii::setAlias('@user', dirname(dirname(dirname(__DIR__))) . '/public_html/uploads/user');
 Yii::setAlias('@iconUrl', 'http://blog.iv/uploads/icon');
 Yii::setAlias('@filePostUrl', 'http://blog.iv/uploads/post');
+Yii::setAlias('@iconTestUrl', 'http://blog.iv/uploads/testIcon');
 
 Yii::setAlias('@iconPost', dirname(dirname(dirname(__DIR__))) . '/public_html/uploads/icon');
 Yii::setAlias('@imagesPost', dirname(dirname(dirname(__DIR__))) . '/public_html/uploads/post');
+Yii::setAlias('@testIcon', dirname(dirname(dirname(__DIR__))) . '/public_html/uploads/testIcon');
+
 
 
 

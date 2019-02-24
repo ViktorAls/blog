@@ -9,7 +9,7 @@ use common\models\answer;
 /**
  * AnswerSearch represents the model behind the search form of `common\models\answer`.
  */
-class AnswerSearch extends answer
+class AnswerSearch extends Answer
 {
     /**
      * {@inheritdoc}
@@ -40,7 +40,7 @@ class AnswerSearch extends answer
      */
     public function search($params)
     {
-        $query = answer::find();
+        $query = Answer::find();
 
         // add conditions that should always apply here
 

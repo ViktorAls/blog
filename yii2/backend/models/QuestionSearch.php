@@ -4,12 +4,12 @@ namespace backend\models;
 
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use common\models\information;
+use common\models\question;
 
 /**
- * InformationSearch represents the model behind the search form of `common\models\information`.
+ * QuestionSearch represents the model behind the search form of `common\models\question`.
  */
-class InformationSearch extends Information
+class QuestionSearch extends Question
 {
     /**
      * {@inheritdoc}
@@ -17,8 +17,7 @@ class InformationSearch extends Information
     public function rules()
     {
         return [
-            [['id'], 'integer'],
-            [['name', 'value', 'comment'], 'safe'],
+            [['title'], 'safe'],
         ];
     }
 
@@ -36,11 +35,12 @@ class InformationSearch extends Information
      *
      * @param array $params
      *
+     * @param integer $test
      * @return ActiveDataProvider
      */
-    public function search($params)
+    public function search($params,$test)
     {
-        $query = Information::find();
+        $query = Question::find()->where(['id_test'=>$test]);
 
         // add conditions that should always apply here
 
@@ -56,14 +56,7 @@ class InformationSearch extends Information
             return $dataProvider;
         }
 
-        // grid filtering conditions
-        $query->andFilterWhere([
-            'id' => $this->id,
-        ]);
-
-        $query->andFilterWhere(['like', 'name', $this->name])
-            ->andFilterWhere(['like', 'value', $this->value])
-            ->andFilterWhere(['like', 'comment', $this->comment]);
+        $query->andFilterWhere(['like', 'title', $this->title]);
 
         return $dataProvider;
     }

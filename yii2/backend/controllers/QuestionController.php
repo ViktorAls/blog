@@ -2,17 +2,20 @@
 
 namespace backend\controllers;
 
+use common\models\query\TestQuery;
+use common\models\Test;
 use Yii;
-use common\models\answer;
-use backend\models\AnswerSearch;
+use common\models\question;
+use backend\models\QuestionSearch;
+use yii\helpers\ArrayHelper;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
 /**
- * AnswerController implements the CRUD actions for answer model.
+ * QuestionController implements the CRUD actions for question model.
  */
-class AnswerController extends Controller
+class QuestionController extends Controller
 {
     /**
      * {@inheritdoc}
@@ -30,22 +33,26 @@ class AnswerController extends Controller
     }
 
     /**
-     * Lists all answer models.
+     * Lists all question models.
+     * @param $test
      * @return mixed
+     * @throws NotFoundHttpException
      */
-    public function actionIndex()
+    public function actionIndex($test)
     {
-        $searchModel = new AnswerSearch();
-        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+        $name = $this->findTestModel($test);
+        $searchModel = new QuestionSearch();
+        $dataProvider = $searchModel->search(Yii::$app->request->queryParams,$test);
 
         return $this->render('index', [
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
+            'name'=>$name,
         ]);
     }
 
     /**
-     * Displays a single answer model.
+     * Displays a single question model.
      * @param integer $id
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
@@ -58,25 +65,27 @@ class AnswerController extends Controller
     }
 
     /**
-     * Creates a new answer model.
+     * Creates a new question model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
     public function actionCreate()
     {
-        $model = new answer();
+        $model = new question();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+            return $this->redirect(['index', 'test' => $model->id_test]);
         }
+        $testFilter = ArrayHelper::map(TestQuery::getArrayAll(),'id','title');
 
         return $this->render('create', [
             'model' => $model,
+            'testFilter'=>$testFilter,
         ]);
     }
 
     /**
-     * Updates an existing answer model.
+     * Updates an existing question model.
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param integer $id
      * @return mixed
@@ -87,20 +96,23 @@ class AnswerController extends Controller
         $model = $this->findModel($id);
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+            return $this->redirect(['index', 'test' => $model->id_test]);
         }
+
+        $testFilter = ArrayHelper::map(TestQuery::getArrayAll(),'id','title');
 
         return $this->render('update', [
             'model' => $model,
+            'testFilter'=>$testFilter,
         ]);
     }
 
     /**
-     * Deletes an existing answer model.
-     * If deletion is successful, the browser will be redirected to the 'index' page.
-     * @param integer $id
-     * @return mixed
-     * @throws NotFoundHttpException if the model cannot be found
+     * @param $id
+     * @return \yii\web\Response
+     * @throws NotFoundHttpException
+     * @throws \Throwable
+     * @throws \yii\db\StaleObjectException
      */
     public function actionDelete($id)
     {
@@ -110,18 +122,31 @@ class AnswerController extends Controller
     }
 
     /**
-     * Finds the answer model based on its primary key value.
+     * Finds the question model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param integer $id
-     * @return answer the loaded model
+     * @return question the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
     {
-        if (($model = answer::findOne($id)) !== null) {
+        if (($model = Question::findOne($id)) !== null) {
             return $model;
         }
+        throw new NotFoundHttpException('Запрашиваемая страница не существует.');
+    }
 
-        throw new NotFoundHttpException('The requested page does not exist.');
+    /**
+     * @param $id
+     * @return bool
+     * @throws NotFoundHttpException
+     */
+    protected function findTestModel($id)
+    {
+        if (($name = Test::findOne($id)) !== null) {
+            return $name['title'];
+        }
+
+        throw new NotFoundHttpException('Запрашиваемая страница не существует.');
     }
 }

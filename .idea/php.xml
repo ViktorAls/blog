@@ -86,6 +86,7 @@
       <path value="$PROJECT_DIR$/yii2/vendor/kartik-v/yii2-sortable" />
       <path value="$PROJECT_DIR$/yii2/vendor/kartik-v/yii2-dynagrid" />
       <path value="$PROJECT_DIR$/yii2/vendor/kartik-v/yii2-grid" />
+      <path value="$PROJECT_DIR$/yii2/vendor/unclead/yii2-multiple-input" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="5.4.0" />

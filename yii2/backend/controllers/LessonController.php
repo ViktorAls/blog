@@ -88,7 +88,7 @@ class LessonController extends Controller
      */
     protected function findModel($id)
     {
-        if (($model = lesson::findOne($id)) !== null) {
+        if (($model = Lesson::findOne($id)) !== null) {
             return $model;
         }
 

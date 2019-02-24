@@ -92,7 +92,7 @@ class GroupController extends Controller
      */
     protected function findModel($id)
     {
-        if (($model = group::findOne($id)) !== null) {
+        if (($model = Group::findOne($id)) !== null) {
             return $model;
         }
 

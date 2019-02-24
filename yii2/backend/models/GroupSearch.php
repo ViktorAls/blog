@@ -9,7 +9,7 @@ use common\models\group;
 /**
  * GroupSearch represents the model behind the search form of `common\models\group`.
  */
-class GroupSearch extends group
+class GroupSearch extends Group
 {
     /**
      * {@inheritdoc}
@@ -40,7 +40,7 @@ class GroupSearch extends group
      */
     public function search($params)
     {
-        $query = group::find();
+        $query = Group::find();
 
         // add conditions that should always apply here
 

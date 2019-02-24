@@ -9,7 +9,7 @@ use common\models\document;
 /**
  * DocumentSearch represents the model behind the search form of `common\models\document`.
  */
-class DocumentSearch extends document
+class DocumentSearch extends Document
 {
     /**
      * {@inheritdoc}
@@ -40,7 +40,7 @@ class DocumentSearch extends document
      */
     public function search($params)
     {
-        $query = document::find();
+        $query = Document::find();
 
         // add conditions that should always apply here
 
