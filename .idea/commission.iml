@@ -35,6 +35,7 @@
       <excludeFolder url="file://$MODULE_DIR$/yii2/vendor/kartik-v/yii2-popover-x" />
       <excludeFolder url="file://$MODULE_DIR$/yii2/vendor/kartik-v/yii2-sortable" />
       <excludeFolder url="file://$MODULE_DIR$/yii2/vendor/kartik-v/yii2-widget-activeform" />
+      <excludeFolder url="file://$MODULE_DIR$/yii2/vendor/kartik-v/yii2-widget-datetimepicker" />
       <excludeFolder url="file://$MODULE_DIR$/yii2/vendor/kartik-v/yii2-widget-fileinput" />
       <excludeFolder url="file://$MODULE_DIR$/yii2/vendor/kartik-v/yii2-widget-select2" />
       <excludeFolder url="file://$MODULE_DIR$/yii2/vendor/myclabs/deep-copy" />

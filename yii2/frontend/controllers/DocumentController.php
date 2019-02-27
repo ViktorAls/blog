@@ -22,25 +22,6 @@ use yii\web\NotFoundHttpException;
 class DocumentController extends Controller
 {
 
-    /**
-     * {@inheritdoc}
-     */
-    public function behaviors()
-    {
-        return [
-            'access' => [
-                'class' => AccessControl::className(),
-                'only' => ['index','download'],
-                'rules' => [
-                    [
-                        'actions' => ['index','download'],
-                        'allow' => true,
-                        'roles' => ['@'],
-                    ],
-                ],
-            ],
-        ];
-    }
 
     /**
      * {@inheritdoc}
