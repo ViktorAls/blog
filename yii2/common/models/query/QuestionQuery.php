@@ -22,4 +22,14 @@ class QuestionQuery extends Question
        return self::find()->where(['id_test'=>$id])->asArray()->with('answer')->all();
     }
 
+    /**
+     * @param $id
+     * @return int|string
+     */
+    public static function getCount($id)
+    {
+        return self::find()->where(['id_test'=>$id])->count();
+    }
+
+
 }

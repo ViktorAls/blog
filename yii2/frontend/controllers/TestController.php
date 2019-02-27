@@ -81,10 +81,10 @@ class TestController extends Controller
                        $rightCountQuestion += $this->checkAnswer($userAnswer[$question['id']],$question['answer'])?1:0;
                    }
             }
-
+            $priseOneQuestion = 100/QuestionQuery::getCount($id);
             $result = new ResultTest();
           $result->id_test = $id;
-          $result->result = $rightCountQuestion;
+          $result->result = $rightCountQuestion*$priseOneQuestion;
           $result->id_user = Yii::$app->user->getId();
           $result->date = date('Y-m-d H-m-i');
             if ($result->save()){

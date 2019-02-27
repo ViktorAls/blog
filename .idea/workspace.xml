@@ -3,7 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="c6942d54-c9bd-496f-aad8-5638e982d304" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yii2/console/migrations/m190216_095215_create_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/yii2/console/migrations/m190216_095215_create_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yii2/common/models/query/QuestionQuery.php" beforeDir="false" afterPath="$PROJECT_DIR$/yii2/common/models/query/QuestionQuery.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yii2/common/runtime/cache/14/144924b90fcfa85d610d6b7e9a48e5e5.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/yii2/common/runtime/cache/80/80da0d36b93ffe5ac6f6d2c8a59b2bbb.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/yii2/common/runtime/cache/b7/b7789052b6e6b48bf8dcbeeefd890e48.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/yii2/common/runtime/cache/co/connection.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/yii2/common/runtime/cache/ea/eab17ea2b86d2fb09c2c35fa09cda7d8.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/yii2/common/runtime/cache/f3/f3ca56d4d673967f4db9fe59781912f8.bin" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/yii2/frontend/controllers/TestController.php" beforeDir="false" afterPath="$PROJECT_DIR$/yii2/frontend/controllers/TestController.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -32,8 +38,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/yii2/frontend/controllers/TestController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="298">
-              <caret line="83" column="12" selection-start-line="83" selection-start-column="12" selection-end-line="83" selection-end-column="12" />
+            <state relative-caret-position="349">
+              <caret line="86" column="65" selection-start-line="86" selection-start-column="65" selection-end-line="86" selection-end-column="65" />
               <folding>
                 <element signature="e#127#165#0#PHP" expanded="true" />
               </folding>
@@ -42,19 +48,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/yii2/console/migrations/m190216_095215_create_table.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-3810">
-              <caret line="77" column="42" lean-forward="true" selection-start-line="77" selection-start-column="42" selection-end-line="77" selection-end-column="42" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/yii2/common/models/Question.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="190">
-              <caret line="122" column="29" lean-forward="true" selection-start-line="122" selection-start-column="29" selection-end-line="122" selection-end-column="29" />
+              <caret line="122" column="29" selection-start-line="122" selection-start-column="29" selection-end-line="122" selection-end-column="29" />
               <folding>
                 <element signature="e#33#41#0#PHP" expanded="true" />
               </folding>
@@ -65,8 +62,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/yii2/common/models/query/QuestionQuery.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="23" selection-start-line="23" selection-end-line="23" />
+            <state relative-caret-position="408">
+              <caret line="30" column="52" selection-start-line="30" selection-start-column="52" selection-end-line="30" selection-end-column="52" />
             </state>
           </provider>
         </entry>
@@ -174,8 +171,8 @@
         <option value="$PROJECT_DIR$/yii2/console/migrations/m190227_132511_userLogin.php" />
         <option value="$PROJECT_DIR$/yii2/common/models/Question.php" />
         <option value="$PROJECT_DIR$/yii2/frontend/views/test/passage.php" />
-        <option value="$PROJECT_DIR$/yii2/common/models/query/QuestionQuery.php" />
         <option value="$PROJECT_DIR$/yii2/console/migrations/m190216_095215_create_table.php" />
+        <option value="$PROJECT_DIR$/yii2/common/models/query/QuestionQuery.php" />
         <option value="$PROJECT_DIR$/yii2/frontend/controllers/TestController.php" />
       </list>
     </option>
@@ -318,21 +315,16 @@
               <item name="blog" type="b2602c69:ProjectViewProjectNode" />
               <item name="blog" type="462c0819:PsiDirectoryNode" />
               <item name="yii2" type="462c0819:PsiDirectoryNode" />
-              <item name="console" type="462c0819:PsiDirectoryNode" />
+              <item name="common" type="462c0819:PsiDirectoryNode" />
+              <item name="runtime" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="blog" type="b2602c69:ProjectViewProjectNode" />
               <item name="blog" type="462c0819:PsiDirectoryNode" />
               <item name="yii2" type="462c0819:PsiDirectoryNode" />
-              <item name="console" type="462c0819:PsiDirectoryNode" />
-              <item name="migrations" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="blog" type="b2602c69:ProjectViewProjectNode" />
-              <item name="blog" type="462c0819:PsiDirectoryNode" />
-              <item name="yii2" type="462c0819:PsiDirectoryNode" />
-              <item name="console" type="462c0819:PsiDirectoryNode" />
-              <item name="models" type="462c0819:PsiDirectoryNode" />
+              <item name="common" type="462c0819:PsiDirectoryNode" />
+              <item name="runtime" type="462c0819:PsiDirectoryNode" />
+              <item name="cache" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="blog" type="b2602c69:ProjectViewProjectNode" />
@@ -449,12 +441,12 @@
       <workItem from="1551005143438" duration="583000" />
       <workItem from="1551015835005" duration="578000" />
       <workItem from="1551039955710" duration="709000" />
-      <workItem from="1551196857754" duration="24940000" />
+      <workItem from="1551196857754" duration="26208000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="452947000" />
+    <option name="totallyTimeSpent" value="454215000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
@@ -824,27 +816,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/yii2/common/models/query/QuestionQuery.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="23" selection-start-line="23" selection-end-line="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/yii2/common/models/Question.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="122" column="29" lean-forward="true" selection-start-line="122" selection-start-column="29" selection-end-line="122" selection-end-column="29" />
-          <folding>
-            <element signature="e#33#41#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/yii2/console/migrations/m190216_095215_create_table.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3810">
-          <caret line="77" column="42" lean-forward="true" selection-start-line="77" selection-start-column="42" selection-end-line="77" selection-end-column="42" />
+        <state relative-caret-position="355">
+          <caret line="82" column="41" selection-start-line="82" selection-start-column="41" selection-end-line="82" selection-end-column="41" />
         </state>
       </provider>
     </entry>
@@ -855,10 +830,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/yii2/common/models/query/QuestionQuery.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="30" column="52" selection-start-line="30" selection-start-column="52" selection-end-line="30" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/yii2/common/models/Question.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="122" column="29" selection-start-line="122" selection-start-column="29" selection-end-line="122" selection-end-column="29" />
+          <folding>
+            <element signature="e#33#41#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/yii2/frontend/controllers/TestController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="298">
-          <caret line="83" column="12" selection-start-line="83" selection-start-column="12" selection-end-line="83" selection-end-column="12" />
+        <state relative-caret-position="349">
+          <caret line="86" column="65" selection-start-line="86" selection-start-column="65" selection-end-line="86" selection-end-column="65" />
           <folding>
             <element signature="e#127#165#0#PHP" expanded="true" />
           </folding>

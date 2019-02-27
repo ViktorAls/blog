@@ -29,7 +29,7 @@ $this->title ='Тесты | '.$searchParams;
                             <div><p>Доступен по: <strong><?= $test['end_date'] ?></strong></p></div>
                         </div>
                         <div class="btn_donov">
-                            <a class="btn_donov-click" href=''>Проходить</a>
+                            <a class="btn_donov-click" href='<?=\yii\helpers\Url::to(['test/passage','idTest'=>$test['id']])?>'>Проходить</a>
                         </div>
                     </div>
                 </div>
