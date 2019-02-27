@@ -26,8 +26,7 @@
 
             <div class="featured__column featured__column--small">
 
-                <div class="entry"
-                     style="background-image:url('<?= \yii\helpers\Url::home(true) . '/uploads/icon/' . $post[1]['icon'] ?>');">
+                <div class="entry" style="background-image:url('<?= \yii\helpers\Url::home(true) . '/uploads/icon/' . $post[1]['icon'] ?>');">
 
                     <div class="entry__content">
                         <span class="entry__category"><a href="#0"><?= $post[1]['category'] ?></a></span>
@@ -45,8 +44,7 @@
 
                 </div>
 
-                <div class="entry"
-                     style="background-image:url('<?= \yii\helpers\Url::home(true) . '/uploads/icon/' . $post[2]['icon'] ?>');">
+                <div class="entry" style="background-image:url('<?= \yii\helpers\Url::home(true) . '/uploads/icon/' . $post[2]['icon'] ?>');">
                     <div class="entry__content">
                         <span class="entry__category"><a href="#0"><?= $post[2]['category'] ?></a></span>
 
