@@ -28,8 +28,8 @@ class Selected extends Widget
     public function run()
     {
         $post = PostQuery::getLimitDesc($this->limit, 'updated_at');
-        $post = $this->addType($post);
-        return $this->render('selected', compact('post'));
+        $posts = $this->addType($post);
+        return $this->render('selected', compact('posts'));
     }
 
     /**

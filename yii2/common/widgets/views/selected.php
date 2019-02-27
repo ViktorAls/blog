@@ -3,63 +3,38 @@
 
         <div class="featured">
 
+
+            <?php foreach ($posts as $key => $post): ?>
+            <?php if ($key===0): ?>
             <div class="featured__column featured__column--big">
-                <div class="entry"
-                     style="background-image:url('<?= \yii\helpers\Url::home(true) . '/uploads/icon/' . $post[0]['icon'] ?>');">
+                <?php elseif ($key===1): ?>
+                <div class="featured__column featured__column--small">
+                    <?php endif; ?>
+                    <div class="entry"
+                         style="background-image:url('<?= \yii\helpers\Url::home(true) . '/uploads/icon/' . $post['icon'] ?>');">
 
-                    <div class="entry__content">
-                        <span class="entry__category"><a href="#0"><?= $post[0]['category'] ?></a></span>
+                        <div class="entry__content">
+                            <span class="entry__category"><a href="#0"><?= $post['category'] ?></a></span>
 
-                        <h1><a href="<?= \yii\helpers\Url::to(['posts/lesson', 'id' => $post[0]['id']]) ?>"
-                               title=""><?= $post[0]['title'] ?></a></h1>
+                            <h1><a href="<?= \yii\helpers\Url::to(['posts/lesson', 'id' => $post['id']]) ?>"
+                                   title=""><?= $post['title'] ?></a></h1>
 
-                        <div class="entry__info">
+                            <div class="entry__info">
 
-                            <ul class="entry__meta">
-                                <li><?= date('F d, Y', (int)$post[0]['updated_at']); ?></li>
-                            </ul>
+                                <ul class="entry__meta">
+                                    <li><?= date('F d,Y', (int)$post['updated_at']); ?></li>
+                                </ul>
+                            </div>
                         </div>
-                    </div>
 
+                    </div>
+                    <?php if ($key===0 || $key===2): ?>
                 </div>
+            <?php endif; ?>
+                <?php endforeach; ?>
+
             </div>
 
-            <div class="featured__column featured__column--small">
-
-                <div class="entry" style="background-image:url('<?= \yii\helpers\Url::home(true) . '/uploads/icon/' . $post[1]['icon'] ?>');">
-
-                    <div class="entry__content">
-                        <span class="entry__category"><a href="#0"><?= $post[1]['category'] ?></a></span>
-
-                        <h1><a href="<?= \yii\helpers\Url::to(['posts/lesson', 'id' => $post[1]['id']]) ?>"
-                               title=""><?= $post[1]['title'] ?></a></h1>
-
-                        <div class="entry__info">
-
-                            <ul class="entry__meta">
-                                <li><?= date('F d,Y', (int)$post[1]['updated_at']); ?></li>
-                            </ul>
-                        </div>
-                    </div>
-
-                </div>
-
-                <div class="entry" style="background-image:url('<?= \yii\helpers\Url::home(true) . '/uploads/icon/' . $post[2]['icon'] ?>');">
-                    <div class="entry__content">
-                        <span class="entry__category"><a href="#0"><?= $post[2]['category'] ?></a></span>
-
-                        <h1><a href="<?= \yii\helpers\Url::to(['posts/lesson', 'id' => $post[2]['id']]) ?>"
-                               title=""><?= $post[2]['title'] ?></a></h1>
-
-                        <div class="entry__info">
-
-                            <ul class="entry__meta">
-                                <li><?= date('F d, Y', (int)$post[2]['updated_at']); ?></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
     </div>
 </div>
