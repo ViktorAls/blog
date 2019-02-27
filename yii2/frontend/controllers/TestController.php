@@ -74,17 +74,16 @@ class TestController extends Controller
     public function actionResult($id){
         if (Yii::$app->request->post('buttonAnswer')){
             $rightCountQuestion = 0;
-            $questions = QuestionQuery::getRightAnswerTest($id);
-            var_dump($question);
+            $questions = QuestionQuery::getQuestionTest($id);
             $userAnswer = Yii::$app->request->post('answer');
             foreach ($questions as $question){
                    if ($userAnswer[$question['id']]){
-                       $rightCountQuestion += $this->checkAnswer($userAnswer[$question['id']],$question['answers'])?1:0;
+                       $rightCountQuestion += $this->checkAnswer($userAnswer[$question['id']],$question['answer'])?1:0;
                    }
             }
             $result = new ResultTest();
           $result->id_test = $id;
-          $result->result = $ball;
+          $result->result = $rightCountQuestion;
           $result->id_user = Yii::$app->user->getId();
           $result->date = date('Y-m-d H-m-i');
             if ($result->save()){
@@ -97,12 +96,20 @@ class TestController extends Controller
     }
 
 
-//    /**
-//     * @param $userAnswer
-//     * @param $rightAnswer
-//     */
-//    protected function checkAnswer($userAnswer, $rightAnswer){
-//        foreach ()
-//    }
+    /**
+     * @param $userAnswer
+     * @param $rightAnswer
+     * @return bool
+     */
+    protected function checkAnswer($userAnswer, $rightAnswer){
+        foreach ($rightAnswer as $right){
+            if($right['bool']===1){
+                if (!$userAnswer[$right['id']]) {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
 
 }

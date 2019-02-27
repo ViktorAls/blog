@@ -22,8 +22,4 @@ class QuestionQuery extends Question
        return self::find()->where(['id_test'=>$id])->asArray()->with('answer')->all();
     }
 
-    public static function getRightAnswerTest($id){
-        return self::find()->where(['question.id_test'=>$id])->andWhere('answer.bool = 1')->asArray()->innerJoin('answer')->all();
-
-    }
 }
