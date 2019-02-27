@@ -18,6 +18,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <div class="box-body">
         <?= $this->render('_form', [
             'model' => $model,
+            'lessonFilter'=>$lessonFilter,
         ]) ?>
     </div>
 </div>

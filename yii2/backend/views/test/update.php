@@ -19,7 +19,7 @@ $this->params['breadcrumbs'][] = 'Обновить';
     <div class="box-body">
         <?= $this->render('_form', [
             'model' => $model,
-            'testFilter'=>$testFilter,
+            'lessonFilter'=>$lessonFilter,
         ]) ?>
     </div>
 </div>

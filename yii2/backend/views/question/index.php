@@ -25,6 +25,7 @@ $this->params['breadcrumbs'][] = ['label' => $name];
         <div class="table-responsive">
             <?= GridView::widget([
                 'dataProvider' => $dataProvider,
+                'options' => [''],
                 'columns' => [
                     ['class' => 'yii\grid\SerialColumn'],
                     [
@@ -37,10 +38,16 @@ $this->params['breadcrumbs'][] = ['label' => $name];
                     ],
                     'title:ntext',
                     [
-                        'label' => 'Вариантов ответов',
+                        'label' => 'Ответы',
                         'format' => 'html',
                         'value' => function ($model) {
-                            return count($model->answers);
+                            $text = null;
+                            foreach ($model->answers as $answer) {
+                                $text .= $answer['title'].' - ';
+                                $text .= $answer['bool']===1?'Правильный':'Не правильный';
+                                $text .='<br>';
+                            }
+                            return $text;
                         }
                     ],
                     ['class' => 'yii\grid\ActionColumn'],

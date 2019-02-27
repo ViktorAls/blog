@@ -37,7 +37,7 @@ class Question extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['title', 'icon', 'id_test'], 'required'],
+            [['title',  'id_test'], 'required'],
             [['title'], 'string'],
             [['answer', 'file'], 'safe'],
             [['id_test'], 'integer'],
@@ -120,7 +120,7 @@ class Question extends \yii\db\ActiveRecord
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getAnswers()
+    public function getAnswer()
     {
         return $this->hasMany(Answer::className(), ['id_question' => 'id']);
     }

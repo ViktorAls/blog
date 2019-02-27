@@ -88,6 +88,7 @@
       <path value="$PROJECT_DIR$/yii2/vendor/kartik-v/yii2-grid" />
       <path value="$PROJECT_DIR$/yii2/vendor/unclead/yii2-multiple-input" />
       <path value="$PROJECT_DIR$/yii2/vendor/kartik-v/yii2-widget-datetimepicker" />
+      <path value="$PROJECT_DIR$/yii2/vendor/kartik-v/yii2-widget-datepicker" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="5.4.0" />

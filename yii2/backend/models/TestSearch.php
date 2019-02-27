@@ -18,7 +18,7 @@ class TestSearch extends Test
     {
         return [
             [['id', 'id_lesson'], 'integer'],
-            [['title', 'description', 'date', 'begin_date', 'end_date'], 'safe'],
+            [['title', 'description', 'begin_date', 'end_date'], 'safe'],
         ];
     }
 
@@ -60,7 +60,6 @@ class TestSearch extends Test
         $query->andFilterWhere([
             'id' => $this->id,
             'id_lesson' => $this->id_lesson,
-            'date' => $this->date,
             'begin_date' => $this->begin_date,
             'end_date' => $this->end_date,
         ]);

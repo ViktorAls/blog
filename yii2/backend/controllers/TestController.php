@@ -2,10 +2,12 @@
 
 namespace backend\controllers;
 
+use common\models\query\LessonQuery;
 use Throwable;
 use Yii;
 use common\models\test;
 use backend\models\testSearch;
+use yii\helpers\ArrayHelper;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -38,10 +40,11 @@ class TestController extends Controller
     {
         $searchModel = new testSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
-
+        $lessonFilter = ArrayHelper::map(LessonQuery::getAll(),'id','name');
         return $this->render('index', [
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
+            'lessonFilter'=>$lessonFilter,
         ]);
     }
 
@@ -70,9 +73,11 @@ class TestController extends Controller
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
         }
+        $lessonFilter = ArrayHelper::map(LessonQuery::getAll(),'id','name');
 
         return $this->render('create', [
             'model' => $model,
+            'lessonFilter'=>$lessonFilter,
         ]);
     }
 
@@ -91,8 +96,11 @@ class TestController extends Controller
             return $this->redirect(['view', 'id' => $model->id]);
         }
 
+        $lessonFilter = ArrayHelper::map(LessonQuery::getAll(),'id','name');
+
         return $this->render('update', [
             'model' => $model,
+            'lessonFilter'=>$lessonFilter,
         ]);
     }
 

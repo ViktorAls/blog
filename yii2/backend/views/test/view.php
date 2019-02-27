@@ -33,7 +33,6 @@ $this->params['breadcrumbs'][] = $this->title;
             'title',
             'description:ntext',
             'id_lesson',
-            'date',
             'begin_date',
             'end_date',
         ],

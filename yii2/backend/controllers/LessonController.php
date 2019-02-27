@@ -2,9 +2,11 @@
 
 namespace backend\controllers;
 
+use common\models\query\LessonQuery;
 use Yii;
 use common\models\lesson;
 use backend\models\LessonSearch;
+use yii\helpers\ArrayHelper;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;

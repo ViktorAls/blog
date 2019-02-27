@@ -33,10 +33,10 @@ class Test extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['title', 'description', 'id_lesson', 'date', 'begin_date', 'end_date'], 'required'],
+            [['title', 'description', 'id_lesson', 'begin_date', 'end_date'], 'required'],
             [['description'], 'string'],
             [['id_lesson'], 'integer'],
-            [['date', 'begin_date', 'end_date'], 'safe'],
+            [['begin_date', 'end_date'], 'safe'],
             [['title'], 'string', 'max' => 150],
             [['id_lesson'], 'exist', 'skipOnError' => true, 'targetClass' => Lesson::className(), 'targetAttribute' => ['id_lesson' => 'id']],
         ];
@@ -52,8 +52,8 @@ class Test extends \yii\db\ActiveRecord
             'title' => 'Название',
             'description' => 'Описание',
             'id_lesson' => 'Урок',
-            'begin_date' => 'Begin Date',
-            'end_date' => 'End Date',
+            'begin_date' => 'Доступен с',
+            'end_date' => 'Доступен по',
         ];
     }
 

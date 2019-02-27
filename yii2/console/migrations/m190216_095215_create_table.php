@@ -88,19 +88,19 @@ class m190216_095215_create_table extends Migration
             'created_at' => $this->integer(11)->notNull(),
             'updated_at' => $this->integer(11)->notNull(),
         ]);
-        // таблица  userFrontend, поле id_group
+        // таблица  user, поле id_group
         $this->createIndex(
             'idx-user-id_group',
-            'userFrontend',
+            'user',
             'id_group'
         );
-        // таблица  userFrontend, поле id_group
+        // таблица  user, поле id_group
         $this->createIndex(
             'idx-comment-id_post',
             'comment',
             'id_post'
         );
-        // таблица  userFrontend, поле id_group
+        // таблица  user, поле id_group
         $this->createIndex(
             'idx-comment-id_user',
             'comment',
@@ -168,10 +168,10 @@ class m190216_095215_create_table extends Migration
             'id',
             'CASCADE'
         );
-        // связь табилци userFrontend по полю id_group к табилци group полю id
+        // связь табилци user по полю id_group к табилци group полю id
         $this->addForeignKey(
             'fk-user-id_group',
-            'userFrontend',
+            'user',
             'id_group',
             'group',
             'id',
@@ -247,10 +247,10 @@ class m190216_095215_create_table extends Migration
      */
     public function safeDown()
     {
-        //внешний ключ для таблици userFrontend  поле id_group
+        //внешний ключ для таблици user  поле id_group
         $this->dropForeignKey(
             'fk-user-id_group',
-            'userFrontend'
+            'user'
         );
         //внешний ключ для таблици postFile  поле id_post
         $this->dropForeignKey(
@@ -299,10 +299,10 @@ class m190216_095215_create_table extends Migration
             'tagDocument'
         );
 
-        //индекс таблици userFrontend поля id_group
+        //индекс таблици user поля id_group
         $this->dropIndex(
             'idx-user-id_group',
-            'userFrontend'
+            'user'
         );
         //индекс таблици document поля id_lesson
         $this->dropIndex(

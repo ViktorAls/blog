@@ -19,13 +19,14 @@ class m190216_104002_insert_information_table extends Migration
                 ['mail','mail@ru.ru','Почта для ображращения'],
                 ['facebook','страница в файсбуке','страница в файсбуке'],
                 ['pointOfView','Моя точка зрения','Моя точка зрения'],
-                ['AboutMe','Duis ex ad cupidatat tempor Excepteur cillum cupidatat fugiat nostrud cupidatat dolor sunt sint sit nisi','Страница О себе. Главная запись'],
+                ['aboutMe','Duis ex ad cupidatat tempor Excepteur cillum cupidatat fugiat nostrud cupidatat dolor sunt sint sit nisi','Страница О себе. Главная запись'],
                 ['whoAmI','Duis ex ad cupidatat tempor Excepteur cillum cupidatat fugiat nostrud cupidatat dolor sunt sint sit nisi','Страница О себе. Кто я'],
                 ['myMission','Duis ex ad cupidatat tempor Excepteur cillum cupidatat fugiat nostrud cupidatat dolor sunt sint sit nisi','Страница О себе. Моя миссия'],
                 ['myOpinion','Duis ex ad cupidatat tempor Excepteur cillum cupidatat fugiat nostrud cupidatat dolor sunt sint sit nisi','Страница О себе. Мой взгляд'],
                 ['myValues','Duis ex ad cupidatat tempor Excepteur cillum cupidatat fugiat nostrud cupidatat dolor sunt sint sit nisi','Страница О себе. Мой ценности'],
                 ['mainFeedback','Duis ex ad cupidatat tempor Excepteur cillum cupidatat fugiat nostrud cupidatat dolor sunt sint sit nisi','Главный текст на странице обратная связь'],
                 ['address','Duis ex ad cupidatat tempor Excepteur cillum cupidatat fugiat nostrud cupidatat dolor sunt sint sit nisi','Адрес, где можно найти'],
+                ['feedback','Duis ex ad cupidatat tempor Excepteur cillum cupidatat fugiat nostrud cupidatat dolor sunt sint sit nisi','Адрес, где можно найти'],
             ]
         )->execute();
     }

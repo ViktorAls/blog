@@ -20,10 +20,12 @@ $this->params['breadcrumbs'][] = $this->title;
                     <h3 class="box-title">Предметы</h3>
                 </div>
                 <div class="box-body">
+                    <div class="table-responsive">
                     <?php Pjax::begin(); ?>
                     <?= GridView::widget([
                         'dataProvider' => $dataProvider,
                         'filterModel' => $searchModel,
+                        'options' => ['class' => ''],
                         'columns' => [
                             ['class' => 'yii\grid\SerialColumn'],
                             [
@@ -68,6 +70,7 @@ $this->params['breadcrumbs'][] = $this->title;
                         ],
                     ]); ?>
                     <?php Pjax::end(); ?>
+                    </div>
                 </div>
             </div>
         </div>

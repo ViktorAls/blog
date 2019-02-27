@@ -17,10 +17,8 @@ class m190218_165329_created_test extends Migration
             'title' => $this->char(150)->notNull(),
             'description' => $this->text()->notNull(),
             'id_lesson' => $this->integer()->notNull(),
-            'date' => $this->dateTime()->null(),
             'begin_date' => $this->dateTime()->null(),
             'end_date' => $this->dateTime()->null(),
-
         ]);
         $this->createTable('answer', [
             'id' => $this->primaryKey(),

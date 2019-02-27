@@ -24,6 +24,7 @@ $this->params['breadcrumbs'][] = $this->title;
             <?= GridView::widget([
                 'dataProvider' => $dataProvider,
                 'filterModel' => $searchModel,
+                'options' => ['class' => ''],
                 'columns' => [
                     ['class' => 'yii\grid\SerialColumn'],
                     'title',
@@ -32,9 +33,9 @@ $this->params['breadcrumbs'][] = $this->title;
                         'attribute' => 'id_lesson',
                         'value' => function ($model) {
                             return $model->lesson['name'];
-                        }
+                        },
+                        'filter' => $lessonFilter,
                     ],
-                    'date',
                     'begin_date',
                     'end_date',
                     [
