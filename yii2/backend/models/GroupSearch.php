@@ -4,7 +4,7 @@ namespace backend\models;
 
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use common\models\group;
+use common\models\Group;
 
 /**
  * GroupSearch represents the model behind the search form of `common\models\group`.

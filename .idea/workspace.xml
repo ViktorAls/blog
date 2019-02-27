@@ -2,18 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c6942d54-c9bd-496f-aad8-5638e982d304" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/yii2/backend/models/AnswerSearch.php" beforeDir="false" afterPath="$PROJECT_DIR$/yii2/backend/models/AnswerSearch.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yii2/backend/models/DocumentSearch.php" beforeDir="false" afterPath="$PROJECT_DIR$/yii2/backend/models/DocumentSearch.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/yii2/backend/models/GroupSearch.php" beforeDir="false" afterPath="$PROJECT_DIR$/yii2/backend/models/GroupSearch.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/yii2/backend/models/InformationSearch.php" beforeDir="false" afterPath="$PROJECT_DIR$/yii2/backend/models/InformationSearch.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/yii2/backend/models/LessonSearch.php" beforeDir="false" afterPath="$PROJECT_DIR$/yii2/backend/models/LessonSearch.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/yii2/backend/models/PostSearch.php" beforeDir="false" afterPath="$PROJECT_DIR$/yii2/backend/models/PostSearch.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/yii2/backend/models/QuestionSearch.php" beforeDir="false" afterPath="$PROJECT_DIR$/yii2/backend/models/QuestionSearch.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/yii2/backend/models/TagsSearch.php" beforeDir="false" afterPath="$PROJECT_DIR$/yii2/backend/models/TagsSearch.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yii2/backend/models/TestSearch.php" beforeDir="false" afterPath="$PROJECT_DIR$/yii2/backend/models/TestSearch.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yii2/backend/models/UserSearch.php" beforeDir="false" afterPath="$PROJECT_DIR$/yii2/backend/models/UserSearch.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yii2/common/widgets/views/selected.php" beforeDir="false" afterPath="$PROJECT_DIR$/yii2/common/widgets/views/selected.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yii2/backend/views/layouts/left.php" beforeDir="false" afterPath="$PROJECT_DIR$/yii2/backend/views/layouts/left.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -26,63 +22,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/yii2/backend/models/DocumentSearch.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="19" selection-start-line="6" selection-start-column="19" selection-end-line="6" selection-end-column="19" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/yii2/backend/models/GroupSearch.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="19" selection-start-line="6" selection-start-column="19" selection-end-line="6" selection-end-column="19" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/yii2/backend/models/InformationSearch.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="100">
-              <caret line="6" column="19" selection-start-line="6" selection-start-column="19" selection-end-line="6" selection-end-column="19" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/yii2/backend/models/LessonSearch.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="100">
-              <caret line="6" column="19" selection-start-line="6" selection-start-column="19" selection-end-line="6" selection-end-column="19" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/yii2/backend/models/LoginForm.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2">
-              <folding>
-                <element signature="e#33#41#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/yii2/backend/models/QuestionSearch.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="19" selection-start-line="6" selection-start-column="19" selection-end-line="6" selection-end-column="19" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/yii2/backend/models/TagsSearch.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="99">
@@ -111,7 +51,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/yii2/backend/models/UserSearch.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-51">
@@ -119,6 +59,24 @@
               <folding>
                 <element signature="e#34#53#0#PHP" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/yii2/backend/views/layouts/content.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="289">
+              <caret line="18" selection-start-line="18" selection-end-line="18" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/yii2/backend/views/layouts/left.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="323">
+              <caret line="46" column="58" selection-start-line="46" selection-start-column="58" selection-end-line="46" selection-end-column="58" />
             </state>
           </provider>
         </entry>
@@ -178,7 +136,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/yii2/backend/controllers/AnswerController.php" />
         <option value="$PROJECT_DIR$/yii2/backend/controllers/DocumentController.php" />
         <option value="$PROJECT_DIR$/yii2/backend/controllers/GroupController.php" />
         <option value="$PROJECT_DIR$/yii2/backend/controllers/InformationController.php" />
@@ -229,6 +186,7 @@
         <option value="$PROJECT_DIR$/yii2/backend/models/TagsSearch.php" />
         <option value="$PROJECT_DIR$/yii2/backend/models/TestSearch.php" />
         <option value="$PROJECT_DIR$/yii2/backend/models/UserSearch.php" />
+        <option value="$PROJECT_DIR$/yii2/backend/views/layouts/left.php" />
       </list>
     </option>
   </component>
@@ -364,6 +322,21 @@
               <item name="blog" type="b2602c69:ProjectViewProjectNode" />
               <item name="blog" type="462c0819:PsiDirectoryNode" />
               <item name="yii2" type="462c0819:PsiDirectoryNode" />
+              <item name="backend" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="blog" type="b2602c69:ProjectViewProjectNode" />
+              <item name="blog" type="462c0819:PsiDirectoryNode" />
+              <item name="yii2" type="462c0819:PsiDirectoryNode" />
+              <item name="backend" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="layouts" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="blog" type="b2602c69:ProjectViewProjectNode" />
+              <item name="blog" type="462c0819:PsiDirectoryNode" />
+              <item name="yii2" type="462c0819:PsiDirectoryNode" />
               <item name="common" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -453,12 +426,12 @@
       <workItem from="1551005143438" duration="583000" />
       <workItem from="1551015835005" duration="578000" />
       <workItem from="1551039955710" duration="709000" />
-      <workItem from="1551196857754" duration="28452000" />
+      <workItem from="1551196857754" duration="28722000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="456459000" />
+    <option name="totallyTimeSpent" value="456729000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
@@ -656,13 +629,6 @@
     <entry file="file://$PROJECT_DIR$/yii2/console/config/params.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/yii2/backend/views/layouts/left.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="37" selection-start-line="13" selection-start-column="37" selection-end-line="13" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/yii2/backend/views/test/index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="202">
@@ -670,13 +636,6 @@
           <folding>
             <element signature="e#7#29#0#PHP" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/yii2/backend/views/layouts/content.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="18" selection-start-line="18" selection-end-line="18" />
         </state>
       </provider>
     </entry>
@@ -820,7 +779,40 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/yii2/backend/models/InformationSearch.php">
+    <entry file="file://$PROJECT_DIR$/yii2/backend/views/layouts/left.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="46" column="58" selection-start-line="46" selection-start-column="58" selection-end-line="46" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/yii2/backend/views/layouts/content.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="18" selection-start-line="18" selection-end-line="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/yii2/backend/models/UserSearch.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-51">
+          <caret line="24" column="7" lean-forward="true" selection-start-line="24" selection-start-column="7" selection-end-line="24" selection-end-column="7" />
+          <folding>
+            <element signature="e#34#53#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/yii2/backend/models/User.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#33#59#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/yii2/backend/models/TestSearch.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="100">
           <caret line="6" column="19" selection-start-line="6" selection-start-column="19" selection-end-line="6" selection-end-column="19" />
@@ -828,6 +820,13 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/yii2/backend/models/LessonSearch.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="6" column="19" selection-start-line="6" selection-start-column="19" selection-end-line="6" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/yii2/backend/models/InformationSearch.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="100">
           <caret line="6" column="19" selection-start-line="6" selection-start-column="19" selection-end-line="6" selection-end-column="19" />
@@ -854,32 +853,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="99">
           <caret line="6" column="19" selection-start-line="6" selection-start-column="19" selection-end-line="6" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/yii2/backend/models/TestSearch.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="6" column="19" selection-start-line="6" selection-start-column="19" selection-end-line="6" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/yii2/backend/models/User.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#33#59#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/yii2/backend/models/UserSearch.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-51">
-          <caret line="24" column="7" lean-forward="true" selection-start-line="24" selection-start-column="7" selection-end-line="24" selection-end-column="7" />
-          <folding>
-            <element signature="e#34#53#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
