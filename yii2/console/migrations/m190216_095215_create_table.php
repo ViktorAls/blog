@@ -80,13 +80,13 @@ class m190216_095215_create_table extends Migration
             'success'=>$this->smallInteger(2)->notNull()->defaultValue(0),
             'id_group' => $this->integer(11)->notNull(),
             'icon' => $this->char(255)->notNull()->defaultValue('avatar.jpg'),
-            'auth_key' => $this->char(32)->notNull(),
+            'auth_key' => $this->char(32),
             'password_hash' => $this->char(255)->notNull(),
             'password_reset_token' => $this->char(255)->null()->unique(),
             'email' => $this->char(255)->notNull()->unique(),
             'status' => $this->smallInteger(6)->defaultValue(0),
-            'created_at' => $this->integer(11)->notNull(),
-            'updated_at' => $this->integer(11)->notNull(),
+            'created_at' => $this->integer(11),
+            'updated_at' => $this->integer(11),
         ]);
         // таблица  user, поле id_group
         $this->createIndex(

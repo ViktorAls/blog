@@ -81,6 +81,7 @@ class TestController extends Controller
                        $rightCountQuestion += $this->checkAnswer($userAnswer[$question['id']],$question['answer'])?1:0;
                    }
             }
+
             $result = new ResultTest();
           $result->id_test = $id;
           $result->result = $rightCountQuestion;
