@@ -43,8 +43,6 @@ use yii\widgets\ActiveForm;
     ])->label('Теги'); ?>
     </div>
     <div class="col-md-4">
-        <?= $form->field($model, 'type')->dropDownList([1=>'Лекция',2=>'Аудио лекция']) ?>
-
         <?= $form->field($model, 'file')->widget(FileInput::classname(), [
             'options' => [
                 'accept' => 'image/*',

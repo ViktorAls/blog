@@ -27,31 +27,9 @@ class Selected extends Widget
      */
     public function run()
     {
-        $post = PostQuery::getLimitDesc($this->limit, 'updated_at');
-        $posts = $this->addType($post);
+        $posts = PostQuery::getLimitDesc($this->limit, 'updated_at');
         return $this->render('selected', compact('posts'));
     }
 
-    /**
-     * @param array $posts
-     * @return array
-     */
-    public function addType(array $posts)
-    {
-        foreach ($posts as $key => $post) {
-
-            switch ($post['type']) {
-                case self::PHOTO_LECTURE :
-                    $posts[$key]['category'] = 'Фото лекция';
-                    break;
-                case self::AUDIO_LECTURE :
-                    $posts[$key]['category'] = 'Аудио лекция';
-                    break;
-                default:
-                    $posts[$key]['category'] = 'Лекция';
-            }
-        }
-        return $posts;
-    }
 
 }

@@ -41,7 +41,7 @@ class RandPost extends Widget
         $html .= Html::beginTag('a', ['class' => "popular__thumb",
             'href' => Url::to([
                 'posts/lesson',
-                'id' => $post['id_post']
+                'id' => $post['id']
             ])
         ]);
         $html .= Html::img(Url::home(true) . \Yii::getAlias('@icon') . '/' . $post['icon']);

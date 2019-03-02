@@ -1506,6 +1506,7 @@ body[data-aos-easing=ease-in-out-quart] [data-aos] {
 
 .slick-slide img {
    display: block;
+   margin: 0 auto;
 }
 
 .slick-slide.slick-loading img {

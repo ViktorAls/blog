@@ -27,8 +27,8 @@ class TestQuery extends Test
 
     public static function getAll(){
         return self::find()->asArray()->joinWith('lesson')
-            ->andWhere(['<','test.begin_date',date('Y-m-d H:i:s')])
-            ->andWhere(['>','test.end_date',date('Y-m-d H:i:s')]);
+            ->andWhere(['<','DATE(test.begin_date)',date('Y-m-d H:i:s')])
+            ->andWhere(['>','DATE(test.end_date)',date('Y-m-d H:i:s')]);
     }
     public static function getArrayAll(){
         return self::find()->asArray()->all();
@@ -54,12 +54,12 @@ class TestQuery extends Test
      */
     public static function getLikeTitle($search,$lesson){
         if ($lesson === 0){
-            return self::find()->andWhere(['>=',date('Y-m-d H:i:s'),'test.begin_date'])
-                ->andWhere(['>','test.end_date',date('Y-m-d H:i:s')])
+            return self::find() ->andWhere(['<','DATE(test.begin_date)',date('Y-m-d H:i:s')])
+                ->andWhere(['>','DATE(test.end_date)',date('Y-m-d H:i:s')])
                 ->andWhere(['like', 'test.title', $search])->joinWith('lesson');
         }
-        return self::find()->andWhere(['>=',date('Y-m-d H:i:s'),'test.begin_date'])
-            ->andWhere(['>','test.end_date',date('Y-m-d H:i:s')])->andWhere(['like', 'test.title', $search])
+        return self::find() ->andWhere(['<','DATE(test.begin_date)',date('Y-m-d H:i:s')])
+            ->andWhere(['>','DATE(test.end_date)',date('Y-m-d H:i:s')])->andWhere(['like', 'test.title', $search])
             ->joinWith('lesson')->andWhere(['test.id_lesson'=>$lesson]);
     }
 }

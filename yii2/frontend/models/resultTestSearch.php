@@ -42,7 +42,7 @@ class resultTestSearch extends resultTest
      */
     public function search($params)
     {
-        $query = resultTest::find()->where(['id_user'=>Yii::$app->user->id]);
+        $query = resultTest::find()->where(['id_user'=>Yii::$app->user->id])->orderBy(['date'=>SORT_DESC])->joinWith('test');
 
         // add conditions that should always apply here
 

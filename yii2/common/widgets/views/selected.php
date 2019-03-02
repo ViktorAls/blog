@@ -14,19 +14,15 @@
                          style="background-image:url('<?= \yii\helpers\Url::home(true) . '/uploads/icon/' . $post['icon'] ?>');">
 
                         <div class="entry__content">
-                            <span class="entry__category"><a href="#0"><?= $post['category'] ?></a></span>
-
+                            <span class="entry__category"><a href="#0"><?= $post['lesson']['name'] ?></a></span>
                             <h1><a href="<?= \yii\helpers\Url::to(['posts/lesson', 'id' => $post['id']]) ?>"
                                    title=""><?= $post['title'] ?></a></h1>
-
                             <div class="entry__info">
-
                                 <ul class="entry__meta">
                                     <li><?= date('F d,Y', (int)$post['updated_at']); ?></li>
                                 </ul>
                             </div>
                         </div>
-
                     </div>
                     <?php if ($key===0 || $key===2): ?>
                 </div>

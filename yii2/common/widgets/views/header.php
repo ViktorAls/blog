@@ -51,20 +51,8 @@ use yii\helpers\Url;
                 <li class="has-children">
                     <a href="#" title="">Лекции</a>
                     <ul class="sub-menu">
-                        <li class="has-children">
-                            <a href="#" title="">Аудио лекции</a>
-                            <ul class="sub-menu">
-                                <?=$liAudioLecture?>
-                                <li><a href="<?= \yii\helpers\Url::to(['posts/audio-lecture']) ?>" title="">Все аудио лекции</a></li>
-                            </ul>
-                        </li>
-                        <li class="has-children">
-                            <a href="#" title="">Лекции</a>
-                            <ul class="sub-menu">
-                                <?=$liLecture?>
-                                <li><a href="<?= \yii\helpers\Url::to(['posts/lecture']) ?>" title="">Все лекции</a></li>
-                            </ul>
-                        </li>
+                        <?=$liLecture?>
+                        <li><a href="<?= \yii\helpers\Url::to(['posts/lecture']) ?>" title="">Все лекции</a></li>
                     </ul>
                 </li>
                 <li><a href="<?= \yii\helpers\Url::to(['site/about']) ?>" title="">О себе</a></li>

@@ -16,7 +16,6 @@ use yii\web\UploadedFile;
  * @property string $description
  * @property int $created_at
  * @property int $updated_at
- * @property int $type
  * @property string $icon
  * @property int $id_lesson
  *
@@ -46,10 +45,11 @@ class Post extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['title', 'description', 'type', 'id_lesson', 'tags_arr'], 'required'],
-            [['description', 'icon', 'file'], 'string'],
+            [['title', 'description','id_lesson', 'tags_arr'], 'required'],
+            [['description', 'icon'], 'string'],
+            ['file','safe'],
             [['files'], 'file', 'maxFiles' => 20],
-            [['created_at', 'updated_at', 'type', 'id_lesson'], 'integer'],
+            [['created_at', 'updated_at', 'id_lesson'], 'integer'],
             [['title'], 'string', 'max' => 150],
             [['id_lesson'], 'exist', 'skipOnError' => true, 'targetClass' => Lesson::className(), 'targetAttribute' => ['id_lesson' => 'id']],
         ];
@@ -67,11 +67,11 @@ class Post extends \yii\db\ActiveRecord
             'description' => 'Описание',
             'created_at' => 'Добавлено',
             'updated_at' => 'Обновлено',
-            'type' => 'Тип',
             'icon' => 'Иконка',
             'id_lesson' => 'Предмет',
             'files'=>'Приложенные файлы',
             'file'=>'Иконка приложения',
+            'tags_arr'=>'Теги лекции',
         ];
     }
     public function behaviors()

@@ -12,26 +12,20 @@ class Search extends \yii\base\Component
      */
     public function SearchAction($route){
         switch ($route) {
-            case 'posts/photo-lecture':
-                $action = ['action' =>Url::current(),'message'=>'Поиск по всем фото-лекциям'];
+            case Url::to(['posts/lecture']):
+                $action = ['action' => Url::current(),'message'=>'Поиск по всем лекциям'];
                 break;
-            case 'posts/lecture':
-                $action = ['action' => Url::current(),'message'=>'Поиск по всем текст-лекциям'];
-                break;
-            case 'posts/audio-lecture':
-                $action = ['action' => Url::current(),'message'=>'Поиск по всем аудио-лекциям'];
-                break;
-            case 'posts/tags':
+            case Url::to(['posts/tags']):
                 $action = ['action' => Url::current(),'message'=>'Поиск по тегам'];
                 break;
-            case 'document/index':
+            case Url::to(['document/index']):
                 $action = ['action' => Url::current(),'message'=>'Поиск по документам'];
                 break;
-            case 'test/index':
+            case Url::to(['test/index']):
                 $action = ['action' => Url::current(),'message'=>'Поиск по тестам'];
                 break;
             default:
-                $action = ['action' => Url::to(['posts/search']),'message'=>'Поиск по всем типам лекций'];
+                $action = ['action' => Url::to(['posts/lecture']),'message'=>'Поиск по всем лекций'];
         }
         return $action;
     }

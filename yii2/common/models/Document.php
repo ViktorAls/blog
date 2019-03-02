@@ -71,6 +71,8 @@ class Document extends \yii\db\ActiveRecord
             'updated_at' => 'Изменено',
             'created_at' => 'Добавлено',
             'id_lesson' => 'Урок',
+            'file'=>'Файл для скачивания',
+            'tags_arr'=>'Теги для документа',
         ];
     }
 

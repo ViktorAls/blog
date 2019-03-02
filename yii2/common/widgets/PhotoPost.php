@@ -24,6 +24,11 @@ class PhotoPost extends Widget
     public $pathIcon = 'uploads/icon/';
 
     /**
+     * @var int
+     */
+    public $idPost;
+
+    /**
      * @var array
      */
     public $data;
@@ -39,7 +44,7 @@ class PhotoPost extends Widget
     public function run()
     {
         return $this->render('photo',[
-            'pathPhoto'=>$this->pathPhoto,
+            'pathPhoto'=>$this->pathPhoto.$this->idPost.'/',
             'data'=>$this->data,
             'pathIcon'=>$this->pathIcon,
             'icon'=>$this->icon

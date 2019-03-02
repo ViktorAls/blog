@@ -2,6 +2,7 @@
 <module type="WEB_MODULE" version="4">
   <component name="NewModuleRootManager">
     <content url="file://$MODULE_DIR$">
+      <excludeFolder url="file://$MODULE_DIR$/yii2/vendor/aki/yii2-image-slider" />
       <excludeFolder url="file://$MODULE_DIR$/yii2/vendor/almasaeed2010/adminlte" />
       <excludeFolder url="file://$MODULE_DIR$/yii2/vendor/behat/gherkin" />
       <excludeFolder url="file://$MODULE_DIR$/yii2/vendor/bower-asset/bootstrap" />
@@ -10,6 +11,7 @@
       <excludeFolder url="file://$MODULE_DIR$/yii2/vendor/bower-asset/punycode" />
       <excludeFolder url="file://$MODULE_DIR$/yii2/vendor/bower-asset/typeahead.js" />
       <excludeFolder url="file://$MODULE_DIR$/yii2/vendor/bower-asset/yii2-pjax" />
+      <excludeFolder url="file://$MODULE_DIR$/yii2/vendor/bupy7/yii2-flexslider" />
       <excludeFolder url="file://$MODULE_DIR$/yii2/vendor/cebe/markdown" />
       <excludeFolder url="file://$MODULE_DIR$/yii2/vendor/cebe/yii2-gravatar" />
       <excludeFolder url="file://$MODULE_DIR$/yii2/vendor/codeception/base" />

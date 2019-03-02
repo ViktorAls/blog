@@ -1416,16 +1416,16 @@ button::-moz-focus-inner, input::-moz-focus-inner {
    width: 18px;
    height: 18px;
    margin: 0;
-   padding: 4px;
+   padding: 16px;
    cursor: pointer;
 }
 
 .slick-slider .slick-dots li button {
    display: block;
-   width: 10px;
-   height: 10px;
+   width: 15px;
+   height: 15px;
    border-radius: 50%;
-   background: rgba(255, 255, 255, 0.6);
+   background: rgba(255,255,255,0.26);
    border: none;
    line-height: 10px;
    padding: 0;
@@ -1433,6 +1433,7 @@ button::-moz-focus-inner, input::-moz-focus-inner {
    cursor: pointer;
    font: 0/0 a;
    text-shadow: none;
+   border: 2px solid #000;
    color: transparent;
 }
 
@@ -3832,7 +3833,7 @@ footer h4::after {
 }
 
 .format-gallery .slick-dots {
-   text-align: left;
+   text-align: center;
    margin: 0;
    padding: 0 2rem 0 2.4rem;
    position: absolute;
@@ -3851,6 +3852,7 @@ footer h4::after {
 .format-gallery .slider__slides.slick-initialized {
    opacity: 1;
    visibility: visible;
+   padding-bottom: 62px;
 }
 
 

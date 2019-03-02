@@ -17,7 +17,7 @@ class PostSearch extends Post
     public function rules()
     {
         return [
-            [['id', 'created_at', 'updated_at', 'type', 'id_lesson'], 'integer'],
+            [['id', 'created_at', 'updated_at', 'id_lesson'], 'integer'],
             [['title', 'description'], 'safe'],
         ];
     }
@@ -42,7 +42,7 @@ class PostSearch extends Post
      */
     public function search($params)
     {
-        $query = Post::find()->orderBy(['id'=>SORT_DESC]);
+        $query = Post::find()->orderBy(['id'=>SORT_DESC])->with('lesson','tags');
 
         // add conditions that should always apply here
 
@@ -62,7 +62,6 @@ class PostSearch extends Post
         $query->andFilterWhere([
             'id' => $this->id,
             'id_lesson' => $this->id_lesson,
-            'type' => $this->type,
         ]);
 
         $query->andFilterWhere(['like', 'title', $this->title])

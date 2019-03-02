@@ -40,7 +40,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <?= Html::beginForm(['test/result', 'id' => $test['id']], 'post', ['class' => "form-inline"]); ?>
     <div class="col-md-12">
         <?php foreach ($questions as $key => $question): ?>
-            <? if (!empty($question['answer'])): ?>
+            <? if (!empty($question['answers'])): ?>
                 <div class="row">
                     <p class="margin_left"><?= $key . '. ' . $question['title'] ?></p>
                     <?php if (is_file(yii::getAlias('@testIcon/') . $question['icon'])): ?>
@@ -49,9 +49,9 @@ $this->params['breadcrumbs'][] = $this->title;
                                 ['style' => 'width:100%;hight:auto; margin-bottom:25px']); ?>
                     </div>
                     <?php endif; ?>
-                    <?php shuffle($question['answer']); ?>
+                    <?php shuffle($question['answers']); ?>
                     <div class="col-md-6">
-                        <?php foreach ($question['answer'] as $answer): ?>
+                        <?php foreach ($question['answers'] as $answer): ?>
                             <div class="check">
                                 <?= Html::checkbox('answer['.$question['id'].']['.$answer['id'].']', false) ?> <?= $answer['title'] ?>
                             </div>

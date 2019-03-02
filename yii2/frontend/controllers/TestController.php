@@ -15,11 +15,45 @@ use common\models\Question;
 use common\models\ResultTest;
 use common\models\Test;
 use Yii;
+use yii\filters\AccessControl;
+use yii\filters\VerbFilter;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 
 class TestController extends Controller
 {
+
+    /**
+     * {@inheritdoc}
+     */
+    public function behaviors()
+    {
+        return [
+            'access' => [
+                'class' => AccessControl::className(),
+                'only' => ['index','result','passage'],
+                'rules' => [
+                    [
+                        'actions' => ['index','result','passage'],
+                        'allow' => true,
+                        'roles' => ['@'],
+                    ],
+                ],
+            ],
+        ];
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function actions()
+    {
+        return [
+            'error' => [
+                'class' => 'yii\web\ErrorAction',
+            ],
+        ];
+    }
 
     public function actionIndex($lesson = 0,$search=''){
         if ($search === '' && $lesson <= 0) {
@@ -77,9 +111,16 @@ class TestController extends Controller
             $questions = QuestionQuery::getQuestionTest($id);
             $userAnswer = Yii::$app->request->post('answer');
             foreach ($questions as $question){
-                   if ($userAnswer[$question['id']]){
-                       $rightCountQuestion += $this->checkAnswer($userAnswer[$question['id']],$question['answer'])?1:0;
-                   }
+                foreach ($question['answers'] as $answer){
+                    $ans = empty($userAnswer[$question['id']][$answer['id']]);
+                    if ($ans === true && $answer['bool'] === '1'){
+                       break 2;
+                    }
+                    if ($ans === false && $answer['bool'] === '0') {
+                        break 2;
+                    }
+                }
+                $rightCountQuestion++;
             }
             $priseOneQuestion = 100/QuestionQuery::getCount($id);
             $result = new ResultTest();
@@ -88,29 +129,12 @@ class TestController extends Controller
           $result->id_user = Yii::$app->user->getId();
           $result->date = date('Y-m-d H-m-i');
             if ($result->save()){
-                yii::$app->session->setFlash('success','Результаты успешно сохранены.');
+                yii::$app->session->setFlash('success','Результаты успешно сохранены.'.$rightCountQuestion*$priseOneQuestion);
             } else {
                 yii::$app->session->setFlash('error','Произошла ошибка сервера.');
             }
         }
-        return  $this->redirect(['test/index']);
-    }
-
-
-    /**
-     * @param $userAnswer
-     * @param $rightAnswer
-     * @return bool
-     */
-    protected function checkAnswer($userAnswer, $rightAnswer){
-        foreach ($rightAnswer as $right){
-            if($right['bool']===1){
-                if (!$userAnswer[$right['id']]) {
-                    return false;
-                }
-            }
-        }
-        return true;
+        return  $this->redirect(['index']);
     }
 
 }

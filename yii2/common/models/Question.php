@@ -120,7 +120,7 @@ class Question extends \yii\db\ActiveRecord
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getAnswer()
+    public function getAnswers()
     {
         return $this->hasMany(Answer::className(), ['id_question' => 'id']);
     }

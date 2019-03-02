@@ -78,7 +78,7 @@ class ArticlePost extends \yii\base\Widget
         $urlIcon = Url::home(true) . $this->pathIcon . $this->nameIcon;
         $title = Html::encode($this->title);
         $date = date($this->formatDate, $this->datePublication);
-        $description =  mb_strimwidth(Html::encode($this->description), 0, 150, "...");
+        $description =  mb_strimwidth(strip_tags($this->description), 0, 150, '...');
         return $this->render('articlePost', [
             'urlFullPost'=>$urlFullPost,
             'urlIcon'=>$urlIcon,

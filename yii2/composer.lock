@@ -4,8 +4,55 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "4d33c9d513254c90ef05059e0bb54259",
+    "content-hash": "f8e706cfe8e6dbce37512c9592a9fc77",
     "packages": [
+        {
+            "name": "aki/yii2-image-slider",
+            "version": "1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/akbarjoudi/yii2-image-slider.git",
+                "reference": "a6428973eea3d40394fcbcfc251b6dcb9ec8ed3d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/akbarjoudi/yii2-image-slider/zipball/a6428973eea3d40394fcbcfc251b6dcb9ec8ed3d",
+                "reference": "a6428973eea3d40394fcbcfc251b6dcb9ec8ed3d",
+                "shasum": ""
+            },
+            "require": {
+                "yiisoft/yii2": "*"
+            },
+            "type": "yii2-extension",
+            "autoload": {
+                "psr-4": {
+                    "aki\\imageslider\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "LGPL-3.0+"
+            ],
+            "authors": [
+                {
+                    "name": "akbarjoudi",
+                    "email": "akbar.joody@gmail.ocm"
+                }
+            ],
+            "description": "Image Slider for yii2",
+            "keywords": [
+                " slider",
+                " widget slider",
+                " yii2imageslider",
+                " yii2slider",
+                "extension",
+                "image",
+                "imageslider",
+                "slider",
+                "yii2"
+            ],
+            "time": "2017-03-21T08:45:59+00:00"
+        },
         {
             "name": "almasaeed2010/adminlte",
             "version": "v2.4.8",
@@ -99,7 +146,7 @@
             "version": "3.2.1",
             "source": {
                 "type": "git",
-                "url": "git@github.com:jquery/jquery-dist.git",
+                "url": "https://github.com/jquery/jquery-dist.git",
                 "reference": "77d2a51d0520d2ee44173afdf4e40a9201f5964e"
             },
             "dist": {
@@ -150,6 +197,50 @@
             "license": [
                 "MIT"
             ]
+        },
+        {
+            "name": "bupy7/yii2-flexslider",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/bupy7/yii2-flexslider.git",
+                "reference": "985928ee543b1e9b0856f1ffd646655a10048a5d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/bupy7/yii2-flexslider/zipball/985928ee543b1e9b0856f1ffd646655a10048a5d",
+                "reference": "985928ee543b1e9b0856f1ffd646655a10048a5d",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.0"
+            },
+            "type": "yii2-extension",
+            "autoload": {
+                "psr-4": {
+                    "bupy7\\flexslider\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Vasilij Belosludcev",
+                    "email": "bupy765@gmail.com",
+                    "homepage": "http://mihaly4.ru"
+                }
+            ],
+            "description": "This is widget wrapper of Flexslider https://github.com/woothemes/FlexSlider for Yii2.",
+            "homepage": "https://github.com/bupy7/yii2-flexslider",
+            "keywords": [
+                "extension",
+                "flexslider",
+                "widget",
+                "yii2"
+            ],
+            "time": "2018-02-09T09:35:34+00:00"
         },
         {
             "name": "cebe/markdown",
@@ -4542,7 +4633,8 @@
         "kartik-v/yii2-dynagrid": 20,
         "kartik-v/yii2-grid": 20,
         "kartik-v/yii2-widget-datetimepicker": 20,
-        "kartik-v/yii2-widget-datepicker": 20
+        "kartik-v/yii2-widget-datepicker": 20,
+        "bupy7/yii2-flexslider": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,

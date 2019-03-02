@@ -6,6 +6,7 @@ use backend\models\PostSearch;
 use common\models\post;
 use common\models\PostFile;
 use common\models\query\LessonQuery;
+use common\models\query\PostQuery;
 use common\models\query\TagQuery;
 use Yii;
 use yii\filters\VerbFilter;
@@ -60,25 +61,24 @@ class PostController extends Controller
      */
     public function actionView($id)
     {
-        return $this->render('view', [
-            'model' => $this->findModel($id),
-        ]);
-    }
-
-    /**
-     * Finds the post model based on its primary key value.
-     * If the model is not found, a 404 HTTP exception will be thrown.
-     * @param integer $id
-     * @return post the loaded model
-     * @throws NotFoundHttpException if the model cannot be found
-     */
-    protected function findModel($id)
-    {
-        if (($model = Post::findOne($id))!==null) {
-            return $model;
+        if (($model = PostQuery::getOneModel(['id' => $id]))!==null) {
+            $images = null;
+            foreach ($model['postFiles'] as $key => $file) {
+                if ($key===0) {
+                    $images[] = ['active' => true, 'src' => $file['name'], 'title' => $file['name']];
+                } else {
+                    $images[] = ['src' => $file['name'], 'title' => $file['name']];
+                }
+            }
+            return $this->render('view', [
+                'model' => $model,
+                'images' => $images,
+            ]);
         }
 
         throw new NotFoundHttpException('The requested page does not exist.');
+
+
     }
 
     /**
@@ -88,7 +88,7 @@ class PostController extends Controller
      */
     public function actionCreate()
     {
-        $model = new post();
+        $model = new Post();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
@@ -125,6 +125,22 @@ class PostController extends Controller
             'lessonFilter' => $lessonFilter,
             'tagFilter' => $tagFilter,
         ]);
+    }
+
+    /**
+     * Finds the post model based on its primary key value.
+     * If the model is not found, a 404 HTTP exception will be thrown.
+     * @param integer $id
+     * @return post the loaded model
+     * @throws NotFoundHttpException if the model cannot be found
+     */
+    protected function findModel($id)
+    {
+        if (($model = Post::findOne($id))!==null) {
+            return $model;
+        }
+
+        throw new NotFoundHttpException('The requested page does not exist.');
     }
 
     /**

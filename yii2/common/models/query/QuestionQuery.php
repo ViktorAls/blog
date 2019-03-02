@@ -19,7 +19,7 @@ class QuestionQuery extends Question
      */
     public static function getQuestionTest($id)
     {
-       return self::find()->where(['id_test'=>$id])->asArray()->with('answer')->all();
+       return self::find()->where(['id_test'=>$id])->asArray()->with('answers')->all();
     }
 
     /**

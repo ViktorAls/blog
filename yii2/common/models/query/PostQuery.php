@@ -28,7 +28,7 @@ class PostQuery extends Post
      * @return array
      */
     public static function getLimitDesc($limit,$fieldDesc = 'id'){
-        return self::find()->asArray()->limit($limit)->orderBy([$fieldDesc => SORT_DESC])->all();
+        return self::find()->asArray()->limit($limit)->with('lesson')->orderBy([$fieldDesc => SORT_DESC])->all();
     }
 
     /**
@@ -37,7 +37,7 @@ class PostQuery extends Post
      * @param array $with
      * @return array
      */
-    public static function getOneModel($where,$with = ['postFiles','tags']){
+    public static function getOneModel($where,$with = ['postFiles','tags','lesson']){
         return self::find()->where($where)->asArray()->with($with)->one();
     }
 
@@ -45,8 +45,8 @@ class PostQuery extends Post
      * @param string $condition
      * @return \yii\db\ActiveQuery
      */
-    public static function getAllByType($condition){
-        return self::find()->where($condition);
+    public static function getAll(){
+        return self::find();
     }
 
     /**
@@ -55,11 +55,11 @@ class PostQuery extends Post
      * @param integer $lesson
      * @return \yii\db\ActiveQuery
      */
-    public static function getByTypeLikeTitle($condition,$search,$lesson){
+    public static function getLikeTitle($search,$lesson){
         if($lesson===0){
-            return self::find()->where($condition)->andWhere(['like', 'title', $search]);
+            return self::find()->andWhere(['like', 'title', $search]);
         }
-        return self::find()->where($condition)->andWhere(['like', 'title', $search])->andWhere(['id_lesson'=>$lesson]);
+        return self::find()->andWhere(['like', 'title', $search])->andWhere(['id_lesson'=>$lesson]);
     }
 
     /**

@@ -43,10 +43,10 @@ class m190216_095215_create_table extends Migration
             'id' => $this->primaryKey(),
             'title' => $this->char(150)->notNull(),
             'description' => $this->text()->notNull(),
-            'created_at' => $this->integer()->notNull(),
-            'updated_at' => $this->integer()->notNull(),
+            'created_at' => $this->integer()->null(),
+            'updated_at' => $this->integer()->null(),
             'type' => $this->integer()->notNull(),
-            'icon' => $this->text()->notNull(),
+            'icon' => $this->text()->null(),
             'id_lesson' => $this->integer()->notNull(),
         ]);
         $this->createTable('group', [

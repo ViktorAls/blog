@@ -22,7 +22,6 @@ $this->params['breadcrumbs'][] = $this->title;
     <!-- /.box-header -->
     <div class="box-body">
         <div class="table-responsive">
-
             <?php Pjax::begin() ?>
             <?= GridView::widget([
                 'dataProvider' => $dataProvider,
@@ -31,21 +30,16 @@ $this->params['breadcrumbs'][] = $this->title;
                 'columns' => [
                     ['class' => 'yii\grid\SerialColumn'],
                     'title',
-                    'description:html',
+                    [
+                        'attribute' => 'description',
+                        'format' => 'html',
+                    ],
                     [
                         'attribute' => 'id_lesson',
                         'value' => function ($model) {
                             return $model->lesson['name'];
                         },
                         'filter' => $lessonFilter,
-                    ],
-                    [
-                        'attribute' => 'type',
-                        'value' => function ($model) {
-                            return $model->type===2 ? 'Аудио лекция' : 'Лекция';
-                        },
-                        'filter' => [1=>'Лекции',2=>'Аудио лекции'],
-
                     ],
                     [
                         'attribute' => 'icon',
