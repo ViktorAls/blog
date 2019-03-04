@@ -2,6 +2,7 @@
 namespace frontend\controllers;
 
 
+use common\models\Information;
 use common\models\query\GroupQuery;
 use common\models\query\InformationQuery;
 use frontend\models\LoginForm;
@@ -18,6 +19,7 @@ use yii\filters\VerbFilter;
 use yii\helpers\ArrayHelper;
 use yii\web\BadRequestHttpException;
 use yii\web\Controller;
+use yii\web\NotFoundHttpException;
 
 /**
  * Site controller
@@ -227,5 +229,38 @@ class SiteController extends Controller
     }
 
 
+    /**
+     * @param $id
+     * @return array|\yii\web\Response
+     * @throws NotFoundHttpException
+     */
+    public function actionInformation($id){
+        if (isset($_POST['hasEditable'])) {
+            \Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
+            $model = $this->findInformationModel($id);
+            if (yii::$app->request->isAjax) {
+                $model->value = yii::$app->request->post('information');
+                if ($model->save()){
+                    return ['output'=>'', 'message'=>'','values'=>$model->value];
+                }
+            }
+            return ['output'=>'', 'message'=>'При сохранении произошла ошибка, попробуйте ещё раз.'];
+        }
+        return $this->redirect(Yii::$app->request->referrer);
+    }
+
+    /**
+     * @param $id
+     * @return Information|null
+     * @throws NotFoundHttpException
+     */
+    protected function findInformationModel($id)
+    {
+        if (($model = Information::findOne($id)) !== null) {
+            return $model;
+        }
+
+        throw new NotFoundHttpException('The requested page does not exist.');
+    }
 
 }

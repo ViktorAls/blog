@@ -2,9 +2,12 @@
 
 /* @var $this yii\web\View */
 /* @var $form yii\bootstrap\ActiveForm */
-
+/* @var array $contact;
+ *
+ */
 /* @var $model \frontend\models\ContactForm */
 
+use kartik\editable\Editable;
 use yii\bootstrap\ActiveForm;
 use yii\captcha\Captcha;
 use yii\helpers\Html;
@@ -25,15 +28,79 @@ $this->title = 'Обратная связь';
 
         <div class="col-full s-content__main">
 
-            <p class="lead"><?= $contact['mainFeedback']['value'] ?></p>
-
-            <p><?= $contact['feedback']['value'] ?></p>
+            <p class="lead">
+                <?php if (Yii::$app->user->identity->success === 1):?>
+                    <?= Editable::widget([
+                        'name'=>'information',
+                        'value'=>$contact['mainFeedback']['value'],
+                        'bsColCssPrefixes'=>Editable::SIZE_X_LARGE,
+                        'pjaxContainerId'=>'p0',
+                        'inputType' => Editable::INPUT_TEXTAREA,
+                        'formOptions'=>[
+                            'action' => [\yii\helpers\Url::to(['site/information','type'=>'ajax','id'=>$contact['mainFeedback']['id']])]
+                        ],
+                        'asPopover' => true,
+                        'editableButtonOptions'=>['label'=>'<i class="fas fa-pen"></i>'],// значек редактирования
+                        'format' => Editable::FORMAT_BUTTON,// редактирвоание по стоке или кнопки
+                        'preHeader'=>' ',// иконка когда редактируем
+                        'header' => 'Изменить: '.$contact['mainFeedback']['name'],
+                        'size'=>'2',
+                        'options' => ['class'=>'form-control', 'placeholder'=>'Enter person name...']]);
+                    ?>
+                <?else:?>
+                    <?=$contact['mainFeedback']['value']?>
+                <?endif;?>
+            </p>
+            <p>
+                <?php if (Yii::$app->user->identity->success === 1):?>
+                    <?= Editable::widget([
+                        'name'=>'information',
+                        'value'=>$contact['feedback']['value'],
+                        'bsColCssPrefixes'=>Editable::SIZE_X_LARGE,
+                        'pjaxContainerId'=>'p0',
+                        'inputType' => Editable::INPUT_TEXTAREA,
+                        'formOptions'=>[
+                            'action' => [\yii\helpers\Url::to(['site/information','type'=>'ajax','id'=>$contact['feedback']['id']])]
+                        ],
+                        'asPopover' => true,
+                        'editableButtonOptions'=>['label'=>'<i class="fas fa-pen"></i>'],// значек редактирования
+                        'format' => Editable::FORMAT_BUTTON,// редактирвоание по стоке или кнопки
+                        'preHeader'=>' ',// иконка когда редактируем
+                        'header' => 'Изменить: '.$contact['feedback']['name'],
+                        'size'=>'2',
+                        'options' => ['class'=>'form-control', 'placeholder'=>'Enter person name...']]);
+                    ?>
+                <?else:?>
+                    <?=$contact['feedback']['value']?>
+                <?endif;?>
+            </p>
 
             <div class="row">
                 <div class="col-six tab-full">
                     <h3>Где нас найти</h3>
-                    <p><?= $contact['address']['value'] ?></p>
-                </div>
+                    <p>
+                        <?php if (Yii::$app->user->identity->success === 1):?>
+                            <?= Editable::widget([
+                                'name'=>'information',
+                                'value'=>$contact['address']['value'],
+                                'bsColCssPrefixes'=>Editable::SIZE_X_LARGE,
+                                'pjaxContainerId'=>'p0',
+                                'inputType' => Editable::INPUT_TEXTAREA,
+                                'formOptions'=>[
+                                    'action' => [\yii\helpers\Url::to(['site/information','type'=>'ajax','id'=>$contact['address']['id']])]
+                                ],
+                                'asPopover' => true,
+                                'editableButtonOptions'=>['label'=>'<i class="fas fa-pen"></i>'],// значек редактирования
+                                'format' => Editable::FORMAT_BUTTON,// редактирвоание по стоке или кнопки
+                                'preHeader'=>' ',// иконка когда редактируем
+                                'header' => 'Изменить: '.$contact['address']['name'],
+                                'size'=>'2',
+                                'options' => ['class'=>'form-control', 'placeholder'=>'Enter person name...']]);
+                            ?>
+                        <?else:?>
+                            <?=$contact['feedback']['value']?>
+                        <?endif;?>
+                    </p>                </div>
 
                 <div class="col-six tab-full">
                     <h3>Контактная информация</h3>
