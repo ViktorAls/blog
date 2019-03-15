@@ -42,7 +42,8 @@ $this->params['breadcrumbs'][] = $this->title;
         <?php foreach ($questions as $key => $question): ?>
             <? if (!empty($question['answers'])): ?>
                 <div class="row">
-                    <p class="margin_left"><?= $key . '. ' . $question['title'] ?></p>
+
+                    <p class="margin_left"><?= $key+1 . '. '.Html::encode($question['title']) ?></p>
                     <?php if (is_file(yii::getAlias('@testIcon/') . $question['icon'])): ?>
                     <div class="col-md-6">
                             <?= Html::img(Url::home(true) . '/uploads/testIcon/' . $question['icon'],
