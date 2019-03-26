@@ -25,17 +25,19 @@ class EmailController extends Controller
 
     public function actionIndex()
     {
+
         if ($this->clock === null || $this->clock < 0 || !is_int($this->clock)){
             $this->clock = 3;
         }
         $time = time() +  60*60*$this->clock;
         $date =  date('Y-m-d H:i:s');
         $date2 = date('Y-m-d H:i:s',$time);
-        var_dump($date,$date2);
         $newTasks = Task::find()->asArray()->where(['between', 'date_end', $date, $date2])
             ->with('user')->all();
         Task::deleteAll(['<','date_end',$date]);
         if (!empty($newTasks)) {
+//            Yii::$app->twilio->sms('+375298096531', 'У Вас есть не выполненные задачи.',[
+//                'from' => '+12028049472' ]);
             Yii::$app->mailer->compose(
                 [
                     'html' => 'task-html'
@@ -51,9 +53,11 @@ class EmailController extends Controller
                 ->setSubject($this->subject)
                 ->setTextBody('Для просмотра задач перейдите в управление сайтом.')
                 ->send();
-
-            echo Yii::$app->params['adminEmail'];
+            echo 'Количество не выполненных задач: '.count($newTasks);
+        } else {
+            echo 'На данные момент, задач нет.';
         }
+
         return 0;
     }
 }

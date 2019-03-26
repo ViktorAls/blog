@@ -91,6 +91,8 @@
       <path value="$PROJECT_DIR$/yii2/vendor/kartik-v/yii2-widget-datepicker" />
       <path value="$PROJECT_DIR$/yii2/vendor/bupy7/yii2-flexslider" />
       <path value="$PROJECT_DIR$/yii2/vendor/aki/yii2-image-slider" />
+      <path value="$PROJECT_DIR$/yii2/vendor/twilio/sdk" />
+      <path value="$PROJECT_DIR$/yii2/vendor/2amigos/yii2-twilio-component" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="5.4.0" />

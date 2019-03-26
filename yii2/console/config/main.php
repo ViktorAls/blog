@@ -30,6 +30,12 @@ return [
                 ],
             ],
         ],
+        'twilio' => [
+            'class' => 'dosamigos\twilio\TwilioComponent',
+            'sid' => 'AC4665db38c6af4cd72689a46c2def3946',
+            'token' => '0f7fd638347e5577f70c60cc78fac694',
+            'phoneNumber' => '+12028049472'
+        ]
     ],
     'params' => $params,
 ];

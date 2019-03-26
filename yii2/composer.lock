@@ -4,8 +4,67 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f8e706cfe8e6dbce37512c9592a9fc77",
+    "content-hash": "51f54dc49f05727b602325d74205d628",
     "packages": [
+        {
+            "name": "2amigos/yii2-twilio-component",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/2amigos/yii2-twilio-component.git",
+                "reference": "85450b5ec9172ba5494a2297f3a9e62f293b8e20"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/2amigos/yii2-twilio-component/zipball/85450b5ec9172ba5494a2297f3a9e62f293b8e20",
+                "reference": "85450b5ec9172ba5494a2297f3a9e62f293b8e20",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7",
+                "twilio/sdk": "^5.15",
+                "yiisoft/yii2": "~2.0.11"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^2.3"
+            },
+            "type": "yii2-extension",
+            "autoload": {
+                "psr-4": {
+                    "dosamigos\\twilio\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "2amigOS! Consulting Group",
+                    "email": "hola@2amigos.us",
+                    "homepage": "http://2amigos.us",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Antonio Ramirez Cobos",
+                    "email": "hola@2amigos.us",
+                    "homepage": "http://2amigos.us",
+                    "role": "Developer"
+                }
+            ],
+            "description": "A Yii2 Application Component to ease the use of twilio SDK",
+            "keywords": [
+                "2amigos",
+                "sms",
+                "twilio",
+                "voice",
+                "yii",
+                "yii 2",
+                "yii framework",
+                "yii2"
+            ],
+            "time": "2017-10-27T16:16:26+00:00"
+        },
         {
             "name": "aki/yii2-image-slider",
             "version": "1.0.1",
@@ -1584,6 +1643,52 @@
                 "mailer"
             ],
             "time": "2018-09-11T07:12:52+00:00"
+        },
+        {
+            "name": "twilio/sdk",
+            "version": "5.30.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/twilio/twilio-php.git",
+                "reference": "e54f54597849344edd40f86e12b17c1ac815e65b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/twilio/twilio-php/zipball/e54f54597849344edd40f86e12b17c1ac815e65b",
+                "reference": "e54f54597849344edd40f86e12b17c1ac815e65b",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.5.0"
+            },
+            "require-dev": {
+                "apigen/apigen": "^4.1",
+                "phpunit/phpunit": "4.5.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Twilio\\": "Twilio/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Twilio API Team",
+                    "email": "api@twilio.com"
+                }
+            ],
+            "description": "A PHP wrapper for Twilio's API",
+            "homepage": "http://github.com/twilio/twilio-php",
+            "keywords": [
+                "api",
+                "sms",
+                "twilio"
+            ],
+            "time": "2019-03-15T20:38:12+00:00"
         },
         {
             "name": "unclead/yii2-multiple-input",
