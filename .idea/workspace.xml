@@ -1,17 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c6942d54-c9bd-496f-aad8-5638e982d304" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/commission.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/commission.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yii2/common/runtime/cache/ea/eab17ea2b86d2fb09c2c35fa09cda7d8.bin" beforeDir="false" afterPath="$PROJECT_DIR$/yii2/common/runtime/cache/ea/eab17ea2b86d2fb09c2c35fa09cda7d8.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yii2/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/yii2/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yii2/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yii2/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yii2/console/config/main.php" beforeDir="false" afterPath="$PROJECT_DIR$/yii2/console/config/main.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yii2/console/controllers/EmailController.php" beforeDir="false" afterPath="$PROJECT_DIR$/yii2/console/controllers/EmailController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yii2/frontend/views/layouts/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/yii2/frontend/views/layouts/index.php" afterDir="false" />
-    </list>
+    <list default="true" id="c6942d54-c9bd-496f-aad8-5638e982d304" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,8 +61,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/yii2/frontend/views/layouts/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="349">
-              <caret line="165" column="32" lean-forward="true" selection-start-line="165" selection-start-column="32" selection-end-line="165" selection-end-column="32" />
+            <state relative-caret-position="383">
+              <caret line="167" column="40" selection-start-line="167" selection-start-column="28" selection-end-line="167" selection-end-column="40" />
             </state>
           </provider>
         </entry>
@@ -479,12 +469,12 @@
       <workItem from="1551948307919" duration="598000" />
       <workItem from="1553513841858" duration="425000" />
       <workItem from="1553580263897" duration="6588000" />
-      <workItem from="1553591561536" duration="8761000" />
+      <workItem from="1553591561536" duration="9372000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="514345000" />
+    <option name="totallyTimeSpent" value="514956000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
@@ -889,8 +879,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/yii2/frontend/views/layouts/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="349">
-          <caret line="165" column="32" lean-forward="true" selection-start-line="165" selection-start-column="32" selection-end-line="165" selection-end-column="32" />
+        <state relative-caret-position="383">
+          <caret line="167" column="40" selection-start-line="167" selection-start-column="28" selection-end-line="167" selection-end-column="40" />
         </state>
       </provider>
     </entry>
