@@ -2,33 +2,21 @@
 
 namespace backend\controllers;
 
+use Throwable;
 use Yii;
 use common\models\tag;
 use backend\models\TagsSearch;
+use yii\db\StaleObjectException;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\web\Response;
 
 /**
  * TagsController implements the CRUD actions for tag model.
  */
-class TagsController extends Controller
+class TagsController extends AccessController
 {
-    /**
-     * {@inheritdoc}
-     */
-    public function behaviors()
-    {
-        return [
-            'verbs' => [
-                'class' => VerbFilter::className(),
-                'actions' => [
-                    'delete' => ['POST'],
-                ],
-            ],
-        ];
-    }
-
     public function actionIndex()
     {
         $searchModel = new TagsSearch();
@@ -47,13 +35,13 @@ class TagsController extends Controller
 
     /**
      * @param $id
-     * @return array|\yii\web\Response
+     * @return array|Response
      * @throws NotFoundHttpException
      */
     public function actionUpdate($id)
     {
         if (isset($_POST['hasEditable'])) {
-            \Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
+            Yii::$app->response->format = Response::FORMAT_JSON;
             $model = $this->findModel($id);
             if (yii::$app->request->isAjax) {
                 $model->name = yii::$app->request->post('tags');
@@ -68,10 +56,10 @@ class TagsController extends Controller
 
     /**
      * @param $id
-     * @return \yii\web\Response
+     * @return Response
      * @throws NotFoundHttpException
-     * @throws \Throwable
-     * @throws \yii\db\StaleObjectException
+     * @throws Throwable
+     * @throws StaleObjectException
      */
     public function actionDelete($id)
     {

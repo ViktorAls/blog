@@ -11,26 +11,27 @@ use yii\bootstrap\ActiveForm;
 $this->title = 'Авторизация';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-    <?php $form = ActiveForm::begin(['id' => 'login-form', 'class' => 'form-horizontal']); ?>
-
-    <span class="heading" ><?= Html::encode($this->title) ?></span>
-
-    <div class="form-group">
-        <?= $form->field($model, 'email')->textInput(['autofocus' => true,'autocomplete'=>'email','class' => 'form-control', 'id' => 'inputEmail']) ?>
-        <i class="fa fa-user"></i>
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title"><?= Html::encode($this->title) ?></h3>
     </div>
-    <div class="form-group help">
-        <?= $form->field($model, 'password')->passwordInput(['id' => 'inputPassword','autocomplete'=>'password', 'class' => 'form-control']) ?>
-        <i class="fa fa-lock"></i>
-        <a href="#" class="fa fa-question-circle"></a>
-    </div>
-    <div class="form-group">
-        <div class="main-checkbox">
-            <?= $form->field($model, 'rememberMe')->checkbox(['id' => 'checkbox1']) ?>
+    <div class="panel-body">
+        <?php $form = ActiveForm::begin(); ?>
+
+        <div class="form-group">
+            <?= $form->field($model, 'email')->textInput(['autofocus' => true]) ?>
+        </div>
+        <div class="form-group help">
+            <?= $form->field($model, 'password')->passwordInput() ?>
         </div>
         <div class="form-group">
-            <?= Html::submitButton('Login', ['class' => 'btn btn-default', 'name' => 'login-button']) ?>
+            <div class="main-checkbox">
+                <?= $form->field($model, 'rememberMe')->checkbox()->label('Запомнить меня !') ?>
+            </div>
+            <div class="form-group">
+                <?= Html::submitButton('Авторизация', ['class' => 'btn btn-default', 'name' => 'login-button']) ?>
+            </div>
         </div>
+        <?php ActiveForm::end(); ?>
     </div>
-    <?php ActiveForm::end(); ?>
-
+</div>

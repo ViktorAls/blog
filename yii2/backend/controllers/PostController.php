@@ -17,23 +17,8 @@ use yii\web\NotFoundHttpException;
 /**
  * PostController implements the CRUD actions for post model.
  */
-class PostController extends Controller
+class PostController extends AccessController
 {
-    /**
-     * {@inheritdoc}
-     */
-    public function behaviors()
-    {
-        return [
-            'verbs' => [
-                'class' => VerbFilter::className(),
-                'actions' => [
-                    'delete' => ['POST'],
-                ],
-            ],
-        ];
-    }
-
     /**
      * Lists all post models.
      * @param int $type

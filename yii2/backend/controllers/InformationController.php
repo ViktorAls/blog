@@ -12,22 +12,8 @@ use yii\filters\VerbFilter;
 /**
  * InformationController implements the CRUD actions for information model.
  */
-class InformationController extends Controller
+class InformationController extends AccessController
 {
-    /**
-     * {@inheritdoc}
-     */
-    public function behaviors()
-    {
-        return [
-            'verbs' => [
-                'class' => VerbFilter::className(),
-                'actions' => [
-                    'delete' => ['POST'],
-                ],
-            ],
-        ];
-    }
 
     public function actionIndex()
     {

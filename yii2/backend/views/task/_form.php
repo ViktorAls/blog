@@ -1,5 +1,6 @@
 <?php
 
+use kartik\datetime\DateTimePicker;
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 
@@ -8,24 +9,28 @@ use yii\widgets\ActiveForm;
 /* @var $form yii\widgets\ActiveForm */
 ?>
 
-<div class="task-form">
+<div class="row">
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'id_user')->textInput() ?>
+    <div class="div col-md-6"><?= $form->field($model, 'date_end')->widget(DateTimePicker::classname(), [
+            'options' => ['placeholder' => 'Необходимо выполнить до...'],
+            'pluginOptions' => [
+                'autoclose' => true
+            ]
+        ]); ?>
 
-    <?= $form->field($model, 'title')->textInput(['maxlength' => true]) ?>
+    </div>
+    <div class="div col-md-6">    <?= $form->field($model, 'priority')->dropDownList(['1'=>'Высокий','2'=>'Средний','3'=>'Низкий']) ?>
 
-    <?= $form->field($model, 'date_begin')->textInput() ?>
+    </div>
+    <div class="div col-md-12">
+        <?= $form->field($model, 'title')->textInput(['maxlength' => true]) ?>
+        <?= $form->field($model, 'description')->textarea(['rows' => 6]) ?>
+    </div>
 
-    <?= $form->field($model, 'date_end')->textInput() ?>
-
-    <?= $form->field($model, 'priority')->textInput() ?>
-
-    <?= $form->field($model, 'description')->textarea(['rows' => 6]) ?>
-
-    <div class="form-group">
-        <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>
+    <div class="col-md-12">
+        <?= Html::submitButton('Сохранить', ['class' => 'btn btn-success btn-block']) ?>
     </div>
 
     <?php ActiveForm::end(); ?>

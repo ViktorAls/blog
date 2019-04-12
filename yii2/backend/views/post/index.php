@@ -33,6 +33,9 @@ $this->params['breadcrumbs'][] = $this->title;
                     [
                         'attribute' => 'description',
                         'format' => 'html',
+                        'value'=>function($model){
+                return mb_strimwidth($model->description,0,400).'...';
+                        },
                     ],
                     [
                         'attribute' => 'id_lesson',

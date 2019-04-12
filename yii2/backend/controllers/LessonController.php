@@ -3,33 +3,22 @@
 namespace backend\controllers;
 
 use common\models\query\LessonQuery;
+use Throwable;
 use Yii;
 use common\models\lesson;
 use backend\models\LessonSearch;
+use yii\db\StaleObjectException;
 use yii\helpers\ArrayHelper;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\web\Response;
 
 /**
  * LessonController implements the CRUD actions for lesson model.
  */
-class LessonController extends Controller
+class LessonController extends AccessController
 {
-    /**
-     * {@inheritdoc}
-     */
-    public function behaviors()
-    {
-        return [
-            'verbs' => [
-                'class' => VerbFilter::className(),
-                'actions' => [
-                    'delete' => ['POST'],
-                ],
-            ],
-        ];
-    }
 
     public function actionIndex()
     {
@@ -49,13 +38,13 @@ class LessonController extends Controller
 
     /**
      * @param $id
-     * @return array|\yii\web\Response
+     * @return array|Response
      * @throws NotFoundHttpException
      */
     public function actionUpdate($id)
     {
         if (isset($_POST['hasEditable'])) {
-            \Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
+            Yii::$app->response->format = Response::FORMAT_JSON;
             $model = $this->findModel($id);
             if (yii::$app->request->isAjax) {
                 $model->name = yii::$app->request->post('lesson');
@@ -69,10 +58,10 @@ class LessonController extends Controller
     }
     /**
      * @param $id
-     * @return \yii\web\Response
+     * @return Response
      * @throws NotFoundHttpException
-     * @throws \Throwable
-     * @throws \yii\db\StaleObjectException
+     * @throws Throwable
+     * @throws StaleObjectException
      */
     public function actionDelete($id)
     {

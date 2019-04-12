@@ -14,23 +14,8 @@ use yii\filters\VerbFilter;
 /**
  * UserController implements the CRUD actions for user model.
  */
-class UserController extends Controller
+class UserController extends AccessController
 {
-    /**
-     * {@inheritdoc}
-     */
-    public function behaviors()
-    {
-        return [
-            'verbs' => [
-                'class' => VerbFilter::className(),
-                'actions' => [
-                    'delete' => ['POST'],
-                ],
-            ],
-        ];
-    }
-
     /**
      * Lists all user models.
      * @return mixed

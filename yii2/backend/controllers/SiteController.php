@@ -1,15 +1,19 @@
 <?php
+
 namespace backend\controllers;
 
+use backend\models\LoginForm;
+use common\models\User;
 use Yii;
 use yii\filters\AccessControl;
 use yii\filters\VerbFilter;
 use yii\web\Controller;
+use yii\web\NotFoundHttpException;
 
 /**
  * Site controller
  */
-class SiteController extends Controller
+class SiteController extends AccessController
 {
     /**
      * {@inheritdoc}
@@ -21,7 +25,7 @@ class SiteController extends Controller
                 'class' => AccessControl::className(),
                 'rules' => [
                     [
-                        'actions' => ['login', 'error'],
+                        'actions' => ['login', 'error','save','delete'],
                         'allow' => true,
                     ],
                     [
@@ -62,6 +66,41 @@ class SiteController extends Controller
         return $this->render('index');
     }
 
+
+    /**
+     *
+     * @throws NotFoundHttpException
+     */
+    public function actionSave()
+    {
+        if (Yii::$app->request->isAjax) {
+            $user = User::findOne(['id' =>3]);
+            if (isset($user)) {
+                $user->push_token = Yii::$app->request->post('push_token');
+                $user->save();
+            }
+        } else {
+            throw new NotFoundHttpException('Страница отсутствует.','404');
+        }
+    }
+
+    /**
+     *
+     * @throws NotFoundHttpException
+     */
+    public function actionDelete()
+    {
+        if (Yii::$app->request->isAjax) {
+            $user = User::findOne(['id' => 3]);
+            if (isset($user)) {
+                $user->push_token = Null;
+                $user->save();
+            }
+        } else {
+            throw new NotFoundHttpException('Страница отсутствует.','404');
+        }
+    }
+
     /**
      * Login action.
      *
@@ -74,7 +113,7 @@ class SiteController extends Controller
             return $this->goHome();
         }
 
-        $model = new \backend\models\LoginForm();
+        $model = new LoginForm();
         if ($model->load(Yii::$app->request->post()) && $model->login()) {
             return $this->goBack();
         }

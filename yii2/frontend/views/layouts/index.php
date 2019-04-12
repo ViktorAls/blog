@@ -156,20 +156,7 @@ $('#modal-info').find('.modal-body').load('" . Url::to('/user/settings') . "');
             .addClass('pgn__next');
     })
 </script>
-<script src="https://www.gstatic.com/firebasejs/5.9.1/firebase.js"></script>
-<script>
-    // Initialize Firebase
-    var config = {
-        apiKey: "AIzaSyBuVMnFa2h1Nhh2WuoY7BdVbtkmiGvZQws",
-        authDomain: "blog-13afc.firebaseapp.com",
-        databaseURL: "https://blog-13afc.firebaseio.com",
-        projectId: "blog-13afc",
-        storageBucket: "blog-13afc.appspot.com",
-        messagingSenderId: "261332650361"
-    };
-    firebase.initializeApp(config);
-</script>
-<!--Конец настроек-->
+
 </body>
 </html>
 <?php $this->endPage() ?>

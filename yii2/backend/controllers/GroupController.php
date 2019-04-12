@@ -2,33 +2,21 @@
 
 namespace backend\controllers;
 
+use Throwable;
 use Yii;
 use common\models\group;
 use backend\models\GroupSearch;
+use yii\db\StaleObjectException;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\web\Response;
 
 /**
  * GroupController implements the CRUD actions for group model.
  */
-class GroupController extends Controller
+class GroupController extends AccessController
 {
-    /**
-     * {@inheritdoc}
-     */
-    public function behaviors()
-    {
-        return [
-            'verbs' => [
-                'class' => VerbFilter::className(),
-                'actions' => [
-                    'delete' => ['POST'],
-                ],
-            ],
-        ];
-    }
-
     /**
      * @return string
      */
@@ -50,13 +38,13 @@ class GroupController extends Controller
 
     /**
      * @param $id
-     * @return array|\yii\web\Response
+     * @return array|Response
      * @throws NotFoundHttpException
      */
     public function actionUpdate($id)
     {
         if (isset($_POST['hasEditable'])) {
-            \Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
+            Yii::$app->response->format = Response::FORMAT_JSON;
             $model = $this->findModel($id);
             if (yii::$app->request->isAjax) {
                 $model->name = yii::$app->request->post('group');
@@ -71,10 +59,10 @@ class GroupController extends Controller
 
     /**
      * @param $id
-     * @return \yii\web\Response
+     * @return Response
      * @throws NotFoundHttpException
-     * @throws \Throwable
-     * @throws \yii\db\StaleObjectException
+     * @throws Throwable
+     * @throws StaleObjectException
      */
     public function actionDelete($id)
     {

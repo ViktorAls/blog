@@ -16,6 +16,8 @@ class AppAsset extends AssetBundle
         'css/font-awesome.css'
     ];
     public $js = [
+        'https://www.gstatic.com/firebasejs/5.9.1/firebase.js',
+        '/../firebase_subscribe.js',
     ];
     public $depends = [
         'yii\web\YiiAsset',

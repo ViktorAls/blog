@@ -15,23 +15,8 @@ use yii\filters\VerbFilter;
 /**
  * QuestionController implements the CRUD actions for question model.
  */
-class QuestionController extends Controller
+class QuestionController extends AccessController
 {
-    /**
-     * {@inheritdoc}
-     */
-    public function behaviors()
-    {
-        return [
-            'verbs' => [
-                'class' => VerbFilter::className(),
-                'actions' => [
-                    'delete' => ['POST'],
-                ],
-            ],
-        ];
-    }
-
     /**
      * Lists all question models.
      * @param $test

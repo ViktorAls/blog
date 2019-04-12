@@ -15,22 +15,8 @@ use yii\filters\VerbFilter;
 /**
  * DocumentController implements the CRUD actions for document model.
  */
-class DocumentController extends Controller
+    class DocumentController extends AccessController
 {
-    /**
-     * {@inheritdoc}
-     */
-    public function behaviors()
-    {
-        return [
-            'verbs' => [
-                'class' => VerbFilter::className(),
-                'actions' => [
-                    'delete' => ['POST'],
-                ],
-            ],
-        ];
-    }
 
     /**
      * Lists all document models.

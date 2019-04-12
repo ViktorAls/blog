@@ -12,35 +12,22 @@ use yii\filters\VerbFilter;
 /**
  * TaskController implements the CRUD actions for task model.
  */
-class TaskController extends Controller
+class TaskController extends AccessController
 {
-    /**
-     * {@inheritdoc}
-     */
-    public function behaviors()
-    {
-        return [
-            'verbs' => [
-                'class' => VerbFilter::className(),
-                'actions' => [
-                    'delete' => ['POST'],
-                ],
-            ],
-        ];
-    }
-
     /**
      * Lists all task models.
      * @return mixed
      */
     public function actionIndex()
     {
-        $dataProvider = new ActiveDataProvider([
-            'query' => task::find(),
-        ]);
+        $tasks1 = Task::find()->orderBy(['date_end' => SORT_DESC])->with('user')->where(['priority'=>'1'])->asArray()->all();
+        $tasks2 = Task::find()->orderBy(['date_end' => SORT_DESC])->with('user')->where(['priority'=>'2'])->asArray()->all();
+        $tasks3 = Task::find()->orderBy(['date_end' => SORT_DESC])->with('user')->where(['priority'=>'3'])->asArray()->all();
 
         return $this->render('index', [
-            'dataProvider' => $dataProvider,
+            'tasks1' => $tasks1,
+            'tasks2' => $tasks2,
+            'tasks3' => $tasks3,
         ]);
     }
 
@@ -96,17 +83,14 @@ class TaskController extends Controller
     }
 
     /**
-     * Deletes an existing task model.
-     * If deletion is successful, the browser will be redirected to the 'index' page.
-     * @param integer $id
-     * @return mixed
-     * @throws NotFoundHttpException if the model cannot be found
+     * @param $id
+     * @throws NotFoundHttpException
+     * @throws \Throwable
+     * @throws \yii\db\StaleObjectException
      */
     public function actionDelete($id)
     {
         $this->findModel($id)->delete();
-
-        return $this->redirect(['index']);
     }
 
     /**

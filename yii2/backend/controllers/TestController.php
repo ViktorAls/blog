@@ -15,23 +15,8 @@ use yii\filters\VerbFilter;
 /**
  * TestController implements the CRUD actions for test model.
  */
-class TestController extends Controller
+class TestController extends AccessController
 {
-    /**
-     * {@inheritdoc}
-     */
-    public function behaviors()
-    {
-        return [
-            'verbs' => [
-                'class' => VerbFilter::className(),
-                'actions' => [
-                    'delete' => ['POST'],
-                ],
-            ],
-        ];
-    }
-
     /**
      * Lists all test models.
      * @return mixed

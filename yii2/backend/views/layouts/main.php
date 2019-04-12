@@ -44,7 +44,6 @@ use yii\helpers\Html;
 
     <?php $this->endBody() ?>
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
-
     </body>
     </html>
     <?php $this->endPage() ?>

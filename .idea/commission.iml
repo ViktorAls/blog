@@ -42,6 +42,7 @@
       <excludeFolder url="file://$MODULE_DIR$/yii2/vendor/kartik-v/yii2-widget-datetimepicker" />
       <excludeFolder url="file://$MODULE_DIR$/yii2/vendor/kartik-v/yii2-widget-fileinput" />
       <excludeFolder url="file://$MODULE_DIR$/yii2/vendor/kartik-v/yii2-widget-select2" />
+      <excludeFolder url="file://$MODULE_DIR$/yii2/vendor/linslin/yii2-curl" />
       <excludeFolder url="file://$MODULE_DIR$/yii2/vendor/myclabs/deep-copy" />
       <excludeFolder url="file://$MODULE_DIR$/yii2/vendor/phar-io/manifest" />
       <excludeFolder url="file://$MODULE_DIR$/yii2/vendor/phar-io/version" />

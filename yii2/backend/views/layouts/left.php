@@ -1,3 +1,8 @@
+<?php
+
+use yii\helpers\Url;
+
+?>
 <aside class="main-sidebar">
 
     <section class="sidebar">
@@ -9,42 +14,54 @@
                 'options' => ['class' => 'sidebar-menu tree', 'data-widget' => 'tree'],
                 'items' => [
                     [
-                        'label' => 'Другое',
-                        'icon' => 'tasks',
-                        'url' => '#',
-                        'items' => [
-                            ['label' => 'Предметы', 'icon' => 'check-circle', 'url' => [\yii\helpers\Url::to(['/lesson/index'])]],
-                            ['label' => 'Группы', 'icon' => 'clock', 'url' => [\yii\helpers\Url::to(['/group/index'])]],
-                            ['label' => 'Теги', 'icon' => 'clock', 'url' => [\yii\helpers\Url::to(['/tags/index'])]],
-                        ],
-                    ],
-                    [
                         'label' => 'Лекции',
-                        'icon' => 'tasks',
+                        'icon' => 'book',
                         'url' => '#',
                         'items' => [
-                            ['label' => 'Лекции', 'icon' => 'clock', 'url' => [\yii\helpers\Url::to(['/post/index'])]],
+                            ['label' => 'Лекции', 'icon' => 'clock', 'url' => [Url::to(['/post/index'])]],
                         ],
                     ],
                     [
-                        'label' => 'Управление тестами',
-                        'icon' => 'tasks',
-                        'url' => [\yii\helpers\Url::to(['/test/index'])],
+                        'label' => 'Тесты',
+                        'icon' => 'text-width',
+                        'url' => '#',
+                        'items' => [
+                            ['label' => 'Управление', 'icon' => 'clock', 'url' => [Url::to(['/test/index'])]],
+                            ['label' => 'Результаты', 'icon' => 'clock', 'url' => [Url::to(['/result/index'])]],
+                            ],
                     ],
                     [
-                        'label' => 'Страница значений',
+                        'label' => ' Задачи',
                         'icon' => 'tasks',
-                        'url' => [\yii\helpers\Url::to(['/information/index'])],
+                        'url' => '#',
+                        'items' => [
+                            ['label' => 'Добавить задачу', 'icon' => 'clock', 'url' => [Url::to(['/task/index'])]],
+                        ],
                     ],
                     [
-                        'label' => 'Документы',
-                        'icon' => 'tasks',
-                        'url' => [\yii\helpers\Url::to(['/document/index'])],
+                        'label' => ' Страница значений',
+                        'icon' => 'pager',
+                        'url' => [Url::to(['/information/index'])],
                     ],
                     [
-                        'label' => 'Пользователи',
-                        'icon' => 'tasks',
-                        'url' => [\yii\helpers\Url::to(['/user/index'])],
+                        'label' => ' Документы',
+                        'icon' => 'passport',
+                        'url' => [Url::to(['/document/index'])],
+                    ],
+                    [
+                        'label' => ' Пользователи',
+                        'icon' => 'user',
+                        'url' => [Url::to(['/user/index'])],
+                    ],
+                    [
+                        'label' => ' Другое ',
+                        'icon' => 'network-wired',
+                        'url' => '#',
+                        'items' => [
+                            ['label' => 'Предметы', 'icon' => 'check-circle', 'url' => [Url::to(['/lesson/index'])]],
+                            ['label' => 'Группы', 'icon' => 'clock', 'url' => [Url::to(['/group/index'])]],
+                            ['label' => 'Теги', 'icon' => 'clock', 'url' => [Url::to(['/tags/index'])]],
+                        ],
                     ],
 
                     ['label' => 'Выход', 'icon' => 'times-circle', 'url' => ['/site/logout'], 'template' => '<a href="{url}" data-method="post">{icon}{label}</a>'],

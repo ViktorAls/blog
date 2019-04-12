@@ -52,7 +52,7 @@ $this->params['breadcrumbs'][] = ['label' => $name];
                     ],
                     ['class' => 'yii\grid\ActionColumn'],
                 ],
-            ]); ?>
+            ])?>
         </div>
     </div>
 </div>

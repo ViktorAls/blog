@@ -21,8 +21,8 @@ class AppAsset extends AssetBundle
     ];
     public $js = [
         '/js/modernizr.js',
-        '/js/pace.min.js',
         '/js/plugins.js',
+        '/js/pace.min.js',
         '/js/main.js',
         '/js/bootstrap.min.js',
     ];

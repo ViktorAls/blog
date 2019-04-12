@@ -93,6 +93,7 @@
       <path value="$PROJECT_DIR$/yii2/vendor/aki/yii2-image-slider" />
       <path value="$PROJECT_DIR$/yii2/vendor/twilio/sdk" />
       <path value="$PROJECT_DIR$/yii2/vendor/2amigos/yii2-twilio-component" />
+      <path value="$PROJECT_DIR$/yii2/vendor/linslin/yii2-curl" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="5.4.0" />

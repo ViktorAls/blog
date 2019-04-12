@@ -8,7 +8,7 @@ use yii\web\IdentityInterface;
 
 /**
  * User model
- *
+ * @property string $push_token
  * @property integer $id
  * @property string $name
  * @property string $middlename
@@ -52,7 +52,7 @@ class User extends ActiveRecord implements IdentityInterface
             [['auth_key','password'], 'string', 'max' => 32],
             [['password'], 'string', 'min' => 6],
             [['password'], 'string'],
-
+            [['push_token'],'safe'],
             [['email'], 'unique'],
             [['email'], 'email'],
             [['password_reset_token'], 'unique'],
