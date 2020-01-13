@@ -21,6 +21,9 @@ use yii\widgets\ActiveForm;
             'lang' => 'ru',
             'minHeight' => 200,
             'buttonSource' => true,
+            'imageUpload' => '/post/image-upload',
+            'imageDelete' => '/post/file-delete',
+            'imageManagerJson' => '/post/images-get',
             'plugins' => [
                 'clips',
                 'fullscreen',
@@ -28,6 +31,7 @@ use yii\widgets\ActiveForm;
                 'fontfamily',
                 'fontsize',
                 'fontcolor',
+                'imagemanager' => 'vova07\imperavi\bundles\ImageManagerAsset',
             ],
         ],
     ]); ?>

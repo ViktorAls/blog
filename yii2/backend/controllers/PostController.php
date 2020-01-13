@@ -19,6 +19,19 @@ use yii\web\NotFoundHttpException;
  */
 class PostController extends AccessController
 {
+    public function actions()
+    {
+        return [
+            'file-upload' => [
+                'class' => 'vova07\imperavi\actions\UploadFileAction',
+                'url' => 'http://blog.iv/uploads/files/', // Directory URL address, where files are stored.
+                'path' => '@files', // Or absolute path to directory where files are stored.
+                'uploadOnlyImage' => false, // For any kind of files uploading.
+                'unique' => false,
+                'translit' => true,
+            ],
+        ];
+    }
     /**
      * Lists all post models.
      * @param int $type

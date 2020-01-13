@@ -27,15 +27,12 @@ AppAsset::register($this);
 <body id="top">
 <?php $this->beginBody() ?>
 
-<!-- pageheader
-================================================== -->
-<!-- pageheader
-  ================================================== -->
-<div class="s-pageheader">
+<?= Alert::widget() ?>
 
+<div class="s-pageheader">
     <?= \common\widgets\Header::widget(['logoName' => Yii::$app->name]) ?>
 </div> <!-- end s-pageheader -->
-<?= Alert::widget(['options' => ['style' => 'margin-bottom: 0px']]) ?>
+
 <?= $content ?>
 
 <!-- s-extra

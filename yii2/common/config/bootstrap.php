@@ -13,8 +13,10 @@ Yii::setAlias('@iconTestUrl', 'http://blog.iv/uploads/testIcon');
 Yii::setAlias('@iconPost', dirname(dirname(dirname(__DIR__))) . '/public_html/uploads/icon');
 Yii::setAlias('@imagesPost', dirname(dirname(dirname(__DIR__))) . '/public_html/uploads/post');
 Yii::setAlias('@testIcon', dirname(dirname(dirname(__DIR__))) . '/public_html/uploads/testIcon');
+Yii::setAlias('@iconTestUrl', 'http://blog.iv/uploads/testIcon');
 
 
+Yii::setAlias('@files', dirname(dirname(dirname(__DIR__))) . '/public_html/uploads/files');
 
 
 

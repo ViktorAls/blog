@@ -3,12 +3,12 @@ namespace frontend\controllers;
 
 
 use common\models\Information;
+use common\models\Post;
 use common\models\query\GroupQuery;
 use common\models\query\InformationQuery;
-use frontend\models\LoginForm;
-use common\models\Post;
 use common\models\query\PostQuery;
 use frontend\models\ContactForm;
+use frontend\models\LoginForm;
 use frontend\models\PasswordResetRequestForm;
 use frontend\models\ResetPasswordForm;
 use frontend\models\SignupForm;
